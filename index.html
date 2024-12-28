@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="online shopping, buy products, fashion, electronics, affordable prices, best deals, home appliances, beauty products, gadgets, trendy fashion, home decor, luxury watches, smartphones, gift ideas, sale, discounts, quality products, eCommerce, shopping cart, free shipping, eco-friendly products, best deals online">
+  <title>ecommerce</title>
+  <link rel="stylesheet" href="inc/styles/all.css"> 
+  <link rel="stylesheet" href="inc/styles/bootstrap.css">
+  <link rel="stylesheet" href="inc/styles/main.css">
+</head>
+<body>
+<header class="header" id="header">
+
+    <div class="top-header d-flex-r-bt-c">
+
+        <div class="col-left d-flex-r-c-c">
+            <select name="currency" id="currency">
+            <option>us dollar</option>
+            <option>eg pound</option>
+            </select>
+        </div>
+
+        <div class="col-right d-flex-r-c-c">
+
+            <div class="whats-no d-flex-r-c-c"><i class="fa-brands fa-whatsapp"></i><p>01210203662</p></div>
+
+            <div class="profile d-flex-r-c-c">
+            <button class="login-btn" id="login-btn">login</button>
+            </div> <!-- end profile -->
+
+        </div>
+
+    </div>
+
+    <div class="main-header d-flex-c-c-c" id="main-header">
+
+        <div class="upper-nav d-flex-r-bt-c">
+
+            <a href="index.php"><h1 class="web-title">shopify</h1></a>
+
+            <div class="nav-icons d-flex-r-c-c">
+            <!-- Example nav-icon -->
+            <div class="nav-icon d-flex-r-c-c"> 
+                <a href="#"><i class="fa-solid fa-code-compare" id="icon"></i></a> 
+                <a href="#" class="details"><span>0</span><p>compare</p></a>
+            </div>
+            </div>
+
+        </div>
+
+        <nav class="navbar d-flex-r-c-c">
+            <ul class="d-flex-r-c-c">
+            <li><a href="#">all brands</a></li>
+            <li><a href="#">all categories</a></li>
+            <li><a href="#">coupons</a></li>
+            <li><a href="#">all offers</a></li>
+            </ul>
+        </nav>
+
+    </div> <!-- End main-header -->
+
+    <div class="right-login-menu d-flex-c-st-c" id="right-login-menu">
+
+        <form class="signin d-flex-c-st-c" action="#" method="POST">
+
+        <div class="menu-header d-flex-r-bt-c">
+            <h4>login</h4>
+            <button id="close-menu-btn"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="input-boxes d-flex-c-st-c">
+
+            <div class="input-box d-flex-r-st-c">
+            <i class="fa fa-envelope" id="icon"></i>
+            <input type="text" name="email" placeholder="Your Email or Phone number">
+            </div>
+
+            <div class="input-box d-flex-r-st-c pass-col">
+            <i class="fa fa-key" id="icon"></i>
+            <input type="password" id="input_Pass" name="password" placeholder="Write Your Password" autocomplete="new-password"/>
+            <div class="eye" onclick="passeyeFunction()">
+                <i class="fa fa-eye" id="faeye_11"></i> 
+                <i class="fa fa-eye-slash" id="faeye_22"></i> 
+            </div>
+            </div>
+
+            <input type="submit" class="submit-btn" name="login" value="login">
+
+            <a href="reset_password.php" class="forget-password">forget your password ?</a>
+
+            <a href="login.php" class="submit-btn create-account-btn">create account</a>
+
+        </div>
+
+        </form>
+
+    </div> <!-- End right-login-menu -->
+
+    <div class="small-menu d-flex-r-bt-c">
+
+        <a href="#" class="small-menu-link d-flex-c-c-c">
+        <i class="fa-solid fa-layer-group" id="icon"></i>
+        <span>categories</span>
+        </a>
+
+        <a href="#" class="small-menu-link d-flex-c-c-c">
+        <i class="fas fa-cart-plus" id="icon"></i>
+        <span>add product</span>
+        </a>
+
+        <a href="#" class="small-menu-link d-flex-c-c-c">
+        <i class="fas fa-store-alt" id="icon"></i>
+        <span>products</span>
+        </a>
+
+        <button class="small-menu-link d-flex-c-c" id="open-btn">
+        <i class="fas fa-bars" id="icon"></i>
+        <span>menu</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+    
+<script src="/inc/js/bootstrap.js"></script>
+<script src="/inc/js/all.min.js"></script>
+<script src="/inc/js/solid.min.js"></script>
+<script src="/inc/js/main.js"></script>
+</body>
+</html>
