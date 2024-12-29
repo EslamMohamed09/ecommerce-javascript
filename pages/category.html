@@ -1,0 +1,726 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>category</title>
+  <link rel="stylesheet" href="../inc/styles/bootstrap.css">
+  <link rel="stylesheet" href="../inc/styles/main.css">
+</head>
+<body>
+<header class="header" id="header">
+
+  <div class="top-header d-flex-r-bt-c">
+
+    <div class="col-left d-flex-r-c-c">
+      <select name="currency" id="currency">
+        <option>us dollar</option>
+        <option>eg pound</option>
+      </select>
+    </div>
+
+    <div class="col-right d-flex-r-c-c">
+
+      <div class="whats-no d-flex-r-c-c"><i class="fa-brands fa-whatsapp"></i><p>01210203662</p></div>
+
+      <div class="profile d-flex-r-c-c">
+        <button class="login-btn" id="login-btn">login</button>
+      </div> <!-- end profile -->
+
+    </div>
+
+  </div>
+
+  <div class="main-header d-flex-c-c-c" id="main-header">
+
+    <div class="upper-nav d-flex-r-bt-c">
+
+      <a href="index.html"><h1 class="web-title">shopify</h1></a>
+
+      <div class="nav-icons d-flex-r-c-c">
+        <!-- Example nav-icon -->
+        <div class="nav-icon d-flex-r-c-c"> 
+          <a href="#"><i class="fa-solid fa-code-compare" id="icon"></i></a> 
+          <a href="#" class="details"><span>0</span><p>compare</p></a>
+        </div>
+      </div>
+
+    </div>
+
+    <nav class="navbar d-flex-r-c-c">
+      <ul class="d-flex-r-c-c">
+        <li><a href="#">all brands</a></li>
+        <li><a href="#">all categories</a></li>
+        <li><a href="#">coupons</a></li>
+        <li><a href="#">all offers</a></li>
+      </ul>
+    </nav>
+
+  </div> <!-- End main-header -->
+
+  <div class="right-login-menu d-flex-c-st-c" id="right-login-menu">
+
+    <form class="signin d-flex-c-st-c" action="#" method="POST">
+
+      <div class="menu-header d-flex-r-bt-c">
+          <h4>login</h4>
+          <button id="close-menu-btn"><i class="fas fa-times"></i></button>
+      </div>
+
+      <div class="input-boxes d-flex-c-st-c">
+
+        <div class="input-box d-flex-r-st-c">
+          <i class="fa fa-envelope" id="icon"></i>
+          <input type="text" name="email" placeholder="Your Email or Phone number">
+        </div>
+
+        <div class="input-box d-flex-r-st-c pass-col">
+          <i class="fa fa-key" id="icon"></i>
+          <input type="password" id="input_Pass" name="password" placeholder="Write Your Password" autocomplete="new-password"/>
+          <div class="eye" onclick="passeyeFunction()">
+            <i class="fa fa-eye" id="faeye_11"></i> 
+            <i class="fa fa-eye-slash" id="faeye_22"></i> 
+          </div>
+        </div>
+
+        <input type="submit" class="submit-btn" name="login" value="login">
+
+        <a href="reset_password.html" class="forget-password">forget your password ?</a>
+
+        <a href="login.html" class="submit-btn create-account-btn">create account</a>
+
+      </div>
+
+    </form>
+
+  </div> <!-- End right-login-menu -->
+
+  <div class="small-menu d-flex-r-bt-c">
+
+      <a href="#" class="small-menu-link d-flex-c-c-c">
+      <i class="fa-solid fa-layer-group" id="icon"></i>
+      <span>categories</span>
+      </a>
+
+      <a href="#" class="small-menu-link d-flex-c-c-c">
+      <i class="fas fa-cart-plus" id="icon"></i>
+      <span>add product</span>
+      </a>
+
+      <a href="#" class="small-menu-link d-flex-c-c-c">
+      <i class="fas fa-store-alt" id="icon"></i>
+      <span>products</span>
+      </a>
+
+      <button class="small-menu-link d-flex-c-c" id="open-btn">
+      <i class="fas fa-bars" id="icon"></i>
+      <span>menu</span>
+      </button>
+
+  </div>
+
+</header>
+
+<section id="category-page">
+
+  <div class="category-information d-flex-r-bt-c"> <!-- BAR -->
+
+    <h1>electronics</h1>
+    
+    <div class="cat-stats">
+      <span>5 categories</span> |
+      <span>9 products</span>
+    </div>
+
+  </div>
+
+  <div class="category-page-container row">
+
+    <div class="filter-col col-lg-2 col-md-3">
+      
+      <div class="categories-block block"> <!-- categories -->
+        <h4><i class="fa-solid fa-bars" id="icon"></i>categories</h4>
+        <ul>
+          <li><a href="category.html?categoryid=34">pc components</a></li>
+          <li><a href="category.html?categoryid=34">sweatshirt</a></li>
+          <li><a href="category.html?categoryid=34">household appliances</a></li>
+          <li><a href="category.html?categoryid=34">shoes</a></li>
+        </ul>
+      </div>
+
+      <div class="parent-categories-block block"> <!-- parent-categories -->
+        <ul class="catmenu" id="catmenu"></ul>
+      </div>
+
+    </div> <!-- End filter-col -->
+
+    <div class="right-block col-lg-10 col-md-9">
+
+      <div class="category-items"></div>
+
+      <div class="this-category-products">
+
+        <div class="products-area">
+
+          <div class="product-item">
+            <div class="image d-flex-r-c-c">
+              <img src="../images" alt="">
+            </div>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-c">
+              <a href="single.html?productid=5" class="product-name">product name</a>
+              <div class="product-price d-flex-r-c-c">
+                <strong class="oldprice">$15</strong>
+                <strong class="price">$14</strong>
+              </div>
+              <button type="button" class="add-btn">add to card</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pagination">
+          
+          
+
+        </div>
+
+      </div>
+
+      <section class="products2-section">
+  
+        <div class="products-container">
+      
+          <div class="product-item"> <!-- Item 1 -->
+            <div class="image d-flex-r-c-c">
+              <img src="images/electronics/computer/adapter/1.png" alt="">
+              <img src="images/electronics/computer/adapter/2.png" alt="">
+            </div>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <a href="single.html" class="product-name">5 Port, 4 Port USB Hub</a>
+              <p>Lorem ipsum dolor sit, Totam.</p>
+              <div class="ratings d-flex-r-st-st">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$69</strong>
+                <strong class="price">$65</strong>
+              </div>
+            </div>
+          </div>
+      
+          <div class="product-item"> <!-- Item 2 -->
+            <div class="image d-flex-r-c-c">
+              <img src="images/electronics/computer/case9/1.png" alt="">
+              <img src="images/electronics/computer/case9/2.png" alt="">
+            </div>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <a href="single.html" class="product-name">HOOD C 303 H</a>
+              <p>Lorem ipsum dolor sit, Totam.</p>
+              <div class="ratings d-flex-r-st-st">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$149</strong>
+                <strong class="price">$142</strong>
+              </div>
+            </div>
+          </div>
+      
+          <div class="product-item"> <!-- Item 3 -->
+            <div class="image d-flex-r-c-c">
+              <img src="images/electronics/fans&airconditions/fan6/1.jpg" alt="">
+              <img src="images/electronics/fans&airconditions/fan6/2.jpg" alt="">
+            </div>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <a href="single.html" class="product-name">Prifix CFF40</a>
+              <p>Lorem ipsum dolor sit, Totam.</p>
+              <div class="ratings d-flex-r-st-st">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$149</strong>
+                <strong class="price">$142</strong>
+              </div>
+            </div>
+          </div>
+      
+          <div class="product-item"> <!-- Item 4 -->
+            <div class="image d-flex-r-c-c">
+              <img src="images\electronics\kettles&heaters\Kettle2/1.png" alt="">
+              <img src="images\electronics\kettles&heaters\Kettle2/2.png" alt="">
+            </div>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <a href="single.html" class="product-name">Kenwood Electric Glass</a>
+              <p>Lorem ipsum dolor sit, Totam.</p>
+              <div class="ratings d-flex-r-st-st">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$164</strong>
+                <strong class="price">$159</strong>
+              </div>
+            </div>
+          </div>
+      
+          <div class="product-item"> <!-- Item 5 -->
+            <div class="image d-flex-r-c-c">
+              <img src="images/electronics/fridges&washing/washing2/1.jpg" alt="">
+              <img src="images/electronics/fridges&washing/washing2/2.jpg" alt="">
+            </div>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <a href="single.html" class="product-name">LG Washing Machine</a>
+              <p>Lorem ipsum dolor sit, Totam.</p>
+              <div class="ratings d-flex-r-st-st">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$449</strong>
+                <strong class="price">$441</strong>
+              </div>
+            </div>
+          </div>
+      
+          <div class="product-item"> <!-- Item 6 -->
+            <div class="image d-flex-r-c-c">
+              <img src="images/electronics/kettles&heaters/steamiron1/1.PNG" alt="">
+              <img src="images/electronics/kettles&heaters/steamiron1/2.PNG" alt="">
+            </div>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <a href="single.html" class="product-name">TORNADO Steam Iron</a>
+              <p>Lorem ipsum dolor sit, Totam.</p>
+              <div class="ratings d-flex-r-st-st">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$119</strong>
+                <strong class="price">$115</strong>
+              </div>
+            </div>
+          </div>
+      
+          <div class="product-item"> <!-- Item 7 -->
+            <div class="image d-flex-r-c-c">
+              <img src="images/electronics/computer/hard/hard2/1.png" alt="">
+              <img src="images/electronics/computer/hard/hard2/2.png" alt="">
+            </div>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <a href="single.html" class="product-name">Transcend Storejet 1Tb</a>
+              <p>Lorem ipsum dolor sit, Totam.</p>
+              <div class="ratings d-flex-r-st-st">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$129</strong>
+                <strong class="price">$121</strong>
+              </div>
+            </div>
+          </div>
+      
+          <div class="product-item"> <!-- Item 8 -->
+            <div class="image d-flex-r-c-c">
+              <img src="images/electronics/computer/hard/hard8/1.png" alt="">
+              <img src="images/electronics/computer/hard/hard8/2.jpg" alt="">
+            </div>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <a href="single.html" class="product-name">Seagate Hub 12TB</a>
+              <p>Lorem ipsum dolor sit, Totam.</p>
+              <div class="ratings d-flex-r-st-st">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$184</strong>
+                <strong class="price">$181</strong>
+              </div>
+            </div>
+          </div>
+      
+          <div class="product-item"> <!-- Item 9 -->
+            <div class="image d-flex-r-c-c">
+              <img src="images/electronics/computer/hard/hard13/3.png" alt="">
+              <img src="images/electronics/computer/hard/hard13/2.png" alt="">
+            </div>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <a href="single.html" class="product-name">Samsung 1TB 870</a>
+              <p>Lorem ipsum dolor sit, Totam.</p>
+              <div class="ratings d-flex-r-st-st">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$149</strong>
+                <strong class="price">$142</strong>
+              </div>
+            </div>
+          </div>
+      
+          <div class="product-item"> <!-- Item 10 -->
+            <div class="image d-flex-r-c-c">
+              <img src="images/electronics/camera/c3/1.png" alt="">
+              <img src="images/electronics/camera/c3/2.png" alt="">
+            </div>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <a href="single.html" class="product-name">Canon Powershot G7 X Mark III</a>
+              <p>Lorem ipsum dolor sit, Totam.</p>
+              <div class="ratings d-flex-r-st-st">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$249</strong>
+                <strong class="price">$242</strong>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      
+      </section>
+
+      <div class="categories-products"><!-- get products for all categories childs -->
+
+        <div class="categoriesproducts1 owl-carousel"> <!-- view first 15 -->
+
+          <div class="product-item">
+            <a href="single.html?id=8">
+              <div class="image d-flex-r-c-c">
+                <img src="../admin/inc/images/electronics/computer/case2/1.png" alt="">
+                <img src="../admin/inc/images/electronics/computer/case2/2.png" alt="">
+              </div>
+            </a>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <h5><a href="single.html?id=9" class="productlink">product name (3 words only)</a></h5>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$40</strong>
+                <strong class="price">$35</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-item">
+            <a href="single.html?id=8">
+              <div class="image d-flex-r-c-c">
+                <img src="../admin/inc/images/electronics/computer/case2/1.png" alt="">
+                <img src="../admin/inc/images/electronics/computer/case2/2.png" alt="">
+              </div>
+            </a>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <h5><a href="single.html?id=9" class="productlink">product name (3 words only)</a></h5>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$40</strong>
+                <strong class="price">$35</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-item">
+            <a href="single.html?id=8">
+              <div class="image d-flex-r-c-c">
+                <img src="../admin/inc/images/electronics/computer/case2/1.png" alt="">
+                <img src="../admin/inc/images/electronics/computer/case2/2.png" alt="">
+              </div>
+            </a>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <h5><a href="single.html?id=9" class="productlink">product name (3 words only)</a></h5>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$40</strong>
+                <strong class="price">$35</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-item">
+            <a href="single.html?id=8">
+              <div class="image d-flex-r-c-c">
+                <img src="../admin/inc/images/electronics/computer/case2/1.png" alt="">
+                <img src="../admin/inc/images/electronics/computer/case2/2.png" alt="">
+              </div>
+            </a>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <h5><a href="single.html?id=9" class="productlink">product name (3 words only)</a></h5>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$40</strong>
+                <strong class="price">$35</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-item">
+            <a href="single.html?id=8">
+              <div class="image d-flex-r-c-c">
+                <img src="../admin/inc/images/electronics/computer/case2/1.png" alt="">
+                <img src="../admin/inc/images/electronics/computer/case2/2.png" alt="">
+              </div>
+            </a>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <h5><a href="single.html?id=9" class="productlink">product name (3 words only)</a></h5>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$40</strong>
+                <strong class="price">$35</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-item">
+            <a href="single.html?id=8">
+              <div class="image d-flex-r-c-c">
+                <img src="../admin/inc/images/electronics/computer/case2/1.png" alt="">
+                <img src="../admin/inc/images/electronics/computer/case2/2.png" alt="">
+              </div>
+            </a>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <h5><a href="single.html?id=9" class="productlink">product name (3 words only)</a></h5>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$40</strong>
+                <strong class="price">$35</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-item">
+            <a href="single.html?id=8">
+              <div class="image d-flex-r-c-c">
+                <img src="../admin/inc/images/electronics/computer/case2/1.png" alt="">
+                <img src="../admin/inc/images/electronics/computer/case2/2.png" alt="">
+              </div>
+            </a>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <h5><a href="single.html?id=9" class="productlink">product name (3 words only)</a></h5>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$40</strong>
+                <strong class="price">$35</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-item">
+            <a href="single.html?id=8">
+              <div class="image d-flex-r-c-c">
+                <img src="../admin/inc/images/electronics/computer/case2/1.png" alt="">
+                <img src="../admin/inc/images/electronics/computer/case2/2.png" alt="">
+              </div>
+            </a>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <h5><a href="single.html?id=9" class="productlink">product name (3 words only)</a></h5>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$40</strong>
+                <strong class="price">$35</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-item">
+            <a href="single.html?id=8">
+              <div class="image d-flex-r-c-c">
+                <img src="../admin/inc/images/electronics/computer/case2/1.png" alt="">
+                <img src="../admin/inc/images/electronics/computer/case2/2.png" alt="">
+              </div>
+            </a>
+            <div class="icons d-flex-c-bt-c">
+              <button type="button"><i class="far fa-heart" id="icon"></i></button>
+              <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+            </div>
+            <div class="content d-flex-c-st-st">
+              <h5><a href="single.html?id=9" class="productlink">product name (3 words only)</a></h5>
+              <div class="product-price d-flex-r-bt-c">
+                <strong class="oldprice">$40</strong>
+                <strong class="price">$35</strong>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+      </div> <!-- END category-childs-products -->
+
+    </div> <!-- End right-block -->
+
+  </div> <!-- END ROW -->
+
+</section>
+
+
+<section id="category-page-categoriesproducts">
+  
+  <div class="categoriesproducts2 d-flex-r-c-c">
+
+    <div class="categoriesproducts2-container owl-carousel"> <!-- maximum 10 from 15 to 25 -->
+
+      <div class="product-item d-flex-c-end-c">
+        <div class="image">
+          <img src="../admin/inc/images/electronics/camera/c2/1.png" alt="">
+          <img src="../admin/inc/images/electronics/camera/c2/2.png" alt="">
+          <img src="../admin/inc/images/electronics/camera/c2/3.png" alt="">
+          <img src="../admin/inc/images/electronics/camera/c2/4.png" alt="">
+        </div>
+        <div class="content">
+          <div class="img-btns d-flex-r-bt-c">
+            <button id="prev-img"><i class="fa fa-angle-left"></i></button>
+            <button id="next-img"><i class="fa fa-angle-right"></i></button>
+          </div>
+          <h5><a href="single.html?id=3" class="productlink">productName (3 words)</a></h5>
+          <div class="product-price d-flex-r-bt-c">
+            <strong class="oldprice">$40</strong>
+            <strong class="price">$33</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div> <!-- END categoriesproducts2 -->
+
+  <div class="categoriesproducts3"> <!-- make pagination view 30 -->
+
+    <div class="products-area">
+
+      <div class="product-item">
+        <div class="image d-flex-r-c-c">
+          <img src="../admin/inc/images/clothes/mens/sweatshirts/10/1.jpg" alt="">
+          <img src="../admin/inc/images/clothes/mens/sweatshirts/10/2.jpg" alt="">
+        </div>
+        <div class="icons d-flex-c-bt-c">
+          <button type="button"><i class="far fa-heart" id="icon"></i></button>
+          <button type="button"><i class="fas fa-shopping-cart" id="icon"></i></button>
+        </div>
+        <div class="content d-flex-c-st-c">
+          <a href="single.html?id=11" class="product-name">product name</a>
+          <div class="product-price d-flex-r-c-c">
+            <strong class="oldprice">$41</strong>
+            <strong class="price">$39</strong>
+          </div>
+          <button type="button" class="add-btn">add to card</button>
+        </div>
+      </div>
+      
+    </div>
+
+
+    <div class="pagination">
+        
+    </div>
+
+  </div> <!-- END categoriesproducts3 -->
+
+</section>
+
+<script src="../inc/js/bootstrap.js"></script>
+<script src="../inc/js/all.min.js"></script>
+<script src="../inc/js/solid.min.js"></script>
+<script src="../inc/js/brands.min.js"></script>
+<script src="../inc/js/main.js"></script>
+</body>
+</html>
