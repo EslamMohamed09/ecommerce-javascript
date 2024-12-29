@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cart page</title>
+  <title>single product</title>
   <link rel="stylesheet" href="../inc/styles/bootstrap.css">
   <link rel="stylesheet" href="../inc/styles/main.css">
 </head>
@@ -120,91 +120,92 @@
   </div>
 
 </header>
-
-<section class="cart-page">
-  <div class="section-container">
-
-    <div class="page-hierarchy d-flex-r-st-c"><p>home</p> <i class="fas fa-chevron-right"></i> <p>your card</p></div>
-
-    <div class="progress-bar-block">
-      <div class="progress-bar-value">
-        <i class="fas fa-shipping-fast" id="progress-icon"></i>
-        <div class="progress-bar"> <!-- BAR -->
-          <div class="filled-progress-bar"></div>
-        </div>
-      </div>
-      <div class="shipping-case">
-        <p>only <span id="remaining-free"></span> away from free shipping</p>
-      </div>
-    </div>
-
+  
+<section id="single-page">
+  <div class="product-container">
     <div class="row">
 
-      <div class="left-block col-lg-9 col-md-8 col-sm-12">
-        <table>
-          <thead>
-            <tr>
-              <th>PRODUCT</th>
-              <th>PRICE</th>
-              <th>QUANTITY</th>
-              <th>TOTAL</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="cart-items"></tbody>
-        </table>
-      </div> <!-- END COL -->
+      <div class="left-block col-md-5">
 
-      <div class="right-block col-lg-3 col-md-4 col-sm-12">
-        <div class="col-blocks">
+        <ul class="allcategoriesproduct d-flex-r-st-c"><li>electronics > phones</li></ul>
 
-          <div class="calculate-block d-flex-c-st-st">
-            <h5>order summary</h5>
-            <p class="subtotal-items d-flex-r-bt-c"><span>subtotal:</span> <span id="subtotal">0</span></p>
-            <p class="get-shipping">get shipping estimate:</p>
-            <div class="citypostal d-flex-r-bt-c"> <!-- city postal -->
-              <select>
-                <option>egypt</option>
-                <option>ksa</option>
-                <option>usa</option>
-                <option>kuwait</option>
-              </select>
-              <input type="text" class="postalcode-input" placeholder="postal code">
+        <div class="images-block d-flex-r-st-st">
+        
+          <div class="small-images d-flex-c-st-st">
+            <div class="small-image">
+              <img src="../admin/inc/images/electronics/phones/samsung4/1.png" class="small-img">
             </div>
-            <button class="btn2">calculate shipping</button>
+            <div class="small-image">
+              <img src="../admin/inc/images/electronics/phones/samsung4/2.png" class="small-img">
+            </div>
+            <div class="small-image">
+              <img src="../admin/inc/images/electronics/phones/samsung4/3.png" class="small-img">
+            </div>
+            <div class="small-image">
+              <img src="../admin/inc/images/electronics/phones/samsung4/4.jpg" class="small-img">
+            </div>
           </div>
+
+          <div class="big-image">
+            <img src="../admin/inc/images/electronics/phones/samsung4/1.png" alt="">
+            <div class="lens"></div>
+          </div>
+
+        </div> <!-- End all-images -->
+
+      </div> <!-- End left-block -->
+
+      <div class="right-block col-md-7">
+        <div class="content d-flex-c-st-st">
+          <div class="magnifier-img"></div>
+
+          <p>visit the hans store</p>
+          <h1></h1>
           
-          <div class="checkout-block d-flex-c-st-st">
-            <p class="coupon-code">coupon code</p>
-            <input type="text" class="couponcode-input" placeholder="Enter Coupon Code">
-            <p class="coupon-code-info">Coupon code will be applied on the checkout page</p>
-            <p class="total-items d-flex-r-bt-c"><span>TOTAL:</span><span id="total">0</span></p>
-            <p class="tax-included">Tax included and shipping calculated at checkout</p>
-            <div class="agree-terms d-flex-r-st-c"><!-- agree-terms -->
-              <input type="checkbox" id="agreeterm-checkbox">
-              <label for="agreeterm-checkbox">I agree with terms & conditions</label>
-            </div>
-            <a href="checkout.html" class="btn2">proceed to checkout</a>
-            <a href="../index.html" class="trans-btn">continue shopping</a>
+          <div class="description-block d-flex-c-st-st">
+            <p class="id"></p>
+            <p><span>Description</span> <i class="fas fa-sticky-note"></i></p>
+            <p class="description">Wireless carrier: Unlocked for All Carriers, Memory storage capacity: 12 GB, Screen size: 6.8 Inches, Wireless network: technology GSM, CDMA, LTE</p>
           </div>
 
-        </div>
-      </div> <!-- END COL -->
+          <p class="brand"><span>Brand:</span> <span class="brand-value">samsung</span></p>
+          <p><span>In stock:</span> <span class="instock"></span></p>
+
+          <div class="about-item-block d-flex-c-st-st">
+            <p><span>About This Item</span> <i class="fas fa-sticky-note"></i></p>
+            <p class="about-this-item"></p>
+          </div>
+
+          <div class="product-price d-flex-r-c-c">
+            <strong class="oldprice">$180</strong>
+            <strong class="price">$160</strong>
+          </div>
+
+          <div class="size-block d-flex-c-st-st" style="gap:0.5rem;">
+            <p class="size"><span>size:</span> <span class="size-value"></span></p>
+            <div class="sizes d-flex-r-st-st"></div>
+          </div>
+
+          <div class="color-block d-flex-c-st-st" style="gap:0.5rem;">
+            <p><span>Color:</span> <span id="selected-color"></span></p>
+            <div class="colors d-flex-r-st-st" style="gap:1rem;"></div>
+          </div>
+
+          <div class="product-quantity-block d-flex-c-st-st" style="gap:0.6rem;">
+            <div class="product-quantity-btns d-flex-r-st-c">
+              <button type="button" class="pro-quantity-btn decrease-quantity-btn d-flex-r-c-c"><i class="fas fa-minus"></i></button>
+              <span id="pro-quantity-no">1</span>
+              <button type="button" class="pro-quantity-btn increase-quantity-btn d-flex-r-c-c"><i class="fas fa-plus"></i></button>
+            </div>
+            <p style="font-size:0.9rem;"><span>subtotal:</span> <span id="subtotal"></span></p>
+          </div>
+
+          <button type="button" class="b-btn">Add To Cart</button>
+          <a href="#"><p>see all mobiles</p></a>
+        </div> <!-- End content -->
+      </div> <!-- End right-block -->
 
     </div>
-
-    <div class="secure-shopping d-flex-r-st-c"> <!-- secure -->
-      <i class="fas fa-lock"></i>
-      <p>Secure Shopping Guarantee</p>
-    </div>
-
-    <div class="services-images d-flex-r-st-c"> <!-- images -->
-      <img src="../admin/inc/images/norton.png" alt="">
-      <img src="../admin/inc/images/TRUSTe.jpg" alt="">
-      <img src="../admin/inc/images/authorizenet.png" alt="">
-      <img src="../admin/inc/images/accredited.png" alt="">
-    </div>
-
   </div>
 </section>
 
