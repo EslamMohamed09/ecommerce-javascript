@@ -1,10 +1,6 @@
 const header = document.querySelector('header');
 
-if(header){
-
-  document.body.style.paddingTop = `${header.offsetHeight}px`;
-
-}
+if(header){document.body.style.paddingTop = `${header.offsetHeight}px`;}
 
 document.addEventListener('DOMContentLoaded', () => {
     const categoriesContainer = document.getElementById('categories-container');
@@ -30,4 +26,75 @@ document.addEventListener('DOMContentLoaded', () => {
       categoriesContainer.appendChild(categoryLink);
     });
 });
-  
+
+
+let index = 0;
+const heroSection = document.querySelector(".hero-section");
+const heroSliderWrapper = document.querySelector('.hero-section .col-middle .slider-wrapper');
+const heroSlideItem = document.querySelectorAll('.hero-section .slide-item');
+
+if(heroSection){
+
+function hideAllSlides(){
+  heroSlideItem.forEach(slide => {
+    slide.style.display = "none";
+  });
+}
+
+hideAllSlides();
+
+if (index >= 0 && index < heroSlideItem.length) {heroSlideItem[index].style.display = "flex";}
+
+function prevB(){
+  index = (index - 1 + heroSlideItem.length) % heroSlideItem.length;
+  hideAllSlides();
+  heroSlideItem[index].style.display = "flex";
+}
+
+function nextB(){
+  index = (index + 1) % heroSlideItem.length;
+  hideAllSlides();
+  heroSlideItem[index].style.display = "flex";
+}
+
+let bannerSliderInterval = setInterval(nextB, 4000);
+
+window.addEventListener('scroll', function(){// Stop Banner Slider
+  if(window.scrollY > 10){
+     clearInterval(bannerSliderInterval);
+  } else if(window.scrollY === 0){
+    clearInterval(bannerSliderInterval);
+    bannerSliderInterval = setInterval(nextB, 4000);
+  }
+});
+
+heroSliderWrapper.addEventListener('mouseenter', function(){
+  clearInterval(bannerSliderInterval);
+});
+
+heroSliderWrapper.addEventListener('mouseleave', function(){
+  clearInterval(bannerSliderInterval);
+  bannerSliderInterval = setInterval(nextB, 4000);
+});
+
+}
+
+
+// if(header){
+
+//   const loginDrawerBtn = document.getElementById("login-btn");
+//   const loginDrawer = document.getElementById("login-drawer");
+//   const closeLoginDrawerBtn = document.getElementById("close-login-drawer-btn");
+
+//   loginDrawerBtn.addEventListener("click", function(){
+//     loginDrawer.classList.add("openingLoginDrawer");
+//     clearInterval(bannerSliderInterval); // Stop Banner Slider
+//   });
+
+//   closeLoginDrawerBtn.addEventListener("click", function(){
+//     loginDrawer.classList.remove("openingLoginDrawer");
+//     clearInterval(bannerSliderInterval);
+//     bannerSliderInterval = setInterval(nextB, 4000);
+//   });
+
+// }
