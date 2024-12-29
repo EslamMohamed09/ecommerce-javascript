@@ -1673,7 +1673,7 @@ h5 {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  background-color: #f2f3f5;
+  background-color: var(--lightblue1);
   padding: 0 0 0 1rem;
   height: 8rem;
 }
@@ -1686,6 +1686,9 @@ h5 {
   gap: 2rem;
   padding: 1rem 0;
   height: 100%;
+}
+#promo-section .row .promo-box .info .btn {
+  border-radius: 0;
 }
 
 #promo-section .row .promo-box .info h4 {
