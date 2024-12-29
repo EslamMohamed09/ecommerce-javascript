@@ -550,7 +550,7 @@ section {
     padding: 2rem 3%;
   }
 }
-/******************* # BUTTONS ********************/
+/************** # BUTTONS ***************/
 .add-btn {
   font-size: 0.9rem;
   font-weight: bold;
@@ -796,7 +796,7 @@ h5 {
     font-size: 1.4rem;
   }
 }
-/*******************  # TITLES ********************/
+/**************  # TITLES ***************/
 .section-heading {
   width: 100%;
   text-align: center;
@@ -1687,9 +1687,9 @@ h5 {
 }
 
 /*
-======================
+ =====================
  # Featured-categories
-======================
+ =====================
 */
 #featured-categories {
   padding: 5rem 4% 0;
@@ -1769,9 +1769,9 @@ h5 {
 }
 
 /*
-======================
+ ==================
  # Main-Categories
-======================
+ ==================
 */
 #main-categories {
   display: flex;
@@ -1959,5 +1959,11 @@ h5 {
 #main-categories .category-panel:nth-child(5) .right-col .products-col > div .content .product-price .price {
   color: var(--shin-orange);
 }
+
+/*
+ ==============
+ # cart-page
+ ==============
+*/
 
 /*# sourceMappingURL=main.css.map */

@@ -495,7 +495,7 @@ section {padding:2rem 7%;
 
 @media(max-width:280px){section {padding:2rem 3%;}}
 
-/******************* # BUTTONS ********************/
+/************** # BUTTONS ***************/
 .add-btn {font-size:0.9rem;
           font-weight:bold;
           text-transform:uppercase;
@@ -687,7 +687,7 @@ h5 {font-size:1rem;}
   h3 {font-size:1.4rem;}
 }
 
-/*******************  # TITLES ********************/
+/**************  # TITLES ***************/
 .section-heading {width:100%;
                   text-align:center;
                   margin:1rem auto 4rem;
@@ -1439,9 +1439,9 @@ h5 {font-size:1rem;}
 
 
 /*
-======================
+ =====================
  # Featured-categories
-======================
+ =====================
 */
 #featured-categories {padding:5rem 4% 0;
 
@@ -1506,9 +1506,9 @@ h5 {font-size:1rem;}
 
 
 /*
-======================
+ ==================
  # Main-Categories
-======================
+ ==================
 */
 #main-categories {display:flex;
                   flex-direction:column;
@@ -1648,3 +1648,10 @@ h5 {font-size:1rem;}
             &:nth-child(5) .right-col .products-col > div .content .product-price .price {color:var(--shin-orange);}
       }
 }
+
+
+/*
+ ==============
+ # cart-page
+ ==============
+*/
