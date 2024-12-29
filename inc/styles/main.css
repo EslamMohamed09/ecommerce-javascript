@@ -808,8 +808,6 @@ h5 {
   background-color: var(--white);
   box-shadow: var(--box-shadow2);
   z-index: 10000;
-  /* right-login-menu */
-  /* small menu */
 }
 .header .top-header {
   padding: 0 3rem;
@@ -1086,7 +1084,6 @@ h5 {
   text-align: center;
   gap: 0.4rem;
 }
-
 @media (min-width: 768px) {
   .header.headerscroll .main-header {
     position: fixed;
@@ -1113,8 +1110,7 @@ h5 {
   .header.headerscroll .main-header .upper-nav {
     padding: 0.2rem 1rem;
   }
-  .header .main-header .upper-nav .web-title,
-  .header.headerscroll .main-header .upper-nav .web-title {
+  .header .main-header .upper-nav .web-title, .header.headerscroll .main-header .upper-nav .web-title {
     font-size: 1.5rem;
   }
   .header .main-header .upper-nav #searchForm {
@@ -1139,7 +1135,10 @@ h5 {
     border-top: 1px solid var(--gray3);
     background: radial-gradient(var(--light-blue), var(--primary-color16));
   }
-  /* upper-nav */
+  .header .main-header.mobile-header {
+    left: 0;
+    box-shadow: 100vh 100vh 100vh 100vh rgba(0, 0, 0, 0.3);
+  }
   .header .main-header .upper-nav {
     display: flex;
     flex-direction: row;
@@ -1171,10 +1170,9 @@ h5 {
   .header .main-header .upper-nav #searchForm #search-btn {
     border: 1px solid var(--primary-color15);
   }
-  .header .main-header .upper-nav #searchForm ::placeholder {
+  .header .main-header .upper-nav #searchForm::placeholder {
     color: var(--white);
   }
-  /* end upper-nav */
   .header .main-header .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -1214,31 +1212,28 @@ h5 {
   .header .small-menu {
     display: flex;
   }
-  .header .main-header.mobile-header {
-    left: 0;
-    box-shadow: 100vh 100vh 100vh 100vh rgba(0, 0, 0, 0.3);
-  }
 }
 @media (max-width: 768px) {
-  #header .small-menu {
+  .header .small-menu {
     display: flex;
   }
 }
 @media (max-width: 400px) {
-  #header .small-menu {
+  .header .small-menu {
     width: 98%;
   }
 }
 @media (max-width: 360px) {
-  #header .small-menu .small-menu-link {
+  .header .small-menu .small-menu-link {
     font-size: 0.8rem;
   }
 }
 @media (max-width: 290px) {
-  #header .small-menu .small-menu-link {
+  .header .small-menu .small-menu-link {
     font-size: 0.6rem;
   }
 }
+
 /*
 ================
  # Home
