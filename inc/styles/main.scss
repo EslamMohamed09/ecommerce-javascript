@@ -125,7 +125,8 @@
        --green20:#044919;
        --green21:#053a15;
        --green22:#063113;
-       --green23:#05270f;
+       --green23:#013629;
+       --green24:#05270f;
 
        --olive:#eff7f7;
        --olive1:#e5f5f5;
@@ -275,7 +276,6 @@
        --primary7:#091a50;
        --primary8:#072380;
        --primary9:#0669aa;
-       --primary10:#013629;
        --primary11:#1b011f;
        --primary12:#106b6b;
        --primary13:#004242;
@@ -685,6 +685,48 @@ h5 {font-size:1rem;}
   h1 {font-size:1.8rem;}
   h2 {font-size:1.5rem;}
   h3 {font-size:1.4rem;}
+}
+
+/*******************  # TITLES ********************/
+.section-heading {width:100%;
+                  text-align:center;
+                  margin:1rem auto 4rem;
+                  padding:0;
+                  display:inline-block;
+                  position:relative;
+                  text-align:center;
+                  background-color:transparent;
+
+      .section-title {font-size:1.4rem;
+                      font-weight:bold;
+                      text-transform:uppercase;
+                      color:var(--primary-color10);
+                      display:inline-block;
+                      position:relative;
+
+            &::before {content:"";
+                       width:41%;
+                       height:3px;
+                       background-color:var(--green23);
+                       position:absolute;
+                       top:2.3rem;
+                       left:0;}
+
+            &::after {content:"";
+                      width:41%;
+                      height:3px;
+                      background-color:var(--green23);
+                      position:absolute;
+                      top:2.3rem;
+                      right:0;}
+      }
+ 
+      .fa-star {position:absolute;
+                top:1.75rem;
+                left:50%;
+                font-size:1.1rem;
+                color:var(--gray-yellow6);
+                transform:translateX(-50%);}
 }
 
 /*
