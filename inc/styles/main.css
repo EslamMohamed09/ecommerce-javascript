@@ -1965,5 +1965,242 @@ h5 {
  # cart-page
  ==============
 */
+.cart-page {
+  padding: 2rem 5% 3rem;
+}
+.cart-page .page-hierarchy {
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.cart-page .page-hierarchy p {
+  font-size: 1.1rem;
+}
+.cart-page .page-hierarchy p:nth-child(3) {
+  color: var(--gray5);
+}
+.cart-page .progress-bar-block {
+  width: 100%;
+  margin: 1rem 0 2rem;
+}
+.cart-page .progress-bar-block .progress-bar-value {
+  margin: 0 0 0.5rem;
+  position: relative;
+}
+.cart-page .progress-bar-block .progress-bar-value #progress-icon {
+  color: var(--orange-red1);
+  position: absolute;
+  top: -1.1rem;
+}
+.cart-page .progress-bar-block .progress-bar-value .progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--red);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+.cart-page .progress-bar-block .progress-bar-value .progress-bar .filled-progress-bar {
+  height: 100%;
+  width: 0;
+  background-color: var(--orange-red1);
+  border-radius: 0.5rem;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+}
+.cart-page .progress-bar-block .shipping-case p {
+  color: var(--gray7);
+}
+.cart-page .left-block table {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.cart-page .left-block table thead {
+  background-color: var(--milky3);
+}
+.cart-page .left-block table thead tr th {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+.cart-page .left-block table thead tr th:not(:first-child) {
+  text-align: center;
+}
+.cart-page .left-block table tr:not(:last-child) {
+  border-bottom: 1px solid var(--gray3);
+}
+.cart-page .left-block table tr td {
+  text-align: center !important;
+}
+.cart-page .left-block table tr td .product-card {
+  gap: 1rem;
+}
+.cart-page .left-block table tr td .product-card .image {
+  flex: 1 1 2rem;
+  padding: 1rem 0.3rem;
+}
+.cart-page .left-block table tr td .product-card .image img {
+  width: 9rem;
+  height: 9rem;
+}
+.cart-page .left-block table tr td .product-card .content {
+  flex: 1 1 15rem;
+  padding-top: 0.5rem;
+}
+.cart-page .left-block table tr td .product-card .content h5 {
+  margin: 0.7rem 0 0;
+}
+.cart-page .left-block table tr td .product-card .content p {
+  color: var(--gray8);
+}
+.cart-page .left-block table tr td .product-card .content span#instock {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.cart-page .left-block table tr td .product-quantity-btns {
+  width: fit-content;
+  margin: 0 auto;
+  gap: 0.5rem;
+  border: 1px solid var(--gray10);
+  border-radius: 2rem;
+}
+.cart-page .left-block table tr td .product-quantity-btns .pro-quantity-btn {
+  width: 1.6rem;
+  height: 2.6rem;
+  font-size: 0.9rem;
+  color: var(--gray8);
+  border: none;
+  background-color: transparent;
+}
+.cart-page .left-block table tr td .product-quantity-btns #pro-quantity-no {
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  padding: 0;
+  color: var(--gray10);
+}
+.cart-page .left-block table tr td .product-quantity-btns .pro-quantity-btn:first-child {
+  padding-left: 1rem;
+}
+.cart-page .left-block table tr td .product-quantity-btns .pro-quantity-btn:nth-child(3) {
+  padding-right: 1rem;
+}
+.cart-page .left-block table tr td p.price,
+.cart-page .left-block table tr td p.total-price {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.cart-page .left-block table tr td .fa-times {
+  cursor: pointer;
+}
+.cart-page .right-block .col-blocks .btn2 {
+  width: 100%;
+}
+.cart-page .right-block .col-blocks .calculate-block {
+  gap: 1rem;
+  border-bottom: 1px solid var(--gray4);
+}
+.cart-page .right-block .col-blocks .calculate-block h5 {
+  width: 100%;
+  padding: 0.6rem 0;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--black2);
+}
+.cart-page .right-block .col-blocks .calculate-block p {
+  width: 100%;
+  font-weight: bold;
+}
+.cart-page .right-block .col-blocks .calculate-block p.subtotal-items {
+  padding: 0.6rem 0 0.8rem;
+  border-bottom: 1px solid var(--gray4);
+}
+.cart-page .right-block .col-blocks .calculate-block p.get-shipping {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.cart-page .right-block .col-blocks .calculate-block .citypostal select {
+  width: 55%;
+  padding: 0.6rem;
+  text-transform: capitalize;
+  color: var(--gray6);
+  background: transparent;
+  border: 1px solid var(--gray6);
+  box-shadow: none;
+  border-radius: 2rem;
+}
+.cart-page .right-block .col-blocks .calculate-block .citypostal .postalcode-input {
+  width: 42%;
+  padding: 0.6rem 0.7rem;
+  border-radius: 2rem;
+  border: 1px solid var(--gray6);
+  background: transparent;
+}
+.cart-page .right-block .col-blocks .calculate-block .btn2 {
+  border-radius: 2rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+.cart-page .right-block .col-blocks .checkout-block {
+  gap: 1rem;
+}
+.cart-page .right-block .col-blocks .checkout-block p.coupon-code {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+.cart-page .right-block .col-blocks .checkout-block .couponcode-input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border-radius: 2rem;
+  border: 1px solid var(--gray6);
+  background: transparent;
+}
+.cart-page .right-block .col-blocks .checkout-block p.coupon-code-info {
+  font-size: 0.9rem;
+  color: var(--gray6);
+}
+.cart-page .right-block .col-blocks .checkout-block p.total-items {
+  width: 100%;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--gray4);
+  border-bottom: 1px solid var(--gray4);
+  font-weight: bold;
+}
+.cart-page .right-block .col-blocks .checkout-block p.tax-included {
+  font-size: 0.9rem;
+  color: var(--gray6);
+}
+.cart-page .right-block .col-blocks .checkout-block .agree-terms {
+  gap: 0.5rem;
+  padding: 0.2rem 0;
+}
+.cart-page .right-block .col-blocks .checkout-block .agree-terms #agreeterm-checkbox {
+  margin: 0;
+}
+.cart-page .right-block .col-blocks .checkout-block .agree-terms label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--gray11);
+}
+.cart-page .right-block .col-blocks .checkout-block .btn2 {
+  font-weight: bold;
+  margin: 1rem 0 0.1rem;
+}
+.cart-page .right-block .col-blocks .checkout-block .trans-btn {
+  width: 100% !important;
+}
+.cart-page .secure-shopping {
+  gap: 0.5rem;
+}
+.cart-page .secure-shopping p {
+  color: var(--gray6);
+}
+.cart-page .services-images {
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.cart-page .services-images img {
+  height: 1.5rem;
+}
 
 /*# sourceMappingURL=main.css.map */
