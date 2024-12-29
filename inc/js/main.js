@@ -1,3 +1,11 @@
+const header = document.querySelector('header');
+
+if(header){
+
+  document.body.style.paddingTop = `${header.offsetHeight}px`;
+
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const categoriesContainer = document.getElementById('categories-container');
     const categories = [
@@ -21,5 +29,5 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLink.textContent = category.name;
       categoriesContainer.appendChild(categoryLink);
     });
-  });
+});
   
