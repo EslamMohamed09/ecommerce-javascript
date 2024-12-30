@@ -1839,6 +1839,74 @@ h5 {font-size:1rem;}
       #post-section {padding:6rem 1% 4rem;;}
 }
 
+/********************
+ # NEWSLETTER
+********************/
+.newsletter-section {min-height:24rem;
+                     width:100%;
+                     padding:0;
+                     margin:0;}
+
+.newsletter-section .row {width:101%;}
+
+.newsletter-section .col-left,
+.newsletter-section .col-right {min-height:24rem;}
+
+.newsletter-section .col-left {background-color:var(--black2);
+                               position:relative;}
+
+.newsletter-section .col-left .newsletter {align-items:center;
+                                           justify-content:center;
+                                           width:90%;
+                                           margin-left:3rem;
+                                           position:absolute;
+                                           top:50%;
+                                           transform:translateY(-50%);}
+
+.newsletter-section .col-left .newsletter h3 {color:var(--white2);
+                                              text-transform:uppercase;
+                                              font-weight:bold;
+                                              margin-bottom:1.3rem;}
+
+.newsletter-section .col-left .newsletter p {color:var(--gray5);
+                                             text-transform:uppercase;
+                                             font-weight:bold;
+                                             font-size:1.1rem;}
+
+
+.newsletter-section .col-right {background-color:#540b23;
+                                justify-content:center;
+                                align-items:center;
+                                position:relative;}    
+
+.newsletter-section .col-right form {width:100%;
+                                     display:flex;
+                                     margin:auto;
+                                     justify-content:center;
+                                     align-items:center;
+                                     position:absolute;
+                                     top:50%;
+                                     transform:translateY(-50%);}
+
+.newsletter-section .col-right form input {width:70%;
+                                           height:4rem;
+                                           background-color:var(--black2);
+                                           padding:0.5rem 1rem;
+                                           font-size:1.5rem;
+                                           color:var(--gray5);
+                                           border:none;
+                                           box-shadow:0 0.1rem 0.3rem rgba(0,0,0,0.2);}
+
+.newsletter-section .col-right form .fa-paper-plane {width:15%;
+                                                     height:4rem;
+                                                     background:#811338;
+                                                     text-align:center;
+                                                     line-height:4rem;
+                                                     color:var(--white2);
+                                                     font-size:1.1rem;
+                                                     border:none;
+                                                     box-shadow:0 0.1rem 0.3rem rgba(0,0,0,0.2);
+                                                     cursor:pointer;}
 
 
 
