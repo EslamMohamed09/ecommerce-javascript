@@ -1292,6 +1292,7 @@ h5 {
 #hero-section .col-left {
   background-color: var(--white);
   box-shadow: var(--box-shadow6);
+  padding: 0;
 }
 #hero-section .col-left .all-category {
   width: 100%;
@@ -1299,18 +1300,33 @@ h5 {
   padding: 0;
   gap: 0.5rem;
 }
-#hero-section .col-left .all-category h2 {
+#hero-section .col-left .all-category h3 {
   width: 100%;
   padding: 1rem;
   text-transform: uppercase;
   text-align: left;
-  color: rgb(183, 233, 253);
-  background: radial-gradient(var(--blue), var(--light-blue7));
+  color: var(--lightblue3);
+  background: radial-gradient(var(--blue6), var(--blue16));
 }
-#hero-section .col-left .all-category .cat-link {
+#hero-section .col-left .all-category h3 svg {
+  font-size: 1.2rem;
+  margin-bottom: 1px;
+  margin-right: 0.5rem;
+}
+#hero-section .col-left .all-category #categories-menu {
   width: 100%;
-  padding: 0.4rem 0.9rem;
-  background-color: transparent;
+}
+#hero-section .col-left .all-category #categories-menu .cat-list {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+}
+#hero-section .col-left .all-category #categories-menu .cat-list:not(:last-child) {
+  border-bottom: 1px solid var(--gray1);
+}
+#hero-section .col-left .all-category #categories-menu .cat-list .cat-link {
+  font-size: 1.15rem;
+  width: 100%;
+  color: var(--gray10);
 }
 #hero-section .col-middle {
   height: 80vh;

@@ -3,7 +3,7 @@ const header = document.querySelector('header');
 if(header){document.body.style.paddingTop = `${header.offsetHeight}px`;}
 
 document.addEventListener('DOMContentLoaded', () => {
-    const categoriesContainer = document.getElementById('categories-container');
+    const categoriesContainer = document.getElementById('categories-menu');
     const categories = [
       { id: 1, name: 'Electronics', link: 'category.php?categoryid=1' },
       { id: 2, name: 'Fashion', link: 'category.php?categoryid=2' },
@@ -19,11 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
   
     categories.forEach(category => {
+      const categoryList = document.createElement('li');
       const categoryLink = document.createElement('a');
       categoryLink.href = category.link;
+      categoryList.className = 'cat-list';
       categoryLink.className = 'cat-link';
       categoryLink.textContent = category.name;
-      categoriesContainer.appendChild(categoryLink);
+      categoryList.appendChild(categoryLink);
+      categoriesContainer.appendChild(categoryList);
     });
 });
 
