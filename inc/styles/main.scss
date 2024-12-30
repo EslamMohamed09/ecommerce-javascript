@@ -1327,29 +1327,37 @@ h5 {font-size:1rem;}
 
       .col-right {background-color:var(--white);
                   box-shadow:var(--box-shadow6);
+                  padding:0;
 
-            .deals-products {gap:1rem;
+            .deals-products {gap:0.5rem;
 
-                  h2 {width:100%;
+                  h3 {width:100%;
                       padding:1rem;
                       text-align:center;
                       text-transform:uppercase;
-                      color:var(--milky2);
-                      background:radial-gradient(var(--blue), var(--light-blue7));}
+                      color:var(--lightblue3);
+                      background:radial-gradient(var(--blue6), var(--blue16));}
 
                   .product-item {display:flex;
                                  flex-direction:row;
+                                 justify-content:center;
+                                 align-items:center;
                                  flex-wrap:nowrap;
                                  width:100%;
                                  padding:0;
+                                 height:fit-content;
                                  overflow:hidden;
+                                 background:transparent;
+
+                              &:not(:last-child) {border-bottom:1px solid var(--gray1);}
 
                         .image {width:50%;
-                                height:6rem;
+                                height:5rem;
                                 display:flex;
                                 flex-direction:row;
                                 justify-content:center;
                                 align-items:center;
+                                background:transparent;
 
                               img {width:70%;
                                    height:70%;
@@ -1357,6 +1365,7 @@ h5 {font-size:1rem;}
                         }
 
                         .content {width:50%;
+                                  height:fit-content;
                                   display:flex;
                                   flex-direction:column;
                                   justify-content:center;
@@ -1368,31 +1377,35 @@ h5 {font-size:1rem;}
                               strong {color:var(--shin-orange);}
 
                               .add-btn {position:absolute;
-                                        right:-110%;
+                                        right:-60%;
                                         top:55%;
                                         width:100%;
-                                        visibility:hidden;
                                         font-size:0.8rem;
                                         text-align:center;
-                                        transition:all 0.5s linear;}
+                                        visibility:hidden;
+                                        opacity:0;
+                                        transition:all 0.3s linear;}
                         }
 
                         &:hover .add-btn {right:0;
                                           visibility:visible;
-                                          transition:all 0.5s linear;}
+                                          opacity:1;
+                                          transition:all 0.4s linear;}
 
                         &:hover strong {opacity:0;
                                         visibility:hidden;}
                   }
             }
       }
+
+      @media(max-width:768px){ .col-right .deals-products .product-item .image {justify-content:flex-start;} 
+                               .col-middle {padding:0;}
+                               .col-left,
+                               .col-middle,
+                               .col-right {margin-bottom:2rem;} }
 }
 
-@media(max-width:768px){ #home-section .col-right .deals-products .product-item .image {justify-content:flex-start;} 
-                         #home-section .col-middle {padding:0;}
-                         #home-section .col-left,
-                         #home-section .col-middle,
-                         #home-section .col-right {margin-bottom:2rem;} }
+
 
 @media(min-width:768px) and (max-width:1100px) { #home-section .col-middle .home-products .product-item h5 {font-size:0.7rem;} }
 
