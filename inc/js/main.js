@@ -82,6 +82,45 @@ heroSliderWrapper.addEventListener('mouseleave', function(){
 
 }
 
+function filterWithTabs(tabButtons, cardItems) {
+  
+  tabButtons = Array.isArray(tabButtons) ? tabButtons : Array.from(tabButtons);
+  cardItems = Array.isArray(cardItems) ? cardItems : Array.from(cardItems);
+
+  function hideAllItems() { // Function to hide all card items
+    cardItems.forEach(item => {
+        item.style.display = 'none';
+    });
+  }
+
+  function showItemsWithClass(filterClass) { // Function to show card items with a specific class
+    cardItems.forEach(item => {
+        if (item.classList.contains(filterClass)) {
+            item.style.display = 'block';
+        }
+    });
+  }
+
+  let firstFilterClick = tabButtons[0].getAttribute('filter-click');
+
+  hideAllItems(); // Initial display setup
+  showItemsWithClass(firstFilterClick);
+
+  tabButtons[0].classList.add('button-active');
+
+  tabButtons.forEach(button => { 
+      button.addEventListener('click', function() {
+          const filterClick = this.getAttribute('filter-click');
+
+          hideAllItems();
+          showItemsWithClass(filterClick);
+
+          tabButtons.forEach(btn => btn.classList.remove('button-active'));
+          this.classList.add('button-active');
+      });
+  });
+}
+
 
 // if(header){
 
