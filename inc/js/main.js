@@ -124,21 +124,195 @@ filterWithTabs(document.querySelectorAll('#main-categories .left-col .first-pcat
                document.querySelectorAll('#main-categories .right-col .product-item'));
 
 
-if(header){
+// if(header){
 
-  const loginDrawerBtn = document.getElementById("login-btn");
-  const loginDrawer = document.getElementById("login-drawer");
-  const closeLoginDrawerBtn = document.getElementById("close-login-drawer-btn");
+//   const loginDrawerBtn = document.getElementById("login-btn");
+//   const loginDrawer = document.getElementById("login-drawer");
+//   const closeLoginDrawerBtn = document.getElementById("close-login-drawer-btn");
 
-  loginDrawerBtn.addEventListener("click", function(){
-    loginDrawer.classList.add("openingLoginDrawer");
-    clearInterval(bannerSliderInterval); // Stop Banner Slider
-  });
+//   loginDrawerBtn.addEventListener("click", function(){
+//     loginDrawer.classList.add("openingLoginDrawer");
+//     clearInterval(bannerSliderInterval); // Stop Banner Slider
+//   });
 
-  closeLoginDrawerBtn.addEventListener("click", function(){
-    loginDrawer.classList.remove("openingLoginDrawer");
-    clearInterval(bannerSliderInterval);
-    bannerSliderInterval = setInterval(nextB, 4000);
-  });
+//   closeLoginDrawerBtn.addEventListener("click", function(){
+//     loginDrawer.classList.remove("openingLoginDrawer");
+//     clearInterval(bannerSliderInterval);
+//     bannerSliderInterval = setInterval(nextB, 4000);
+//   });
 
+// }
+
+function scrollBarSlider(options) {
+  const {
+      section = 'slider-section',
+      containerSelector = '.slides-container',
+      dotsSelector = '#sliderdots',
+      prevArrowSelector = '.arrow-left',
+      nextArrowSelector = '.arrow-right',
+      slidesToShowDefault = 1,
+      slidesToScrollDefault = 1,
+      autoplaySpeed = 3000
+  } = options;
+
+  let sliderSection = document.querySelector(section);
+  let sliderContainer = document.querySelector(containerSelector);
+  let currentIndex = 0;
+  let slidesToShow = slidesToShowDefault;
+  let slidesToScroll = slidesToScrollDefault;
+  let slides;
+  let dotsWrapper = document.querySelector(dotsSelector);
+  let isDragging = false;
+  let startX = 0;
+  let scrollStart = 0;
+  let autoSlideInterval;
+  const gapSize = parseFloat(getComputedStyle(document.documentElement).fontSize) * 1.5;
+
+  function setupSlider() {
+      slides = sliderContainer.children;
+      sliderContainer.style.display = 'flex';
+      sliderContainer.style.scrollBehavior = 'smooth';
+      updateSlidesToShow();
+  }
+
+  function setResponsive() {
+      const responsiveSettings = [
+          { breakpoint: 10, settings: { slidesToShow: 1, slidesToScroll: 1 }},
+          { breakpoint: 360, settings: { slidesToShow: 2, slidesToScroll: 2 }},
+          { breakpoint: 560, settings: { slidesToShow: 3, slidesToScroll: 3 }},
+          { breakpoint: 720, settings: { slidesToShow: 4, slidesToScroll: 4 }},
+          { breakpoint: 1000, settings: { slidesToShow: 5, slidesToScroll: 5 }},
+          { breakpoint: 1400, settings: { slidesToShow: 6, slidesToScroll: 6 }},
+          { breakpoint: 1600, settings: { slidesToShow: 7, slidesToScroll: 7 }}
+      ];
+
+      responsiveSettings.forEach(resp => {
+          if (window.innerWidth >= resp.breakpoint) {
+              slidesToShow = resp.settings.slidesToShow;
+              slidesToScroll = resp.settings.slidesToScroll;
+          }
+      });
+      updateSlidesToShow();
+  }
+
+  function updateSlidesToShow() {
+      const wrapperWidth = sliderContainer.clientWidth;
+      const slideWidth = (wrapperWidth - gapSize * (slidesToShow - 1)) / slidesToShow;
+      
+      Array.from(slides).forEach(slide => {
+          slide.style.flex = `0 0 ${slideWidth}px`;
+          slide.style.maxWidth = `${slideWidth}px`;
+      });
+  }
+
+  function scrollToSlide() {
+      const wrapperWidth = sliderContainer.clientWidth;
+      const slideWidth = (wrapperWidth - gapSize * (slidesToShow - 1)) / slidesToShow;
+      const scrollPosition = currentIndex * (slideWidth + gapSize);
+  
+      function animateScroll(start, end, duration) {
+          let startTime = null;
+  
+          function animation(currentTime) {
+              if (!startTime) startTime = currentTime;
+              const timeElapsed = currentTime - startTime;
+              const run = easeInOutQuad(timeElapsed, start, end - start, duration);
+  
+              sliderContainer.scrollLeft = run;
+              if (timeElapsed < duration) requestAnimationFrame(animation);
+          }
+  
+          function easeInOutQuad(t, b, c, d) {
+              t /= d / 2;
+              if (t < 1) return c / 2 * t * t + b;
+              t--;
+              return -c / 2 * (t * (t - 2) - 1) + b;
+          }
+  
+          requestAnimationFrame(animation);
+      }
+  
+      animateScroll(sliderContainer.scrollLeft, scrollPosition, 600);
+      
+      if (currentIndex >= slides.length) {
+          currentIndex = 0;
+          sliderContainer.scrollTo({ left: 0 });
+      }
+  }
+
+  function prevSlide() {
+      currentIndex -= slidesToScroll;
+      if (currentIndex < 0) {
+          currentIndex = slides.length - (slides.length % slidesToScroll || slidesToScroll);
+      }
+      scrollToSlide(true);
+  }
+
+  function nextSlide() {
+      currentIndex += slidesToScroll;
+      if (currentIndex > slides.length) {currentIndex = 0;}
+      scrollToSlide(true);
+  }
+
+  function attachEvents() {
+      const prevButton = document.querySelector(prevArrowSelector);
+      const nextButton = document.querySelector(nextArrowSelector);
+
+      prevButton.addEventListener('click', prevSlide);
+      nextButton.addEventListener('click', nextSlide);
+      window.addEventListener('resize', setResponsive);
+
+      sliderContainer.addEventListener('mousedown', startDrag);
+      sliderContainer.addEventListener('mousemove', duringDrag);
+      sliderContainer.addEventListener('mouseup', endDrag);
+      sliderContainer.addEventListener('mouseleave', endDrag);
+
+      // sliderSection.addEventListener('mouseover', () => clearInterval(autoSlideInterval));
+      // sliderSection.addEventListener('mouseleave', autoSlide);
+  }
+
+  function startDrag(e) {
+      isDragging = true;
+      startX = e.clientX;
+      scrollStart = sliderContainer.scrollLeft;
+  }
+
+  function duringDrag(e) {
+      if (!isDragging) return;
+      const currentX = e.clientX;
+      const dragDistance = currentX - startX;
+      sliderContainer.scrollLeft = scrollStart - dragDistance;
+  }
+
+  function endDrag() {
+      if (!isDragging) return;
+      isDragging = false;
+      const wrapperWidth = sliderContainer.clientWidth;
+      const slideWidth = wrapperWidth / slidesToShow;
+      const scrollLeft = sliderContainer.scrollLeft;
+
+      if (Math.abs(scrollLeft - currentIndex * slideWidth) > slideWidth / 2) {
+          if (scrollLeft > currentIndex * slideWidth) {
+              nextSlide();
+          } else {
+              prevSlide();
+          }
+      } else {
+          scrollToSlide(true);
+      }
+  }
+
+  function autoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(nextSlide, autoplaySpeed);
+  }
+
+  setupSlider();
+  setResponsive();
+  attachEvents();
+  // autoSlide();
 }
+
+scrollBarSlider({containerSelector:'.featured-categories .slider-wrapper', 
+                 prevArrowSelector:'.featured-categories .arrow-left', 
+                 nextArrowSelector:'.featured-categories .arrow-right'});
