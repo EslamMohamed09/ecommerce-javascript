@@ -316,3 +316,19 @@ function scrollBarSlider(options) {
 scrollBarSlider({containerSelector:'.featured-categories .slider-wrapper', 
                  prevArrowSelector:'.featured-categories .arrow-left', 
                  nextArrowSelector:'.featured-categories .arrow-right'});
+
+const categoriesColors = [
+    "var(--transparent-green3)",  // 1st color
+    "var(--transparent-yellow2)", // 2nd color
+    "var(--transparent-yellow)",  // 3rd color
+    "var(--transparent-orange3)", // 4th color
+    "var(--transparent-green4)",  // 5th color
+    "var(--transparent-blue)",    // 6th color
+    "var(--transparent-violet)",  // 7th color
+    "var(--transparent-olive)",   // 8th color
+    "var(--transparent-orange)"   // 9th color
+];
+
+document.querySelectorAll('.featured-categories .slider-wrapper .category-item .image').forEach((catItem, index) => {
+  catItem.style.backgroundColor = categoriesColors[index % categoriesColors.length];
+});
