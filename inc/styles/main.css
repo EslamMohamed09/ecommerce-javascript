@@ -983,9 +983,9 @@ h5 {
   flex-wrap: nowrap;
   gap: 0.5rem;
 }
-.header .main-header .upper-nav .nav-icons .nav-icon #icon {
+.header .main-header .upper-nav .nav-icons .nav-icon svg {
   font-size: 1.2rem;
-  color: var(--gray3);
+  color: var(--gray10);
 }
 .header .main-header .upper-nav .nav-icons .nav-icon .details {
   display: flex;
@@ -1007,7 +1007,7 @@ h5 {
 }
 .header .main-header .upper-nav .nav-icons .nav-icon .details p {
   font-size: 1rem;
-  color: var(--gray3);
+  color: var(--gray10);
 }
 .header .main-header .navbar {
   width: 100%;

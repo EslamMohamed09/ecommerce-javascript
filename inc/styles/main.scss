@@ -848,8 +848,8 @@ h5 {font-size:1rem;}
                         .nav-icon {flex-wrap:nowrap;
                                    gap:0.5rem;
 
-                              #icon {font-size:1.2rem;
-                                         color:var(--gray3);}
+                              svg {font-size:1.2rem;
+                                   color:var(--gray10);}
 
                               .details {display:flex;
                                         flex-direction:column;
@@ -868,7 +868,7 @@ h5 {font-size:1rem;}
                                           background-color:#fa5858;}
 
                                     p {font-size:1rem;
-                                       color:var(--gray3);}
+                                       color:var(--gray10);}
                               }
                         }
                   }
