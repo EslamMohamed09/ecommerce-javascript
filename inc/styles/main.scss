@@ -1719,11 +1719,13 @@ h5 {font-size:1rem;}
                                         text-align:center;
                                         position:relative;
 
-                                    .productlink {color:var(--gray2);
+                                    .productlink {color:var(--gray9);
                                                   font-size:1.1rem;
                                                   font-weight:bold;}
 
-                                    .product-price {gap:50%;}
+                                    .product-price {gap:50%;
+                                          .price {color:var(--darkred);}
+                                    }
 
                                     .add-btn {position:absolute;
                                               bottom:0.3rem;
@@ -1743,11 +1745,6 @@ h5 {font-size:1rem;}
                         }
                   }
             }
-
-            &:nth-child(2) .right-col .products-col > div .content .product-price .price {color:var(--aqua4);}
-            &:nth-child(3) .right-col .products-col > div .content .product-price .price {color:var(--violet7);}
-            &:nth-child(4) .right-col .products-col > div .content .product-price .price {color:var(--blue5);}
-            &:nth-child(5) .right-col .products-col > div .content .product-price .price {color:var(--shin-orange);}
       }
 }
 
