@@ -120,8 +120,11 @@ function filterWithTabs(tabButtons, cardItems) {
   });
 }
 
-filterWithTabs(document.querySelectorAll('#main-categories .left-col .first-pcat-names h4'), 
-               document.querySelectorAll('#main-categories .right-col .product-item'));
+filterWithTabs(document.querySelectorAll('#main-categories .category-panel1 .left-col .first-pcat-names h4'), 
+               document.querySelectorAll('#main-categories .category-panel1 .right-col .product-item'));
+
+filterWithTabs(document.querySelectorAll('#main-categories .category-panel2 .left-col .first-pcat-names h4'), 
+               document.querySelectorAll('#main-categories .category-panel2 .right-col .product-item'));
 
 
 // if(header){
