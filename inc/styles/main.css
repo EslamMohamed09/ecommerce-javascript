@@ -2351,7 +2351,7 @@ h5 {
   margin: 3rem 0 0;
   text-align: center;
   color: var(--gray2);
-  background: var(--gray2);
+  background: var(--gray11);
   box-shadow: 0 0.1rem 0.5rem var(--orangered2);
   display: none;
   transition: all 0.3s linear;

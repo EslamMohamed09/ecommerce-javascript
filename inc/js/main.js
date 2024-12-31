@@ -338,3 +338,45 @@ const categoriesColors = [
 document.querySelectorAll('.featured-categories .slider-wrapper .category-item .image').forEach((catItem, index) => {
   catItem.style.backgroundColor = categoriesColors[index % categoriesColors.length];
 });
+
+/* 
+ #########################
+ #### ScrollUp Button #### 
+ #########################
+*/
+if(document.getElementById('scroll-up')){
+
+   var scrollUpBtn = document.getElementById('scroll-up');
+   window.onscroll = function() {
+    if (window.scrollY >= 1200) {
+        scrollUpBtn.style.display = "block";
+    } else {
+        scrollUpBtn.style.display = "none";
+    }
+  };
+
+  document.querySelector('.scroll-up').addEventListener('click', function(event) {
+    event.preventDefault();
+    scrollToTop(80);
+  });
+  
+  function scrollToTop(duration) {
+    const start = window.pageYOffset;
+    const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+  
+    function scrollStep() {
+      const currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+  
+      window.scroll(0, start - start * progress);
+  
+      if (progress < 1) {
+        requestAnimationFrame(scrollStep);
+      }
+    }
+  
+    requestAnimationFrame(scrollStep);
+  }
+
+}
