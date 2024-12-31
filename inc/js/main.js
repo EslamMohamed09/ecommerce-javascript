@@ -120,24 +120,25 @@ function filterWithTabs(tabButtons, cardItems) {
   });
 }
 
-filterWithTabs(document.querySelectorAll('#main-categories .left-col .first-pcat-names h4'), document.querySelectorAll('#main-categories .right-col .product-item'));
+filterWithTabs(document.querySelectorAll('#main-categories .left-col .first-pcat-names h4'), 
+               document.querySelectorAll('#main-categories .right-col .product-item'));
 
 
-// if(header){
+if(header){
 
-//   const loginDrawerBtn = document.getElementById("login-btn");
-//   const loginDrawer = document.getElementById("login-drawer");
-//   const closeLoginDrawerBtn = document.getElementById("close-login-drawer-btn");
+  const loginDrawerBtn = document.getElementById("login-btn");
+  const loginDrawer = document.getElementById("login-drawer");
+  const closeLoginDrawerBtn = document.getElementById("close-login-drawer-btn");
 
-//   loginDrawerBtn.addEventListener("click", function(){
-//     loginDrawer.classList.add("openingLoginDrawer");
-//     clearInterval(bannerSliderInterval); // Stop Banner Slider
-//   });
+  loginDrawerBtn.addEventListener("click", function(){
+    loginDrawer.classList.add("openingLoginDrawer");
+    clearInterval(bannerSliderInterval); // Stop Banner Slider
+  });
 
-//   closeLoginDrawerBtn.addEventListener("click", function(){
-//     loginDrawer.classList.remove("openingLoginDrawer");
-//     clearInterval(bannerSliderInterval);
-//     bannerSliderInterval = setInterval(nextB, 4000);
-//   });
+  closeLoginDrawerBtn.addEventListener("click", function(){
+    loginDrawer.classList.remove("openingLoginDrawer");
+    clearInterval(bannerSliderInterval);
+    bannerSliderInterval = setInterval(nextB, 4000);
+  });
 
-// }
+}
