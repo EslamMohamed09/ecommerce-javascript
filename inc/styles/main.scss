@@ -1732,12 +1732,13 @@ h5 {font-size:1rem;}
                                               left:-60%;
                                               width:100%;
                                               opacity:0;
-                                              transition:all 0.5s linear;}
+                                              transition:all 0.3s linear;}
                               }
 
                               &:hover .add-btn {left:50%;
                                                 transform:translateX(-50%);
-                                                opacity:1;}
+                                                opacity:1;
+                                                transition:all 0.5s linear;}
 
                               &:hover .product-price {opacity:0;
                                                       visibility:0;
