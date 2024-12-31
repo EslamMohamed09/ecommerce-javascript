@@ -87,7 +87,7 @@ function filterWithTabs(tabButtons, cardItems) {
   tabButtons = Array.isArray(tabButtons) ? tabButtons : Array.from(tabButtons);
   cardItems = Array.isArray(cardItems) ? cardItems : Array.from(cardItems);
 
-  function hideAllItems() { // Function to hide all card items
+  function hideAllItems() {
     cardItems.forEach(item => {
         item.style.display = 'none';
     });
@@ -103,9 +103,8 @@ function filterWithTabs(tabButtons, cardItems) {
 
   let firstFilterClick = tabButtons[0].getAttribute('filter-click');
 
-  hideAllItems(); // Initial display setup
+  hideAllItems();
   showItemsWithClass(firstFilterClick);
-
   tabButtons[0].classList.add('button-active');
 
   tabButtons.forEach(button => { 
@@ -120,6 +119,8 @@ function filterWithTabs(tabButtons, cardItems) {
       });
   });
 }
+
+filterWithTabs(document.querySelectorAll('#main-categories .left-col .first-pcat-names h4'), document.querySelectorAll('#main-categories .right-col .product-item'));
 
 
 // if(header){
