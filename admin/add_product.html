@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-height, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>add product</title>
+  <link rel="stylesheet" href="inc/styles/all.css">  
+  <link rel="stylesheet" href="inc/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="inc/styles/main.css">
+</head>
+
+<body>
+<header class="header" id="header"></header>   
+
+<section class="dashboard-section add-product-page" id="dashboard-section">
+
+  <aside id="main-aside"></aside>
+
+  <div class="add-product-page-container page-container">
+
+    <h1 class="section-heading">add product</h1>
+
+    <form action="" class="add-product-form" enctype="multipart/form-data">
+
+      <div class="left-block">
+
+        <div class="input-holder"> <!-- Name -->
+          <label for="">name</label>
+          <input type="text" autocomplete="off" title="write product name !" required="required">
+        </div>
+
+        <div class="input-holder"> <!-- Description -->
+          <label for="">description</label>
+          <input type="text">
+        </div>
+
+        <div class="input-holder"> <!-- about this item -->
+          <label for="">about this product</label>
+          <input type="text">
+        </div>
+
+        <div class="input-holder category-input-holder"> <!-- category -->
+          <label for="">category</label>
+          <select name="category" id="category-select">
+            <option value="">electronics</option>
+            <option value="">men clothes</option>
+            <option value="">women clothes</option>
+          </select>
+        </div>
+
+        <div class="input-holder"> <!-- tags -->
+          <label for="">tags</label>
+          <input type="text">
+        </div>
+
+        <div class="input-holder"> <!-- size -->
+          <label for="">size</label>
+          <input type="text">
+        </div>
+
+        <div class="input-holder"> <!-- colors -->
+          <label for="">colors</label>
+          <input type="text">
+        </div>
+
+        <div class="input-holder"> <!-- offer -->
+          <label for="">offer</label>
+          <input type="text">
+        </div>
+
+        <div class="input-holder"> <!-- regular price -->
+          <label for="">regular price</label>
+          <input type="text">
+        </div>
+
+        <div class="input-holder"> <!-- sale price -->
+          <label for="">sale price</label>
+          <input type="text" autocomplete="off" title="write product price !" required="required">
+        </div>
+
+        <div class="input-holder"> <!-- sku -->
+          <label for="">sku</label>
+          <input type="text">
+        </div>
+
+        <div class="input-holder"> <!-- stock quantity -->
+          <label for="">stock quantity</label>
+          <input type="number">
+        </div>
+
+      </div>
+
+      <div class="right-block">
+        <div class="upload-image-holder d-flex-c-c-c">
+          <i class="far fa-images" id="image-icon"></i>
+          <div class="uploading-button-holder d-flex-r-st-st">
+            <button class="upload-button"><i class="fas fa-upload"></i></button>
+            <h3>drop images here or <span>click to browse</span></h3>
+          </div>
+          <p>jpg, jpeg and png</p>
+        </div>
+      </div>
+
+      <input type="submit" value="save product" class="submit-btn">
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<script src="inc/js/jquery-3.5.1.min.js"></script>
+<script src="inc/js/bootstrap.min.js"></script>
+<script src="inc/js/all.min.js"></script>
+<script src="inc/js/solid.min.js"></script>
+<script src="inc/js/regular.min.js"></script>
+<script src="inc/js/brands.min.js"></script>
+<script src="pages/header.js"></script>
+<script src="pages/aside.js"></script>
+<script src="inc/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+{
+  "categories": [
+    {"id":"1", "name":"electronics", "Image":"../admin/inc/images/electronics/T.V/tv1/1.png", "parent_id":null},
+
+    {"id":"2", "name":"laptops", "Image":"../admin/inc/images/electronics/laptops/DELL/13/1.jpg", "parent_id":"1"},
+
+    {"id":"3", "name":"acer", "Image":"../admin/inc/images/electronics/laptops/ACER/6/1.jpg", "parent_id":"2"},
+
+    {"id":"4", "name":"asus", "Image":"../admin/inc/images/electronics/laptops/ASUS/1/1.jpg", "parent_id":"2"},
+
+    {"id":"5", "name":"auusda", "Image":"../admin/inc/images/electronics/laptops/Auusda/1.jpg", "parent_id":"2"},
+
+    {"id":"6", "name":"dell", "Image":"../admin/inc/images/electronics/laptops/DELL/10/1.jpg", "parent_id":"2"},
+
+    {"id":"7", "name":"hp", "Image":"../admin/inc/images/electronics/laptops/HP/14/1.jpg", "parent_id":"2"},
+
+    {"id":"8", "name":"lenovo", "Image":"../admin/inc/images/electronics/laptops/lenovo/5/1.png", "parent_id":"2"},
+
+    {"id":"9", "name":"blender", "Image":"../admin/inc/images/electronics/blenders/blender2/1.png", "parent_id":"1"},
+
+    {"id":"10", "name":"boilers & heaters", "Image":"../admin/inc/images/electronics/boilers&heaters/kettle3/1.png", "parent_id":"1"},
+
+    {"id":"11", "name":"heater", "Image":"../admin/inc/images/electronics/boilers&heaters/heater1/1.png", "parent_id":"10"},
+
+    {"id":"12", "name":"kettle", "Image":"../admin/inc/images/electronics/boilers&heaters/kettle1/1.png", "parent_id":"10"},
+
+    {"id":"13", "name":"iron", "Image":"../admin/inc/images/electronics/boilers&heaters/steamiron2/1.png", "parent_id":"10"},
+
+    {"id":"14", "name":"digital camera", "Image":"../admin/inc/images/electronics/camera/c1/1.png", "parent_id":"1"},
+
+    {"id":"15", "name":"fans & air conditions", "Image":"../admin/inc/images/electronics/fans&airconditions/fan3/1.png", "parent_id":"1"},
+
+    {"id":"16", "name":"fridges & washing machines", "Image":"../admin/inc/images/electronics/fridges&washing/washing1/1.jpg", "parent_id":"1"},
+
+    {"id":"17", "name":"pc accessories", "Image":"../admin/inc/images/electronics/pcaccessories/adapter/adapter1/1.png", "parent_id":"1"},
+
+    {"id":"18", "name":"adapter", "Image":"../admin/inc/images/electronics/pcaccessories/adapter/adapter1/3.jpg", "parent_id":"17"},
+
+    {"id":"19", "name":"cooler", "Image":"../admin/inc/images/electronics/pcaccessories/cooler/cooler1/1.png", "parent_id":"17"},
+
+    {"id":"20", "name":"pc components", "Image":"../admin/inc/images/electronics/pccomponents/case/case9/2.png", "parent_id":"1"},
+
+    {"id":"21", "name":"case", "Image":"../admin/inc/images/electronics/pccomponents/case/case1/1.png", "parent_id":"20"},
+
+    {"id":"22", "name":"hard", "Image":"../admin/inc/images/electronics/pccomponents/hard/hard13/1.png", "parent_id":"20"},
+
+    {"id":"23", "name":"motherboard", "Image":"../admin/inc/images/electronics/pccomponents/motherboard/gigabyte1/1.png", "parent_id":"20"},
+
+    {"id":"24", "name":"printer", "Image":"../admin/inc/images/electronics/pccomponents/printer/printer1/1.png", "parent_id":"20"},
+
+    {"id":"25", "name":"ram memory", "Image":"../admin/inc/images/electronics/pccomponents/ram-memory/ram3/1.png", "parent_id":"20"},
+
+    {"id":"26", "name":"vga card", "Image":"../admin/inc/images/electronics/pccomponents/vga-card/vga1/1.png", "parent_id":"20"},
+
+    {"id":"27", "name":"phones", "Image":"../admin/inc/images/electronics/phones/samsung2/2.png", "parent_id":"1"},
+
+    {"id":"28", "name":"television", "Image":"../admin/inc/images/electronics/T.V/tv2/2.png", "parent_id":"1"},
+
+    {"id":"29", "name":"vacuum cleaner", "Image":"../admin/inc/images/electronics/vacuumcleaner/vc1/1.png", "parent_id":"1"},
+
+    {"id":"30", "name":"watches", "Image":"../admin/inc/images/electronics/watches/1/1.png", "parent_id":"1"},
+
+    {"id":"31", "name":"iphone", "Image":"../admin/inc/images/electronics/phones/iphone1/1.png", "parent_id":"27"},
+
+    {"id":"32", "name":"oppo", "Image":"../admin/inc/images/electronics/phones/oppo2/1.png", "parent_id":"27"},
+
+    {"id":"33", "name":"samsung", "Image":"../admin/inc/images/electronics/phones/samsung4/1.png", "parent_id":"27"},
+
+    {"id":"34", "name":"portable sound & vision", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/portable_speakers&docks/5/1.png", "parent_id":"1"},
+
+    {"id":"35", "name":"accessories", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/mp3playeraccessories/4/1.png", "parent_id":"34"},
+
+    {"id":"36", "name":"mp3 & digital media players", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/mp3_and_digital_media_players/3/1.jpg", "parent_id":"34"},
+
+    {"id":"37", "name":"personal casset players", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/personal_casset_players/1/1.jpg", "parent_id":"34"},
+
+    {"id":"38", "name":"radios & dab", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/radios_and_dab/AMFM_Radios/1/1.png", "parent_id":"34"},
+
+    {"id":"39", "name":"headphone, earbuds & accessories", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphonestands/3/1.jpg", "parent_id":"35"},
+
+    {"id":"40", "name":"mp3 player accessories", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/mp3playeraccessories/2/1.png", "parent_id":"35"},
+
+    {"id":"41", "name":"portable speakers & docks", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/portable_speakers&docks/4/1.jpg", "parent_id":"35"},
+
+    {"id":"42", "name":"headphone adapters", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphoneadapters/2/1.jpg", "parent_id":"39"},
+
+    {"id":"43", "name":"headphone cases", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphonecases/2/1.jpg", "parent_id":"39"},
+
+    {"id":"44", "name":"headphones & earbuds", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphones&earbuds/Over-Ear_Headphones/3/1.png", "parent_id":"39"},
+
+    {"id":"45", "name":"headphone stands", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphonestands/2/1.jpg", "parent_id":"39"},
+
+    {"id":"46", "name":"earbuds", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphones&earbuds/earbuds/buds1/1.png", "parent_id":"44"},
+
+    {"id":"47", "name":"In-Ear Headphones", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphones&earbuds/In-Ear_Headphones/1/1.png", "parent_id":"44"},
+
+    {"id":"48", "name":"On-Ear Headphones", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphones&earbuds/On-Ear_Headphones/10/1.png", "parent_id":"44"},
+
+    {"id":"49", "name":"Over-Ear Headphones", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphones&earbuds/Over-Ear_Headphones/1/1.png", "parent_id":"44"},
+
+    {"id":"50", "name":"am fm radios", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/radios_and_dab/AMFM_Radios/1/1.png", "parent_id":"38"},
+
+    {"id":"51", "name":"shortwave radios", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/radios_and_dab/shortwave_radios/2/1.jpg", "parent_id":"38"},
+
+    {"id":"52", "name":"household appliances", "Image":"../admin/inc/images/household_appliances/kitchen/cooker3/1.png", "parent_id":null},
+
+    {"id":"53", "name":"kitchen", "Image":"../admin/inc/images/household_appliances/kitchen/fryer2/1.png", "parent_id":"52"},
+
+    {"id":"54", "name":"cooker", "Image":"../admin/inc/images/household_appliances/kitchen/cooker5/1.png", "parent_id":"53"},
+
+    {"id":"55", "name":"dish", "Image":"../admin/inc/images/household_appliances/kitchen/dish2/1.jpg", "parent_id":"53"},
+
+    {"id":"56", "name":"drying dish", "Image":"../admin/inc/images/household_appliances/kitchen/dryingdish/1.png", "parent_id":"53"},
+
+    {"id":"57", "name":"fryer", "Image":"../admin/inc/images/household_appliances/kitchen/fryer3/1.jpg", "parent_id":"53"},
+
+    {"id":"58", "name":"glass milk", "Image":"../admin/inc/images/household_appliances/kitchen/glass-milk/1.jpg", "parent_id":"53"},
+
+    {"id":"59", "name":"knife", "Image":"../admin/inc/images/household_appliances/kitchen/knife1/1.png", "parent_id":"53"},
+
+    {"id":"60", "name":"microwave", "Image":"../admin/inc/images/household_appliances/kitchen/microwave1/1.png", "parent_id":"53"},
+
+    {"id":"61", "name":"milkpot", "Image":"../admin/inc/images/household_appliances/kitchen/milkpot2/1.png", "parent_id":"53"},
+
+    {"id":"62", "name":"pot", "Image":"../admin/inc/images/household_appliances/kitchen/pot2/1.jpg", "parent_id":"53"},
+
+    {"id":"63", "name":"spoons", "Image":"../admin/inc/images/household_appliances/kitchen/spoons1/1.png", "parent_id":"53"},
+
+    {"id":"64", "name":"clothes", "Image":"../admin/inc/images/clothes/men/sweatshirt/9/4.jpg", "parent_id":null},
+
+    {"id":"65", "name":"men clothes", "Image":"../admin/inc/images/clothes/men/sweatshirt/6/1.jpg", "parent_id":"64"},
+
+    {"id":"66", "name":"women clothes", "Image":"../admin/inc/images/clothes/women/shoes/boat/7/1.png", "parent_id":"64"},
+
+    {"id":"67", "name":"sweatshirt", "Image":"../admin/inc/images/clothes/men/sweatshirt/10/1.jpg", "parent_id":"65"},
+
+    {"id":"68", "name":"women shoes", "Image":"../admin/inc/images/clothes/women/shoes/boat/1/1.png", "parent_id":"66"},
+
+    {"id":"69", "name":"athletic", "Image":"../admin/inc/images/clothes/women/shoes/athletic/running/roadrunning/1/1.png", "parent_id":"68"},
+
+    {"id":"70", "name":"boat", "Image":"../admin/inc/images/clothes/women/shoes/boat/5/1.png", "parent_id":"68"},
+
+    {"id":"71", "name":"sandals", "Image":"../admin/inc/images/clothes/women/shoes/sandals/1/1.png", "parent_id":"68"},
+
+    {"id":"72", "name":"running", "Image":"../admin/inc/images/clothes/women/shoes/athletic/running/roadrunning/2/1.png", "parent_id":"69"},
+
+    {"id":"73", "name":"sport sandals & slides", "Image":"../admin/inc/images/clothes/women/shoes/athletic/sportsandals&slides/4/1.png", "parent_id":"69"},
+
+    {"id":"74", "name":"team sports", "Image":"../admin/inc/images/clothes/women/shoes/athletic/team-sports/basketball/1/1.png", "parent_id":"69"},
+
+    {"id":"75", "name":"walking", "Image":"../admin/inc/images/clothes/women/shoes/athletic/walking/1/1.png", "parent_id":"69"},
+
+    {"id":"76", "name":"road running", "Image":"../admin/inc/images/clothes/women/shoes/athletic/running/roadrunning/5/1.png", "parent_id":"72"},
+
+    {"id":"77", "name":"basketball", "Image":"../admin/inc/images/clothes/women/shoes/athletic/team-sports/basketball/3/1.png", "parent_id":"74"},
+
+    {"id":"78", "name":"field hockey & lacrosse", "Image":"../admin/inc/images/clothes/women/shoes/athletic/team-sports/field-hockey&lacrosse/1/1.png", "parent_id":"74"},
+
+    {"id":"79", "name":"soccer", "Image":"../admin/inc/images/clothes/women/shoes/athletic/team-sports/soccer/1/1.png", "parent_id":"74"},
+
+    {"id":"80", "name":"softball & baseball", "Image":"../admin/inc/images/clothes/women/shoes/athletic/team-sports/softball&baseball/5/1.png", "parent_id":"74"},
+
+    {"id":"81", "name":"flats", "Image":"../admin/inc/images/clothes/women/shoes/sandals/flats/1/1.png", "parent_id":"71"},
+
+    {"id":"82", "name":"flip-flops", "Image":"../admin/inc/images/clothes/women/shoes/sandals/flip-flops/1/1.png", "parent_id":"71"},
+
+    {"id":"83", "name":"platforms & wedges", "Image":"../admin/inc/images/clothes/women/shoes/sandals/platforms&wedges/1/1.png", "parent_id":"71"},
+
+    {"id":"84", "name":"slides", "Image":"../admin/inc/images/clothes/women/shoes/sandals/slides/2/1.png", "parent_id":"71"},
+
+    {"id":"85", "name":"shoes", "Image":"../admin/inc/images/clothes/men/shoes/1/beige,gray,white,tan(1).png", "parent_id":"65"},
+
+    {"id":"86", "name":"pants", "Image":"../admin/inc/images/clothes/men/pants/casual/1/1.png", "parent_id":"65"},
+
+    {"id":"87", "name":"casual", "Image":"../admin/inc/images/clothes/men/pants/casual/1/1.png", "parent_id":"86"},
+
+    {"id":"88", "name":"jeans", "Image":"../admin/inc/images/clothes/men/pants/jeans/1/1.png", "parent_id":"86"},
+
+    {"id":"89", "name":"t-shirt", "Image":"../admin/inc/images/clothes/men/t-shirt/1/blue.png", "parent_id":"65"},
+
+    {"id":"90", "name":"surveillance cameras", "Image":"../admin/inc/images/electronics/surveillancecameras/2/1.jpg", "parent_id":"1"}
+  ]
+}

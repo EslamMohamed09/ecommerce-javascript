@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-height, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>customers</title>
+  <link rel="stylesheet" href="inc/styles/all.css">  
+  <link rel="stylesheet" href="inc/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="inc/styles/main.css">
+</head>
+<body>
+<header class="header" id="header"></header>
+
+<section class="dashboard-section customers-page" id="dashboard-section">
+
+  <aside id="main-aside"></aside>
+
+  <div class="customers-page-container page-container">
+
+    <h1 class="section-heading">manage customers</h1>
+
+    <div class="manage-customers-table-block manage-table-block">
+
+      <div class="table-header d-flex-r-bt-c">
+
+        <form class="search-form d-flex-r-st-c" action="customer_search.php" method="POST">
+          <input type="search" name="search" placeholder="Search Customer" id="searchinput-customers">
+          <button type="submit" name="submit-search" id="submit-search"><i class="fas fa-search" id="submit-searchi"></i></button>
+        </form>
+
+        <div class="counting">
+          <span>all customers</span> 
+          <span class="no"></span>
+        </div>
+
+        <div class="ordering-btns">
+          <a href="?sort=ASC" class="">ASC</a> /
+          <a href="?sort=DESC" class="">DESC</a> 
+        </div>
+
+      </div>
+
+      <form action="" method="POST" class="manage-customers-table-form manage-table-form" style="width:100%;"> <!-- multiple delete form -->
+
+        <table>
+
+          <thead>
+            <tr>
+              <th><label class="checkbox-label">
+                  <input type="checkbox" name="checkbox[]" id="head-checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </th>
+              <th><label for="first-head-checkbox">fullname</label></th>
+              <th>email</th>
+              <th>phone no.</th>
+              <th>gender</th>
+              <th>country</th>
+              <th>city</th>
+              <th>po. code</th>
+              <th>question</th>
+              <th>date</th>
+              <th>iD</th>
+            </tr>
+          </thead>
+
+          <tbody id="manage-customers-table"></tbody>
+
+        </table>
+
+        <div class="action-buttons-block">
+          <div class="action-buttons-holder d-flex-r-st-c">
+            <input type="submit" name="multipledelete" value="delete" class="btn2 delete-btn">
+          </div>
+        </div>
+
+        <div class="pagination"></div>
+
+      </form>
+
+    </div> <!-- End Customer Table -->
+
+  </div>
+
+</section>
+
+<script src="inc/js/jquery-3.5.1.min.js"></script>
+<script src="inc/js/bootstrap.min.js"></script>
+<script src="inc/js/all.min.js"></script>
+<script src="inc/js/solid.min.js"></script>
+<script src="inc/js/regular.min.js"></script>
+<script src="inc/js/brands.min.js"></script>
+<script src="pages/header.js"></script>
+<script src="pages/aside.js"></script>
+<script src="inc/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-height, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>login</title>
+  <link rel="stylesheet" href="inc/styles/all.css">  
+  <link rel="stylesheet" href="inc/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="inc/styles/main.css">
+</head>
+<body>
+
+<section id="login-section" class="d-flex-c-st-c">
+
+  <div class="forms d-flex-c-st-c">
+
+    <form class="login-form" action="" method="POST"> <!-- login-form -->
+
+      <div class="login-form-container">
+
+        <div class="left-block d-flex-c-c-c">
+
+          <h2>login</h2>
+          
+          <div class="input-boxes d-flex-c-c-c">
+
+            <div class="input-box d-flex-r-bt-c"> <!-- username -->
+              <i class="fa fa-user" id="icon"></i>
+              <input type="text" name="name" placeholder="Username" autocomplete="off" maxlength="20" required/>
+            </div>
+
+            <div class="input-box d-flex-r-st-c"> <!-- Password -->
+              <i class="fa fa-key" id="icon"></i>
+              <div class="pass-input">
+                <input type="password" name="password" maxlength="25" pattern=".{5,25}" title="Password can't be less than 5 characters or more than 25" placeholder="Write your password" autocomplete="off" required/>
+                <div class="passeye" onclick="eyeFunction(this)">
+                  <i class="fa fa-eye" style="display:none;"></i>
+                  <i class="fa fa-eye-slash"></i> 
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <input type="submit" value="login" name="login" class="btn3">
+
+          <p>I have no account <span id="goToRegisterFormBtn">register</span></p>
+
+        </div> <!-- End left-block -->
+
+        <div class="right-block d-flex-c-c-c">
+          <h2>glade to see you</h2>
+          <p>welcome please fill in the blanks for sign in</p>
+        </div>
+
+      </div>
+
+    </form> <!-- End login-form -->
+
+    <form class="register-form register-user d-flex-c-st-c" action="" method="POST" enctype="multipart/form-data" onsubmit="return checkErrors();">
+
+      <div class="registerPhasesSteps">
+        <div class="line"></div>
+        <ul class="links d-flex-r-bt-c">
+          <li class="active" id="Rstep1">1</li>
+          <li id="Rstep2">2</li>
+          <li id="Rstep3">3</li>
+        </ul>
+      </div>
+
+      <div class="registerphase d-flex-c-st-c active" id="registerphase1">
+
+        <h2>register</h2>
+
+        <div class="blocks">
+
+          <div class="left-block">
+            <div class="input-boxes d-flex-c-st-c">  <!-- Input boxes 1 -->
+
+              <div class="input-box d-flex-r-bt-c"> <!-- username -->
+                <i class="fa fa-user" id="icon"></i>
+                <input type="text" name="username" maxlength="25" pattern=".{5,25}" title="username can't be less than 5 letters or more than 25." autocomplete="off" placeholder="Username" id="usernameinput" required/>
+              </div>
+
+              <div class="input-box d-flex-r-bt-c">  <!-- password -->
+                <i class="fa fa-key" id="icon"></i>
+                <div class="pass-input">
+                  <input type="password" name="password" maxlength="25" pattern=".{8,25}" title="password can't less than 8 letters or more than 25" placeholder="write your password" autocomplete="new-password" id="passinput" required/>
+                  <div class="passeye" onclick="eyeFunction(this)">
+                    <i class="fa fa-eye" style="display:none;"></i>
+                    <i class="fa fa-eye-slash"></i> 
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-box d-flex-r-bt-c"> <!-- fullname -->
+                <i class="fa fa-user" id="icon"></i>
+                <input type="text" name="fullname" autocomplete="off" placeholder="Full Name" maxlength="34" pattern=".{8,25}" title="Full Name maximum letter 25." id="fullnameinput" required/>
+              </div>
+
+              <select name="gender" id="gender">  <!-- gender -->
+                <option value="0">gender</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
+              </select>
+
+              <div class="input-box d-flex-r-bt-c">
+                 <i class="fa fa-user" id="icon"></i>
+                 <input type="file" name="userimg" id="file-input">
+              </div>
+
+            </div>
+          </div> <!-- End left-block -->
+
+          <div class="right-block">
+            <div class="input-boxes d-flex-c-st-c">  <!-- Input boxes 2 -->
+
+              <div class="input-box d-flex-r-bt-c">  <!-- email -->
+                <i class="fa fa-envelope" id="icon"></i>
+                <input type="email" name="email" maxlength="35" pattern=".{6,35}" title="write email !." autocomplete="off" placeholder="Example@gmail.com" id="emailinput" required/>
+              </div>
+
+              <div class="input-box d-flex-r-bt-c">  <!-- country -->
+                <i class="fa-solid fa-globe" id="icon"></i>
+                <select name="" id="">
+                  <option value="egypt">egypt</option>
+                  <option value="syria">syria</option>
+                </select>          
+              </div>
+
+              <div class="input-box d-flex-r-bt-c">  <!-- Facebook -->
+                <i class="fa fa-envelope" id="icon"></i>
+                <input type="text" name="facebook" placeholder="facebook profile title" autocomplete="off"/>
+              </div>
+
+              <div class="input-box d-flex-r-bt-c">  <!-- LinkedIn -->
+                <i class="fa fa-envelope" id="icon"></i>
+                <input type="text" name="linkedin" placeholder="linkedin profile title" autocomplete="off"/>
+              </div>
+
+              <div class="input-box d-flex-r-bt-c">  <!-- whatsapp -->
+                <i class="fa fa-envelope" id="icon"></i>
+                <input type="text" name="whatsapp" maxlength="20" pattern=".{4,20}" title="whatsapp number can't less than 4 numbers and can't morethan 20 numbers!." placeholder="whatsapp number" autocomplete="off" id="whatsinput" required/>
+              </div>
+
+            </div>
+          </div> <!-- End right-block -->
+
+        </div>
+
+        <button type="button" class="submitregisterphase1 btn3">submit info</button>
+
+        <p>Already have an account <span id="goToLoginFormBtn">sign in</span></p>
+
+      </div> <!-- End registerphase1 add user info -->
+
+      <div class="registerphase d-flex-c-st-c" id="registerphase2">
+
+        <div id="certificationsContainer"></div>
+
+        <div class="add-delete-btns d-flex-r-end-c">
+          <button type="button" class="addCertificationBtn btn2">Add Certification</button>
+          <button type="button" class="deleteCertificationBtn btn2">Delete Certification</button>
+        </div>
+        <p id="maximumCertificationMsg">Maximum 4 certifications reached.</p>
+
+        <div class="backSubmitBtns d-flex-r-bt-c">
+          <button type="button" class="backregisterphase2 back btn3">back</button>
+          <button type="button" class="submitregisterphase2 btn3">submit without certification</button>
+        </div>
+
+      </div> <!-- End registerphase2 add user certifications -->
+
+      <div class="registerphase d-flex-c-st-c" id="registerphase3">
+
+        <div id="skillsContainer"></div>
+
+        <div class="add-delete-btns d-flex-c-end-end">
+          <button type="button" class="addSkillsBtn btn2">add Skills</button>
+          <button type="button" class="deleteSkillsBtn btn2" style="display:none;">Delete Skills</button>
+        </div>
+
+        <div class="backSubmitBtns d-flex-r-bt-c">
+          <button type="button" class="backregisterphase3 back btn3">back</button>
+          <input type="submit" value="register without skills" name="register" class="submit-register btn3" onclick="checkErrors()">
+        </div>
+
+      </div> <!-- End registerphase3 add user skills -->
+
+    </form> <!-- End register-form -->
+
+  </div>
+
+</section>
+
+<script src="inc/js/jquery-3.5.1.min.js"></script>
+<script src="inc/js/bootstrap.min.js"></script>
+<script src="inc/js/all.min.js"></script>
+<script src="inc/js/solid.min.js"></script>
+<script src="inc/js/regular.min.js"></script>
+<script src="inc/js/brands.min.js"></script>
+<script src="inc/js/main.js"></script>
+</body>
+</html>

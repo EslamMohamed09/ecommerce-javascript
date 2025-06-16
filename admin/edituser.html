@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-height, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>edit user</title>
+  <link rel="stylesheet" href="inc/styles/all.css">
+  <link rel="stylesheet" href="inc/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="inc/styles/main.css">
+</head>
+<body>
+<header class="header" id="header"></header>  
+
+<section class="dashboard-section" id="dashboard-section">
+
+    <aside id="main-aside"></aside>
+
+    <div class="section-container edit-member-page edit-page">
+
+      <h1 class="edit-heading">edit user eslam mohamed</h1>
+
+      <div class="sub-heading"> <!--- sub-heading --->
+        <h3 class="sub-title">personal information</h3>
+        <i class="fas fa-star"></i>
+      </div>
+
+      <form class="form-horizontal2 row" action="" method="POST"> <!-- member info -->
+
+        <input type="hidden" name="memberid" value="2">
+
+        <div class="left-block col-lg-8 col-md-8 col-sm-12">
+
+          <div class="input-holder">  <!-- Username -->
+            <label>Username</label>
+            <input type="text" name="username" maxlength="20" pattern=".{4,20}" autocomplete="off" value="eslam mohamed" class="input-control" required/>
+          </div>
+
+          <div class="input-holder">  <!-- Password -->
+            <label class="control-label">Password</label>
+            <div class="pass-input">
+                <input type="password" name="password" autocomplete="new-password" maxlength="25" pattern=".{8,25}" class="input-control" id="passInput"/>
+                <div class="passeye" onclick="eyeFunction(this)">
+                <i class="fa fa-eye" style="display:none;"></i> 
+                <i class="fa fa-eye-slash"></i> 
+                </div>
+            </div>
+          </div>
+
+          <div class="input-holder">  <!-- FullName -->
+            <label class="control-label">Full Name</label>
+            <input type="text" name="fullname" maxlength="25" pattern=".{8,25}" autocomplete="off" value="eslam mohamed fahmi" class="input-control" required/>
+          </div>
+
+          <div class="input-holder">  <!-- Gender -->
+            <label class="control-label">Gender</label>
+            <select name="gender" class="input-control">
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
+          </div>
+
+          <div class="input-holder">  <!-- Rank -->
+            <label class="control-label">Rank</label>
+            <select name="rank" class="input-control">
+                <option value="0">user</option>    
+                <option value="1">admin</option>
+            </select>
+          </div>
+
+          <div class="input-holder">  <!-- Facebook -->
+            <label class="control-label">Facebook</label>
+            <input type="text" name="facebook" maxlength="20" placeholder="Profile title" autocomplete="off" value="eslam mohamed" class="input-control"/>
+          </div>
+
+          <div class="input-holder">  <!-- LinkedIn -->
+            <label>LinkedIn</label>
+            <input type="text" name="linkedin" placeholder="Profile title" autocomplete="off" value="eslam mohamed" class="input-control"/>
+          </div>
+
+          <div class="input-holder">  <!-- Email -->
+            <label>Email</label>
+            <input type="email" name="email" placeholder="example@gmail.com" maxlength="35" autocomplete="off" value="email@gmail.com" class="input-control" required/>
+          </div>
+
+          <div class="input-holder">  <!-- whatsapp -->
+              <label>Whatsapp</label>
+              <input type="text" name="whatsapp" maxlength="20" placeholder="whatsapp number" autocomplete="off" value="01210203662" class="input-control"/>
+          </div>
+
+          <div class="input-holder">  <!-- Country -->
+              <label>Country</label>
+              <select name="country" id="select_country" class="input-control">
+              <option value="Afghanistan">Afghanistan</option>
+              <option value="Albania">Albania</option>
+              <option value="Algeria">Algeria</option>
+              <option value="Andorra">Andorra</option>
+              <option value="Angola">Angola</option>
+              <option value="Egypt">Egypt</option>
+              <option value="El Salvador">El Salvador</option>
+              <option value="Equatorial Guinea">Equatorial Guinea</option>
+              <option value="Eritrea">Eritrea</option>
+              <option value="Estonia">Estonia</option>
+              </select>
+          </div>
+
+        </div> <!-- End-left-block -->
+
+        <div class="right-block col-lg-4 col-md-4 col-sm-12">
+          <div class="image-holder d-flex-c-c-c">
+            <label>select your image</label>
+            <input type="file">
+            <img src="inc/images/users/eslam(10).jpg" alt="">
+          </div>
+        </div>
+
+        <input type="submit" name="updatememberinfo" value="update" class="btn3"/>
+
+      </form>
+    
+      <form class="certification-form" action="" method="POST"> <!-- Edit certification -->
+      
+        <h2 class="block-title3 d-flex-r-bt-c">Certification 1<hr></h2>
+
+        <div class="double-input-box d-flex-r-bt-c"> <!-- double inputs: Title, Duration -->
+
+          <div class="input-box row">  <!-- Title -->
+            <label class="control-label col-lg-2 col-md-2 col-sm-3">Title</label>
+            <div class="input-holder col-lg-10 col-md-10 col-sm-9">
+              <input type="hidden" name="cid" value="">
+              <input type="text" name="ctitle" value="" placeholder="Bachelor Of Arts" autocomplete="off" class="input-control"/>
+            </div>
+          </div>
+
+          <div class="input-box row">  <!-- Duration -->
+            <label class="control-label col-lg-2 col-md-2 col-sm-3">duration</label>
+            <div class="input-holder col-lg-10 col-md-10 col-sm-9">
+              <input type="text" name="cduration" value="" placeholder="2013 - 2018" autocomplete="off" class="input-control"/>
+            </div>  
+          </div>
+
+        </div>
+
+        <div class="description-input-box input-box row">  <!-- Description -->
+          <label class="control-label col-lg-1 col-md-2 col-sm-2">Description</label>
+          <div class="input-holder col-lg-11 col-md-10 col-sm-10">
+            <input type="text" name="cdescription" class="input-control" value="" placeholder="I Succeed In Php Diploma From Egyptian Technology Center" autocomplete="off"/>
+          </div>
+        </div>
+
+        <div class="submit-inputs-holder d-flex-c-st-st">  <!-- Save Certification Button -->
+          <input type="submit" name="deletecertification" value="delete" class="btn2 wfull"/>
+          <input type="submit" name="savecertification" value="update certification" class="btn2 wfull"/>
+        </div> 
+
+      </form>
+
+      <form class="certification-form" action="" method="POST"> <!-- Add certification -->
+
+        <div class="block-title2"><hr><h2>Add Certification</h2><hr></div>
+
+        <div class="double-input-box d-flex-r-bt-c"> <!-- double inputs -->
+
+          <div class="input-box row">  <!-- Title -->
+            <label class="control-label col-lg-2 col-md-2 col-sm-3">Title</label>
+            <div class="input-holder col-lg-10 col-md-10 col-sm-9">
+              <input type="hidden" name="memberid" value="">
+              <input type="text" name="ctitle" class="input-control" placeholder="Bachelor Of Arts" autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="input-box row">  <!-- Duration -->
+            <label class="control-label col-lg-2 col-md-2 col-sm-3">duration</label>
+            <div class="input-holder col-lg-10 col-md-10 col-sm-9">
+              <input type="text" name="cduration" class="input-control" placeholder="2013 - 2018" autocomplete="off"/>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="input-box description-input-box row">  <!-- Description -->
+          <label class="control-label col-lg-1 col-md-2 col-sm-2">Description</label>
+          <div class="input-holder col-lg-11 col-md-10 col-sm-10"><input type="text" name="cdescription" class="input-control" placeholder="I Succeed In Php Diploma From Egyptian Technology Center" autocomplete="off"/></div>
+        </div>
+
+        <div class="submit-input-holder row">  <!-- Submit Button -->
+          <div class="col-md-12 d-flex-r-c-c">
+            <i class="fa fa-plus"></i>
+            <input type="submit" name="addcertification" value="add certification" class="btn4"/>
+          </div>
+        </div> 
+
+      </form>
+
+      <form class="skills-form edit-skills-form" action="" method="POST"> <!-- Edit Skills -->
+
+        <div class="block-title2"><hr><h2>Edit skills</h2><hr></div>
+
+        <div class="skills-blocks d-flex-r-c-c">
+
+          <div class="computer-skills-block block d-flex-c-st-st">  <!-- Computer Skills -->
+            <label class="control-label">Computer Skills</label>
+            <textarea name="computerskills" class="computerSkillsTextarea"></textarea>
+            <input type="text" value="" onkeydown="if(event.keyCode === 13) {addTag(null, '.edit-skills-form .computerSkillsInput', '.edit-skills-form .computerSkillsTextarea'); return false;}"  maxlength="28" class="input-control computerSkillsInput">
+            <button type="button" onclick="addTag(null, '.edit-skills-form .computerSkillsInput', '.edit-skills-form .computerSkillsTextarea')" class="btn2">add skill</button>
+          </div>
+
+          <div class="personal-skills-block block d-flex-c-st-st">  <!-- Personal Skills -->
+            <label class="control-label">Personal Skills</label>
+            <textarea name="personalskills" class="personalSkillsTextarea"></textarea>
+            <input type="text" value="" onkeydown="if(event.keyCode === 13) {addTag(null, '.edit-skills-form .personalSkillsInput', '.edit-skills-form .personalSkillsTextarea'); return false;}" maxlength="28" class="input-control personalSkillsInput">
+            <button type="button" onclick="addTag(null, '.edit-skills-form .personalSkillsInput', '.edit-skills-form .personalSkillsTextarea')" class="btn2">add skill</button>
+          </div>
+
+        </div> <!-- End skills-blocks -->
+        
+        <div class="submit-inputs-holder d-flex-c-c-c">  <!-- Submit Button -->
+          <input type="submit" name="deleteskills" value="delete skills" class="btn2 w-100"/>
+          <input type="submit" name="editskills" value="edit skills" class="btn2 w-100"/>
+        </div>
+
+      </form>
+
+      <form class="skills-form add-skills-form" action="" method="POST"> <!-- Add Skills -->
+
+        <div class="block-title2"><hr><h2>Add skills</h2><hr></div>
+
+        <div class="skills-blocks d-flex-r-st-st">
+
+          <div class="computer-skills-block block d-flex-c-st-st">  <!-- Computer Skills -->
+            <label class="control-label">Computer Skills</label>
+            <textarea name="computerskills" id="computerSkillsTextarea"></textarea>
+            <input type="text" value="" maxlength="28" class="computerSkillsInput input-control" onkeydown="if(event.keyCode === 13) {addTag(null, '.add-skills-form .computerSkillsInput', '.add-skills-form #computerSkillsTextarea'); return false;}">
+            <button type="button" class="btn2" onclick="addTag(null, '.add-skills-form .computerSkillsInput', '.add-skills-form #computerSkillsTextarea')">add skill</button>
+          </div>
+
+          <div class="personal-skills-block block d-flex-c-st-st">  <!-- Personal Skills -->
+            <label class="control-label">Personal Skills</label>
+            <textarea name="personalskills" id="personalSkillsTextarea"></textarea>
+            <input type="text" value="" maxlength="28" class="personalSkillsInput input-control" onkeydown="if(event.keyCode === 13) {addTag(null, '.add-skills-form .personalSkillsInput', '.add-skills-form #personalSkillsTextarea'); return false;}">
+            <button type="button" onclick="addTag(null, '.add-skills-form .personalSkillsInput', '.add-skills-form #personalSkillsTextarea')" class="btn2">add skill</button>
+          </div>
+
+        </div>
+        
+        <div class="submit-input-holder d-flex-r-c-c">  <!-- Submit Button -->
+          <i class="fa fa-plus"></i>
+          <input type="submit" name="addskills" value="add skills" class="btn4"/>
+        </div>
+
+      </form>
+
+    </div> <!-- End Edit-member-page -->
+  
+</section>
+
+<script src="inc/js/jquery-3.5.1.min.js"></script>
+<script src="inc/js/bootstrap.min.js"></script>
+<script src="inc/js/all.min.js"></script>
+<script src="inc/js/solid.min.js"></script>
+<script src="inc/js/regular.min.js"></script>
+<script src="inc/js/brands.min.js"></script>
+<script src="pages/header.js"></script>
+<script src="pages/aside.js"></script>
+<script src="inc/js/main.js"></script>
+</body>
+</html>

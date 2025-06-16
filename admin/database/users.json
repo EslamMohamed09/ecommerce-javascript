@@ -1,0 +1,33 @@
+{
+  "users": [
+    {"id":"1", "username":"moamen mohamed", "email":"moamenmohamed@gmail.com", "fullname":"moamen mohamed mohamed", "password":"12345", "gender":"male", "city":"", "address":"", "postalcode":"12575", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"01003384894", "image":"../inc/images/users/eslam1.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"2", "username":"kahled mohamed", "email":"kahledmohamed@gmail.com", "fullname":"kahled mohamed mohamed", "password":"12346", "gender":"male", "city":"", "address":"", "postalcode":"12575", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"01003384816", "image":"../inc/images/users/eslam2.jpg", "groupId":"user", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"3", "username":"samy ali", "email":"samyali@gmail.com", "fullname":"samy ali mohamed", "password":"12347", "gender":"male", "city":"", "address":"", "postalcode":"12575", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"01185038568", "image":"../inc/images/users/eslam3.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"4", "username":"waleed ahmed", "email":"waleedahmed@gmail.com", "fullname":"waleed ahmed mohamed", "password":"12348", "gender":"male", "city":"", "address":"", "postalcode":"12638", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"01000293848", "image":"../inc/images/users/eslam4.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"5", "username":"abdelrahman khaled", "email":"abdelrahmankhaled@gmail.com", "fullname":"abdelrahman khaled mohamed", "password":"12349", "gender":"male", "city":"", "address":"", "postalcode":"12575", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"012292849275", "image":"../inc/images/users/eslam5.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"6", "username":"adham ali", "email":"adhamali@gmail.com", "fullname":"adham ali mohamed", "password":"12310", "gender":"male", "city":"", "address":"", "postalcode":"12575", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"010074092041", "image":"../inc/images/users/eslam6.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"7", "username":"samir rushdi", "email":"samirrushdi@gmail.com", "fullname":"samir rushdi mohamed", "password":"12345", "gender":"male", "city":"", "address":"", "postalcode":"12575", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"01215092041", "image":"../inc/images/users/eslam7.jpg", "groupId":"user", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"8", "username":"kamel waleed", "email":"kamelwaleed@gmail.com", "fullname":"kamel waleed mohamed", "password":"12345", "gender":"male", "city":"", "address":"", "postalcode":"12434", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"01264092041", "image":"../inc/images/users/eslam8.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"9", "username":"mohaned ali", "email":"mohanedali@gmail.com", "fullname":"mohaned ali mohamed", "password":"12345", "gender":"male", "city":"", "address":"", "postalcode":"12909", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"01274092041", "image":"../inc/images/users/eslam9.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"10", "username":"kareem mohamed", "email":"kareemmohamed@gmail.com", "fullname":"kareem mohamed mohamed", "password":"12345", "gender":"male", "city":"", "address":"", "postalcode":"12560", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"010740920411", "image":"../inc/images/users/eslam10.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"11", "username":"ramy alaa", "email":"ramyalaa@gmail.com", "fullname":"ramy alaa mohamed", "password":"12345", "gender":"male", "city":"", "address":"", "postalcode":"12640", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"01274092041", "image":"../inc/images/users/eslam11.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"12", "username":"merna ali", "email":"mernaali@gmail.com", "fullname":"merna ali mohamed", "password":"12345", "gender":"female", "city":"", "address":"", "postalcode":"12234", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"01174092041", "image":"../inc/images/users/eslam1.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"13", "username":"salma khaled", "email":"salmakhaled@gmail.com", "fullname":"salma khaled mohamed", "password":"12345", "gender":"female", "city":"", "address":"", "postalcode":"12118", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"01174092042", "image":"../inc/images/users/eslam2.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"14", "username":"omar fathi", "email":"omarfathi@gmail.com", "fullname":"omar fathi mohamed", "password":"12345", "gender":"male", "city":"", "address":"", "postalcode":"12120", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"0119030284", "image":"../inc/images/users/eslam3.jpg", "groupId":"user", "regStatus":"activated", "date":"18/11/2024"},
+
+    {"id":"15", "username":"mostafa mohamed", "email":"mostafamohamed@gmail.com", "fullname":"mostafa mohamed mohamed", "password":"12345", "gender":"male", "city":"", "address":"", "postalcode":"12640", "facebook":"", "linkedin":"", "country":"Egypt", "whatsapp":"01174092043", "image":"../inc/images/users/eslam4.jpg", "groupId":"admin", "regStatus":"activated", "date":"18/11/2024"}
+  ]
+}

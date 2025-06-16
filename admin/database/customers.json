@@ -1,0 +1,33 @@
+{
+  "customers": [
+    {"id":"1", "fullname":"moamen mohamed", "email":"moamenmohamed@gmail.com", "password":"12345", "phone_no":"01003384894", "cust_image":"../inc/images/users/eslam1.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12575", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"2", "fullname":"kahled mohamed", "email":"kahledmohamed@gmail.com", "password":"12346", "phone_no":"01003384816", "cust_image":"../inc/images/users/eslam2.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12575", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"3", "fullname":"samy ali", "email":"samyali@gmail.com", "password":"12347", "phone_no":"01185038568", "cust_image":"../inc/images/users/eslam3.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12575", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"4", "fullname":"waleed ahmed", "email":"waleedahmed@gmail.com", "password":"12348", "phone_no":"01000293848", "cust_image":"../inc/images/users/eslam4.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12638", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"5", "fullname":"abdelrahman khaled", "email":"abdelrahmankhaled@gmail.com", "password":"12349", "phone_no":"012292849275", "cust_image":"../inc/images/users/eslam5.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12575", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"6", "fullname":"adham ali", "email":"adhamali@gmail.com", "password":"12310", "phone_no":"010074092041", "cust_image":"../inc/images/users/eslam6.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12575", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"7", "fullname":"samir rushdi", "email":"samirrushdi@gmail.com", "password":"12345", "phone_no":"01215092041", "cust_image":"../inc/images/users/eslam7.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12575", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"8", "fullname":"kamel waleed", "email":"kamelwaleed@gmail.com", "password":"12345", "phone_no":"01264092041", "cust_image":"../inc/images/users/eslam8.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12434", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"9", "fullname":"mohaned ali", "email":"mohanedali@gmail.com", "password":"12345", "phone_no":"01274092041", "cust_image":"../inc/images/users/eslam9.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12909", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"10", "fullname":"kareem mohamed", "email":"kareemmohamed@gmail.com", "password":"12345", "phone_no":"010740920411", "cust_image":"../inc/images/users/eslam10.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12560", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"11", "fullname":"ramy alaa", "email":"ramyalaa@gmail.com", "password":"12345", "phone_no":"01274092041", "cust_image":"../inc/images/users/eslam11.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12640", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"12", "fullname":"merna ali", "email":"mernaali@gmail.com", "password":"12345", "phone_no":"01174092041", "cust_image":"../inc/images/users/eslam1.jpg", "gender":"female", "country":"Egypt", "city":"", "address":"", "postalcode":"12234", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"13", "fullname":"salma khaled", "email":"salmakhaled@gmail.com", "password":"12345", "phone_no":"01174092042", "cust_image":"../inc/images/users/eslam2.jpg", "gender":"female", "country":"Egypt", "city":"", "address":"", "postalcode":"12118", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"14", "fullname":"omar fathi", "email":"omarfathi@gmail.com", "password":"12345", "phone_no":"0119030284", "cust_image":"../inc/images/users/eslam3.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12120", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"},
+
+    {"id":"15", "fullname":"mostafa mohamed", "email":"mostafamohamed@gmail.com", "password":"12345", "phone_no":"01174092043", "cust_image":"../inc/images/users/eslam3.jpg", "gender":"male", "country":"Egypt", "city":"", "address":"", "postalcode":"12640", "visa_no":"", "question":"", "other_question":"", "answer":"", "date":"18/11/2024"}
+  ]
+}

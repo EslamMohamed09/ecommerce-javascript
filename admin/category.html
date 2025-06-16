@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-height, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>category</title>
+  <link rel="stylesheet" href="inc/styles/all.css"> 
+  <link rel="stylesheet" href="inc/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="inc/styles/main.css">
+</head>
+<body>
+<header class="header" id="header"></header>    
+
+<section class="dashboard-section category-page" id="dashboard-section">
+
+  <aside id="main-aside"></aside>
+
+  <div class="category-page-container page-container"> <!-- ===== category page container ==== -->
+
+    <h1 class="section-heading">manage categories</h1>
+
+    <div class="add-managing-category d-flex-r-st-st">
+
+      <form class="add-category-form d-flex-c-st-st">
+
+        <div class="sub-heading"> <!-- Add new category -->
+          <h3 class="sub-title">add new category</h3>
+          <i class="fas fa-star"></i>
+        </div>
+
+        <div class="input-holder d-flex-c-st-st"> <!-- Name -->
+          <label for="catname" class="cat-label">name</label>
+          <input type="text" name="catname" class="input-control">
+        </div>
+
+        <div class="input-holder d-flex-c-st-st"> <!-- description -->
+          <label for="catdesc" class="cat-label">description</label>
+          <input type="text" name="catdesc" class="input-control">
+        </div>
+
+        <div class="parent-input-holder input-holder d-flex-c-st-st"> <!-- parent -->
+          <label for="parent-select" class="cat-label">parent</label>
+          <select name="parent" id="parent-select">
+            <option value="null">No Parent</option>
+            <option value="electronics">electronics</option>
+            <option value="laptops">laptops</option>
+            <option value="samsung">samsung</option>
+          </select>
+        </div>
+
+        <div class="image-input-holder input-holder d-flex-r-bt-c">
+          <label class="cat-label">select category image</label>
+          <input type="file" name="image" required>
+        </div>
+
+        <input type="submit" value="add new category" class="btn2">
+
+      </form>
+
+      <div class="manage-categories-table-block manage-table-block">
+
+        <form action="" class="manage-category-table-form manage-table-form d-flex-c-st-st">
+          <table>
+
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="first-head-checkbox"></th>
+                <th><label for="first-head-checkbox">name</label></th>
+                <th>image</th>
+                <th>parent</th>
+                <th>level</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+
+            <tbody id="manage-category-table"></tbody>
+
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="second-head-checkbox"></th>
+                <th><label for="second-head-checkbox">name</label></th>
+                <th>image</th>
+                <th>parent</th>
+                <th>level</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            
+          </table>
+
+          <div class="submit-buttons-block">
+            <div class="submit-buttons-holder d-flex-r-st-c">
+              <input type="submit" name="multipledelete" value="delete" class="btn2">
+            </div>
+          </div>
+
+          <div class="pagination"></div>
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<script src="inc/js/jquery-3.5.1.min.js"></script>
+<script src="inc/js/bootstrap.min.js"></script>
+<script src="inc/js/all.min.js"></script>
+<script src="inc/js/solid.min.js"></script>
+<script src="inc/js/regular.min.js"></script>
+<script src="inc/js/brands.min.js"></script>
+<script src="pages/header.js"></script>
+<script src="pages/aside.js"></script>
+<script src="inc/js/main.js"></script>
+</body>
+</html>

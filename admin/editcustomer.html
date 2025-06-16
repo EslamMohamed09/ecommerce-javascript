@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-height, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>edit customer</title>
+  <link rel="stylesheet" href="inc/styles/all.css">  
+  <link rel="stylesheet" href="inc/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="inc/styles/main.css">
+</head>
+<body>
+<header class="header" id="header"></header>
+
+<section class="dashboard-section" id="dashboard-section">
+
+  <aside id="main-aside"></aside>
+
+  <div class="section-container edit-page container">
+
+    <h1 class="edit-heading">edit customer yassen</h1>
+
+    <form class="form-horizontal2 row" action="" method="POST">
+
+      <input type="hidden" name="customerid" value="24">
+
+      <div class="left-block col-lg-8 col-md-8 col-sm-12">
+
+        <div class="input-holder d-flex-r-bt-c">  <!-- Customer Fullname -->
+          <label class="control-label">Fullname</label>
+          <input type="text" name="fullname" maxlength="18" pattern=".{4,18}" value="yassen mohamed" class="input-control" required/>
+        </div>
+
+        <div class="input-holder d-flex-r-bt-c">  <!-- Customer Email -->
+          <label class="control-label">Email</label>
+          <input type="text" name="email" maxlength="45" value="yassen@gmail.com" class="input-control" required/>
+        </div>
+
+        <div class="input-holder d-flex-r-bt-c">  <!-- Customer Phone number -->
+          <label class="control-label">phone number</label>
+          <input type="text" name="phone_no" maxlength="20" pattern=".{3,20}" value="01210203662" class="input-control" required/>
+        </div>
+
+        <div class="input-holder">  <!-- Password -->
+          <label class="control-label">Password</label>
+          <div class="pass-input">
+            <input type="password" name="password" autocomplete="new-password" maxlength="25" pattern=".{8,25}" class="input-control" id="passInput"/>
+            <div class="passeye" onclick="eyeFunction(this)">
+              <i class="fa fa-eye" style="display:none;"></i> 
+              <i class="fa fa-eye-slash"></i> 
+            </div>
+          </div>
+        </div>
+
+        <div class="input-holder d-flex-r-bt-c">  <!-- Customer gender -->
+          <label class="control-label">gender</label>
+          <select name="gender" class="input-control">
+            <option value="male" selected>male</option>
+            <option value="female">female</option>
+          </select>
+        </div>
+
+        <div class="input-holder">  <!-- Country -->
+          <label>Country</label>
+          <select name="country" id="select_country" class="input-control">
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+            <option value="Egypt">Egypt</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="Equatorial Guinea">Equatorial Guinea</option>
+            <option value="Eritrea">Eritrea</option>
+            <option value="Estonia">Estonia</option>
+          </select>
+        </div>
+
+        <div class="input-holder d-flex-r-bt-c">  <!-- city -->
+          <label class="control-label">city</label>
+          <input type="text" name="customercity" maxlength="16" pattern=".{4,16}" value="6 october" class="input-control" required/>
+        </div>
+
+        <div class="input-holder d-flex-r-bt-c">  <!-- address -->
+          <label class="control-label">address</label>
+          <input type="text" name="customeraddress" maxlength="35" pattern=".{11,35}" value="address" class="input-control" required/>
+        </div>
+
+        <div class="input-holder d-flex-r-bt-c">  <!-- Postal code -->
+          <label class="control-label">Postal code</label>
+          <input type="text" name="customerpostalcode" maxlength="10" pattern=".{4,10}" value="12565" class="input-control" required/>
+        </div>
+
+        <div class="input-holder d-flex-r-bt-c">  <!-- visa number -->
+          <label class="control-label">visa number</label>
+          <input type="text" name="customervisa_no" id="visaInput" maxlength="19" pattern=".{3,19}" value="0000-0000-0000-0000" class="input-control"/>
+        </div>
+
+        <div class="input-holder d-flex-r-bt-c">  <!-- QUESTIONS -->
+          <label class="control-label">questions</label>
+          <select name="question" class="input-control" id="question_select" onchange="selectquestion()">
+            <option value="0"> choose question </option>
+            <option value="father name" selected>father name</option>
+            <option value="school name">school name</option>
+            <option value="favourite time">favourite time</option>
+            <option value="favourite sport">favourite sport</option>
+            <option value="other">other</option>
+          </select>
+        </div>
+
+        <div class="input-holder d-flex-r-bt-c" id="other_question"> <!-- other question -->
+          <label class="control-label">other question</label>
+          <input type="text" name="otherquestion" class="input-control" value="other_question">
+        </div>
+
+        <div class="input-holder d-flex-r-bt-c" id="answer_question"> <!-- answer -->
+          <label class="control-label">answer question</label>
+          <input type="text" name="answer" class="input-control" maxlength="35" pattern=".{3,35}" value="answer" required/>
+        </div>
+
+      </div> <!-- End col-md-8 -->
+
+      <div class="right-block col-lg-4 col-md-4 col-sm-12">
+        <div class="image-holder d-flex-c-c-c">
+          <label>select your image</label>
+          <input type="file">
+          <img src="inc/images/users/eslam(7).jpg" alt="">
+        </div>
+      </div>
+      
+      <input type="submit" value="update" class="btn3"/>
+
+    </form>
+
+  </div> <!-- ===== End page-container ==== -->
+
+</section>
+
+<script src="inc/js/jquery-3.5.1.min.js"></script>
+<script src="inc/js/bootstrap.min.js"></script>
+<script src="inc/js/all.min.js"></script>
+<script src="inc/js/solid.min.js"></script>
+<script src="inc/js/regular.min.js"></script>
+<script src="inc/js/brands.min.js"></script>
+<script src="pages/header.js"></script>
+<script src="pages/aside.js"></script>
+<script src="inc/js/main.js"></script>
+</body>
+</html>

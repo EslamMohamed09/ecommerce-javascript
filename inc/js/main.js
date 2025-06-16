@@ -82,41 +82,39 @@ heroSliderWrapper.addEventListener('mouseleave', function(){
 
 }
 
-function filterWithTabs(tabButtons, cardItems) {
+function filterWithTabs(tabs, Items) {
   
-  tabButtons = Array.isArray(tabButtons) ? tabButtons : Array.from(tabButtons);
-  cardItems = Array.isArray(cardItems) ? cardItems : Array.from(cardItems);
+  tabs = Array.isArray(tabs) ? tabs : Array.from(tabs);
+  Items = Array.isArray(Items) ? Items : Array.from(Items);
 
-  function hideAllItems() {
-    cardItems.forEach(item => {
-        item.style.display = 'none';
+
+  function showItems(filterClass) { // Function to show items with a specific class
+    Items.forEach(item => {
+      if (item.classList.contains(filterClass)) {
+          item.style.display = 'block';
+      }
     });
   }
 
-  function showItemsWithClass(filterClass) { // Function to show card items with a specific class
-    cardItems.forEach(item => {
-        if (item.classList.contains(filterClass)) {
-            item.style.display = 'block';
-        }
+  tabs[0].classList.add('button-active');
+
+  Items.forEach(item => {item.style.display = 'none';});
+
+  let firstFilterClick = tabs[0].getAttribute('filter-click');
+  showItems(firstFilterClick);
+
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      
+      tabs.forEach(btn => btn.classList.remove('button-active'));
+      this.classList.add('button-active');
+
+      const filterClick = this.getAttribute('filter-click');
+
+      Items.forEach(item => {item.style.display = 'none';});
+      showItems(filterClick);
     });
-  }
-
-  let firstFilterClick = tabButtons[0].getAttribute('filter-click');
-
-  hideAllItems();
-  showItemsWithClass(firstFilterClick);
-  tabButtons[0].classList.add('button-active');
-
-  tabButtons.forEach(button => { 
-      button.addEventListener('click', function() {
-          const filterClick = this.getAttribute('filter-click');
-
-          hideAllItems();
-          showItemsWithClass(filterClick);
-
-          tabButtons.forEach(btn => btn.classList.remove('button-active'));
-          this.classList.add('button-active');
-      });
   });
 }
 

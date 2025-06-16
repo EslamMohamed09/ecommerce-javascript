@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-height, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>settings</title>
+  <link rel="stylesheet" href="inc/styles/all.css"> 
+  <link rel="stylesheet" href="inc/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="inc/styles/main.css">
+</head>
+<body>
+<header class="header" id="header"></header>
+
+<section class="settings-page dashboard-section" id="dashboard-section">
+
+  <aside id="main-aside"></aside>
+
+  <div class="settings-page-container page-container">
+
+    <h1 class="section-heading">settings</h1>
+
+    <div class="cards">
+
+      <div class="first-card card">
+
+        <h2>site control</h2>
+        <p>control the website if there is maintenance</p>
+
+        <div class="content-card">
+
+          <div class="item">
+
+            <div class="left">
+              <span>website control</span>
+              <p>open/close website and type the reason</p>
+            </div>
+
+            <label class="right">
+              <input type="checkbox" class="toggle-checkbox" checked/>
+              <div class="toggle-switch">
+                <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </label>
+
+          </div>
+
+          <textarea id="close-message" placeholder="close message content"></textarea>
+
+        </div>
+
+      </div> <!-- End Card-->
+
+      <div class="second-card card">
+
+        <h2>general info</h2>
+        <p>general information about your account</p>
+
+        <div class="content-card">
+
+          <div class="input-holder">
+            <label for="first">first name</label>
+            <input type="text" id="first" class="input-control" placeholder="first name">
+          </div>
+
+          <div class="input-holder">
+            <label for="second">second name</label>
+            <input type="text" id="second" class="input-control" placeholder="second name">
+          </div>
+
+          <div class="input-holder">
+            <label for="email-input">email</label>
+            <input type="email" id="email-input" class="input-control" placeholder="write email here">
+          </div>
+
+        </div>
+
+      </div> <!-- End Card-->
+
+      <div class="third-card card">
+
+        <h2>security info</h2>
+        <p>security information about your account</p>
+
+        <div class="content-card">
+
+          <div class="item">
+            <div class="info">
+              <span>password</span>
+              <p>last change in 10/10/2022</p>
+            </div>
+            <a href="#" class="btn">change</a>
+          </div>
+
+          <div class="item">
+            <div class="info">
+              <span>two factor authentication</span>
+              <p>enable/disable the feature</p>
+            </div>
+            <label class="right">
+              <input type="checkbox" class="toggle-checkbox" checked/>
+              <div class="toggle-switch">
+                <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </label>
+          </div>
+
+          <div class="item">
+            <div class="info">
+              <span>devices</span>
+              <p>check the login devices list</p>
+            </div>
+            <a href="#" class="btn">devices</a>
+          </div>
+
+        </div>
+
+      </div> <!-- End Card-->
+
+      <div class="fourth-card card">
+
+        <h2>social info</h2>
+        <p>social media information</p>
+
+        <div class="content-card">
+          <div class="social-bar"><a href="#" id="social-link"><i class="fab fa-facebook-f" id="face-icon"></i></a><input type="text" class="input-control" placeholder="facebook link"></div>
+          <div class="social-bar"><a href="#" id="social-link"><i class="fab fa-instagram" id="instagram-icon"></i></a><input type="text" class="input-control" placeholder="instagram link"></div>
+          <div class="social-bar"><a href="#" id="social-link"><i class="fab fa-linkedin" id="linkedin-icon"></i></a><input type="text" class="input-control" placeholder="linkedin link"></div>
+          <div class="social-bar"><a href="#" id="social-link"><i class="fab fa-pinterest" id="pinterest-icon"></i></a><input type="text" class="input-control" placeholder="pinterest link"></div>
+          <div class="social-bar"><a href="#" id="social-link"><i class="fab fa-youtube" id="youtube-icon"></i></a><input type="text" class="input-control" placeholder="youtube link"></div>
+          <div class="social-bar"><a href="#" id="social-link"><i class="fab fa-tiktok" id="tiktok-icon"></i></a><input type="text" class="input-control" placeholder="tiktok link"></div>
+        </div>
+
+      </div> <!-- End Card-->
+
+    </div>
+
+  </div> <!-- ===== End Main-Settings-Data ==== -->
+
+</section>
+
+<script src="pages/header.js"></script>
+<script src="pages/aside.js"></script>
+<script src="inc/js/jquery-3.5.1.min.js"></script>
+<script src="inc/js/bootstrap.min.js"></script>
+<script src="inc/js/all.min.js"></script>
+<script src="inc/js/solid.min.js"></script>
+<script src="inc/js/regular.min.js"></script>
+<script src="inc/js/brands.min.js"></script>
+<script src="inc/js/main.js"></script>
+</body>
+</html>

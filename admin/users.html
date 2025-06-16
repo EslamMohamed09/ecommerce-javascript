@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-height, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>users</title>
+  <link rel="stylesheet" href="inc/styles/all.css"> 
+  <link rel="stylesheet" href="inc/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="inc/styles/main.css">
+</head>
+<body> 
+<header class="header" id="header"></header>
+
+<section class="dashboard-section" id="users-page"> <!-- Manage Users -->
+
+  <aside id="main-aside"></aside>
+
+  <div class="users-page-container page-container">
+
+    <h1 class="section-heading">Manage users</h1>
+
+    <div class="manage-users-table-block manage-table-block"> <!-- manage users -->
+
+      <div class="table-header d-flex-r-bt-c">
+
+        <form class="search-form d-flex-r-st-c" action="member_search.php" method="POST">
+          <input type="search" name="search" placeholder="Search User" id="searchinput-members">
+          <button type="submit" name="submit-search" id="submit-search-btn"><i class="fas fa-search"></i></button>
+        </form>
+
+        <div class="counting">
+          <span>all users</span> 
+          <span class="no"></span>
+        </div>
+
+        <div class="ordering-btns">
+          <a href="?sort=ASC">ASC</a> /
+          <a href="?sort=DESC">DESC</a> 
+        </div>
+
+      </div>
+
+      <form action="" method="POST"  class="manage-table-form" style="width:100%;"> <!-- multiple-delete & multiple-approve -->
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="checkbox[]" id="head-checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </th>
+              <th>User</th>
+              <th>Email</th>
+              <th>Full Name</th>
+              <th>Rank</th>
+              <th>status</th>
+              <th>Registerd Date</th>
+              <th>ID</th>
+            </tr>
+          </thead>
+
+          <tbody id="manage-users-table">
+            <tr>
+              <td>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="checkbox[]">
+                  <span class="checkmark"></span>
+                </label>
+              </td>
+              <td>
+                <div class="title-field d-flex-r-st-c">
+                  <a href="#" class="image"><img src="inc/images/electronics/watches/1/1.png" alt=""></a>
+                  <a href="#" class="product-title">hossam</a>
+                </div>
+              </td>
+              <td>email</td>
+              <td>fullname</td>
+              <td>rank</td>
+              <td>status</td>
+              <td>register data</td>
+              <td>Id</td>
+            </tr>
+          </tbody>
+      
+        </table>
+
+        <div class="action-buttons-block">
+          <div class="action-buttons-holder d-flex-r-st-c">
+            <input type="submit" name="multipledelete" value="delete" class="btn2 delete-submit">
+            <input type="submit" name="multipleapprove" value="approve" class="btn2 approve-submit">
+          </div>
+        </div>
+
+        <div class="pagination"></div>
+
+      </form>
+
+    </div> <!-- End managing-table -->
+
+    <button class="tab-btn collapsible" id="collapsible">Add User</button>
+
+    <div class="add-user-block collapsible-page"> <!-- # Add User Area # -->
+
+      <form class="form-horizontal2 register-user row" action="" method="POST"> <!-- member info -->
+  
+        <div class="left-block col-lg-8 col-md-8 col-sm-12">
+
+          <div class="input-holder">  <!-- Username -->
+            <label>Username</label>
+            <input type="text" name="username" maxlength="20" pattern=".{4,20}" autocomplete="off" class="input-control" required/>
+          </div>
+
+          <div class="input-holder">  <!-- Password -->
+            <label class="control-label">Password</label>
+            <div class="pass-input">
+              <input type="password" name="password" autocomplete="new-password" maxlength="25" pattern=".{8,25}" class="input-control" id="passInput"/>
+              <div class="passeye" onclick="eyeFunction(this)">
+                <i class="fa fa-eye" style="display:none;"></i> 
+                <i class="fa fa-eye-slash"></i> 
+              </div>
+            </div>
+          </div>
+
+          <div class="input-holder">  <!-- FullName -->
+            <label class="control-label">Full Name</label>
+            <input type="text" name="fullname" maxlength="25" pattern=".{8,25}" autocomplete="off" class="input-control" required/>
+          </div>
+
+          <div class="input-holder">  <!-- Gender -->
+            <label class="control-label">Gender</label>
+            <select name="gender" class="input-control">
+              <option value="male">male</option>
+              <option value="female">female</option>
+            </select>
+          </div>
+
+          <div class="input-holder">  <!-- Rank -->
+            <label class="control-label">Rank</label>
+            <select name="rank" class="input-control">
+              <option value="0">user</option>    
+              <option value="1">admin</option>
+            </select>
+          </div>
+
+          <div class="input-holder">  <!-- Facebook -->
+            <label class="control-label">Facebook</label>
+            <input type="text" name="facebook" maxlength="20" placeholder="Profile title" autocomplete="off" class="input-control"/>
+          </div>
+
+          <div class="input-holder">  <!-- LinkedIn -->
+            <label>LinkedIn</label>
+            <input type="text" name="linkedin" placeholder="Profile title" autocomplete="off" class="input-control"/>
+          </div>
+
+          <div class="input-holder">  <!-- Email -->
+            <label>Email</label>
+            <input type="email" name="email" placeholder="example@gmail.com" maxlength="35" autocomplete="off" class="input-control" required/>
+          </div>
+
+          <div class="input-holder">  <!-- whatsapp -->
+            <label>Whatsapp</label>
+            <input type="text" name="whatsapp" maxlength="20" placeholder="whatsapp number" autocomplete="off" class="input-control"/>
+          </div>
+
+          <div class="input-holder">  <!-- Country -->
+            <label>Country</label>
+            <select name="country" id="select_country" class="input-control">
+              <option value="Afghanistan">Afghanistan</option>
+              <option value="Albania">Albania</option>
+              <option value="Algeria">Algeria</option>
+              <option value="Andorra">Andorra</option>
+              <option value="Angola">Angola</option>
+              <option value="Egypt">Egypt</option>
+              <option value="El Salvador">El Salvador</option>
+              <option value="Equatorial Guinea">Equatorial Guinea</option>
+              <option value="Eritrea">Eritrea</option>
+              <option value="Estonia">Estonia</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="right-block col-lg-4 col-md-4 col-sm-12">
+          <div class="image-holder d-flex-c-c-c">
+            <label>select your image</label>
+            <input type="file">
+          </div>
+        </div>
+
+        <div id="certificationsContainer"></div>
+
+        <div class="add-delete-btns d-flex-r-end-c">
+          <button type="button" class="addCertificationBtn btn2">Add Certification</button>
+          <button type="button" class="deleteCertificationBtn btn2">Delete Certification</button>
+        </div>
+        <p id="maximumCertificationMsg">Maximum 4 certifications reached.</p>
+
+        <div id="skillsContainer"></div>
+        <div class="add-delete-btns d-flex-c-end-end">
+          <button type="button" class="addSkillsBtn btn2">add Skills</button>
+          <button type="button" class="deleteSkillsBtn btn2">Delete Skills</button>
+        </div>
+
+        <input type="submit" name="register" value="register" class="btn3"/>  <!-- Add Button -->
+
+      </form>
+
+    </div> <!-- add-user-area -->
+
+  </div> <!-- users-page-container -->
+
+</section>
+
+
+<script src="inc/js/jquery-3.5.1.min.js"></script>
+<script src="inc/js/bootstrap.min.js"></script>
+<script src="inc/js/all.min.js"></script>
+<script src="inc/js/solid.min.js"></script>
+<script src="inc/js/regular.min.js"></script>
+<script src="inc/js/brands.min.js"></script>
+<script src="pages/header.js"></script>
+<script src="pages/aside.js"></script>
+<script src="inc/js/main.js"></script>
+</body>
+</html>
