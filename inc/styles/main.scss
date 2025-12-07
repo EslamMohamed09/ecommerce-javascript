@@ -7,7 +7,9 @@
    text-transform:capitalize;
    font-family:'Montserrat', sans-serif;
    scroll-behavior:smooth;
-   transition:all 0.4s linear;}
+   transition:all 0.4s linear;
+   scrollbar-width:thin;
+   scrollbar-color:var(--olive16) var(--olive2);}
 
 :root {--gray:#f2f2f7;
        --gray1:#f0f0f8;
