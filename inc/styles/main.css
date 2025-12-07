@@ -664,6 +664,7 @@ ul li {
 .btn:hover {
   color: var(--black);
   background-color: transparent;
+  border: 1px solid var(--black2);
 }
 
 .btn2 {
@@ -1961,7 +1962,7 @@ h1, h2, h3, h4, h5 {
 .featured-categories .section-container .arrows {
   width: 110%;
   position: absolute;
-  top: 44%;
+  top: 55%;
   right: 50%;
   transform: translate(50%, -50%);
   display: flex !important;

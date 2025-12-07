@@ -173,10 +173,10 @@ function scrollBarSlider(options) {
   const gapSize = parseFloat(getComputedStyle(document.documentElement).fontSize) * 1.5;
 
   function setupSlider() {
-      slides = sliderContainer.children;
-      sliderContainer.style.display = 'flex';
-      sliderContainer.style.scrollBehavior = 'smooth';
-      updateSlidesToShow();
+    slides = sliderContainer.children;
+    sliderContainer.style.display = 'flex';
+    sliderContainer.style.scrollBehavior = 'smooth';
+    updateSlidesToShow();
   }
 
   function setResponsive() {
@@ -307,8 +307,8 @@ function scrollBarSlider(options) {
   }
 
   function autoSlide() {
-      clearInterval(autoSlideInterval);
-      autoSlideInterval = setInterval(nextSlide, autoplaySpeed);
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(nextSlide, autoplaySpeed);
   }
 
   setupSlider();
