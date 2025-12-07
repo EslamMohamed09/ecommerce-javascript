@@ -728,7 +728,7 @@ h1, h2, h3, h4, h5 {font-weight:bold;
                     margin:0;
                     color:var(--gray11)}
 
-h1 {font-size:2.1rem;}
+h1 {font-size:1.9rem;}
 h2 {font-size:1.7rem;}
 h3 {font-size:1.6rem;}
 h4 {font-size:1.2rem;}
@@ -739,6 +739,11 @@ h5 {font-size:1rem;}
   h2 {font-size:1.5rem;}
   h3 {font-size:1.4rem;}
 }
+
+h1, h2, h3, h4, h5 {font-weight:bold;
+                    margin:0;
+                    color:var(--gray12);
+                    line-height:1.2;}
 
 /**************  # TITLES ***************/
 .section-heading {width:100%;
@@ -1237,7 +1242,7 @@ h5 {font-size:1rem;}
                                   margin-bottom:0.6rem;}
 
                               p {width:90%;
-                                 font-size:1.2rem;
+                                 font-size:1rem;
                                  margin-bottom:0.9rem;
                                  color:var(--black);}
 
