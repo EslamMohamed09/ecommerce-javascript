@@ -1409,6 +1409,7 @@ h1, h2, h3, h4, h5 {
   background: radial-gradient(var(--gray4), var(--gray7));
   box-shadow: var(--box-shadow6);
   position: relative;
+  scroll-behavior: auto;
 }
 #hero-section .section-container .col-middle .slider-wrapper .slide-item {
   width: 100%;
