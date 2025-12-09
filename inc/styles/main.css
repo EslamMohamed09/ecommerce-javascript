@@ -2626,7 +2626,7 @@ h1, h2, h3, h4, h5 {
 *********
 */
 footer {
-  background: var(--gray10);
+  background: var(--gray12);
   margin-bottom: 0 !important;
 }
 footer .container {
@@ -2653,10 +2653,10 @@ footer .footer-widget .footer-content hr {
   opacity: 1;
   margin-bottom: 2rem;
   background-color: var(--white2);
+  color: var(--white2);
 }
 footer .footer-widget .footer-content p {
   color: var(--gray4);
-  font-size: 1.3rem;
   line-height: 2.2rem;
 }
 footer .footer-widget .footer-content ul {
@@ -2681,27 +2681,36 @@ footer .footer-widget .footer-content ul li .dart {
   background-color: var(--white2);
 }
 footer .footer-widget .footer-content ul li:hover .dart {
-  width: 15px;
+  width: 0.8rem;
 }
 footer .footer-widget .footer-content ul li:hover a {
   color: var(--white2);
 }
+footer .footer-widget-4 .footer-content .social-icons {
+  margin-bottom: 1rem;
+}
 footer .footer-widget-4 .footer-content .social-icons .social-links li {
   display: inline-block;
 }
+footer .footer-widget-4 .footer-content .social-icons .social-links li:not(:last-child) {
+  margin-right: 0.3rem;
+}
 footer .footer-widget-4 .footer-content .social-icons .social-links li a {
-  color: var(--gray5);
+  color: var(--gray9);
   background-color: var(--gray2);
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 2.3rem;
+  height: 2.3rem;
   text-align: center;
   border-radius: 50%;
-  line-height: 32.5px;
+  line-height: 30px;
   margin: 3px 2px;
   font-size: 1.5rem;
 }
-footer .footer-widget-4 .footer-content .social-icons li a:hover {
+footer .footer-widget-4 .footer-content .social-icons .social-links li a svg, footer .footer-widget-4 .footer-content .social-icons .social-links li a i {
+  font-size: 1.2rem;
+}
+footer .footer-widget-4 .footer-content .social-icons .social-links li a:hover {
   background: chocolate;
   color: var(--white2);
 }
@@ -2710,23 +2719,23 @@ footer .footer-widget-4 .footer-content .contacts div {
   color: var(--gray4);
 }
 footer .footer-widget-4 .footer-content .contacts div:first-child span {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
-footer .footer-widget-4 .footer-content .contacts #fi {
+footer .footer-widget-4 .footer-content .contacts div svg, footer .footer-widget-4 .footer-content .contacts div i {
   color: var(--gray4);
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   margin-right: 0.5rem;
 }
 footer .footer-widget-4 .footer-content .contacts div a {
   color: var(--gray4);
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 footer .footer-bottom {
   padding: 2rem 0;
   text-align: center;
   margin-bottom: 0 !important;
-  background-color: var(--gray11);
+  background-color: var(--gray13);
   box-shadow: var(--box-shadow4);
 }
 footer .footer-bottom h4 {
