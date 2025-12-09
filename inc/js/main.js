@@ -631,3 +631,18 @@ function pagination(data, itemsPerPage, renderContent, paginationContainer) {
 function truncateWords(text, wordsCount) {
   return text.split(' ').slice(0, wordsCount).join(' ');
 }
+
+function eyeFunction(eyeIcon) {
+  const passInput = eyeIcon.previousElementSibling;
+  const eyeIcons = eyeIcon.querySelectorAll(".fa-eye, .fa-eye-slash");
+
+  if (passInput.type === 'password') {
+    passInput.type = 'text';
+    eyeIcons[0].style.display = "block";
+    eyeIcons[1].style.display = "none";
+  } else {
+    passInput.type = 'password';
+    eyeIcons[0].style.display = "none";
+    eyeIcons[1].style.display = "block";
+  }
+}
