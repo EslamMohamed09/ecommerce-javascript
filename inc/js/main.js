@@ -627,3 +627,7 @@ function pagination(data, itemsPerPage, renderContent, paginationContainer) {
   renderPage(1);
   renderPagination(1);
 }
+
+function truncateWords(text, wordsCount) {
+  return text.split(' ').slice(0, wordsCount).join(' ');
+}
