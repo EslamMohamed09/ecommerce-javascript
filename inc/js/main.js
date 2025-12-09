@@ -534,3 +534,96 @@ if(document.getElementById('scroll-up')){
   }
 
 }
+
+/*
+ ######################
+ ####### GLOBAL #######
+ ######################
+*/
+function pagination(data, itemsPerPage, renderContent, paginationContainer) {
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+
+  if (totalPages <= 1) {
+    paginationContainer.style.display = 'none';
+    renderContent(data, 1);
+    return;
+  } else {
+    paginationContainer.style.display = 'flex';
+  }
+
+  function renderPage(page) {
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = page * itemsPerPage;
+    const currentItems = data.slice(startIndex, endIndex);
+    renderContent(currentItems, page);
+  }
+
+  function renderPagination(currentPage) {
+    paginationContainer.innerHTML = '';
+
+    const visiblePages = 3;
+    const range = Math.min(visiblePages, totalPages);
+
+    if (currentPage > 1) {
+      const prevButton = createPaginationLink('Previous', currentPage - 1);
+      prevButton.classList.add('previous');
+      paginationContainer.appendChild(prevButton);
+    }
+
+    if (currentPage <= range) {
+      for (let i = 1; i <= range; i++) {
+        paginationContainer.appendChild(createPaginationLink(i, i, currentPage));
+      }
+      if (totalPages > visiblePages) {
+        appendDots();
+        paginationContainer.appendChild(createPaginationLink(totalPages, totalPages, currentPage));
+      }
+    } else if (currentPage > totalPages - range) {
+      paginationContainer.appendChild(createPaginationLink(1, 1, currentPage));
+      appendDots();
+      for (let i = totalPages - range + 1; i <= totalPages; i++) {
+        paginationContainer.appendChild(createPaginationLink(i, i, currentPage));
+      }
+    } else {
+      paginationContainer.appendChild(createPaginationLink(1, 1, currentPage));
+      appendDots();
+      for (let i = currentPage - Math.floor(visiblePages / 2); i <= currentPage + Math.floor(visiblePages / 2); i++) {
+        paginationContainer.appendChild(createPaginationLink(i, i, currentPage));
+      }
+      appendDots();
+      paginationContainer.appendChild(createPaginationLink(totalPages, totalPages, currentPage));
+    }
+
+    if (currentPage < totalPages) {
+      const nextButton = createPaginationLink('Next', currentPage + 1);
+      nextButton.classList.add('next');
+      paginationContainer.appendChild(nextButton);
+    }
+  }
+
+  function createPaginationLink(text, page, currentPage) {
+    const link = document.createElement('a');
+    link.href = '#';
+    link.className = 'pagination-link';
+    link.textContent = text;
+    if (page === currentPage) {
+      link.classList.add('active');
+    }
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      renderPage(page);
+      renderPagination(page);
+    });
+    return link;
+  }
+
+  function appendDots() {
+    const dots = document.createElement('span');
+    dots.className = 'pagination-dots';
+    dots.textContent = '....';
+    paginationContainer.appendChild(dots);
+  }
+
+  renderPage(1);
+  renderPagination(1);
+}
