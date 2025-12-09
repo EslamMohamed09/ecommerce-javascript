@@ -225,8 +225,8 @@ if(heroSection){
       p.textContent = truncateWords(p.textContent, 20);
     });
 
-    loginDrawerBtn.addEventListener("click", stopSlider);
-    closeLoginDrawerBtn.addEventListener("click", startSlider);
+    // loginDrawerBtn.addEventListener("click", stopSlider);
+    // closeLoginDrawerBtn.addEventListener("click", startSlider);
   }
 
   heroSlider({
