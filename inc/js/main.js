@@ -45,7 +45,7 @@ if(heroSection){
       sliderWrapperSelector = '.slider-wrapper',
       prevBtnSelector = '.prev-btn',
       nextBtnSelector = '.next-btn',
-      playSpeed = 6000
+      playSpeed = 7000
     } = options;
 
     let section = document.querySelector(sectionSelector);
