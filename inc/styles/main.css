@@ -2315,7 +2315,7 @@ h1, h2, h3, h4, h5 {
 .popular-products-section .section-container .products-container .product-item .content .ratings {
   gap: 0.1rem;
 }
-.popular-products-section .section-container .products-container .product-item .content .ratings svg {
+.popular-products-section .section-container .products-container .product-item .content .ratings svg, .popular-products-section .section-container .products-container .product-item .content .ratings i {
   color: var(--yellow10);
   font-size: 1rem;
 }

@@ -62,7 +62,7 @@ if(heroSection){
 
     function setupSlider() {
       if (currentIndex >= 0 && currentIndex < slides.length) {
-        indicatorsMenu.children[currentIndex]?.classList.add('active');
+          indicatorsMenu.children[currentIndex]?.classList.add('active');
       }
     }
 
@@ -96,7 +96,7 @@ if(heroSection){
     }
 
     function updateSlides() {
-      const scrollPosition = currentIndex * slideWidth - 30;
+      const scrollPosition = currentIndex * slideWidth;
       Array.from(indicatorsMenu.children).forEach(indicator => { indicator.classList.remove('active'); });
       indicatorsMenu.children[currentIndex].classList.add('active');
 
