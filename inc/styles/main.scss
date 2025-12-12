@@ -1223,7 +1223,7 @@ h1, h2, h3, h4, h5 {font-weight:bold;
                          background:transparent;
 
                   .slider-container {width:100%;
-                                     height:85%;
+                                     height:87%;
                                      padding:0 0.01rem;
                                      box-shadow:var(--box-shadow2);
                                      position:relative;
@@ -1537,12 +1537,12 @@ h1, h2, h3, h4, h5 {font-weight:bold;
                                              justify-content:center;
                                              align-items:center;
                                              flex-wrap:nowrap;
-                                             padding:0;
+                                             padding:0 0.3rem 0 0;
                                              overflow:hidden;
 
                                           &:not(:last-child) {border-bottom:1px solid var(--gray1);}
 
-                                    .image {width:38%;
+                                    .image {width:37%;
                                             height:5rem;
                                             display:flex;
                                             flex-direction:row;
@@ -1555,7 +1555,7 @@ h1, h2, h3, h4, h5 {font-weight:bold;
                                                object-fit:contain;}
                                     }
 
-                                    .content {width:62%;
+                                    .content {width:63%;
                                               height:fit-content;
                                               display:flex;
                                               flex-direction:column;
@@ -1594,6 +1594,8 @@ h1, h2, h3, h4, h5 {font-weight:bold;
 
       @media(max-width:1250px){
                   .section-container {
+                        .col-left h4,
+                        .col-right h4 {font-size:1rem;}
                         .col-middle {
 
                               .products-menu .product-item {
@@ -1610,7 +1612,6 @@ h1, h2, h3, h4, h5 {font-weight:bold;
                                                       img {width:60%;
                                                            height:60%;}
                                                 }
-                                                h5 {font-size:0.8rem !important;}
                                           }
                                     }
                               }
@@ -1621,7 +1622,10 @@ h1, h2, h3, h4, h5 {font-weight:bold;
       @media (max-width:1250px) and (min-width:900px){
               .section-container {
                   .col-middle .products-menu .product-item h5 {font-size:0.7rem !important;}
-                  .col-right .products-menu .product-item button {font-size:0.6rem !important;}
+                  .col-right .products-menu .product-item {
+                        h5 {font-size:0.6rem !important;}
+                        button {font-size:0.6rem !important;}
+                  }
               }
       }
 
@@ -1629,7 +1633,9 @@ h1, h2, h3, h4, h5 {font-weight:bold;
                   height:79vh !important;
                   .section-container {height:79vh !important;
                         .col-middle {
-                          .slider-wrapper .hero-slide-item {flex-flow:column-reverse !important;}
+                          .slider-wrapper .hero-slide-item {flex-flow:column-reverse !important;
+                              .left-block {justify-content:flex-end;}
+                          }
                         }
 
                         .col-right {
@@ -1648,13 +1654,23 @@ h1, h2, h3, h4, h5 {font-weight:bold;
                               .section-container {grid-template-columns:100%;
                                 .col-left,
                                 .col-right {display:none;}
+
+                                .col-middle {padding:0;
+                                   .slider-wrapper .hero-slide-item .right-block img {width:13rem !important;
+                                                                                      height:13rem !important;}
+                                }
                               }
+      }
+
+      @media(max-width:990px) and (min-width:300px){ 
+                              .section-container {
+                                  .col-middle .hero-slide-item .left-block .block-content {width:75% !important;}
+                              }
+
       }
 
       @media(max-width:768px){ 
                                 .section-container {
-                                    .col-middle,
-                                    .col-right {margin-bottom:2rem;}
                                     .col-middle {padding:0;}
                                     .col-right .deals-products .product-item .image {justify-content:flex-start;}
                                 }
