@@ -614,8 +614,8 @@ ul {margin:0;
        box-shadow:var(--box-shadow5);
        transition:all 0.3s linear;
 
-       :hover {color:var(--white2);
-               box-shadow:0 0 6px #0084ff7a;}
+      &:hover {color:var(--white2);
+              box-shadow:0 0 6px #0084ff7a;}
 }
 
 .btn3 {padding:0.6rem 1.3rem !important;
@@ -628,8 +628,8 @@ ul {margin:0;
        background-color:var(--blue7);
        box-shadow:var(--box-shadow5);
        transition:all 0.3s linear;
-       &:hover {background-color:transparent;
-                color:var(--blue7);}
+      &:hover {background-color:transparent;
+               color:var(--blue7);}
 }
 
 .btn4 {margin:0;
@@ -644,8 +644,8 @@ ul {margin:0;
        color:var(--violet);
        box-shadow:var(--blue-box-shadow);
        background:linear-gradient(to right,var(--violet6), rgb(64, 4, 121) 80%);
-       &:hover {color:var(--white);
-                background:linear-gradient(to right,#056c9b, rgb(158, 108, 204) 80%);}
+      &:hover {color:var(--white);
+               background:linear-gradient(to right,#056c9b, rgb(158, 108, 204) 80%);}
 }
 
 .btn5 {font-size:1rem;
@@ -658,7 +658,7 @@ ul {margin:0;
        border:1px solid var(--yellow10);
        background:var(--yellow10);
        box-shadow:var(--blue-box-shadow);
-       &:hover {background:transparent}
+      &:hover {background:transparent}
 }
 
 .btn4-trans {margin:0;
@@ -671,10 +671,10 @@ ul {margin:0;
              color:rgb(64, 4, 121);
              border:1px solid var(--violet6);
              transition:all 0.4s linear;
-       &:hover {color:#fca4fc;
-                border:none;
-                background:rgb(64, 4, 121);
-                border:1px solid rgb(64, 4, 121);}
+      &:hover {color:#fca4fc;
+               border:none;
+               background:rgb(64, 4, 121);
+               border:1px solid rgb(64, 4, 121);}
 }
 
 .line-btn {font-size:1rem;
@@ -688,31 +688,31 @@ ul {margin:0;
            background:transparent;
            position:relative;
 
-       &::before {content:"";
-                  position:absolute;
-                  bottom:-0.2rem;
-                  width:100%;
-                  height:2px;
-                  display:block;
-                  margin:auto;
-                  transition:0.5s;
-                  background-color:var(--black);
-                  z-index:0;}
+      &::before {content:"";
+            position:absolute;
+            bottom:-0.2rem;
+            width:100%;
+            height:2px;
+            display:block;
+            margin:auto;
+            transition:0.5s;
+            background-color:var(--black);
+            z-index:0;}
 
-       &::after {content:"";
-                 position:absolute;
-                 bottom:-0.2rem;
-                 width:0;
-                 height:2px;
-                 display:block;
-                 margin:auto;
-                 transition:0.5s;
-                 background-color:var(--gray5);
-                 z-index:20;}
+      &::after {content:"";
+            position:absolute;
+            bottom:-0.2rem;
+            width:0;
+            height:2px;
+            display:block;
+            margin:auto;
+            transition:0.5s;
+            background-color:var(--gray5);
+            z-index:20;}
 
-       &:hover {color:var(--black2);}
+      &:hover {color:var(--black2);}
 
-       &:hover::after {width:100%;}
+      &:hover::after {width:100%;}
 }
 
 img {max-width:100%;

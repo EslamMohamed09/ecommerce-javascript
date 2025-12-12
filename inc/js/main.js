@@ -38,7 +38,7 @@ const heroSlideItem = document.querySelectorAll('.hero-section .slide-item');
 
 if(heroSection){
 
- function heroSlider(options) {
+  function heroSlider(options) {
 
     const {
       sectionSelector = '.slider-section',
