@@ -82,11 +82,11 @@
 
     {"id":"41", "name":"portable speakers & docks", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/portable_speakers&docks/4/1.jpg", "parent_id":"35"},
 
-    {"id":"42", "name":"headphone adapters", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphoneadapters/2/1.jpg", "parent_id":"39"},
+    {"id":"42", "name":"headphone adapters", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphoneadapters/2/1.png", "parent_id":"39"},
 
-    {"id":"43", "name":"headphone cases", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphonecases/2/1.jpg", "parent_id":"39"},
+    {"id":"43", "name":"headphone cases", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphonecases/2/1.png", "parent_id":"39"},
 
-    {"id":"44", "name":"headphones & earbuds", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphones&earbuds/Over-Ear_Headphones/3/1.png", "parent_id":"39"},
+    {"id":"44", "name":"headphones & earbuds", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphones&earbuds/Over-Ear_Headphones/3/grayxwhite(1).png", "parent_id":"39"},
 
     {"id":"45", "name":"headphone stands", "Image":"../admin/inc/images/electronics/portable_sound_&_vision/accessories/headphone,earbuds&accessories/headphonestands/2/1.jpg", "parent_id":"39"},
 
@@ -164,7 +164,7 @@
 
     {"id":"82", "name":"flip-flops", "Image":"../admin/inc/images/clothes/women/shoes/sandals/flip-flops/1/1.png", "parent_id":"71"},
 
-    {"id":"83", "name":"platforms & wedges", "Image":"../admin/inc/images/clothes/women/shoes/sandals/platforms&wedges/1/1.png", "parent_id":"71"},
+    {"id":"83", "name":"platforms & wedges", "Image":"../admin/inc/images/clothes/women/shoes/sandals/platforms&wedges/1/black.jpg", "parent_id":"71"},
 
     {"id":"84", "name":"slides", "Image":"../admin/inc/images/clothes/women/shoes/sandals/slides/2/1.png", "parent_id":"71"},
 
