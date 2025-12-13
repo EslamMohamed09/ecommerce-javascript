@@ -1077,7 +1077,7 @@ h1, h2, h3, h4, h5 {
 }
 .header .main-header .bottom-bar .navbar ul {
   gap: 2rem;
-  padding: 0.8rem 0;
+  padding: 0.6rem 0;
 }
 .header .main-header .bottom-bar .navbar ul li a {
   font-size: 1.1rem;
@@ -1348,12 +1348,12 @@ h1, h2, h3, h4, h5 {
 =======
 */
 .hero-section {
-  height: 82vh;
+  min-height: 77vh;
   padding: 1rem 4% 2rem;
   margin: 0 0 2rem;
 }
 .hero-section .section-container {
-  height: 82vh;
+  min-height: 77vh;
   display: grid;
   grid-template-columns: 18% 67% 15%;
 }
@@ -1406,7 +1406,7 @@ h1, h2, h3, h4, h5 {
 }
 .hero-section .section-container .col-middle .slider-container {
   width: 100%;
-  height: 87%;
+  height: 85%;
   padding: 0 0.01rem;
   box-shadow: var(--box-shadow2);
   position: relative;
@@ -1703,7 +1703,7 @@ h1, h2, h3, h4, h5 {
   width: 100%;
   height: fit-content;
   flex-wrap: wrap;
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
   gap: 0.5rem;
   background: var(--white);
   box-shadow: var(--box-shadow2);
@@ -1854,14 +1854,14 @@ h1, h2, h3, h4, h5 {
   opacity: 0;
   visibility: hidden;
 }
-@media (max-width: 1250px) {
+@media (max-width: 1400px) {
   .hero-section .section-container .col-left h4,
   .hero-section .section-container .col-right h4 {
     font-size: 1rem;
   }
   .hero-section .section-container .col-middle .products-menu .product-item .image {
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
   .hero-section .section-container .col-right .deals-products .products-menu .product-item .image img {
     width: 60%;
@@ -1881,15 +1881,15 @@ h1, h2, h3, h4, h5 {
 }
 @media (max-width: 1150px) {
   .hero-section {
-    height: 79vh !important;
+    min-height: 79vh !important;
   }
   .hero-section .section-container {
-    height: 79vh !important;
+    min-height: 79vh !important;
   }
-  .hero-section .section-container .col-middle .slider-wrapper .hero-slide-item {
+  .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item {
     flex-flow: column-reverse !important;
   }
-  .hero-section .section-container .col-middle .slider-wrapper .hero-slide-item .left-block {
+  .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item .left-block {
     justify-content: flex-end;
   }
   .hero-section .section-container .col-right .deals-products .products-menu .product-item h5 {
@@ -1931,6 +1931,9 @@ h1, h2, h3, h4, h5 {
  # Promo
 =========
 */
+.promo-section {
+  background-color: #00b7ff;
+}
 .promo-section .row {
   width: 100%;
   margin: auto;
