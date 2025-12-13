@@ -190,6 +190,7 @@
        --milky4:rgb(208, 241, 253);
        --milky5:rgb(183, 233, 253);
        --milky6:#acbfd4;
+       --milky7:#0271a834;
 
        --aqua:#f1f8f8;
        --aqua1:#eafafa;
@@ -1280,12 +1281,11 @@ h1, h2, h3, h4, h5 {font-weight:bold;
                                      position:relative;
 
                         .slider-wrapper {height:100%;
-                                         padding:0 5%;
+                                         padding:0;
                                          display:flex;
                                          flex-direction:row !important;
                                          overflow:hidden;
-                                         background:radial-gradient(var(--gray4), var(--gray7));
-                                         box-shadow:var(--box-shadow6);
+                                         box-shadow:var(--box-shadow2);
                                          scroll-behavior:auto;
                               
                               .hero-slide-item {flex:0 0 100%;
@@ -1328,8 +1328,8 @@ h1, h2, h3, h4, h5 {font-weight:bold;
                                                   position:relative;
                                                   z-index:0;
 
-                                          img {width:9rem;
-                                               height:9rem;
+                                          img {width:40%;
+                                               height:40%;
                                                object-fit:contain;}
                                     }
 
@@ -1731,9 +1731,9 @@ h1, h2, h3, h4, h5 {font-weight:bold;
 }
 
 /*
-=========
+========
  # Promo
-=========
+========
 */
 .promo-section {
 

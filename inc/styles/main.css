@@ -176,6 +176,7 @@
   --milky4:rgb(208, 241, 253);
   --milky5:rgb(183, 233, 253);
   --milky6:#acbfd4;
+  --milky7:#0271a834;
   --aqua:#f1f8f8;
   --aqua1:#eafafa;
   --aqua2:#e3f1f1;
@@ -1469,12 +1470,11 @@ h1, h2, h3, h4, h5 {
 }
 .hero-section .section-container .col-middle .slider-container .slider-wrapper {
   height: 100%;
-  padding: 0 5%;
+  padding: 0;
   display: flex;
   flex-direction: row !important;
   overflow: hidden;
-  background: radial-gradient(var(--gray4), var(--gray7));
-  box-shadow: var(--box-shadow6);
+  box-shadow: var(--box-shadow2);
   scroll-behavior: auto;
 }
 .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item {
@@ -1528,8 +1528,8 @@ h1, h2, h3, h4, h5 {
   z-index: 0;
 }
 .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item .right-block img {
-  width: 9rem;
-  height: 9rem;
+  width: 40%;
+  height: 40%;
   object-fit: contain;
 }
 .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active {
@@ -1983,9 +1983,9 @@ h1, h2, h3, h4, h5 {
 }
 
 /*
-=========
+========
  # Promo
-=========
+========
 */
 .promo-section .row {
   width: 100%;

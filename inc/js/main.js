@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 let index = 0;
 const heroSection = document.querySelector(".hero-section");
 const heroSliderWrapper = document.querySelector('.hero-section .col-middle .slider-wrapper');
-const heroSlideItem = document.querySelectorAll('.hero-section .slide-item');
+const heroSlideItems = document.querySelectorAll('.hero-section .hero-slide-item');
+
+
 
 if(heroSection){
 
@@ -234,6 +236,17 @@ if(heroSection){
     sliderWrapperSelector:'.hero-section .col-middle .slider-container .slider-wrapper',
     prevBtnSelector:'.hero-section .col-middle .slider-container .prev-btn',
     nextBtnSelector:'.hero-section .col-middle .slider-container .next-btn',
+  });
+
+  const heroSlideItemsGradients = [
+    'radial-gradient(var(--lightblue2), var(--milky6))',
+    'radial-gradient(var(--lightblue1), var(--lightblue6))',
+    'radial-gradient(var(--lightblue1), var(--milky7))'
+  ];
+
+  heroSlideItems.forEach((slide, index) => {
+    const bgIndex = Math.floor(index / 3) % heroSlideItemsGradients.length;
+    slide.style.background = heroSlideItemsGradients[bgIndex];
   });
 
 }
