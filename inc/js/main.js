@@ -62,6 +62,12 @@ if(heroSection){
     let startX = 0;
     let scrollStart = 0;
 
+    const heroSlideItemsGradients = [
+      'radial-gradient(var(--lightblue2), var(--milky6))',
+      'radial-gradient(var(--lightblue1), var(--lightblue6))',
+      'radial-gradient(var(--lightblue1), var(--milky7))'
+    ];
+
     function setupSlider() {
       if (currentIndex >= 0 && currentIndex < slides.length) {
           indicatorsMenu.children[currentIndex]?.classList.add('active');
@@ -97,7 +103,13 @@ if(heroSection){
       }
     }
 
+    function updateWrapperBackground() {
+      const groupIndex = Math.floor(currentIndex / 3) % heroSlideItemsGradients.length;
+      sliderWrapper.style.background = heroSlideItemsGradients[groupIndex];
+    }
+
     function updateSlides() {
+      updateWrapperBackground();
       const scrollPosition = currentIndex * slideWidth;
       Array.from(indicatorsMenu.children).forEach(indicator => { indicator.classList.remove('active'); });
       indicatorsMenu.children[currentIndex].classList.add('active');
@@ -236,17 +248,6 @@ if(heroSection){
     sliderWrapperSelector:'.hero-section .col-middle .slider-container .slider-wrapper',
     prevBtnSelector:'.hero-section .col-middle .slider-container .prev-btn',
     nextBtnSelector:'.hero-section .col-middle .slider-container .next-btn',
-  });
-
-  const heroSlideItemsGradients = [
-    'radial-gradient(var(--lightblue2), var(--milky6))',
-    'radial-gradient(var(--lightblue1), var(--lightblue6))',
-    'radial-gradient(var(--lightblue1), var(--milky7))'
-  ];
-
-  heroSlideItems.forEach((slide, index) => {
-    const bgIndex = Math.floor(index / 3) % heroSlideItemsGradients.length;
-    slide.style.background = heroSlideItemsGradients[bgIndex];
   });
 
 }

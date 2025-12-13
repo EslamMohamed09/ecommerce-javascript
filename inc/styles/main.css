@@ -1470,7 +1470,7 @@ h1, h2, h3, h4, h5 {
 }
 .hero-section .section-container .col-middle .slider-container .slider-wrapper {
   height: 100%;
-  padding: 0;
+  padding: 0 5%;
   display: flex;
   flex-direction: row !important;
   overflow: hidden;
