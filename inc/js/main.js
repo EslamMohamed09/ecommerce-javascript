@@ -494,6 +494,24 @@ document.querySelectorAll('.featured-categories .slider-wrapper .category-item .
 });
 
 /* 
+ ########################
+ #### OFFERS SECTION ####
+ ########################
+*/
+if(document.querySelector('.offers-section')){
+    animatedFilterWithTabsAndArrows(
+      document.querySelectorAll('.offers-section .section-heading2 .tabs li'),
+      document.querySelectorAll('.offers-section .products-container .products-group'),
+      document.querySelector('.offers-section .section-heading2 .arrows .prev-btn'),
+      document.querySelector('.offers-section .section-heading2 .arrows .next-btn')
+    );
+
+    document.querySelectorAll('.offers-section .product-item .product-title').forEach((title) => {
+      title.textContent = truncateWords(title.textContent, 4);
+    });
+}
+
+/* 
  #########################
  #### ScrollUp Button #### 
  #########################
@@ -645,6 +663,90 @@ function eyeFunction(eyeIcon) {
     eyeIcons[0].style.display = "none";
     eyeIcons[1].style.display = "block";
   }
+}
+
+function animatedFilterWithTabsAndArrows(tabs, groups, prevBtn, nextBtn) {
+  tabs = Array.from(tabs);
+  groups = Array.from(groups);
+
+  let visibleCount = 8;
+  let pageIndexes = {};
+  let currentGroup = null;
+
+  function paginate(group, page) {
+    const productItems = Array.from(group.querySelectorAll('.product-item'));
+    const totalPages = Math.ceil(productItems.length / visibleCount);
+    page = Math.max(0, Math.min(page, totalPages - 1));
+    console.log(`total pages - 1 ${totalPages}`);
+    console.log(`Math.min ${Math.min(page, totalPages - 1)}`);
+    console.log(`page ${page}`);
+    const key = group.classList[1];
+    pageIndexes[key] = page;
+
+    productItems.forEach((item, i) => {
+      item.classList.remove('show');
+      item.style.display = 'none';
+      
+      if (i >= page * visibleCount && i < (page + 1) * visibleCount) {
+          item.style.display = 'block';
+          item.style.opacity = "0";
+          item.style.transform = "scale(0.8) translateY(20px)";
+          item.style.transition = "none";
+          void item.offsetWidth; // force reflow
+          
+          setTimeout(() => {
+            item.style.transition = "all 0.3s ease";
+            item.style.opacity = "1";
+            item.style.transform = "scale(1) translateY(0)";
+          }, (i % visibleCount) * 40);
+      }
+
+    });
+
+    prevBtn.disabled = page === 0;
+    nextBtn.disabled = page === totalPages - 1;
+  }
+
+  function showGroup(filterClass) {
+    groups.forEach(group => {
+      const isActive = group.classList.contains(filterClass);
+      group.classList.toggle('item-active', isActive);
+
+      if (isActive) {
+        currentGroup = group;
+        const key = group.classList[1];
+        if (!(key in pageIndexes)) pageIndexes[key] = 0;
+        paginate(group, pageIndexes[key]);
+      }
+    });
+  }
+
+  // Initial setup
+  tabs[0].classList.add('button-active');
+  showGroup(tabs[0].getAttribute('filter-click'));
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function () {
+      tabs.forEach(t => t.classList.remove('button-active'));
+      this.classList.add('button-active');
+      const filterClass = this.getAttribute('filter-click');
+      showGroup(filterClass);
+    });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentGroup) {
+      const key = currentGroup.classList[1];
+      paginate(currentGroup, pageIndexes[key] - 1);
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentGroup) {
+      const key = currentGroup.classList[1];
+      paginate(currentGroup, pageIndexes[key] + 1);
+    }
+  });
 }
 
 /*** REMOVE WHITE BACKGROUND ***/
