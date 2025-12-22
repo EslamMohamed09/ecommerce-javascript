@@ -36,8 +36,6 @@ const heroSection = document.querySelector(".hero-section");
 const heroSliderWrapper = document.querySelector('.hero-section .col-middle .slider-wrapper');
 const heroSlideItems = document.querySelectorAll('.hero-section .hero-slide-item');
 
-
-
 if(heroSection){
 
   function heroSlider(options) {
@@ -67,6 +65,11 @@ if(heroSection){
       'radial-gradient(var(--lightblue1), var(--lightblue6))',
       'radial-gradient(var(--lightblue1), var(--milky7))'
     ];
+
+    function updateWrapperBackground() {
+      const groupIndex = Math.floor(currentIndex / 3) % heroSlideItemsGradients.length;
+      sliderWrapper.style.background = heroSlideItemsGradients[groupIndex];
+    }
 
     function setupSlider() {
       if (currentIndex >= 0 && currentIndex < slides.length) {
@@ -101,11 +104,6 @@ if(heroSection){
           indicatorsMenu.style.display = 'none';
         }
       }
-    }
-
-    function updateWrapperBackground() {
-      const groupIndex = Math.floor(currentIndex / 3) % heroSlideItemsGradients.length;
-      sliderWrapper.style.background = heroSlideItemsGradients[groupIndex];
     }
 
     function updateSlides() {
@@ -487,9 +485,9 @@ function scrollBarSlider(options) {
   // autoSlide();
 }
 
-scrollBarSlider({containerSelector:'.featured-categories .slider-wrapper', 
-                 prevArrowSelector:'.featured-categories .arrow-left', 
-                 nextArrowSelector:'.featured-categories .arrow-right'});
+scrollBarSlider({containerSelector:'.categories-section .slider-wrapper', 
+                 prevArrowSelector:'.categories-section .arrow-left', 
+                 nextArrowSelector:'.categories-section .arrow-right'});
 
 const categoriesColors = [
     "var(--transparent-green3)",  // 1st color
