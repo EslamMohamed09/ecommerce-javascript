@@ -1090,37 +1090,45 @@ h1, h2, h3, h4, h5 {
 .header .main-header .middle-bar #searchForm {
   width: 50%;
 }
-.header .main-header .middle-bar .nav-icons {
+.header .main-header .middle-bar .action-buttons {
   flex-wrap: nowrap;
   gap: 2rem;
 }
-.header .main-header .middle-bar .nav-icons .nav-icon {
+.header .main-header .middle-bar .action-buttons .action-button {
   flex-wrap: nowrap;
   gap: 0.5rem;
 }
-.header .main-header .middle-bar .nav-icons .nav-icon svg, .header .main-header .middle-bar .nav-icons .nav-icon i {
-  font-size: 1.2rem;
+.header .main-header .middle-bar .action-buttons .action-button svg, .header .main-header .middle-bar .action-buttons .action-button i {
+  font-size: 1.4rem;
   color: var(--gray10);
 }
-.header .main-header .middle-bar .nav-icons .nav-icon .details {
+.header .main-header .middle-bar .action-buttons .action-button .name-holder {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 0.1rem;
 }
-.header .main-header .middle-bar .nav-icons .nav-icon .details span {
-  padding: 0 0.1rem;
-  height: 1.5rem;
-  width: 1.6rem;
+.header .main-header .middle-bar .action-buttons .action-button .name-holder .value {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--red6);
+}
+.header .main-header .middle-bar .action-buttons .action-button .name-holder .value span {
+  width: fit-content;
+  height: fit-content;
   border-radius: 50%;
   font-size: 0.7rem;
   text-align: center;
-  line-height: 1.6rem;
   color: #fff2f2;
-  background-color: #fa5858;
+  font-size: 0.7rem;
+  line-height: 6px;
 }
-.header .main-header .middle-bar .nav-icons .nav-icon .details p {
+.header .main-header .middle-bar .action-buttons .action-button .name-holder p {
   font-size: 1rem;
   color: var(--gray10);
 }
@@ -1436,8 +1444,8 @@ h1, h2, h3, h4, h5 {
   background: radial-gradient(var(--blue6), var(--blue16));
 }
 .hero-section .section-container .col-left .all-category h4 svg, .hero-section .section-container .col-left .all-category h4 i {
-  font-size: 1.2rem;
-  margin-bottom: 1px;
+  font-size: 1rem;
+  margin-top: 1px;
   margin-right: 0.5rem;
 }
 .hero-section .section-container .col-left .all-category #categories-menu {

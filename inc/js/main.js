@@ -1,33 +1,72 @@
 const header = document.querySelector('header');
 
-if(header){document.body.style.paddingTop = `${header.offsetHeight}px`;}
+if (header) { document.body.style.paddingTop = `${header.offsetHeight}px`; }
+
+  // padding to notification of action buttons
+  document.querySelectorAll('header .main-header .middle-bar .action-buttons .action-button .value span').forEach((span) => {
+    let number = span.textContent.trim();
+
+    if (/^\d{4,}$/.test(number)) {
+
+      if (window.innerWidth < 690) {
+        span.parentElement.style.padding = '5px 2px 4px 2px';
+      } else {
+        span.parentElement.style.padding = '8px 2px 7.5px';
+      }
+
+    } else if (/^\d{3}$/.test(number)) {
+
+      if (window.innerWidth < 690) {
+        span.parentElement.style.padding = '5px 2px 4px 2px';
+      } else {
+        span.parentElement.style.padding = '8px 3px 7.5px';
+      }
+
+    } else if (/^\d{2}$/.test(number)) {
+
+      if (window.innerWidth < 690) {
+        span.parentElement.style.padding = '4px 2.9px 3px 2.9px';
+      } else {
+        span.parentElement.style.padding = '6px 3.5px';
+      }
+
+    } else {
+
+      if (window.innerWidth < 690) {
+        span.parentElement.style.padding = '3px 4px 2px';
+      } else {
+        span.parentElement.style.padding = '5px 6px';
+      }
+
+    }
+  });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const categoriesContainer = document.getElementById('categories-menu');
-    const categories = [
-      { id: 1, name: 'Electronics', link: 'category.php?categoryid=1' },
-      { id: 2, name: 'Fashion', link: 'category.php?categoryid=2' },
-      { id: 3, name: 'Home Appliances', link: 'category.php?categoryid=3' },
-      { id: 4, name: 'Books', link: 'category.php?categoryid=4' },
-      { id: 5, name: 'Toys', link: 'category.php?categoryid=5' },
-      { id: 6, name: 'Sports', link: 'category.php?categoryid=6' },
-      { id: 7, name: 'Beauty Products', link: 'category.php?categoryid=7' },
-      { id: 8, name: 'Furniture', link: 'category.php?categoryid=8' },
-      { id: 9, name: 'Groceries', link: 'category.php?categoryid=9' },
-      { id: 10, name: 'Jewelry', link: 'category.php?categoryid=10' },
-      { id: 11, name: 'Watches', link: 'category.php?categoryid=11' },
-    ];
-  
-    categories.forEach(category => {
-      const categoryList = document.createElement('li');
-      const categoryLink = document.createElement('a');
-      categoryLink.href = category.link;
-      categoryList.className = 'cat-list';
-      categoryLink.className = 'cat-link';
-      categoryLink.textContent = category.name;
-      categoryList.appendChild(categoryLink);
-      categoriesContainer.appendChild(categoryList);
-    });
+  const categoriesContainer = document.getElementById('categories-menu');
+  const categories = [
+    { id: 1, name: 'Electronics', link: 'category.php?categoryid=1' },
+    { id: 2, name: 'Fashion', link: 'category.php?categoryid=2' },
+    { id: 3, name: 'Home Appliances', link: 'category.php?categoryid=3' },
+    { id: 4, name: 'Books', link: 'category.php?categoryid=4' },
+    { id: 5, name: 'Toys', link: 'category.php?categoryid=5' },
+    { id: 6, name: 'Sports', link: 'category.php?categoryid=6' },
+    { id: 7, name: 'Beauty Products', link: 'category.php?categoryid=7' },
+    { id: 8, name: 'Furniture', link: 'category.php?categoryid=8' },
+    { id: 9, name: 'Groceries', link: 'category.php?categoryid=9' },
+    { id: 10, name: 'Jewelry', link: 'category.php?categoryid=10' },
+    { id: 11, name: 'Watches', link: 'category.php?categoryid=11' },
+  ];
+
+  categories.forEach(category => {
+    const categoryList = document.createElement('li');
+    const categoryLink = document.createElement('a');
+    categoryLink.href = category.link;
+    categoryList.className = 'cat-list';
+    categoryLink.className = 'cat-link';
+    categoryLink.textContent = category.name;
+    categoryList.appendChild(categoryLink);
+    categoriesContainer.appendChild(categoryList);
+  });
 });
 
 
@@ -36,7 +75,7 @@ const heroSection = document.querySelector(".hero-section");
 const heroSliderWrapper = document.querySelector('.hero-section .col-middle .slider-wrapper');
 const heroSlideItems = document.querySelectorAll('.hero-section .hero-slide-item');
 
-if(heroSection){
+if (heroSection) {
 
   function heroSlider(options) {
 
@@ -73,7 +112,7 @@ if(heroSection){
 
     function setupSlider() {
       if (currentIndex >= 0 && currentIndex < slides.length) {
-          indicatorsMenu.children[currentIndex]?.classList.add('active');
+        indicatorsMenu.children[currentIndex]?.classList.add('active');
       }
     }
 
@@ -150,8 +189,8 @@ if(heroSection){
       });
 
       if (currentIndex >= slides.length) {
-          currentIndex = 0;
-          sliderWrapper.scrollLeft = 0;
+        currentIndex = 0;
+        sliderWrapper.scrollLeft = 0;
       }
     }
 
@@ -242,16 +281,16 @@ if(heroSection){
   }
 
   heroSlider({
-    sectionSelector:'.hero-section .col-middle .slider-container',
-    sliderWrapperSelector:'.hero-section .col-middle .slider-container .slider-wrapper',
-    prevBtnSelector:'.hero-section .col-middle .slider-container .prev-btn',
-    nextBtnSelector:'.hero-section .col-middle .slider-container .next-btn',
+    sectionSelector: '.hero-section .col-middle .slider-container',
+    sliderWrapperSelector: '.hero-section .col-middle .slider-container .slider-wrapper',
+    prevBtnSelector: '.hero-section .col-middle .slider-container .prev-btn',
+    nextBtnSelector: '.hero-section .col-middle .slider-container .next-btn',
   });
 
 }
 
 function filterWithTabs(tabs, Items) {
-  
+
   tabs = Array.isArray(tabs) ? tabs : Array.from(tabs);
   Items = Array.isArray(Items) ? Items : Array.from(Items);
 
@@ -259,41 +298,41 @@ function filterWithTabs(tabs, Items) {
   function showItems(filterClass) { // Function to show items with a specific class
     Items.forEach(item => {
       if (item.classList.contains(filterClass)) {
-          item.style.display = 'block';
+        item.style.display = 'block';
       }
     });
   }
 
   tabs[0].classList.add('button-active');
 
-  Items.forEach(item => {item.style.display = 'none';});
+  Items.forEach(item => { item.style.display = 'none'; });
 
   let firstFilterClick = tabs[0].getAttribute('filter-click');
   showItems(firstFilterClick);
 
 
   tabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      
+    tab.addEventListener('click', function () {
+
       tabs.forEach(btn => btn.classList.remove('button-active'));
       this.classList.add('button-active');
 
       const filterClick = this.getAttribute('filter-click');
 
-      Items.forEach(item => {item.style.display = 'none';});
+      Items.forEach(item => { item.style.display = 'none'; });
       showItems(filterClick);
     });
   });
 }
 
-filterWithTabs(document.querySelectorAll('#main-categories .category-panel1 .left-col .first-pcat-names h4'), 
-               document.querySelectorAll('#main-categories .category-panel1 .right-col .product-item'));
+filterWithTabs(document.querySelectorAll('#main-categories .category-panel1 .left-col .first-pcat-names h4'),
+  document.querySelectorAll('#main-categories .category-panel1 .right-col .product-item'));
 
-filterWithTabs(document.querySelectorAll('#main-categories .category-panel2 .left-col .second-pcat-names h4'), 
-               document.querySelectorAll('#main-categories .category-panel2 .right-col .product-item'));
+filterWithTabs(document.querySelectorAll('#main-categories .category-panel2 .left-col .second-pcat-names h4'),
+  document.querySelectorAll('#main-categories .category-panel2 .right-col .product-item'));
 
-filterWithTabs(document.querySelectorAll('#main-categories .category-panel3 .left-col .third-pcat-names h4'), 
-               document.querySelectorAll('#main-categories .category-panel3 .right-col .product-ad'));
+filterWithTabs(document.querySelectorAll('#main-categories .category-panel3 .left-col .third-pcat-names h4'),
+  document.querySelectorAll('#main-categories .category-panel3 .right-col .product-ad'));
 
 
 // if(header){
@@ -349,19 +388,19 @@ function scrollBarSlider(options) {
 
   function setResponsive() {
     const responsiveSettings = [
-      { breakpoint: 10, settings: { slidesToShow: 1, slidesToScroll: 1 }},
-      { breakpoint: 360, settings: { slidesToShow: 2, slidesToScroll: 2 }},
-      { breakpoint: 560, settings: { slidesToShow: 3, slidesToScroll: 3 }},
-      { breakpoint: 720, settings: { slidesToShow: 4, slidesToScroll: 4 }},
-      { breakpoint: 1000, settings: { slidesToShow: 5, slidesToScroll: 5 }},
-      { breakpoint: 1400, settings: { slidesToShow: 6, slidesToScroll: 6 }},
-      { breakpoint: 1600, settings: { slidesToShow: 7, slidesToScroll: 7 }}
+      { breakpoint: 10, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+      { breakpoint: 360, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+      { breakpoint: 560, settings: { slidesToShow: 3, slidesToScroll: 3 } },
+      { breakpoint: 720, settings: { slidesToShow: 4, slidesToScroll: 4 } },
+      { breakpoint: 1000, settings: { slidesToShow: 5, slidesToScroll: 5 } },
+      { breakpoint: 1400, settings: { slidesToShow: 6, slidesToScroll: 6 } },
+      { breakpoint: 1600, settings: { slidesToShow: 7, slidesToScroll: 7 } }
     ];
 
     responsiveSettings.forEach(resp => {
       if (window.innerWidth >= resp.breakpoint) {
-          slidesToShow = resp.settings.slidesToShow;
-          slidesToScroll = resp.settings.slidesToScroll;
+        slidesToShow = resp.settings.slidesToShow;
+        slidesToScroll = resp.settings.slidesToScroll;
       }
     });
     updateSlidesToShow();
@@ -370,7 +409,7 @@ function scrollBarSlider(options) {
   function updateSlidesToShow() {
     const wrapperWidth = sliderContainer.clientWidth;
     const slideWidth = (wrapperWidth - gapSize * (slidesToShow - 1)) / slidesToShow;
-    
+
     Array.from(slides).forEach(slide => {
       slide.style.flex = `0 0 ${slideWidth}px`;
       slide.style.maxWidth = `${slideWidth}px`;
@@ -405,25 +444,25 @@ function scrollBarSlider(options) {
     }
 
     animateScroll(sliderContainer.scrollLeft, scrollPosition, 600);
-    
+
     if (currentIndex >= slides.length) {
-        currentIndex = 0;
-        sliderContainer.scrollTo({ left: 0 });
+      currentIndex = 0;
+      sliderContainer.scrollTo({ left: 0 });
     }
   }
 
   function prevSlide() {
     currentIndex -= slidesToScroll;
     if (currentIndex < 0) {
-        currentIndex = slides.length - (slides.length % slidesToScroll || slidesToScroll);
+      currentIndex = slides.length - (slides.length % slidesToScroll || slidesToScroll);
     }
     scrollToSlide(true);
   }
 
   function nextSlide() {
-      currentIndex += slidesToScroll;
-      if (currentIndex > slides.length) {currentIndex = 0;}
-      scrollToSlide(true);
+    currentIndex += slidesToScroll;
+    if (currentIndex > slides.length) { currentIndex = 0; }
+    scrollToSlide(true);
   }
 
   function attachEvents() {
@@ -464,13 +503,13 @@ function scrollBarSlider(options) {
     const scrollLeft = sliderContainer.scrollLeft;
 
     if (Math.abs(scrollLeft - currentIndex * slideWidth) > slideWidth / 2) {
-        if (scrollLeft > currentIndex * slideWidth) {
-            nextSlide();
-        } else {
-            prevSlide();
-        }
+      if (scrollLeft > currentIndex * slideWidth) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
     } else {
-        scrollToSlide(true);
+      scrollToSlide(true);
     }
   }
 
@@ -485,20 +524,22 @@ function scrollBarSlider(options) {
   // autoSlide();
 }
 
-scrollBarSlider({containerSelector:'.categories-section .slider-wrapper', 
-                 prevArrowSelector:'.categories-section .arrow-left', 
-                 nextArrowSelector:'.categories-section .arrow-right'});
+scrollBarSlider({
+  containerSelector: '.categories-section .slider-wrapper',
+  prevArrowSelector: '.categories-section .arrow-left',
+  nextArrowSelector: '.categories-section .arrow-right'
+});
 
 const categoriesColors = [
-    "var(--transparent-green3)",  // 1st color
-    "var(--transparent-yellow2)", // 2nd color
-    "var(--transparent-yellow)",  // 3rd color
-    "var(--transparent-orange3)", // 4th color
-    "var(--transparent-green4)",  // 5th color
-    "var(--transparent-blue)",    // 6th color
-    "var(--transparent-violet)",  // 7th color
-    "var(--transparent-olive)",   // 8th color
-    "var(--transparent-orange)"   // 9th color
+  "var(--transparent-green3)",  // 1st color
+  "var(--transparent-yellow2)", // 2nd color
+  "var(--transparent-yellow)",  // 3rd color
+  "var(--transparent-orange3)", // 4th color
+  "var(--transparent-green4)",  // 5th color
+  "var(--transparent-blue)",    // 6th color
+  "var(--transparent-violet)",  // 7th color
+  "var(--transparent-olive)",   // 8th color
+  "var(--transparent-orange)"   // 9th color
 ];
 
 document.querySelectorAll('.featured-categories .slider-wrapper .category-item .image').forEach((catItem, index) => {
@@ -510,17 +551,17 @@ document.querySelectorAll('.featured-categories .slider-wrapper .category-item .
  #### OFFERS SECTION ####
  ########################
 */
-if(document.querySelector('.offers-section')){
-    animatedFilterWithTabsAndArrows(
-      document.querySelectorAll('.offers-section .section-heading2 .tabs li'),
-      document.querySelectorAll('.offers-section .products-container .products-group'),
-      document.querySelector('.offers-section .section-heading2 .arrows .prev-btn'),
-      document.querySelector('.offers-section .section-heading2 .arrows .next-btn')
-    );
+if (document.querySelector('.offers-section')) {
+  animatedFilterWithTabsAndArrows(
+    document.querySelectorAll('.offers-section .section-heading2 .tabs li'),
+    document.querySelectorAll('.offers-section .products-container .products-group'),
+    document.querySelector('.offers-section .section-heading2 .arrows .prev-btn'),
+    document.querySelector('.offers-section .section-heading2 .arrows .next-btn')
+  );
 
-    document.querySelectorAll('.offers-section .product-item .product-title').forEach((title) => {
-      title.textContent = truncateWords(title.textContent, 4);
-    });
+  document.querySelectorAll('.offers-section .product-item .product-title').forEach((title) => {
+    title.textContent = truncateWords(title.textContent, 4);
+  });
 }
 
 /* 
@@ -528,38 +569,38 @@ if(document.querySelector('.offers-section')){
  #### ScrollUp Button #### 
  #########################
 */
-if(document.getElementById('scroll-up')){
+if (document.getElementById('scroll-up')) {
 
-   var scrollUpBtn = document.getElementById('scroll-up');
-   window.onscroll = function() {
+  var scrollUpBtn = document.getElementById('scroll-up');
+  window.onscroll = function () {
     if (window.scrollY >= 1200) {
-        scrollUpBtn.style.display = "block";
+      scrollUpBtn.style.display = "block";
     } else {
-        scrollUpBtn.style.display = "none";
+      scrollUpBtn.style.display = "none";
     }
   };
 
-  document.querySelector('.scroll-up').addEventListener('click', function(event) {
+  document.querySelector('.scroll-up').addEventListener('click', function (event) {
     event.preventDefault();
     scrollToTop(80);
   });
-  
+
   function scrollToTop(duration) {
     const start = window.pageYOffset;
     const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-  
+
     function scrollStep() {
       const currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-  
+
       window.scroll(0, start - start * progress);
-  
+
       if (progress < 1) {
         requestAnimationFrame(scrollStep);
       }
     }
-  
+
     requestAnimationFrame(scrollStep);
   }
 
@@ -698,19 +739,19 @@ function animatedFilterWithTabsAndArrows(tabs, groups, prevBtn, nextBtn) {
     productItems.forEach((item, i) => {
       item.classList.remove('show');
       item.style.display = 'none';
-      
+
       if (i >= page * visibleCount && i < (page + 1) * visibleCount) {
-          item.style.display = 'block';
-          item.style.opacity = "0";
-          item.style.transform = "scale(0.8) translateY(20px)";
-          item.style.transition = "none";
-          void item.offsetWidth; // force reflow
-          
-          setTimeout(() => {
-            item.style.transition = "all 0.3s ease";
-            item.style.opacity = "1";
-            item.style.transform = "scale(1) translateY(0)";
-          }, (i % visibleCount) * 40);
+        item.style.display = 'block';
+        item.style.opacity = "0";
+        item.style.transform = "scale(0.8) translateY(20px)";
+        item.style.transition = "none";
+        void item.offsetWidth; // force reflow
+
+        setTimeout(() => {
+          item.style.transition = "all 0.3s ease";
+          item.style.opacity = "1";
+          item.style.transform = "scale(1) translateY(0)";
+        }, (i % visibleCount) * 40);
       }
 
     });
