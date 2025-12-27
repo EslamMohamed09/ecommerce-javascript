@@ -1,3 +1,115 @@
+class Slider {
+  constructor(containerId, options = {}) {
+    this.container = document.getElementById(containerId);
+    if (!this.container) return;
+
+    this.slides = this.container.querySelectorAll(options.slideSelector || '.slide');
+    this.wrapper = this.container.querySelector(options.wrapperSelector || '.slider-wrapper');
+    this.dotsContainer = this.container.querySelector('.slider-dots') || this.container.querySelector('.offer-dots');
+    
+    this.prevBtn = this.container.querySelector('.prev-btn') || this.container.querySelector('.nav-prev');
+    this.nextBtn = this.container.querySelector('.next-btn') || this.container.querySelector('.nav-next'); // Fixed selector
+    
+    this.currentIndex = 0;
+    this.totalSlides = this.slides.length;
+    this.autoPlayDelay = options.autoPlayDelay || 5000;
+    this.isAutoPlay = options.autoPlay !== false;
+    this.type = options.type || 'fade'; // 'fade' or 'slide' or 'carousel'
+    this.visibleItems = options.visibleItems || 1;
+    
+    this.timer = null;
+
+    this.init();
+  }
+
+  init() {
+    // Create dots if needed
+    if (this.dotsContainer && this.type !== 'carousel') {
+        this.createDots();
+    }
+
+    // Event Listeners
+    if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.prev());
+    if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.next());
+
+    if (this.isAutoPlay) {
+        this.startAutoPlay();
+        this.container.addEventListener('mouseenter', () => this.stopAutoPlay());
+        this.container.addEventListener('mouseleave', () => this.startAutoPlay());
+    }
+
+    this.update();
+  }
+
+  createDots() {
+    this.dotsContainer.innerHTML = '';
+    this.slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('slider-dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => this.goTo(index));
+      this.dotsContainer.appendChild(dot);
+    });
+  }
+
+  update() {
+    if (this.type === 'fade') {
+        this.slides.forEach((slide, index) => {
+            if (index === this.currentIndex) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+    }
+    else if (this.type === 'slide' || this.type === 'carousel') {
+      // For carousel/slide logic (Products)
+      // Assuming simple translation for demo
+      // NOTE: For 'carousel' type used in product slider, we move a strip
+      // Logic simplified for this specific structure
+      if (this.wrapper && this.type === 'carousel') {
+          // This acts more like a scroll in this specific CSS set up
+          // But let's support the 'offers' slider which acts like 'fade' structure but css handles it differently
+      }
+    }
+
+    // Update Dots
+    if (this.dotsContainer) {
+        const dots = this.dotsContainer.querySelectorAll('.slider-dot');
+        dots.forEach((dot, index) => {
+            if (index === this.currentIndex) dot.classList.add('active');
+            else dot.classList.remove('active');
+        });
+    }
+  }
+
+  next() {
+    this.currentIndex++;
+    if (this.currentIndex >= this.totalSlides) this.currentIndex = 0;
+    this.update();
+  }
+
+  prev() {
+    this.currentIndex--;
+    if (this.currentIndex < 0) this.currentIndex = this.totalSlides - 1;
+    this.update();
+  }
+
+  goTo(index) {
+    this.currentIndex = index;
+    this.update();
+  }
+
+  startAutoPlay() {
+    if (this.timer) clearInterval(this.timer);
+    this.timer = setInterval(() => this.next(), this.autoPlayDelay);
+  }
+
+  stopAutoPlay() {
+    if (this.timer) clearInterval(this.timer);
+  }
+}
+
 const header = document.querySelector('header');
 
 if (header) { document.body.style.paddingTop = `${header.offsetHeight}px`; }
@@ -326,13 +438,13 @@ function filterWithTabs(tabs, Items) {
 }
 
 filterWithTabs(document.querySelectorAll('#main-categories .category-panel1 .left-col .first-pcat-names h4'),
-  document.querySelectorAll('#main-categories .category-panel1 .right-col .product-item'));
+               document.querySelectorAll('#main-categories .category-panel1 .right-col .product-item'));
 
 filterWithTabs(document.querySelectorAll('#main-categories .category-panel2 .left-col .second-pcat-names h4'),
-  document.querySelectorAll('#main-categories .category-panel2 .right-col .product-item'));
+               document.querySelectorAll('#main-categories .category-panel2 .right-col .product-item'));
 
 filterWithTabs(document.querySelectorAll('#main-categories .category-panel3 .left-col .third-pcat-names h4'),
-  document.querySelectorAll('#main-categories .category-panel3 .right-col .product-ad'));
+               document.querySelectorAll('#main-categories .category-panel3 .right-col .product-ad'));
 
 
 // if(header){
@@ -547,22 +659,34 @@ document.querySelectorAll('.featured-categories .slider-wrapper .category-item .
 });
 
 /* 
- ########################
- #### OFFERS SECTION ####
- ########################
+ ###################################
+ #### PERCENTAGE OFFERS SECTION ####
+ ###################################
 */
-if (document.querySelector('.offers-section')) {
-  animatedFilterWithTabsAndArrows(
-    document.querySelectorAll('.offers-section .section-heading2 .tabs li'),
-    document.querySelectorAll('.offers-section .products-container .products-group'),
-    document.querySelector('.offers-section .section-heading2 .arrows .prev-btn'),
-    document.querySelector('.offers-section .section-heading2 .arrows .next-btn')
-  );
+if (document.querySelector('.percentage-offers-section')) {
+    animatedFilterWithTabsAndArrows(
+      document.querySelectorAll('.percentage-offers-section .section-heading2 .tabs li'),
+      document.querySelectorAll('.percentage-offers-section .products-container .products-group'),
+      document.querySelector('.percentage-offers-section .section-heading2 .arrows .prev-btn'),
+      document.querySelector('.percentage-offers-section .section-heading2 .arrows .next-btn')
+    );
 
   document.querySelectorAll('.offers-section .product-item .product-title').forEach((title) => {
     title.textContent = truncateWords(title.textContent, 4);
   });
 }
+
+/* 
+ ###############################
+ #### OFFERS SLIDER SECTION ####
+ ###############################
+*/
+// CSS handles the "one/two/three" classes, we just toggle .active
+const offersSlider = new Slider('offersSlider', {
+  type:'fade',
+  slideSelector:'.offer-slide',
+  autoPlayDelay:4000
+});
 
 /* 
  #########################
