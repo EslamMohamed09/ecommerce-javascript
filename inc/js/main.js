@@ -671,7 +671,7 @@ if (document.querySelector('.percentage-offers-section')) {
       document.querySelector('.percentage-offers-section .section-heading2 .arrows .next-btn')
     );
 
-  document.querySelectorAll('.offers-section .product-item .product-title').forEach((title) => {
+  document.querySelectorAll('.percentage-offers-section .product-item .product-title').forEach((title) => {
     title.textContent = truncateWords(title.textContent, 4);
   });
 }
