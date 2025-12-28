@@ -437,14 +437,14 @@ function filterWithTabs(tabs, Items) {
   });
 }
 
-filterWithTabs(document.querySelectorAll('#main-categories .category-panel1 .left-col .first-pcat-names h4'),
-               document.querySelectorAll('#main-categories .category-panel1 .right-col .product-item'));
+filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel1 .left-col .first-pcat-names h4'),
+               document.querySelectorAll('.main-categories-section .category-panel1 .right-col .product-item'));
 
-filterWithTabs(document.querySelectorAll('#main-categories .category-panel2 .left-col .second-pcat-names h4'),
-               document.querySelectorAll('#main-categories .category-panel2 .right-col .product-item'));
+filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel2 .left-col .second-pcat-names h4'),
+               document.querySelectorAll('.main-categories-section .category-panel2 .right-col .product-item'));
 
-filterWithTabs(document.querySelectorAll('#main-categories .category-panel3 .left-col .third-pcat-names h4'),
-               document.querySelectorAll('#main-categories .category-panel3 .right-col .product-ad'));
+filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel3 .left-col .third-pcat-names h4'),
+               document.querySelectorAll('.main-categories-section .category-panel3 .right-col .product-ad'));
 
 
 // if(header){
