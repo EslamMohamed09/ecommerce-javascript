@@ -663,15 +663,15 @@ document.querySelectorAll('.featured-categories .slider-wrapper .category-item .
  #### PERCENTAGE OFFERS SECTION ####
  ###################################
 */
-if (document.querySelector('.percentage-offers-section')) {
+if (document.querySelector('.best-offers-section')) {
     animatedFilterWithTabsAndArrows(
-      document.querySelectorAll('.percentage-offers-section .section-heading2 .tabs li'),
-      document.querySelectorAll('.percentage-offers-section .products-container .products-group'),
-      document.querySelector('.percentage-offers-section .section-heading2 .arrows .prev-btn'),
-      document.querySelector('.percentage-offers-section .section-heading2 .arrows .next-btn')
+      document.querySelectorAll('.best-offers-section .section-heading2 .tabs li'),
+      document.querySelectorAll('.best-offers-section .products-container .products-group'),
+      document.querySelector('.best-offers-section .section-heading2 .arrows .prev-btn'),
+      document.querySelector('.best-offers-section .section-heading2 .arrows .next-btn')
     );
 
-  document.querySelectorAll('.percentage-offers-section .product-item .product-title').forEach((title) => {
+  document.querySelectorAll('.best-offers-section .product-item .product-title').forEach((title) => {
     title.textContent = truncateWords(title.textContent, 4);
   });
 }
