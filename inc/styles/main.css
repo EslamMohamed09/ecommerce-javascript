@@ -2544,6 +2544,9 @@ img {
 .best-seller-section .product-carousel-window .product-carousel-track .product-card:hover {
   box-shadow: var(--shadow-hover);
 }
+.best-seller-section .product-carousel-window .product-carousel-track .product-card:hover .default-img {
+  opacity: 0;
+}
 .best-seller-section .product-carousel-window .product-carousel-track .product-card:hover .hover-img {
   opacity: 1;
 }
@@ -2617,7 +2620,7 @@ img {
   transition: all var(--transition-fast);
 }
 .best-seller-section .product-carousel-window .product-carousel-track .prod-image-box .prod-actions button:hover {
-  background-color: var(--primary-color);
+  background-color: var(--blue18);
   color: var(--white);
 }
 .best-seller-section .product-carousel-window .product-carousel-track .prod-image-box .add-to-cart-btn {

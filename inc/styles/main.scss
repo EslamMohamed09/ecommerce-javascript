@@ -2242,6 +2242,8 @@ img {max-width:100%;
 
                         &:hover {box-shadow:var(--shadow-hover);}
 
+                        &:hover .default-img {opacity:0;}
+
                         &:hover .hover-img {opacity:1;}
 
                         &:hover .prod-actions {transform:translateX(0);
@@ -2301,7 +2303,7 @@ img {max-width:100%;
                                       color:var(--text-dark);
                                       box-shadow:var(--shadow-sm);
                                       transition:all var(--transition-fast);
-                                      &:hover {background-color:var(--primary-color);
+                                      &:hover {background-color:var(--blue18);
                                                color:var(--white);}
                               }     
                         }
@@ -2763,15 +2765,16 @@ img {max-width:100%;
                                                                      margin:0 !important;
                                                                      border-radius:50%;
                                                                      border:none;
-                                                                     position:relative;}
+                                                                     position:relative;
 
-                                                      .color-circle.checked::before {content:"✔";
-                                                                                     color:var(--white);
-                                                                                     font-size:0.8rem;
-                                                                                     position:absolute;
-                                                                                     top:50%;
-                                                                                     left:50%;
-                                                                                     transform:translate(-50%, -50%);}
+                                                            &.checked::before {content:"✔";
+                                                                               color:var(--white);
+                                                                               font-size:0.8rem;
+                                                                               position:absolute;
+                                                                               top:50%;
+                                                                               left:50%;
+                                                                               transform:translate(-50%, -50%);}
+                                                      }
                                                 }
 
                                                 .circle-outer:first-child .color-circle {background-color:sienna;}
