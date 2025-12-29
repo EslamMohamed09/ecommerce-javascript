@@ -2216,12 +2216,12 @@ img {max-width:100%;
                 display:flex;
                 justify-content:center;
                 align-items:center;
-                color:var(--text-dark);
+                color:var(--navyblue6);
                 transition:all var(--transition-fast);
 
-            &:hover {background-color:var(--primary-color);
+            &:hover {background-color:var(--blue18);
                      color:var(--white);
-                     border-color:var(--primary-color);}
+                     border-color:var(--blue18);}
       }
 
       .product-carousel-window {overflow:hidden;
@@ -2300,7 +2300,7 @@ img {max-width:100%;
                                       display:flex;
                                       justify-content:center;
                                       align-items:center;
-                                      color:var(--text-dark);
+                                      color:var(--navyblue6);
                                       box-shadow:var(--shadow-sm);
                                       transition:all var(--transition-fast);
                                       &:hover {background-color:var(--blue18);
@@ -2337,13 +2337,13 @@ img {max-width:100%;
                                     overflow:hidden;
                                     text-overflow:ellipsis;
 
-                              a {color:var(--text-dark);
-                              &:hover {color:var(--primary-color);}
+                              a {color:var(--navyblue6);
+                                 &:hover {color:var(--primary-color);}
                               }
                         }
 
                         .prod-price {font-weight:600;
-                                    color:var(--text-dark);
+                                    color:var(--navyblue6);
                                     margin-bottom:15px;
 
                               .old-price {color:var(--navyblue2);
@@ -2365,7 +2365,7 @@ img {max-width:100%;
                                     &.selected::after {content:'';
                                                       position:absolute;
                                                       inset:-3px;
-                                                      border:1px solid var(--text-dark);
+                                                      border:1px solid var(--navyblue6);
                                                       border-radius:50%;}
 
                                     &.blue {background-color:#1a4f8b;}
