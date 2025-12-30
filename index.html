@@ -422,7 +422,7 @@
   </div>
 </section>
 
-<section class="categories-section">
+<section class="shop-by-categories-section">
 
   <div class="section-container">
 
@@ -1098,11 +1098,10 @@
   <div class="section-heading">
     <h3 class="section-title">Best Sellers</h3>
     <i class="fas fa-star"></i>
-  </div>
-
-  <div class="slider-nav-buttons">
-    <button class="nav-btn" id="bs-prev"><i class="fa-solid fa-arrow-left"></i></button>
-    <button class="nav-btn" id="bs-next"><i class="fa-solid fa-arrow-right"></i></button>
+    <div class="arrows">
+      <button class="nav-btn arrow-left" id="bs-prev"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="nav-btn arrow-right" id="bs-next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
   </div>
 
   <div class="product-carousel-window">
@@ -1111,8 +1110,10 @@
       <div class="product-card"> <!-- Item 1 -->
         <div class="prod-image-box">
           <span class="badge new">New</span>
-          <img src="admin/inc/images/clothes/men/sweatshirt/9/4.png" alt="Jacket" class="default-img">
-          <img src="admin/inc/images/clothes/men/sweatshirt/9/1.jpg" alt="Jacket Hover" class="hover-img">
+          <div class="image-holder">
+            <img src="admin/inc/images/clothes/men/sweatshirt/9/4.png" alt="Jacket">
+            <img src="admin/inc/images/clothes/men/sweatshirt/9/1.jpg" alt="Jacket Hover">
+          </div>
           <div class="prod-actions">
             <button title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
             <button title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -1133,8 +1134,10 @@
       <div class="product-card"> <!-- Item 2 -->
         <div class="prod-image-box">
           <span class="badge hot">Hot</span>
-          <img src="admin/inc/images/sports&outdoors/sports&outdoor-recreation-accessories/gym-bags/sports-duffels/1/1.jpg" alt="Bag" class="default-img">
-          <img src="admin/inc/images/sports&outdoors/sports&outdoor-recreation-accessories/gym-bags/sports-duffels/1/2.jpg" alt="Bag" class="hover-img">
+          <div class="image-holder">
+            <img src="admin/inc/images/sports&outdoors/sports&outdoor-recreation-accessories/gym-bags/sports-duffels/1/1.jpg" alt="Bag">
+            <img src="admin/inc/images/sports&outdoors/sports&outdoor-recreation-accessories/gym-bags/sports-duffels/1/2.jpg" alt="Bag">
+          </div>
           <div class="prod-actions">
             <button title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
             <button title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -1153,8 +1156,10 @@
 
       <div class="product-card"> <!-- Item 3 -->
         <div class="prod-image-box">
-          <img src="admin/inc/images/clothes/men/t-shirt/2/green(1).png" alt="T-Shirt" class="default-img">
-          <img src="admin/inc/images/clothes/men/t-shirt/2/green(2).png" alt="T-Shirt" class="hover-img">
+          <div class="image-holder">
+            <img src="admin/inc/images/clothes/men/t-shirt/2/green(1).png" alt="T-Shirt">
+            <img src="admin/inc/images/clothes/men/t-shirt/2/green(2).png" alt="T-Shirt">
+          </div>
           <div class="prod-actions">
             <button title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
             <button title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -1176,8 +1181,10 @@
       <div class="product-card"> <!-- Item 4 -->
         <div class="prod-image-box">
           <span class="badge sale">-20%</span>
-          <img src="admin/inc/images/clothes/men/shoes/2/grayxbluexorangexwhite(1).png" alt="sneakers" class="default-img">
-          <img src="admin/inc/images/clothes/men/shoes/2/grayxbluexorangexwhite(2).png" alt="sneakers" class="hover-img">
+          <div class="image-holder">
+            <img src="admin/inc/images/clothes/men/shoes/2/grayxbluexorangexwhite(1).png" alt="sneakers">
+            <img src="admin/inc/images/clothes/men/shoes/2/grayxbluexorangexwhite(2).png" alt="sneakers">
+          </div>
           <div class="prod-actions">
             <button title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
             <button title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -1196,8 +1203,10 @@
 
       <div class="product-card"> <!-- Item 5 -->
         <div class="prod-image-box">
-          <img src="admin/inc/images/clothes/men/pants/jeans/3/1.png" alt="Shirt" class="default-img">
-          <img src="admin/inc/images/clothes/men/pants/jeans/3/2.png" alt="Shirt Hover" class="hover-img">
+          <div class="image-holder">
+            <img src="admin/inc/images/clothes/men/pants/jeans/3/1.png" alt="Shirt">
+            <img src="admin/inc/images/clothes/men/pants/jeans/3/2.png" alt="Shirt Hover">
+          </div>
           <div class="prod-actions">
             <button title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
             <button title="Quick View"><i class="fa-regular fa-eye"></i></button>
@@ -1211,6 +1220,76 @@
           <div class="prod-colors">
             <span class="color-dot blue selected"></span>
             <span class="color-dot white"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card"> <!-- Item 2 -->
+        <div class="prod-image-box">
+          <span class="badge hot">Hot</span>
+          <div class="image-holder">
+            <img src="admin/inc/images/sports&outdoors/sports&outdoor-recreation-accessories/gym-bags/sports-duffels/1/1.jpg" alt="Bag">
+            <img src="admin/inc/images/sports&outdoors/sports&outdoor-recreation-accessories/gym-bags/sports-duffels/1/2.jpg" alt="Bag">
+          </div>
+          <div class="prod-actions">
+            <button title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+            <button title="Quick View"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="prod-details">
+          <span class="prod-cat">Accessories</span>
+          <h3 class="prod-title"><a href="#">adidas linear duffel s black,black</a></h3>
+          <div class="prod-price"><span class="old-price">$26</span> $24</div>
+          <div class="prod-colors">
+            <span class="color-dot brown selected"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card"> <!-- Item 3 -->
+        <div class="prod-image-box">
+          <div class="image-holder">
+            <img src="admin/inc/images/clothes/men/t-shirt/2/green(1).png" alt="T-Shirt">
+            <img src="admin/inc/images/clothes/men/t-shirt/2/green(2).png" alt="T-Shirt">
+          </div>
+          <div class="prod-actions">
+            <button title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+            <button title="Quick View"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="prod-details">
+          <span class="prod-cat">Tops</span>
+          <h3 class="prod-title"><a href="#">Men's Round Neck Short Sleeve T-Shirt</a></h3>
+          <div class="prod-price"><span class="old-price">$31</span> $25</div>
+          <div class="prod-colors">
+            <span class="color-dot black selected"></span>
+            <span class="color-dot white"></span>
+            <span class="color-dot gray"></span>
+          </div>
+        </div>
+      </div>
+        
+      <div class="product-card"> <!-- Item 4 -->
+        <div class="prod-image-box">
+          <span class="badge sale">-20%</span>
+          <div class="image-holder">
+            <img src="admin/inc/images/clothes/men/shoes/2/grayxbluexorangexwhite(1).png" alt="sneakers">
+            <img src="admin/inc/images/clothes/men/shoes/2/grayxbluexorangexwhite(2).png" alt="sneakers">
+          </div>
+          <div class="prod-actions">
+            <button title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+            <button title="Quick View"><i class="fa-regular fa-eye"></i></button>
+          </div>
+          <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="prod-details">
+          <span class="prod-cat">Footwear</span>
+          <h3 class="prod-title"><a href="#">Skechers MEN VAPOR LITE Oxford</a></h3>
+          <div class="prod-price"><span class="old-price">$66</span> $64</div>
+          <div class="prod-colors">
+            <span class="color-dot white selected"></span>
           </div>
         </div>
       </div>

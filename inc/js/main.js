@@ -112,46 +112,46 @@ class Slider {
 
 const header = document.querySelector('header');
 
-if (header) { document.body.style.paddingTop = `${header.offsetHeight}px`; }
+if (header) {document.body.style.paddingTop = `${header.offsetHeight}px`;}
 
-  // padding to notification of action buttons
-  document.querySelectorAll('header .main-header .middle-bar .action-buttons .action-button .value span').forEach((span) => {
-    let number = span.textContent.trim();
+// padding to notification of action buttons
+document.querySelectorAll('header .main-header .middle-bar .action-buttons .action-button .value span').forEach((span) => {
+  let number = span.textContent.trim();
 
-    if (/^\d{4,}$/.test(number)) {
+  if (/^\d{4,}$/.test(number)) {
 
-      if (window.innerWidth < 690) {
-        span.parentElement.style.padding = '5px 2px 4px 2px';
-      } else {
-        span.parentElement.style.padding = '8px 2px 7.5px';
-      }
-
-    } else if (/^\d{3}$/.test(number)) {
-
-      if (window.innerWidth < 690) {
-        span.parentElement.style.padding = '5px 2px 4px 2px';
-      } else {
-        span.parentElement.style.padding = '8px 3px 7.5px';
-      }
-
-    } else if (/^\d{2}$/.test(number)) {
-
-      if (window.innerWidth < 690) {
-        span.parentElement.style.padding = '4px 2.9px 3px 2.9px';
-      } else {
-        span.parentElement.style.padding = '6px 3.5px';
-      }
-
+    if (window.innerWidth < 690) {
+      span.parentElement.style.padding = '5px 2px 4px 2px';
     } else {
-
-      if (window.innerWidth < 690) {
-        span.parentElement.style.padding = '3px 4px 2px';
-      } else {
-        span.parentElement.style.padding = '5px 6px';
-      }
-
+      span.parentElement.style.padding = '9px 2px 8.5px';
     }
-  });
+
+  } else if (/^\d{3}$/.test(number)) {
+
+    if (window.innerWidth < 690) {
+      span.parentElement.style.padding = '5px 2px 4px 2px';
+    } else {
+      span.parentElement.style.padding = '8px 3px 7.5px';
+    }
+
+  } else if (/^\d{2}$/.test(number)) {
+
+    if (window.innerWidth < 690) {
+      span.parentElement.style.padding = '4px 2.9px 3px 2.9px';
+    } else {
+      span.parentElement.style.padding = '6px 3.5px';
+    }
+
+  } else {
+
+    if (window.innerWidth < 690) {
+      span.parentElement.style.padding = '3px 4px 2px';
+    } else {
+      span.parentElement.style.padding = '5px 6px';
+    }
+
+  }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const categoriesContainer = document.getElementById('categories-menu');
@@ -401,6 +401,71 @@ if (heroSection) {
 
 }
 
+// if(header){
+
+//   const loginDrawerBtn = document.getElementById("login-btn");
+//   const loginDrawer = document.getElementById("login-drawer");
+//   const closeLoginDrawerBtn = document.getElementById("close-login-drawer-btn");
+
+//   loginDrawerBtn.addEventListener("click", function(){
+//     loginDrawer.classList.add("openingLoginDrawer");
+//     clearInterval(bannerSliderInterval); // Stop Banner Slider
+//   });
+
+//   closeLoginDrawerBtn.addEventListener("click", function(){
+//     loginDrawer.classList.remove("openingLoginDrawer");
+//     clearInterval(bannerSliderInterval);
+//     bannerSliderInterval = setInterval(nextB, 4000);
+//   });
+
+// }
+
+/* 
+ ####################################
+ #### SHOP BY CATEGORIES SECTION ####
+ ####################################
+*/
+scrollBarSlider({
+  containerSelector:'.shop-by-categories-section .slider-wrapper',
+  prevArrowSelector:'.shop-by-categories-section .arrow-left',
+  nextArrowSelector:'.shop-by-categories-section .arrow-right'
+});
+
+const categoriesColors = [
+  "var(--transparent-green3)",  // 1st color
+  "var(--transparent-yellow2)", // 2nd color
+  "var(--transparent-yellow)",  // 3rd color
+  "var(--transparent-orange)", // 4th color
+  "var(--transparent-green4)",  // 5th color
+  "var(--transparent-blue)",    // 6th color
+  "var(--transparent-violet)",  // 7th color
+  "var(--transparent-olive)",   // 8th color
+  "var(--transparent-orange)"   // 9th color
+];
+
+document.querySelectorAll('.shop-by-categories-section .slider-wrapper .category-item .image').forEach((catItem, index) => {
+  catItem.style.backgroundColor = categoriesColors[index % categoriesColors.length];
+});
+
+/* 
+ #############################
+ #### BEST SELLER SECTION ####
+ #############################
+*/
+if(document.querySelector('.best-seller-section')) {
+  scrollSlider({
+    section:'.best-seller-section',
+    containerSelector:'.best-seller-section .product-carousel-track',
+    prevArrowSelector:'.best-seller-section .section-heading .arrows .arrow-left',
+    nextArrowSelector:'.best-seller-section .section-heading .arrows .arrow-right',
+  });
+}
+
+/* 
+ #################################
+ #### MAIN CATEGORIES SECTION ####
+ #################################
+*/
 function filterWithTabs(tabs, Items) {
 
   tabs = Array.isArray(tabs) ? tabs : Array.from(tabs);
@@ -447,25 +512,84 @@ filterWithTabs(document.querySelectorAll('.main-categories-section .category-pan
                document.querySelectorAll('.main-categories-section .category-panel3 .right-col .product-ad'));
 
 
-// if(header){
+/* 
+ #############################
+ #### BEST OFFERS SECTION ####
+ #############################
+*/
+if (document.querySelector('.best-offers-section')) {
+    animatedFilterWithTabsAndArrows(
+      document.querySelectorAll('.best-offers-section .section-heading2 .tabs li'),
+      document.querySelectorAll('.best-offers-section .products-container .products-group'),
+      document.querySelector('.best-offers-section .section-heading2 .arrows .prev-btn'),
+      document.querySelector('.best-offers-section .section-heading2 .arrows .next-btn')
+    );
 
-//   const loginDrawerBtn = document.getElementById("login-btn");
-//   const loginDrawer = document.getElementById("login-drawer");
-//   const closeLoginDrawerBtn = document.getElementById("close-login-drawer-btn");
+  document.querySelectorAll('.best-offers-section .product-item .product-title').forEach((title) => {
+    title.textContent = truncateWords(title.textContent, 4);
+  });
+}
 
-//   loginDrawerBtn.addEventListener("click", function(){
-//     loginDrawer.classList.add("openingLoginDrawer");
-//     clearInterval(bannerSliderInterval); // Stop Banner Slider
-//   });
+/* 
+ ###############################
+ #### OFFERS SLIDER SECTION ####
+ ###############################
+*/
+// CSS handles the "one/two/three" classes, we just toggle .active
+const offersSlider = new Slider('offersSlider', {
+  type:'fade',
+  slideSelector:'.offer-slide',
+  autoPlayDelay:4000
+});
 
-//   closeLoginDrawerBtn.addEventListener("click", function(){
-//     loginDrawer.classList.remove("openingLoginDrawer");
-//     clearInterval(bannerSliderInterval);
-//     bannerSliderInterval = setInterval(nextB, 4000);
-//   });
 
-// }
+/* 
+ #########################
+ #### ScrollUp Button #### 
+ #########################
+*/
+if (document.getElementById('scroll-up')) {
 
+  var scrollUpBtn = document.getElementById('scroll-up');
+  window.onscroll = function () {
+    if (window.scrollY >= 1200) {
+      scrollUpBtn.style.display = "block";
+    } else {
+      scrollUpBtn.style.display = "none";
+    }
+  };
+
+  document.querySelector('.scroll-up').addEventListener('click', function (event) {
+    event.preventDefault();
+    scrollToTop(80);
+  });
+
+  function scrollToTop(duration) {
+    const start = window.pageYOffset;
+    const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+    function scrollStep() {
+      const currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      window.scroll(0, start - start * progress);
+
+      if (progress < 1) {
+        requestAnimationFrame(scrollStep);
+      }
+    }
+
+    requestAnimationFrame(scrollStep);
+  }
+
+}
+
+/*
+ ######################
+ ####### GLOBAL #######
+ ######################
+*/
 function scrollBarSlider(options) {
   const {
     section = 'slider-section',
@@ -636,105 +760,6 @@ function scrollBarSlider(options) {
   // autoSlide();
 }
 
-scrollBarSlider({
-  containerSelector: '.categories-section .slider-wrapper',
-  prevArrowSelector: '.categories-section .arrow-left',
-  nextArrowSelector: '.categories-section .arrow-right'
-});
-
-const categoriesColors = [
-  "var(--transparent-green3)",  // 1st color
-  "var(--transparent-yellow2)", // 2nd color
-  "var(--transparent-yellow)",  // 3rd color
-  "var(--transparent-orange3)", // 4th color
-  "var(--transparent-green4)",  // 5th color
-  "var(--transparent-blue)",    // 6th color
-  "var(--transparent-violet)",  // 7th color
-  "var(--transparent-olive)",   // 8th color
-  "var(--transparent-orange)"   // 9th color
-];
-
-document.querySelectorAll('.featured-categories .slider-wrapper .category-item .image').forEach((catItem, index) => {
-  catItem.style.backgroundColor = categoriesColors[index % categoriesColors.length];
-});
-
-/* 
- ###################################
- #### PERCENTAGE OFFERS SECTION ####
- ###################################
-*/
-if (document.querySelector('.best-offers-section')) {
-    animatedFilterWithTabsAndArrows(
-      document.querySelectorAll('.best-offers-section .section-heading2 .tabs li'),
-      document.querySelectorAll('.best-offers-section .products-container .products-group'),
-      document.querySelector('.best-offers-section .section-heading2 .arrows .prev-btn'),
-      document.querySelector('.best-offers-section .section-heading2 .arrows .next-btn')
-    );
-
-  document.querySelectorAll('.best-offers-section .product-item .product-title').forEach((title) => {
-    title.textContent = truncateWords(title.textContent, 4);
-  });
-}
-
-/* 
- ###############################
- #### OFFERS SLIDER SECTION ####
- ###############################
-*/
-// CSS handles the "one/two/three" classes, we just toggle .active
-const offersSlider = new Slider('offersSlider', {
-  type:'fade',
-  slideSelector:'.offer-slide',
-  autoPlayDelay:4000
-});
-
-/* 
- #########################
- #### ScrollUp Button #### 
- #########################
-*/
-if (document.getElementById('scroll-up')) {
-
-  var scrollUpBtn = document.getElementById('scroll-up');
-  window.onscroll = function () {
-    if (window.scrollY >= 1200) {
-      scrollUpBtn.style.display = "block";
-    } else {
-      scrollUpBtn.style.display = "none";
-    }
-  };
-
-  document.querySelector('.scroll-up').addEventListener('click', function (event) {
-    event.preventDefault();
-    scrollToTop(80);
-  });
-
-  function scrollToTop(duration) {
-    const start = window.pageYOffset;
-    const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-
-    function scrollStep() {
-      const currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      window.scroll(0, start - start * progress);
-
-      if (progress < 1) {
-        requestAnimationFrame(scrollStep);
-      }
-    }
-
-    requestAnimationFrame(scrollStep);
-  }
-
-}
-
-/*
- ######################
- ####### GLOBAL #######
- ######################
-*/
 function pagination(data, itemsPerPage, renderContent, paginationContainer) {
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
@@ -922,6 +947,177 @@ function animatedFilterWithTabsAndArrows(tabs, groups, prevBtn, nextBtn) {
       paginate(currentGroup, pageIndexes[key] + 1);
     }
   });
+}
+
+function scrollSlider(options) {
+  const {
+    section = 'slider-section',
+    containerSelector = '.slides-container',
+    dotsSelector = '#sliderdots',
+    prevArrowSelector = '.arrow-left',
+    nextArrowSelector = '.arrow-right',
+    slidesToShowDefault = 1,
+    slidesToScrollDefault = 1,
+    autoplaySpeed = 3000
+  } = options;
+
+  let sliderSection = document.querySelector(section);
+  let sliderContainer = document.querySelector(containerSelector);
+  let currentIndex = 0;
+  let slidesToShow = slidesToShowDefault;
+  let slidesToScroll = slidesToScrollDefault;
+  let slides;
+  let dotsWrapper = document.querySelector(dotsSelector);
+  let isDragging = false;
+  let startX = 0;
+  let scrollStart = 0;
+  let autoSlideInterval;
+  const gapSize = parseFloat(getComputedStyle(document.documentElement).fontSize) * 1.5;
+
+  function setupSlider() {
+    slides = Array.from(sliderContainer.children);
+    sliderContainer.style.display = 'flex';
+    sliderContainer.style.overflow = 'hidden';
+    updateSlidesToShow();
+  }
+
+  function setResponsive() {
+    const responsiveSettings = [
+      { breakpoint: 10, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+      { breakpoint: 360, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+      { breakpoint: 560, settings: { slidesToShow: 3, slidesToScroll: 3 } },
+      { breakpoint: 720, settings: { slidesToShow: 4, slidesToScroll: 4 } },
+      { breakpoint: 1000, settings: { slidesToShow: 5, slidesToScroll: 5 } },
+      { breakpoint: 1200, settings: { slidesToShow: 6, slidesToScroll: 6 } },
+      { breakpoint: 1400, settings: { slidesToShow: 7, slidesToScroll: 7 } },
+      { breakpoint: 1600, settings: { slidesToShow: 8, slidesToScroll: 8 } }
+    ];
+
+    responsiveSettings.forEach(resp => {
+      if (window.innerWidth >= resp.breakpoint) {
+        slidesToShow = resp.settings.slidesToShow;
+        slidesToScroll = resp.settings.slidesToScroll;
+      }
+    });
+    updateSlidesToShow();
+  }
+
+  function updateSlidesToShow() {
+    const wrapperWidth = sliderContainer.clientWidth;
+    const slideWidth = (wrapperWidth - gapSize * (slidesToShow - 1)) / slidesToShow;
+
+    Array.from(slides).forEach(slide => {
+      slide.style.flex = `0 0 ${slideWidth}px`;
+      slide.style.maxWidth = `${slideWidth}px`;
+    });
+  }
+
+  function scrollToSlide() {
+    const wrapperWidth = sliderContainer.clientWidth;
+    const slideWidth = (wrapperWidth - gapSize * (slidesToShow - 1)) / slidesToShow;
+    const scrollPosition = currentIndex * (slideWidth + gapSize);
+
+    function animateScroll(start, end, duration) {
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(timeElapsed, start, end - start, duration);
+
+        sliderContainer.scrollLeft = run;
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    animateScroll(sliderContainer.scrollLeft, scrollPosition, 600);
+
+    if (currentIndex >= slides.length) {
+      currentIndex = 0;
+      sliderContainer.scrollTo({ left: 0 });
+    }
+  }
+
+  function prevSlide() {
+    currentIndex -= slidesToScroll;
+    if (currentIndex < 0) {
+      currentIndex = slides.length - (slides.length % slidesToScroll || slidesToScroll);
+    }
+    scrollToSlide(true);
+  }
+
+  function nextSlide() {
+    currentIndex += slidesToScroll;
+    if (currentIndex > slides.length) { currentIndex = 0; }
+    scrollToSlide(true);
+  }
+
+  function attachEvents() {
+    const prevButton = document.querySelector(prevArrowSelector);
+    const nextButton = document.querySelector(nextArrowSelector);
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+    window.addEventListener('resize', setResponsive);
+
+    sliderContainer.addEventListener('mousedown', startDrag);
+    sliderContainer.addEventListener('mousemove', duringDrag);
+    sliderContainer.addEventListener('mouseup', endDrag);
+    sliderContainer.addEventListener('mouseleave', endDrag);
+
+    // sliderSection.addEventListener('mouseover', () => clearInterval(autoSlideInterval));
+    // sliderSection.addEventListener('mouseleave', autoSlide);
+  }
+
+  function startDrag(e) {
+    isDragging = true;
+    startX = e.clientX;
+    scrollStart = sliderContainer.scrollLeft;
+  }
+
+  function duringDrag(e) {
+    if (!isDragging) return;
+    const currentX = e.clientX;
+    const dragDistance = currentX - startX;
+    sliderContainer.scrollLeft = scrollStart - dragDistance;
+  }
+
+  function endDrag() {
+    if (!isDragging) return;
+    isDragging = false;
+    const wrapperWidth = sliderContainer.clientWidth;
+    const slideWidth = wrapperWidth / slidesToShow;
+    const scrollLeft = sliderContainer.scrollLeft;
+
+    if (Math.abs(scrollLeft - currentIndex * slideWidth) > slideWidth / 2) {
+      if (scrollLeft > currentIndex * slideWidth) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    } else {
+      scrollToSlide(true);
+    }
+  }
+
+  function autoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(nextSlide, autoplaySpeed);
+  }
+
+  setupSlider();
+  setResponsive();
+  attachEvents();
+  // autoSlide();
 }
 
 /*** REMOVE WHITE BACKGROUND ***/
