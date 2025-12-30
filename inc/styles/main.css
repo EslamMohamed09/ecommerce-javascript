@@ -2578,7 +2578,7 @@ img {
   position: relative;
 }
 .best-seller-section .product-carousel-window .product-carousel-track .product-card .prod-image-box .image-holder img {
-  width: 100%;
+  width: 80%;
   height: 100%;
   object-fit: contain;
   transition: opacity var(--transition-normal);
@@ -2650,9 +2650,8 @@ img {
 }
 .best-seller-section .product-carousel-window .product-carousel-track .product-card .prod-details .prod-title a {
   color: var(--navyblue6);
-}
-.best-seller-section .product-carousel-window .product-carousel-track .product-card .prod-details .prod-title a:hover {
-  color: var(--primary-color);
+  font-size: 1rem;
+  text-transform: capitalize;
 }
 .best-seller-section .product-carousel-window .product-carousel-track .product-card .prod-details .prod-price {
   font-weight: 600;

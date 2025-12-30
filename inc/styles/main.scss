@@ -2272,7 +2272,7 @@ img {max-width:100%;
                               .image-holder {height:350px;
                                              position:relative;
 
-                                    img {width:100%;
+                                    img {width:80%;
                                          height:100%;
                                          object-fit:contain;
                                          transition:opacity var(--transition-normal);
@@ -2339,8 +2339,8 @@ img {max-width:100%;
                                            text-overflow:ellipsis;
 
                                     a {color:var(--navyblue6);
-                                       &:hover {color:var(--primary-color);}
-                                    }
+                                       font-size:1rem;
+                                       text-transform:capitalize;}
                               }
 
                               .prod-price {font-weight:600;
