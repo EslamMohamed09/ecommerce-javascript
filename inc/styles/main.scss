@@ -532,7 +532,8 @@
 ::-webkit-scrollbar {width:8px;}
 
 ::-webkit-scrollbar-thumb {background-image:linear-gradient(125deg, var(--olive16) 0%, var(--olive13) 100%);
-                           border-radius:0;}
+                           border-radius:0;
+                           cursor:grab;}
 
 *::selection {background:var(--brown13);
               color:var(--white);}
