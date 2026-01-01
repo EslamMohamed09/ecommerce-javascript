@@ -8,8 +8,14 @@
   list-style: none;
   text-decoration: none !important;
   font-family: var(--font-primary);
-  scroll-behavior: smooth;
   transition: all 0.4s linear;
+}
+
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
