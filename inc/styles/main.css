@@ -15,7 +15,7 @@
 :root {
   --font-body:"Outfit", sans-serif;
   --font-primary:"Poppins", sans-serif;
-  --font-display:"Playfair Display", serif;
+  --font-primary2:"Montserrat", sans-serif;
   --font-heading:"Playfair Display", serif;
   --font-mont:"Mont", cursive;
   --font-Rale:"Rale", cursive;
@@ -609,9 +609,8 @@ section {
 }
 
 h1, h2, h3, h4, h5 {
-  font-weight: bold;
   margin: 0;
-  color: var(--gray11);
+  color: var(--gray12);
 }
 
 h1 {
@@ -645,13 +644,6 @@ h5 {
     font-size: 1.4rem;
   }
 }
-h1, h2, h3, h4, h5 {
-  font-weight: bold;
-  margin: 0;
-  color: var(--gray12);
-  line-height: 1.2;
-}
-
 p {
   font-size: 1rem;
   margin: 0;
@@ -2989,7 +2981,8 @@ img {
   list-style: none;
 }
 .best-offers-section .section-container .right-block .section-heading2 .title-holder .tabs li {
-  font-size: 1rem;
+  font-size: 1.03rem;
+  font-family: var(--font-primary2);
   font-weight: bold;
   cursor: pointer;
   color: var(-gray12);

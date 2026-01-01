@@ -10,7 +10,7 @@
 
 :root {--font-body:'Outfit', sans-serif;
        --font-primary:'Poppins', sans-serif;
-       --font-display:'Playfair Display', serif;
+       --font-primary2:'Montserrat', sans-serif;
        --font-heading:'Playfair Display', serif;
        --font-mont:'Mont', cursive;
        --font-Rale:'Rale', cursive;
@@ -565,9 +565,8 @@ section {padding:2rem 4%;
 .section-container {width:100%;
                     margin:0 auto;}
 
-h1, h2, h3, h4, h5 {font-weight:bold;
-                    margin:0;
-                    color:var(--gray11)}
+h1, h2, h3, h4, h5 {margin:0;
+                    color:var(--gray12)}
 
 h1 {font-size:1.9rem;}
 h2 {font-size:1.7rem;}
@@ -580,11 +579,6 @@ h5 {font-size:0.9rem;}
   h2 {font-size:1.5rem;}
   h3 {font-size:1.4rem;}
 }
-
-h1, h2, h3, h4, h5 {font-weight:bold;
-                    margin:0;
-                    color:var(--gray12);
-                    line-height:1.2;}
 
 p {font-size:1rem;
    margin:0;
@@ -1394,9 +1388,9 @@ img {max-width:100%;
 
                                     &.active {visibility:visible;
                                               opacity:1;
-                                              transition:opacity 0.7s ease;}
-
-                                    &.active .left-block {margin-left:0.5rem;}
+                                              transition:opacity 0.7s ease;
+                                              .left-block {margin-left:0.5rem;}
+                                    }
 
                                     /* Animation */
                                     &.active:first-child .left-block .semi-title {animation:movebottom 0.7s linear 0.7s backwards;}
@@ -2621,7 +2615,8 @@ img {max-width:100%;
                                            gap:1.5rem;
                                            list-style:none;
 
-                                          li {font-size:1rem;
+                                          li {font-size:1.03rem;
+                                              font-family:var(--font-primary2);
                                               font-weight:bold;
                                               cursor:pointer;
                                               color:var(-gray12);

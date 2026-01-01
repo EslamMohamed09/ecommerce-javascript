@@ -459,6 +459,16 @@ if(document.querySelector('.best-seller-section')) {
     prevArrowSelector:'.best-seller-section .section-heading .arrows .arrow-left',
     nextArrowSelector:'.best-seller-section .section-heading .arrows .arrow-right',
   });
+
+  const bestSellerColorDots = document.querySelectorAll('.best-seller-section .product-card .color-dot');
+  bestSellerColorDots.forEach(dot => {
+    dot.addEventListener('click', function(e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      parent.querySelectorAll('.color-dot').forEach(s => s.classList.remove('selected')); // Get siblings
+      this.classList.add('selected');
+    });
+  });
 }
 
 /* 
