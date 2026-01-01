@@ -618,7 +618,6 @@ function scrollBarSlider(options) {
   function setupSlider() {
     slides = sliderContainer.children;
     sliderContainer.style.display = 'flex';
-    sliderContainer.style.scrollBehavior = 'smooth';
     updateSlidesToShow();
   }
 
