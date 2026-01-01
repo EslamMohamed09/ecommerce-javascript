@@ -2548,10 +2548,10 @@ img {
 }
 .best-seller-section .product-carousel-window .product-carousel-track .product-card .prod-image-box {
   height: 350px;
-  position: relative;
   border-radius: 8px 8px 0 0;
   background-color: #f5f5f5;
   overflow: hidden;
+  position: relative;
 }
 .best-seller-section .product-carousel-window .product-carousel-track .product-card .prod-image-box .badge {
   position: absolute;

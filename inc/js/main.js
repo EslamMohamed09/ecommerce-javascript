@@ -618,7 +618,6 @@ function scrollBarSlider(options) {
   function setupSlider() {
     slides = sliderContainer.children;
     sliderContainer.style.display = 'flex';
-    sliderContainer.style.scrollBehavior = 'smooth';
     updateSlidesToShow();
   }
 
@@ -679,7 +678,7 @@ function scrollBarSlider(options) {
       requestAnimationFrame(animation);
     }
 
-    animateScroll(sliderContainer.scrollLeft, scrollPosition, 600);
+    animateScroll(sliderContainer.scrollLeft, scrollPosition, 900);
 
     if (currentIndex >= slides.length) {
       currentIndex = 0;
@@ -688,17 +687,30 @@ function scrollBarSlider(options) {
   }
 
   function prevSlide() {
-    currentIndex -= slidesToScroll;
-    if (currentIndex < 0) {
-      currentIndex = slides.length - (slides.length % slidesToScroll || slidesToScroll);
+    const maxIndex = slides.length - slidesToShow;
+
+    if (currentIndex <= 0) {
+        currentIndex = maxIndex;
+    } else {
+      currentIndex = Math.max(currentIndex - slidesToScroll, 0);
     }
-    scrollToSlide(true);
+
+    scrollToSlide();
   }
 
   function nextSlide() {
-    currentIndex += slidesToScroll;
-    if (currentIndex > slides.length) { currentIndex = 0; }
-    scrollToSlide(true);
+    const maxIndex = slides.length - slidesToShow;
+
+    if (currentIndex >= maxIndex) {
+        currentIndex = 0;
+    } else {
+      currentIndex = Math.min(
+        currentIndex + slidesToScroll,
+        maxIndex
+      );
+    }
+
+    scrollToSlide();
   }
 
   function attachEvents() {
