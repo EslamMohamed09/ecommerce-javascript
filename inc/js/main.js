@@ -994,7 +994,7 @@ function scrollSlider5Items(options) {
   let startX = 0;
   let scrollStart = 0;
   let autoSlideInterval;
-  const gapSize = parseFloat(getComputedStyle(document.documentElement).fontSize) * 1.5;
+  const gapSize = parseFloat(getComputedStyle(document.documentElement).fontSize) * 1;
 
   function setupSlider() {
     slides = Array.from(sliderContainer.children);

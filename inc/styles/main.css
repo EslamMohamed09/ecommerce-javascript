@@ -2534,7 +2534,7 @@ img {
 }
 .best-seller-section .product-carousel-window .product-carousel-track {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   transition: transform var(--transition-slow);
   overflow: hidden;
   scroll-behavior: auto;
@@ -3581,9 +3581,9 @@ img {
 }
 
 /*
-**************
+***************
  # TESTIMONIALS
-**************
+***************
 */
 .testimonials-section {
   background: var(--color-white);
@@ -3599,11 +3599,6 @@ img {
   border-radius: var(--radius-xl);
   padding: var(--spacing-2xl);
   transition: all var(--transition-normal);
-}
-.testimonials-section .testimonials-container .testimonial-card:hover {
-  border-color: var(--color-secondary);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
 }
 .testimonials-section .testimonials-container .testimonial-card .testimonial-card-rating {
   font-size: 1.125rem;
@@ -3637,6 +3632,11 @@ img {
 .testimonials-section .testimonials-container .testimonial-card .testimonial-card-author .testimonial-card-location {
   font-size: 0.875rem;
   color: var(--color-gray-500);
+}
+.testimonials-section .testimonials-container .testimonial-card:hover {
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
 }
 
 .scroll-up {

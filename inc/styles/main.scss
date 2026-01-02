@@ -2237,7 +2237,7 @@ img {max-width:100%;
                                 padding:15px;
 
             .product-carousel-track {display:flex;
-                                     gap:1.5rem;
+                                     gap:1rem;
                                      transition:transform var(--transition-slow);
                                      overflow:hidden;
                                      scroll-behavior:auto;
@@ -3140,9 +3140,9 @@ img {max-width:100%;
 }
 
 /*
-**************
+***************
  # TESTIMONIALS
-**************
+***************
 */
 .testimonials-section {background:var(--color-white);
 
@@ -3155,10 +3155,6 @@ img {max-width:100%;
                                border-radius:var(--radius-xl);
                                padding:var(--spacing-2xl);
                                transition:all var(--transition-normal);
-
-                  &:hover {border-color:var(--color-secondary);
-                           box-shadow:var(--shadow-lg);
-                           transform:translateY(-4px);}
 
                   .testimonial-card-rating {font-size:1.125rem;
                                             color:#fbbf24;
@@ -3187,6 +3183,10 @@ img {max-width:100%;
                         .testimonial-card-location {font-size:0.875rem;
                                                     color:var(--color-gray-500);}
                   }
+
+                  &:hover {border-color:var(--color-secondary);
+                           box-shadow:var(--shadow-lg);
+                           transform:translateY(-4px);}
             }
       }
 }
