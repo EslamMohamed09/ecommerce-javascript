@@ -808,6 +808,7 @@ img {max-width:100%;
                       font-weight:bold;
                       text-transform:uppercase;
                       color:var(--primary-color10);
+                      font-family:var(--font-primary2);
                       display:inline-block;
                       position:relative;
 
@@ -2015,8 +2016,8 @@ img {max-width:100%;
                           padding:0;
 
             .products-container {display:grid;
-                                 grid-template-columns:repeat(auto-fill,minmax(180px, 1fr));
-                                 gap:0.5rem;
+                                 grid-template-columns:repeat(auto-fill,minmax(200px, 1fr));
+                                 gap:1rem;
                                  padding:0.3rem;
                                  border-radius:0.5rem;
                                  position:relative;
@@ -2168,6 +2169,7 @@ img {max-width:100%;
 
                               .product-name {font-size:1rem;
                                              font-weight:bold;
+                                             font-family:var(--font-primary2);
                                              line-height:1rem;
                                              color:var(--gray11);}
 
@@ -2796,9 +2798,10 @@ img {max-width:100%;
                                                 .circle-outer:nth-child(4) .color-circle {background-color:blue;}
                                           }
 
-                                          .product-title {font-size:1rem;
+                                          .product-title {font-size:1.05rem;
                                                           font-weight:bold;
                                                           text-align:left;
+                                                          font-family:var(--font-primary2);
                                                           line-height:1.2;
                                                           color:var(--gray11);}
 
@@ -3133,6 +3136,58 @@ img {max-width:100%;
 
       @media (max-width:576px) {
             .brands-grid {grid-template-columns:repeat(2, 1fr);}
+      }
+}
+
+/*
+**************
+ # TESTIMONIALS
+**************
+*/
+.testimonials-section {background:var(--color-white);
+
+      .testimonials-container {display:grid;
+                               grid-template-columns:repeat(3, 1fr);
+                               gap:1rem;
+
+            .testimonial-card {background:var(--color-white);
+                               border:1px solid var(--color-gray-200);
+                               border-radius:var(--radius-xl);
+                               padding:var(--spacing-2xl);
+                               transition:all var(--transition-normal);
+
+                  &:hover {border-color:var(--color-secondary);
+                           box-shadow:var(--shadow-lg);
+                           transform:translateY(-4px);}
+
+                  .testimonial-card-rating {font-size:1.125rem;
+                                            color:#fbbf24;
+                                            margin-bottom:var(--spacing-lg);}
+
+                  .testimonial-card-text {font-size:1rem;
+                                          color:var(--color-gray-600);
+                                          line-height:1.75;
+                                          font-style:italic;
+                                          margin-bottom:var(--spacing-xl);}
+
+                  .testimonial-card-author {display:flex;
+                                            align-items:center;
+                                            gap:var(--spacing-md);
+
+                        .testimonial-card-avatar {width:56px;
+                                                  height:56px;
+                                                  border-radius:var(--radius-full);
+                                                  object-fit:cover;}
+
+                        .testimonial-card-name {font-size:1rem;
+                                                font-weight:600;
+                                                color:var(--color-gray-800);
+                                                margin-bottom:var(--spacing-xs);}
+
+                        .testimonial-card-location {font-size:0.875rem;
+                                                    color:var(--color-gray-500);}
+                  }
+            }
       }
 }
 
