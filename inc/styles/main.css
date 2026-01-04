@@ -3378,6 +3378,7 @@ img {
 */
 .trust-section {
   padding: 2.5rem 4%;
+  margin: 4rem 0 0;
   background: linear-gradient(135deg, var(--gray) 0%, var(--gray2) 100%);
   border-top: 1px solid var(--gray3);
   border-bottom: 1px solid var(--gray3);
@@ -3609,6 +3610,9 @@ img {
  # NEWSLETTER
 *************
 */
+.newsletter-section {
+  padding: 3rem 7% 4rem;
+}
 .newsletter-section .newsletter-wrapper {
   display: flex;
   align-items: center;
