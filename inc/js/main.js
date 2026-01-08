@@ -425,11 +425,13 @@ if (heroSection) {
  #### SHOP BY CATEGORIES SECTION ####
  ####################################
 */
-scrollBarSlider({
-  containerSelector:'.shop-by-categories-section .slider-wrapper',
-  prevArrowSelector:'.shop-by-categories-section .arrow-left',
-  nextArrowSelector:'.shop-by-categories-section .arrow-right'
-});
+if(document.querySelector('.shop-by-categories-section')){
+  scrollBarSlider({
+    containerSelector:'.shop-by-categories-section .slider-wrapper',
+    prevArrowSelector:'.shop-by-categories-section .arrow-left',
+    nextArrowSelector:'.shop-by-categories-section .arrow-right'
+  });
+}
 
 const categoriesColors = [
   "var(--transparent-green3)",  // 1st color
@@ -512,15 +514,16 @@ function filterWithTabs(tabs, Items) {
   });
 }
 
-filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel1 .left-col .first-pcat-names h4'),
-               document.querySelectorAll('.main-categories-section .category-panel1 .right-col .product-item'));
+if(document.querySelector('.main-categories-section')) {
+  filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel1 .left-col .first-pcat-names h4'),
+                 document.querySelectorAll('.main-categories-section .category-panel1 .right-col .product-item'));
 
-filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel2 .left-col .second-pcat-names h4'),
-               document.querySelectorAll('.main-categories-section .category-panel2 .right-col .product-item'));
+  filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel2 .left-col .second-pcat-names h4'),
+                 document.querySelectorAll('.main-categories-section .category-panel2 .right-col .product-item'));
 
-filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel3 .left-col .third-pcat-names h4'),
-               document.querySelectorAll('.main-categories-section .category-panel3 .right-col .product-ad'));
-
+  filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel3 .left-col .third-pcat-names h4'),
+                 document.querySelectorAll('.main-categories-section .category-panel3 .right-col .product-ad'));
+}
 
 /* 
  #############################
@@ -566,7 +569,6 @@ if (document.querySelector('.testimonials-section')) {
     });
 }
 
-
 /* 
  #########################
  #### ScrollUp Button #### 
@@ -605,6 +607,1211 @@ if (document.getElementById('scroll-up')) {
     }
 
     requestAnimationFrame(scrollStep);
+  }
+
+}
+
+/* 
+ ===========================
+ ####### SINGLE PAGE #######
+ ===========================
+*/
+if (document.querySelector("#single-page")) {
+
+  function getProductId() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('id');
+  }
+
+  async function loadProduct(productId) {
+    const response = await fetch('../database/products.json');
+    if (!response.ok) { throw new Error('Failed to load products') }
+    const data = await response.json();
+
+    const product = data.products.find(product => product.id === productId);
+    if (!product) { throw new Error('Product not found') }
+    return product;
+  }
+
+  async function loadProducts() {
+    const response = await fetch('../database/products.json');
+    if (!response.ok) { throw new Error('Failed to load products') }
+    const data = await response.json();
+    return data.products;
+  }
+
+  function categoryIdOfProduct(productId, products) {
+    const product = products.find((product) => product.id === productId);
+    if (product) { return product.catId } else { throw new Error('Failed to load category') }
+  }
+
+  function siblingProductsOfProduct(categoryId, excludeProductId, products) {
+    const categoryProducts = products.filter((product) => product.catId === categoryId && product.id !== excludeProductId);
+    return categoryProducts;
+  }
+
+  async function getSiblingCategories(categoryId) {
+
+    const response = await fetch('../database/categories.json');
+    if (!response.ok) { throw new Error('Failed to load categories') }
+    const data = await response.json();
+
+    let category = data.categories.find(cat => cat.id === categoryId);
+
+    if (!category || !category.parent_id) { return []; }
+
+    // Get all categories with the same parent_id & exclude the given category
+    return data.categories.filter(cat => cat.parent_id === category.parent_id && cat.id !== categoryId);
+  }
+
+  function getCategoriesProducts(categoriesIds, products) {
+    return products.filter(product => categoriesIds.includes(product.catId));
+  }
+
+  async function loadCategories() {
+    const response = await fetch('../database/categories.json');
+    if (!response.ok) { throw new Error('Failed to load categories'); }
+    const data = await response.json();
+    return data.categories;
+  }
+
+  function getParentCategories(categoryId, categories, parentCategories = []) {
+    const category = categories.find(cat => cat.id === categoryId);
+
+    if (category) {
+      parentCategories.unshift(category);
+
+      if (category.parent_id) {
+        return getParentCategories(category.parent_id, categories, parentCategories);
+      }
+    }
+
+    return parentCategories;
+  }
+
+  async function displayParentCategories() {
+    try {
+      const categories = await loadCategories();
+      const product = await loadProduct(getProductId());
+      const categoryId = product.catId;
+      const parentCategories = getParentCategories(categoryId, categories);
+
+      let parentCategoriesHtml = parentCategories.map((parentCategory, index) => `
+      <li class="d-flex-r-c-c">
+        ${index !== 0 ? '<i class="fas fa-chevron-left"></i>' : ''}
+        <a href="category.html?id=${parentCategory.id}" class="catlink">${parentCategory.name}</a>
+      </li>`).join('');
+
+      const parentCategoriesHolder = document.querySelector('#single-page .product-container .left-block .parent-categories-holder');
+      parentCategoriesHolder.innerHTML = parentCategoriesHtml;
+    } catch (error) {
+      console.error('error loading parent categories:', error);
+    }
+  }
+
+  async function displayFeaturedProducts() {
+    try {
+
+      const currentProductId = getProductId();
+      const products = await loadProducts();
+      const productCategoryId = categoryIdOfProduct(currentProductId, products);
+      const siblingProducts = siblingProductsOfProduct(productCategoryId, currentProductId, products);
+
+      const siblingCategories = await getSiblingCategories(productCategoryId);
+      const siblingCategoriesIds = siblingCategories.map((cat) => cat.id);
+      const siblingCategoriesProducts = getCategoriesProducts(siblingCategoriesIds, products);
+
+      if (siblingProducts.length > 0) {
+
+        let siblingProductsHtml = siblingProducts.map((product) => {
+
+          let truncateTitle = product.title.split(" ").slice(0, 3).join(" ");
+
+          let imageHtml = '';
+
+          if (Array.isArray(product.image)) {
+
+            // Case 1: Direct array of URLs
+            if (typeof product.image[0] === 'string') {
+              imageHtml = product.image.slice(0, 2).map(src => `<img src="${src}" alt="${truncateTitle}">`).join('');
+            }
+
+            // Case 2: Array of objects with {color, url: []}
+            else if (typeof product.image[0] === 'object' && Array.isArray(product.image[0].url)) {
+              // Find the color that matches product.color (if exists) or take first
+              const colorObj = product.image.find(img => img.color === product.color) || product.image[0];
+              const urls = colorObj.url || [];
+              imageHtml = urls.slice(0, 2).map(src => `<img src="${src}" alt="${truncateTitle}">`).join('');
+            }
+
+          }
+
+          let hotDealStat = parseInt(product.off) > 20 ? `<span class="stat hot">hot</span>` : '';
+          let dealStat = product.off ? `<span class="stat sale">-${product.off}</span>` : '';
+          let topRateStat = product.rating > 4 ? `<span class="stat top">top</span>` : '';
+
+          let colorHtml = product.colors && product.colors.length > 0
+            ? `<ul class="colors-holder d-flex-r-c-c">
+                                ${product.colors.slice(0, 5).map((proColor) => {
+              let backgroundStyle = '';
+
+              if (proColor.includes('x')) {
+                const colorArray = proColor.split('x').map(c => c.trim());
+                if (colorArray.length === 2) {
+                  backgroundStyle = `radial-gradient(${colorArray[0]}, ${colorArray[1]})`;
+                } else {
+                  backgroundStyle = `radial-gradient(${colorArray.join(', ')})`;
+                }
+              } else {
+                backgroundStyle = proColor;
+              }
+
+              return `<li class="circle-outer"><div class="color-circle" style="background:${backgroundStyle};"></div></li>`;
+            }).join('')}
+                            </ul>`
+            : '';
+
+          let filterDescription = product.description ? product.description.replace(/[-:,]/g, "") :
+            product.aboutThisItem ? product.aboutThisItem.replace(/[-:,]/g, "") : '';
+
+          let descriptionHtml = filterDescription ? `<p>${filterDescription.split(" ").slice(0, 4).join(" ")}...</p>` : '';
+
+          let ratingHtml = '';
+          if (product.rating) {
+            for (let i = 1; i <= 5; i++) {
+              if (i <= product.rating) {
+                ratingHtml += `<i class="fas fa-star"></i>`;
+              } else if (i - 0.5 === product.rating) {
+                ratingHtml += `<i class="fas fa-star-half-alt"></i>`;
+              } else {
+                ratingHtml += `<i class="far fa-star"></i>`;
+              }
+            }
+            ratingHtml = `<div class="ratings d-flex-r-st-st">${ratingHtml}</div>`
+          }
+
+          return `<div class="product-item">
+                      <div class="image-holder d-flex-r-c-c">
+                        ${imageHtml}
+                      </div>
+                      <div class="stats d-flex-c-st-st">
+                        ${hotDealStat}
+                        ${topRateStat}
+                        ${dealStat}
+                      </div>
+                      <div class="icons d-flex-c-st-st">
+                        <button type="button"><i class="far fa-heart" id="icon"></i></button>
+                        <button type="button" class="add-to-cart-btn"><i class="fas fa-shopping-cart" id="icon"></i></button>
+                        <button type="button"><i class="fas fa-eye" id="icon"></i></button>
+                        <button type="button"><i class="fas fa-compress-alt" id="icon"></i></button>
+                      </div>
+                      <div class="content d-flex-c-st-st">
+                        ${colorHtml}
+                        <a href="single.html?id=${product.id}" class="product-title">${truncateTitle}</a>
+                        ${descriptionHtml}
+                        ${ratingHtml}
+                        <div class="product-price d-flex-r-bt-c">
+                          <strong class="oldprice">${product.price}</strong>
+                          <strong class="price">${product.salePrice}</strong>
+                        </div>
+                      </div>
+          </div>`
+
+        }).join('');
+
+        const siblingProductsBlock = document.createElement('div');
+        siblingProductsBlock.classList.add('sibling-products-block');
+
+        const siblingProductsContainer = document.createElement('div');
+        siblingProductsContainer.classList.add('sibling-products-container');
+
+        const siblingProductsWrapper = document.createElement('div');
+        siblingProductsWrapper.classList.add('slider-wrapper');
+
+        const siblingProductsHeading = document.createElement('div'); // block title
+        siblingProductsHeading.classList.add('block-heading');
+
+        const siblingProductsTitle = document.createElement('h3');
+        siblingProductsTitle.classList.add('block-heading-title');
+
+        siblingProductsTitle.textContent = 'related items';
+
+        siblingProductsHeading.appendChild(siblingProductsTitle);
+        siblingProductsContainer.appendChild(siblingProductsHeading);
+
+        siblingProductsWrapper.innerHTML = siblingProductsHtml;
+        siblingProductsContainer.appendChild(siblingProductsWrapper);
+        siblingProductsBlock.appendChild(siblingProductsContainer);
+
+        document.querySelector('#single-page .featured-products-container').appendChild(siblingProductsBlock);
+
+        if (siblingProductsWrapper.children.length > 6) {
+
+          siblingProductsWrapper.style.cssText = 'display:flex;margin:4rem auto 0;';
+
+          siblingProductsContainer.innerHTML += `<div class="arrows">
+                                                          <div class="arrow-left"><i class="fa fa-angle-left"></i></div>
+                                                          <div class="arrow-right"><i class="fa fa-angle-right"></i></div>
+                                                        </div>
+                                                        <div id="sliderdots" class="d-flex-r-c-c"></div>`;
+
+          countSliderFullScreen({
+            section: '.sibling-products-block',
+            containerSelector: '.sibling-products-block .slider-wrapper',
+            dotsSelector: '.sibling-products-block #sliderdots',
+            prevArrowSelector: '.sibling-products-block .arrow-left',
+            nextArrowSelector: '.sibling-products-block .arrow-right',
+          });
+
+        } else {
+          siblingProductsWrapper.style.display = 'grid';
+          siblingProductsWrapper.style.gridTemplateColumns = 'repeat(auto-fill, minmax(190px, 1fr))';
+        }
+      }
+
+      const bestSellerSiblingProducts = siblingProducts.filter(product => product.bought > 30);
+      if (bestSellerSiblingProducts.length > 0) {
+
+        let bestSellerSiblingProductsHtml = bestSellerSiblingProducts.map((product) => {
+
+          let truncateTitle = product.title.split(" ").slice(0, 3).join(" ");
+
+          let imageHtml = '';
+
+          if (Array.isArray(product.image)) {
+
+            if (typeof product.image[0] === 'string') {// Case 1: Direct array of URLs
+              imageHtml = product.image.slice(0, 2).map(src => `<img src="${src}" alt="${truncateTitle}">`).join('');
+            }
+
+            else if (typeof product.image[0] === 'object' && Array.isArray(product.image[0].url)) {// Case 2: Array of objects with {color, url: []}
+              // Find the color that matches product.color (if exists) or take first
+              const colorObj = product.image.find(img => img.color === product.color) || product.image[0];
+              const urls = colorObj.url || [];
+              imageHtml = urls.slice(0, 2).map(src => `<img src="${src}" alt="${truncateTitle}">`).join('');
+            }
+
+          }
+
+          let hotDealStat = parseInt(product.off) > 20 ? `<span class="stat hot">hot</span>` : '';
+          let dealStat = product.off ? `<span class="stat sale">-${product.off}</span>` : '';
+          let topRateStat = product.rating > 4 ? `<span class="stat top">top</span>` : '';
+
+          let colorHtml = product.colors && product.colors.length > 0
+            ? `<ul class="colors-holder d-flex-r-c-c">
+                                ${product.colors.slice(0, 5).map((proColor) => {
+                    let backgroundStyle = '';
+
+                    if (proColor.includes('x')) {
+                      const colorArray = proColor.split('x').map(c => c.trim());
+                      if (colorArray.length === 2) {
+                        backgroundStyle = `radial-gradient(${colorArray[0]}, ${colorArray[1]})`;
+                      } else {
+                        backgroundStyle = `radial-gradient(${colorArray.join(', ')})`;
+                      }
+                    } else {
+                      backgroundStyle = proColor;
+                    }
+
+                    return `<li class="circle-outer"><div class="color-circle" style="background:${backgroundStyle};"></div></li>`;
+                  }).join('')}
+              </ul>`
+            : '';
+
+          let filterDescription = product.description ? product.description.replace(/[-:,]/g, "") :
+            product.aboutThisItem ? product.aboutThisItem.replace(/[-:,]/g, "") : '';
+
+          let descriptionHtml = filterDescription ? `<p>${filterDescription.split(" ").slice(0, 4).join(" ")}...</p>` : '';
+
+          let ratingHtml = '';
+          if (product.rating) {
+            for (let i = 1; i <= 5; i++) {
+              if (i <= product.rating) {
+                ratingHtml += `<i class="fas fa-star"></i>`;
+              } else if (i - 0.5 === product.rating) {
+                ratingHtml += `<i class="fas fa-star-half-alt"></i>`;
+              } else {
+                ratingHtml += `<i class="far fa-star"></i>`;
+              }
+            }
+            ratingHtml = `<div class="ratings d-flex-r-st-st">${ratingHtml}</div>`
+          }
+
+          return `<div class="product-item">
+                      <div class="image-holder d-flex-r-c-c">
+                        ${imageHtml}
+                      </div>
+                      <div class="stats d-flex-c-st-st">
+                        ${hotDealStat}
+                        ${topRateStat}
+                        ${dealStat}
+                      </div>
+                      <div class="icons d-flex-c-st-st">
+                        <button type="button"><i class="far fa-heart" id="icon"></i></button>
+                        <button type="button" class="add-to-cart-btn"><i class="fas fa-shopping-cart" id="icon"></i></button>
+                        <button type="button"><i class="fas fa-eye" id="icon"></i></button>
+                        <button type="button"><i class="fas fa-compress-alt" id="icon"></i></button>
+                      </div>
+                      <div class="content d-flex-c-st-st">
+                        ${colorHtml}
+                        <a href="single.html?id=${product.id}" class="product-title">${truncateTitle}</a>
+                        ${descriptionHtml}
+                        ${ratingHtml}
+                        <div class="product-price d-flex-r-bt-c">
+                          <strong class="oldprice">${product.price}</strong>
+                          <strong class="price">${product.salePrice}</strong>
+                        </div>
+                      </div>
+            </div>`
+
+        }).join('');
+
+        const bestSellerSiblingProductsBlock = document.createElement('div');
+        bestSellerSiblingProductsBlock.classList.add('best-seller-sibling-products-block');
+
+        const bestSellerSiblingProductsContainer = document.createElement('div');
+        bestSellerSiblingProductsContainer.classList.add('best-seller-sibling-products-container');
+
+        const bestSellerSiblingProductsWrapper = document.createElement('div');
+        bestSellerSiblingProductsWrapper.classList.add('slider-wrapper');
+
+        const bestSellerSiblingProductsHeading = document.createElement('div'); // block title
+        bestSellerSiblingProductsHeading.classList.add('block-heading');
+
+        const bestSellerSiblingProductsTitle = document.createElement('h3');
+        bestSellerSiblingProductsTitle.classList.add('block-heading-title');
+
+        bestSellerSiblingProductsTitle.textContent = 'best seller';
+
+        bestSellerSiblingProductsHeading.appendChild(bestSellerSiblingProductsTitle);
+        bestSellerSiblingProductsContainer.appendChild(bestSellerSiblingProductsHeading);
+
+        bestSellerSiblingProductsWrapper.innerHTML = bestSellerSiblingProductsHtml;
+        bestSellerSiblingProductsContainer.appendChild(bestSellerSiblingProductsWrapper);
+        bestSellerSiblingProductsBlock.appendChild(bestSellerSiblingProductsContainer);
+
+        document.querySelector('#single-page .featured-products-container').appendChild(bestSellerSiblingProductsBlock);
+
+        if (bestSellerSiblingProductsWrapper.children.length > 6) {
+
+          bestSellerSiblingProductsWrapper.style.cssText = 'display:flex;margin:4rem auto 0;';
+
+          bestSellerSiblingProductsContainer.innerHTML += `<div class="arrows">
+                                                                  <div class="arrow-left"><i class="fa fa-angle-left"></i></div>
+                                                                  <div class="arrow-right"><i class="fa fa-angle-right"></i></div>
+                                                                </div>
+                                                                <div id="sliderdots" class="d-flex-r-c-c"></div>`;
+
+          countSliderFullScreen({
+            section: '.best-seller-sibling-products-block',
+            containerSelector: '.best-seller-sibling-products-block .slider-wrapper',
+            dotsSelector: '.best-seller-sibling-products-block #sliderdots',
+            prevArrowSelector: '.best-seller-sibling-products-block .arrow-left',
+            nextArrowSelector: '.best-seller-sibling-products-block .arrow-right',
+          });
+
+        } else {
+          bestSellerSiblingProductsWrapper.style.display = 'grid';
+          bestSellerSiblingProductsWrapper.style.gridTemplateColumns = 'repeat(auto-fill, minmax(190px, 1fr))';
+        }
+      }
+
+      const topRatedsiblingProducts = siblingProducts.filter(product => product.rating > 4);
+      if (topRatedsiblingProducts.length > 0) {
+
+        let topRatedsiblingProductsHtml = topRatedsiblingProducts.map((product) => {
+
+          let truncateTitle = product.title.split(" ").slice(0, 3).join(" ");
+
+          let imageHtml = '';
+
+          if (Array.isArray(product.image)) {
+
+            if (typeof product.image[0] === 'string') {// Case 1: Direct array of URLs
+              imageHtml = product.image.slice(0, 2).map(src => `<img src="${src}" alt="${truncateTitle}">`).join('');
+            }
+
+            else if (typeof product.image[0] === 'object' && Array.isArray(product.image[0].url)) {// Case 2: Array of objects with {color, url: []}
+              // Find the color that matches product.color (if exists) or take first
+              const colorObj = product.image.find(img => img.color === product.color) || product.image[0];
+              const urls = colorObj.url || [];
+              imageHtml = urls.slice(0, 2).map(src => `<img src="${src}" alt="${truncateTitle}">`).join('');
+            }
+
+          }
+
+          let hotDealStat = parseInt(product.off) > 20 ? `<span class="stat hot">hot</span>` : '';
+          let dealStat = product.off ? `<span class="stat sale">-${product.off}</span>` : '';
+          let topRateStat = product.rating > 4 ? `<span class="stat top">top</span>` : '';
+
+          let colorHtml = product.colors && product.colors.length > 0
+            ? `<ul class="colors-holder d-flex-r-c-c">
+                                ${product.colors.slice(0, 5).map((proColor) => {
+              let backgroundStyle = '';
+
+              if (proColor.includes('x')) {
+                const colorArray = proColor.split('x').map(c => c.trim());
+                if (colorArray.length === 2) {
+                  backgroundStyle = `radial-gradient(${colorArray[0]}, ${colorArray[1]})`;
+                } else {
+                  backgroundStyle = `radial-gradient(${colorArray.join(', ')})`;
+                }
+              } else {
+                backgroundStyle = proColor;
+              }
+
+              return `<li class="circle-outer"><div class="color-circle" style="background:${backgroundStyle};"></div></li>`;
+            }).join('')}
+                            </ul>`
+            : '';
+
+          let filterDescription = product.description ? product.description.replace(/[-:,]/g, "") :
+            product.aboutThisItem ? product.aboutThisItem.replace(/[-:,]/g, "") : '';
+
+          let descriptionHtml = filterDescription ? `<p>${filterDescription.split(" ").slice(0, 4).join(" ")}...</p>` : '';
+
+          let ratingHtml = '';
+          if (product.rating) {
+            for (let i = 1; i <= 5; i++) {
+              if (i <= product.rating) {
+                ratingHtml += `<i class="fas fa-star"></i>`;
+              } else if (i - 0.5 === product.rating) {
+                ratingHtml += `<i class="fas fa-star-half-alt"></i>`;
+              } else {
+                ratingHtml += `<i class="far fa-star"></i>`;
+              }
+            }
+            ratingHtml = `<div class="ratings d-flex-r-st-st">${ratingHtml}</div>`
+          }
+
+          return `<div class="product-item">
+                      <div class="image-holder d-flex-r-c-c">
+                        ${imageHtml}
+                      </div>
+                      <div class="stats d-flex-c-st-st">
+                        ${hotDealStat}
+                        ${topRateStat}
+                        ${dealStat}
+                      </div>
+                      <div class="icons d-flex-c-st-st">
+                        <button type="button"><i class="far fa-heart" id="icon"></i></button>
+                        <button type="button" class="add-to-cart-btn"><i class="fas fa-shopping-cart" id="icon"></i></button>
+                        <button type="button"><i class="fas fa-eye" id="icon"></i></button>
+                        <button type="button"><i class="fas fa-compress-alt" id="icon"></i></button>
+                      </div>
+                      <div class="content d-flex-c-st-st">
+                        ${colorHtml}
+                        <a href="single.html?id=${product.id}" class="product-title">${truncateTitle}</a>
+                        ${descriptionHtml}
+                        ${ratingHtml}
+                        <div class="product-price d-flex-r-bt-c">
+                          <strong class="oldprice">${product.price}</strong>
+                          <strong class="price">${product.salePrice}</strong>
+                        </div>
+                      </div>
+            </div>`
+
+        }).join('');
+
+        const topRatedsiblingProductsBlock = document.createElement('div');
+        topRatedsiblingProductsBlock.classList.add('top-rated-sibling-products-block');
+
+        const topRatedsiblingProductsContainer = document.createElement('div');
+        topRatedsiblingProductsContainer.classList.add('top-rated-sibling-products-container');
+
+        const topRatedsiblingProductsWrapper = document.createElement('div');
+        topRatedsiblingProductsWrapper.classList.add('slider-wrapper');
+
+        const topRatedsiblingProductsHeading = document.createElement('div'); // block title
+        topRatedsiblingProductsHeading.classList.add('block-heading');
+
+        const topRatedsiblingProductsTitle = document.createElement('h3');
+        topRatedsiblingProductsTitle.classList.add('block-heading-title');
+
+        topRatedsiblingProductsTitle.textContent = 'top rated';
+
+        topRatedsiblingProductsHeading.appendChild(topRatedsiblingProductsTitle);
+        topRatedsiblingProductsContainer.appendChild(topRatedsiblingProductsHeading);
+
+        topRatedsiblingProductsWrapper.innerHTML = topRatedsiblingProductsHtml;
+        topRatedsiblingProductsContainer.appendChild(topRatedsiblingProductsWrapper);
+        topRatedsiblingProductsBlock.appendChild(topRatedsiblingProductsContainer);
+
+        document.querySelector('#single-page .featured-products-container').appendChild(topRatedsiblingProductsBlock);
+
+        if (topRatedsiblingProductsWrapper.children.length > 6) {
+
+          topRatedsiblingProductsWrapper.style.cssText = 'display:flex;margin:4rem auto 0;';
+
+          topRatedsiblingProductsContainer.innerHTML += `<div class="arrows">
+                                                                  <div class="arrow-left"><i class="fa fa-angle-left"></i></div>
+                                                                  <div class="arrow-right"><i class="fa fa-angle-right"></i></div>
+                                                                </div>
+                                                                <div id="sliderdots" class="d-flex-r-c-c"></div>`;
+
+          countSliderFullScreen({
+            section: '.top-rated-sibling-products-block',
+            containerSelector: '.top-rated-sibling-products-block .slider-wrapper',
+            dotsSelector: '.top-rated-sibling-products-block #sliderdots',
+            prevArrowSelector: '.top-rated-sibling-products-block .arrow-left',
+            nextArrowSelector: '.top-rated-sibling-products-block .arrow-right',
+          });
+
+        } else {
+          topRatedsiblingProductsWrapper.style.display = 'grid';
+          topRatedsiblingProductsWrapper.style.gridTemplateColumns = 'repeat(auto-fill, minmax(190px, 1fr))';
+        }
+      }
+
+      const highViewedSiblingProducts = siblingProducts.filter(product => product.viewed > 100);
+      if (highViewedSiblingProducts.length > 0) {
+
+        let highViewedSiblingProductsHtml = highViewedSiblingProducts.map((product) => {
+
+          let truncateTitle = product.title.split(" ").slice(0, 3).join(" ");
+
+          let imageHtml = '';
+
+          if (Array.isArray(product.image)) {
+
+            if (typeof product.image[0] === 'string') {// Case 1: Direct array of URLs
+              imageHtml = product.image.slice(0, 2).map(src => `<img src="${src}" alt="${truncateTitle}">`).join('');
+            }
+
+            else if (typeof product.image[0] === 'object' && Array.isArray(product.image[0].url)) {// Case 2: Array of objects with {color, url: []}
+              // Find the color that matches product.color (if exists) or take first
+              const colorObj = product.image.find(img => img.color === product.color) || product.image[0];
+              const urls = colorObj.url || [];
+              imageHtml = urls.slice(0, 2).map(src => `<img src="${src}" alt="${truncateTitle}">`).join('');
+            }
+
+          }
+
+          let hotDealStat = parseInt(product.off) > 20 ? `<span class="stat hot">hot</span>` : '';
+          let dealStat = product.off ? `<span class="stat sale">-${product.off}</span>` : '';
+          let topRateStat = product.rating > 4 ? `<span class="stat top">top</span>` : '';
+
+          let colorHtml = product.colors && product.colors.length > 0
+            ? `<ul class="colors-holder d-flex-r-c-c">
+                                ${product.colors.slice(0, 5).map((proColor) => {
+              let backgroundStyle = '';
+
+              if (proColor.includes('x')) {
+                const colorArray = proColor.split('x').map(c => c.trim());
+                if (colorArray.length === 2) {
+                  backgroundStyle = `radial-gradient(${colorArray[0]}, ${colorArray[1]})`;
+                } else {
+                  backgroundStyle = `radial-gradient(${colorArray.join(', ')})`;
+                }
+              } else {
+                backgroundStyle = proColor;
+              }
+
+              return `<li class="circle-outer"><div class="color-circle" style="background:${backgroundStyle};"></div></li>`;
+            }).join('')}
+                            </ul>`
+            : '';
+
+          let filterDescription = product.description ? product.description.replace(/[-:,]/g, "") :
+            product.aboutThisItem ? product.aboutThisItem.replace(/[-:,]/g, "") : '';
+
+          let descriptionHtml = filterDescription ? `<p>${filterDescription.split(" ").slice(0, 4).join(" ")}...</p>` : '';
+
+          let ratingHtml = '';
+          if (product.rating) {
+            for (let i = 1; i <= 5; i++) {
+              if (i <= product.rating) {
+                ratingHtml += `<i class="fas fa-star"></i>`;
+              } else if (i - 0.5 === product.rating) {
+                ratingHtml += `<i class="fas fa-star-half-alt"></i>`;
+              } else {
+                ratingHtml += `<i class="far fa-star"></i>`;
+              }
+            }
+            ratingHtml = `<div class="ratings d-flex-r-st-st">${ratingHtml}</div>`
+          }
+
+          return `<div class="product-item">
+                      <div class="image-holder d-flex-r-c-c">
+                        ${imageHtml}
+                      </div>
+                      <div class="stats d-flex-c-st-st">
+                        ${hotDealStat}
+                        ${topRateStat}
+                        ${dealStat}
+                      </div>
+                      <div class="icons d-flex-c-st-st">
+                        <button type="button"><i class="far fa-heart" id="icon"></i></button>
+                        <button type="button" class="add-to-cart-btn"><i class="fas fa-shopping-cart" id="icon"></i></button>
+                        <button type="button"><i class="fas fa-eye" id="icon"></i></button>
+                        <button type="button"><i class="fas fa-compress-alt" id="icon"></i></button>
+                      </div>
+                      <div class="content d-flex-c-st-st">
+                        ${colorHtml}
+                        <a href="single.html?id=${product.id}" class="product-title">${truncateTitle}</a>
+                        ${descriptionHtml}
+                        ${ratingHtml}
+                        <div class="product-price d-flex-r-bt-c">
+                          <strong class="oldprice">${product.price}</strong>
+                          <strong class="price">${product.salePrice}</strong>
+                        </div>
+                      </div>
+            </div>`
+
+        }).join('');
+
+        const highViewedSiblingProductsBlock = document.createElement('div');
+        highViewedSiblingProductsBlock.classList.add('high-viewed-sibling-products-block');
+
+        const highViewedSiblingProductsContainer = document.createElement('div');
+        highViewedSiblingProductsContainer.classList.add('high-viewed-sibling-products-container');
+
+        const highViewedSiblingProductsWrapper = document.createElement('div');
+        highViewedSiblingProductsWrapper.classList.add('slider-wrapper');
+
+        const highViewedSiblingProductsHeading = document.createElement('div'); // block title
+        highViewedSiblingProductsHeading.classList.add('block-heading');
+
+        const highViewedSiblingProductsTitle = document.createElement('h3');
+        highViewedSiblingProductsTitle.classList.add('block-heading-title');
+
+        highViewedSiblingProductsTitle.textContent = 'customers viewed related items';
+
+        highViewedSiblingProductsHeading.appendChild(highViewedSiblingProductsTitle);
+        highViewedSiblingProductsContainer.appendChild(highViewedSiblingProductsHeading);
+
+        highViewedSiblingProductsWrapper.innerHTML = highViewedSiblingProductsHtml;
+        highViewedSiblingProductsContainer.appendChild(highViewedSiblingProductsWrapper);
+        highViewedSiblingProductsBlock.appendChild(highViewedSiblingProductsContainer);
+
+        document.querySelector('#single-page .featured-products-container').appendChild(highViewedSiblingProductsBlock);
+
+        if (highViewedSiblingProductsWrapper.children.length > 6) {
+
+          highViewedSiblingProductsWrapper.style.cssText = 'display:flex;margin:4rem auto 0;';
+
+          highViewedSiblingProductsContainer.innerHTML += `<div class="arrows">
+                                                                  <div class="arrow-left"><i class="fa fa-angle-left"></i></div>
+                                                                  <div class="arrow-right"><i class="fa fa-angle-right"></i></div>
+                                                                </div>
+                                                                <div id="sliderdots" class="d-flex-r-c-c"></div>`;
+
+          countSliderFullScreen({
+            section: '.high-viewed-sibling-products-block',
+            containerSelector: '.high-viewed-sibling-products-block .slider-wrapper',
+            dotsSelector: '.high-viewed-sibling-products-block #sliderdots',
+            prevArrowSelector: '.high-viewed-sibling-products-block .arrow-left',
+            nextArrowSelector: '.high-viewed-sibling-products-block .arrow-right',
+          });
+
+        } else {
+          highViewedSiblingProductsWrapper.style.display = 'grid';
+          highViewedSiblingProductsWrapper.style.gridTemplateColumns = 'repeat(auto-fill, minmax(190px, 1fr))';
+        }
+      }
+
+      if (siblingCategoriesProducts.length > 0) {
+
+        let siblingCategoriesProductsHtml = siblingCategoriesProducts.map((product) => {
+
+          let truncateTitle = product.title.split(" ").slice(0, 3).join(" ");
+
+          let imageHtml = '';
+
+          if (Array.isArray(product.image)) {
+
+            if (typeof product.image[0] === 'string') {// Case 1: Direct array of URLs
+              imageHtml = product.image.slice(0, 2).map(src => `<img src="${src}" alt="${truncateTitle}">`).join('');
+            }
+
+            else if (typeof product.image[0] === 'object' && Array.isArray(product.image[0].url)) {// Case 2: Array of objects with {color, url: []}
+              // Find the color that matches product.color (if exists) or take first
+              const colorObj = product.image.find(img => img.color === product.color) || product.image[0];
+              const urls = colorObj.url || [];
+              imageHtml = urls.slice(0, 2).map(src => `<img src="${src}" alt="${truncateTitle}">`).join('');
+            }
+
+          }
+
+          let hotDealStat = parseInt(product.off) > 20 ? `<span class="stat hot">hot</span>` : '';
+          let dealStat = product.off ? `<span class="stat sale">-${product.off}</span>` : '';
+          let topRateStat = product.rating > 4 ? `<span class="stat top">top</span>` : '';
+
+          let colorHtml = product.colors && product.colors.length > 0
+            ? `<ul class="colors-holder d-flex-r-c-c">
+                                ${product.colors.slice(0, 5).map((proColor) => {
+              let backgroundStyle = '';
+
+              if (proColor.includes('x')) {
+                const colorArray = proColor.split('x').map(c => c.trim());
+                if (colorArray.length === 2) {
+                  backgroundStyle = `radial-gradient(${colorArray[0]}, ${colorArray[1]})`;
+                } else {
+                  backgroundStyle = `radial-gradient(${colorArray.join(', ')})`;
+                }
+              } else {
+                backgroundStyle = proColor;
+              }
+
+              return `<li class="circle-outer"><div class="color-circle" style="background:${backgroundStyle};"></div></li>`;
+            }).join('')}
+                            </ul>`
+            : '';
+
+          let filterDescription = product.description ? product.description.replace(/[-:,]/g, "") :
+            product.aboutThisItem ? product.aboutThisItem.replace(/[-:,]/g, "") : '';
+
+          let descriptionHtml = filterDescription ? `<p>${filterDescription.split(" ").slice(0, 4).join(" ")}...</p>` : '';
+
+          let ratingHtml = '';
+          if (product.rating) {
+            for (let i = 1; i <= 5; i++) {
+              if (i <= product.rating) {
+                ratingHtml += `<i class="fas fa-star"></i>`;
+              } else if (i - 0.5 === product.rating) {
+                ratingHtml += `<i class="fas fa-star-half-alt"></i>`;
+              } else {
+                ratingHtml += `<i class="far fa-star"></i>`;
+              }
+            }
+            ratingHtml = `<div class="ratings d-flex-r-st-st">${ratingHtml}</div>`
+          }
+
+          return `<div class="product-item">
+                      <div class="image-holder d-flex-r-c-c">
+                        ${imageHtml}
+                      </div>
+                      <div class="stats d-flex-c-st-st">
+                        ${hotDealStat}
+                        ${topRateStat}
+                        ${dealStat}
+                      </div>
+                      <div class="icons d-flex-c-st-st">
+                        <button type="button"><i class="far fa-heart" id="icon"></i></button>
+                        <button type="button" class="add-to-cart-btn"><i class="fas fa-shopping-cart" id="icon"></i></button>
+                        <button type="button"><i class="fas fa-eye" id="icon"></i></button>
+                        <button type="button"><i class="fas fa-compress-alt" id="icon"></i></button>
+                      </div>
+                      <div class="content d-flex-c-st-st">
+                        ${colorHtml}
+                        <a href="single.html?id=${product.id}" class="product-title">${truncateTitle}</a>
+                        ${descriptionHtml}
+                        ${ratingHtml}
+                        <div class="product-price d-flex-r-bt-c">
+                          <strong class="oldprice">${product.price}</strong>
+                          <strong class="price">${product.salePrice}</strong>
+                        </div>
+                      </div>
+            </div>`
+
+        }).join('');
+
+        const siblingCategoriesProductsBlock = document.createElement('div');
+        siblingCategoriesProductsBlock.classList.add('sibling-categories-products-block');
+
+        const siblingCategoriesProductsContainer = document.createElement('div');
+        siblingCategoriesProductsContainer.classList.add('sibling-categories-products-container');
+
+        const siblingCategoriesProductsWrapper = document.createElement('div');
+        siblingCategoriesProductsWrapper.classList.add('slider-wrapper');
+
+        const siblingCategoriesProductsHeading = document.createElement('div'); // block title
+        siblingCategoriesProductsHeading.classList.add('block-heading');
+
+        const siblingCategoriesProductsTitle = document.createElement('h3');
+        siblingCategoriesProductsTitle.classList.add('block-heading-title');
+
+        siblingCategoriesProductsTitle.textContent = 'recommended for you';
+
+        siblingCategoriesProductsHeading.appendChild(siblingCategoriesProductsTitle);
+        siblingCategoriesProductsContainer.appendChild(siblingCategoriesProductsHeading);
+
+        siblingCategoriesProductsWrapper.innerHTML = siblingCategoriesProductsHtml;
+        siblingCategoriesProductsContainer.appendChild(siblingCategoriesProductsWrapper);
+        siblingCategoriesProductsBlock.appendChild(siblingCategoriesProductsContainer);
+
+        document.querySelector('#single-page .featured-products-container').appendChild(siblingCategoriesProductsBlock);
+
+        if (siblingCategoriesProductsWrapper.children.length > 6) {
+
+          siblingCategoriesProductsWrapper.style.cssText = 'display:flex;margin:4rem auto !important;';
+
+          siblingCategoriesProductsContainer.innerHTML += `<div class="arrows">
+                                                                  <div class="arrow-left"><i class="fa fa-angle-left"></i></div>
+                                                                  <div class="arrow-right"><i class="fa fa-angle-right"></i></div>
+                                                                </div>
+                                                                <div id="sliderdots" class="d-flex-r-c-c"></div>`;
+
+          countSliderFullScreen({
+            section: '.sibling-categories-products-block',
+            containerSelector: '.sibling-categories-products-block .slider-wrapper',
+            dotsSelector: '.sibling-categories-products-block #sliderdots',
+            prevArrowSelector: '.sibling-categories-products-block .arrow-left',
+            nextArrowSelector: '.sibling-categories-products-block .arrow-right',
+          });
+
+        } else {
+          siblingCategoriesProductsWrapper.style.display = 'grid';
+          siblingCategoriesProductsWrapper.style.gridTemplateColumns = 'repeat(auto-fill, minmax(190px, 1fr))';
+        }
+      }
+
+      const productImages = document.querySelectorAll('.image-holder img');
+      productImages.forEach(function (img) {
+        const clonedImage = img.cloneNode();
+        removeBackground(clonedImage, '#ffffff');
+        img.parentNode.replaceChild(clonedImage, img);
+      });
+
+      document.querySelectorAll(".product-item").forEach((item) => {
+        const addToCartBtn = item.querySelector('.add-to-cart-btn');
+
+        if (addToCartBtn) {
+
+          addToCartBtn.addEventListener('click', async function () {
+
+            const hrefTitle = item.querySelector('.product-title').getAttribute('href');
+
+            if (hrefTitle.includes('=')) {
+              const productId = hrefTitle.split('=')[1];
+
+              const product = await loadProduct(productId);
+
+              const productBox = {
+                id: product.id,
+                title: product.title,
+                image: product.image[0],
+                brand: product.brand ? product.brand : null,
+                stock: product.instock,
+                oldPrice: product.price,
+                salePrice: product.salePrice,
+                size: product.size ? product.size : null,
+                color: product.color ? product.color : null,
+                quantity: 1,
+              }
+
+              const productCart = JSON.parse(localStorage.getItem('ecommerce2-product-cart')) || [];
+
+              const existingProductIndex = productCart.findIndex((item) => item.id === productBox.id);
+
+              if (existingProductIndex > -1) {
+                productCart[existingProductIndex] = productBox;
+                alert('product updated to the cart');
+              } else {
+                productCart.push(productBox);
+                alert('product added to the cart');
+              }
+
+              localStorage.setItem('ecommerce2-product-cart', JSON.stringify(productCart));
+            } else {
+              console.error('Invalid product link');
+            }
+
+          });
+
+        }
+      });
+
+    } catch (error) {
+      console.error('Failed to get products');
+    }
+  }
+
+  displayParentCategories();
+
+  displayFeaturedProducts();
+
+
+  function fetchProduct(productId) {
+    fetch('../database/products.json').then(response => response.json())
+      .then(data => {
+        const product = data.products.find(p => p.id == productId);
+        if (product) {
+          displayProductDetails(product);
+        } else {
+          document.querySelector("#single-page .product-container");
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching the product data:', error);
+        document.querySelector("#single-page .product-container").innerHTML = 'Error loading product';
+      });
+  }
+
+  if (getProductId()) {
+    fetchProduct(getProductId());
+  } else {
+    document.querySelector("#single-page .product-container").innerHTML = 'no product to view';
+  }
+
+  function displayProductDetails(product) {
+    const productContainer = document.querySelector("#single-page .product-container");
+
+    const smallImagesHolder = productContainer.querySelector(".left-block .small-images-holder");
+    const bigImage = productContainer.querySelector(".left-block .big-image-holder img");
+    const colorsHolder = productContainer.querySelector(".right-block .content .colors-holder");
+    const selectedColor = productContainer.querySelector(".right-block .color-block #selected-color");
+
+    smallImagesHolder.innerHTML = '';
+    colorsHolder.innerHTML = '';
+
+    if (product.title) { productContainer.querySelector(".right-block .content h1").textContent = product.title }
+    if (product.id) { productContainer.querySelector(".right-block .content .description-block .id").textContent = product.id }
+
+    if (product.description) {
+      productContainer.querySelector(".right-block .content .description-block .description").textContent = product.description;
+    } else {
+      productContainer.querySelector(".right-block .content .description-block").style.display = "none";
+    }
+
+    if (product.brand) {
+      productContainer.querySelector(".right-block .content .brand .brand-value").textContent = product.brand;
+    } else {
+      productContainer.querySelector(".right-block .content .brand").style.display = 'none';
+    }
+
+    if (product.instock) { productContainer.querySelector(".right-block .content .instock").textContent = product.instock; }
+    if (product.aboutThisItem) {
+      productContainer.querySelector(".right-block .content .about-item-block .about-this-item").textContent = product.aboutThisItem;
+    } else {
+      productContainer.querySelector(".right-block .content .about-item-block").style.display = "none";
+    }
+
+    if (product.price) { productContainer.querySelector(".right-block .content .oldprice").textContent = product.price; }
+    if (product.salePrice) { productContainer.querySelector(".right-block .content .price").textContent = product.salePrice; }
+
+    const sizeBlock = productContainer.querySelector(".right-block .content .size-block");
+    const sizeElement = sizeBlock.querySelector(".size .size-value");
+    const sizesContainer = sizeBlock.querySelector(".sizes");
+
+    let hasSize = product.size || product.screenSize;
+    let hasSizes = product.sizes && Array.isArray(product.sizes) && product.sizes.length > 0;
+
+    if (hasSize) { sizeElement.textContent = product.size || product.screenSize } else { sizeElement.parentElement.style.display = 'none'; }
+
+    if (hasSizes) {
+      sizesContainer.innerHTML = '';
+      product.sizes.forEach((size) => {
+        sizesContainer.innerHTML += `<span>${size}</span>`;
+      });
+    } else {
+      sizesContainer.style.display = 'none';
+    }
+
+    if (!hasSize && !hasSizes) { sizeBlock.style.display = 'none'; } else { sizeBlock.style.display = 'flex'; }
+
+    if (product.color) { selectedColor.textContent = product.color; }
+
+    const attachFlippingImages = () => {
+      const smallImages = smallImagesHolder.querySelectorAll('.small-img');
+      smallImages.forEach((img) => {
+        img.addEventListener('click', () => {
+          bigImage.src = img.src;
+        });
+      });
+    };
+
+    if (product.image && Array.isArray(product.image)) {
+      const firstItem = product.image[0];
+
+      if (typeof firstItem === "string") {
+        product.image.forEach((img) => {
+          smallImagesHolder.innerHTML += `
+                <div class="small-image">
+                  <img src="${img}" class="small-img" alt="${product.title}">
+                </div>`;
+        });
+        bigImage.src = product.image[0];
+
+      } else if (typeof firstItem === "object" && Array.isArray(firstItem.url)) {
+
+        firstItem.url.forEach((img) => {
+          smallImagesHolder.innerHTML += `
+              <div class="small-image">
+                <img src="${img}" class="small-img" alt="${product.title}">
+              </div>`;
+        });
+
+        bigImage.src = firstItem.url[0];
+
+        product.image.forEach((object) => {
+          if (object.url && Array.isArray(object.url) && object.url.length > 0) {
+            const colorThumb = document.createElement("div");
+            colorThumb.className = "color-thumb";
+            colorThumb.title = object.color;
+            colorThumb.innerHTML = `
+                  <img src="${object.url[0]}" alt="${product.title}">
+                  <span class="color-name">${object.color}</span>
+                `;
+            colorsHolder.appendChild(colorThumb);
+
+            colorThumb.addEventListener("click", () => {
+              const colorName = object.color;
+              selectedColor.textContent = colorName;
+
+              colorsHolder.querySelectorAll("img").forEach(img => {
+                img.style.border = '1.7px solid var(--gray6)';
+                img.style.borderRadius = '';
+              });
+
+              const img = colorThumb.querySelector("img");
+              const firstColor = colorName.split('x')[0].trim().toLowerCase();
+              img.style.border = `1.5px solid ${firstColor}`;
+              img.style.borderRadius = '0.2rem';
+
+              smallImagesHolder.innerHTML = '';
+              object.url.forEach((imgUrl) => {
+                smallImagesHolder.innerHTML += `
+                      <div class="small-image">
+                        <img src="${imgUrl}" class="small-img" alt="${product.title}">
+                      </div>`;
+              });
+
+              bigImage.src = object.url[0];
+              attachFlippingImages();
+            });
+          }
+        });
+      }
+    }
+
+    attachFlippingImages();
+
+    productContainer.querySelector(".right-block .content .product-quantity-block #subtotal").textContent = product.salePrice;
+
+    magnify(document.querySelector('#single-page .product-container .left-block .big-image-holder img'));
+    flippingSizes();
+    handleQuantity();
+    addToCart();
+  }
+
+  function magnify(bigImage) {
+    const lens = document.querySelector('#single-page .product-container .left-block .big-image-holder .lens');
+    const magnifierImage = document.querySelector('#single-page .product-container .right-block .content .magnifier-img');
+
+    if (bigImage && lens && magnifierImage) {
+      lens.addEventListener('mousemove', (e) => moveLens(e, bigImage, lens, magnifierImage));
+      bigImage.addEventListener('mousemove', (e) => moveLens(e, bigImage, lens, magnifierImage));
+      bigImage.addEventListener('mouseout', () => leaveLens(lens, magnifierImage));
+    }
+  }
+
+  function moveLens(e, bigImage, lens, magnifierImage) {
+    const bigImageRect = bigImage.getBoundingClientRect();
+    let x = e.pageX - bigImageRect.left - lens.offsetWidth / 2;
+    let y = e.pageY - bigImageRect.top - lens.offsetHeight / 2;
+
+    x = Math.max(0, Math.min(x, bigImageRect.width - lens.offsetWidth));
+    y = Math.max(0, Math.min(y, bigImageRect.height - lens.offsetHeight));
+
+    lens.style.left = `${x}px`;
+    lens.style.top = `${y}px`;
+
+    const cx = magnifierImage.offsetWidth / lens.offsetWidth;
+    const cy = magnifierImage.offsetHeight / lens.offsetHeight;
+
+    magnifierImage.style.backgroundImage = `url('${bigImage.src}')`;
+    magnifierImage.style.backgroundPosition = `-${x * cx}px -${y * cy}px`;
+    magnifierImage.style.backgroundSize = `${bigImageRect.width * cx}px ${bigImageRect.height * cy}px`;
+
+    lens.classList.add('active');
+    magnifierImage.classList.add('active');
+  }
+
+  function leaveLens(lens, magnifierImage) {
+    lens.classList.remove('active');
+    magnifierImage.classList.remove('active');
+  }
+
+  function flippingSizes() {
+    document.querySelectorAll("#single-page .size-block .sizes span").forEach((size) => {
+      size.addEventListener('click', function () {
+        document.querySelector("#single-page .size-block .size .size-value").textContent = size.textContent;
+      });
+    });
+  }
+
+  function handleQuantity() {
+    const maxQuantity = parseInt(document.querySelector(".product-container .right-block .instock").textContent);
+    const productPrice = parseFloat(document.querySelector(".product-container .right-block .product-price .price").textContent.replace('$', '').trim());
+    const decreaseQuantityBtn = document.querySelector(".product-container .right-block .product-quantity-block .decrease-quantity-btn");
+    const increaseQuantityBtn = document.querySelector(".product-container .right-block .product-quantity-block .increase-quantity-btn");
+    const proQuantityElement = document.querySelector(".product-container .right-block .product-quantity-block #pro-quantity-no");
+    const subtotalElement = document.querySelector(".product-container .right-block .product-quantity-block #subtotal");
+
+    let proQuantityNumber = parseInt(proQuantityElement.textContent.trim());
+
+    decreaseQuantityBtn.addEventListener('click', () => {
+      if (proQuantityNumber > 1) {
+        proQuantityNumber -= 1;
+        proQuantityElement.textContent = proQuantityNumber;
+        subtotalElement.textContent = `$${(proQuantityNumber * productPrice).toFixed(2)}`;
+      }
+    });
+
+    increaseQuantityBtn.addEventListener('click', () => {
+      if (proQuantityNumber < maxQuantity) {
+        proQuantityNumber += 1;
+        proQuantityElement.textContent = proQuantityNumber;
+        subtotalElement.textContent = `$${(proQuantityNumber * productPrice).toFixed(2)}`;
+      }
+    });
+  }
+
+  function addToCart() {
+
+    document.querySelector("#single-page .product-container .right-block .add-to-cart-btn").addEventListener('click', function () {
+      const singlepProductContainer = document.querySelector("#single-page .product-container");
+
+      const safeTextContent = (selector) => {
+        const element = singlepProductContainer.querySelector(selector);
+        return element ? element.textContent.trim() : '';
+      };
+
+      const safeGetAttribute = (selector, attr) => {
+        const element = singlepProductContainer.querySelector(selector);
+        return element ? element.getAttribute(attr) : '';
+      };
+
+      const productIdV = safeTextContent('.id');
+      const productTitleV = safeTextContent('h1');
+      const productImageV = safeGetAttribute(".big-image-holder img", 'src');
+      const productBrandV = safeTextContent('.brand-value') || '';
+      const productStockV = safeTextContent('.instock');
+      const oldPriceV = safeTextContent('.oldprice');
+      const salePriceV = safeTextContent('.price');
+      const sizeV = safeTextContent('.size-value') || '';
+      const colorV = safeTextContent('#selected-color');
+      const quantityV = safeTextContent('#pro-quantity-no');
+
+      const product = {
+        id: productIdV,
+        title: productTitleV,
+        image: productImageV,
+        brand: productBrandV,
+        stock: productStockV,
+        oldPrice: oldPriceV,
+        salePrice: salePriceV,
+        size: sizeV,
+        color: colorV,
+        quantity: quantityV
+      };
+
+      let productCart = JSON.parse(localStorage.getItem('ecommerce2-product-cart')) || [];
+
+      const existingProductIndex = productCart.findIndex(item => item.id === product.id);
+
+      if (existingProductIndex > -1) {
+        productCart[existingProductIndex] = product;
+        alert('Product updated in cart');
+      } else {
+        productCart.push(product);
+        alert('Product added to cart');
+      }
+
+      localStorage.setItem('ecommerce2-product-cart', JSON.stringify(productCart));
+    });
+
   }
 
 }
