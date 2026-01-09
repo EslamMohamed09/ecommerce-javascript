@@ -3846,7 +3846,7 @@ img {
 }
 .testimonials-section .wrapper-container {
   position: relative;
-  padding: 0 0.1rem;
+  padding: 0;
   /* <--> */
 }
 .testimonials-section .wrapper-container .slider-wrapper {
@@ -3854,6 +3854,7 @@ img {
   gap: 1.5rem;
   padding: 0;
   scroll-behavior: auto;
+  background-color: rgb(196, 130, 130);
   overflow: hidden;
   transition: transform var(--transition-slow);
 }
@@ -3912,6 +3913,7 @@ img {
 }
 .testimonials-section .wrapper-container .arrows {
   width: 103%;
+  height: 0;
   position: absolute;
   top: 50%;
   right: 50%;

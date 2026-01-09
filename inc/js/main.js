@@ -566,7 +566,6 @@ if (document.querySelector('.testimonials-section')) {
     });
 }
 
-
 /* 
  #########################
  #### ScrollUp Button #### 

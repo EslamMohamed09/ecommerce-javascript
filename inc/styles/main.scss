@@ -3365,12 +3365,12 @@ img {max-width:100%;
 .testimonials-section {background:var(--white);
 
       .wrapper-container {position:relative;
-                          padding:0 0.1rem;
+                          padding:0;
 
             .slider-wrapper {display:flex;
                              gap:1.5rem;
                              padding:0;
-                             scroll-behavior:auto;
+                             scroll-behavior:auto;background-color:rgb(196, 130, 130);
                              overflow:hidden;
                              transition:transform var(--transition-slow);
 
@@ -3423,6 +3423,7 @@ img {max-width:100%;
 
             /* <--> */
             .arrows {width:103%;
+                     height:0;
                      position:absolute;
                      top:50%;
                      right:50%;
