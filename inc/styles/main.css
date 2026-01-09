@@ -2752,6 +2752,8 @@ img {
 }
 .main-categories-section .category-panel {
   width: 100%;
+  display: grid;
+  grid-template-columns: 20% 75%;
 }
 .main-categories-section .category-panel .hidden {
   display: none;
@@ -2772,7 +2774,8 @@ img {
   background-color: var(--blue);
 }
 .main-categories-section .category-panel:nth-child(2) .parent-cat-names h3 {
-  color: rgb(185, 235, 255);
+  color: var(--blue6);
+  font-weight: bold;
 }
 .main-categories-section .category-panel:nth-child(2) .parent-cat-names h4:hover {
   color: rgb(185, 235, 255);
@@ -2784,25 +2787,27 @@ img {
   background-color: var(--violet8);
 }
 .main-categories-section .category-panel:nth-child(3) .parent-cat-names h3 {
-  color: rgb(221, 185, 255);
+  color: var(--violet11);
+  font-weight: bold;
 }
 .main-categories-section .category-panel:nth-child(3) .parent-cat-names h4:hover {
-  color: rgb(221, 185, 255);
+  color: var(--violet5);
 }
 .main-categories-section .category-panel:nth-child(3) .parent-cat-names h4.button-active {
-  color: rgb(221, 185, 255);
+  color: var(--violet5);
 }
 .main-categories-section .category-panel:nth-child(4) .parent-cat-names {
   background-color: var(--blue5);
 }
 .main-categories-section .category-panel:nth-child(4) .parent-cat-names h3 {
-  color: var(--blue3);
+  color: var(--grayblue6);
+  font-weight: bold;
 }
 .main-categories-section .category-panel:nth-child(4) .parent-cat-names h4:hover {
   color: var(--blue3);
 }
 .main-categories-section .category-panel:nth-child(4) .parent-cat-names h4.button-active {
-  color: var(--blue3);
+  color: var(--blue11);
 }
 .main-categories-section .category-panel:nth-child(5) .parent-cat-names {
   background: var(--brown11);
@@ -2816,11 +2821,11 @@ img {
 .main-categories-section .category-panel:nth-child(5) .parent-cat-names h4.button-active {
   color: var(--brown7);
 }
-.main-categories-section .category-panel .left-col {
+.main-categories-section .category-panel .col-left {
   padding: 0;
   background-color: transparent;
 }
-.main-categories-section .category-panel .left-col .parent-cat-names {
+.main-categories-section .category-panel .col-left .parent-cat-names {
   width: 100%;
   height: 100%;
   padding: 1rem;
@@ -2833,7 +2838,7 @@ img {
   overflow: hidden;
   position: relative;
 }
-.main-categories-section .category-panel .left-col .parent-cat-names img {
+.main-categories-section .category-panel .col-left .parent-cat-names img {
   position: absolute;
   top: 0;
   left: 0;
@@ -2843,26 +2848,26 @@ img {
   z-index: -1;
   opacity: 0.1;
 }
-.main-categories-section .category-panel .left-col .parent-cat-names h3 {
+.main-categories-section .category-panel .col-left .parent-cat-names h3 {
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 1rem;
 }
-.main-categories-section .category-panel .left-col .parent-cat-names h4 {
+.main-categories-section .category-panel .col-left .parent-cat-names h4 {
   text-transform: uppercase;
   cursor: pointer;
   color: var(--white);
 }
-.main-categories-section .category-panel .right-col {
+.main-categories-section .category-panel .col-right {
   padding: 0;
 }
-.main-categories-section .category-panel .right-col .products-col {
+.main-categories-section .category-panel .col-right .products-block {
   padding: 0.7rem 0.5rem;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
-.main-categories-section .category-panel .right-col .products-col > div {
+.main-categories-section .category-panel .col-right .products-block > div {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2871,18 +2876,18 @@ img {
   background-color: transparent;
   overflow: hidden;
 }
-.main-categories-section .category-panel .right-col .products-col > div .image {
+.main-categories-section .category-panel .col-right .products-block > div .image {
   width: 100%;
-  height: 7rem;
+  height: 9rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.main-categories-section .category-panel .right-col .products-col > div .image img {
-  width: 90%;
-  height: 90%;
+.main-categories-section .category-panel .col-right .products-block > div .image img {
+  width: 85%;
+  height: 85%;
 }
-.main-categories-section .category-panel .right-col .products-col > div .content {
+.main-categories-section .category-panel .col-right .products-block > div .content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2893,18 +2898,18 @@ img {
   text-align: center;
   position: relative;
 }
-.main-categories-section .category-panel .right-col .products-col > div .content .productlink {
-  color: var(--gray9);
-  font-size: 1.1rem;
+.main-categories-section .category-panel .col-right .products-block > div .content .productlink {
+  color: var(--gray12);
+  font-size: 1rem;
   font-weight: bold;
 }
-.main-categories-section .category-panel .right-col .products-col > div .content .product-price {
+.main-categories-section .category-panel .col-right .products-block > div .content .product-price {
   gap: 50%;
 }
-.main-categories-section .category-panel .right-col .products-col > div .content .product-price .price {
-  color: var(--darkred);
+.main-categories-section .category-panel .col-right .products-block > div .content .product-price .price {
+  color: var(--orange-red3);
 }
-.main-categories-section .category-panel .right-col .products-col > div .content .add-btn {
+.main-categories-section .category-panel .col-right .products-block > div .content .add-btn {
   position: absolute;
   bottom: 0.3rem;
   left: -60%;
@@ -2912,13 +2917,13 @@ img {
   opacity: 0;
   transition: all 0.3s linear;
 }
-.main-categories-section .category-panel .right-col .products-col > div:hover .add-btn {
+.main-categories-section .category-panel .col-right .products-block > div:hover .add-btn {
   left: 50%;
   transform: translateX(-50%);
   opacity: 1;
   transition: all 0.5s linear;
 }
-.main-categories-section .category-panel .right-col .products-col > div:hover .product-price {
+.main-categories-section .category-panel .col-right .products-block > div:hover .product-price {
   opacity: 0;
   visibility: 0;
   transition: all 0.2s linear;

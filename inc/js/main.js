@@ -516,14 +516,14 @@ function filterWithTabs(tabs, Items) {
 }
 
 if(document.querySelector('.main-categories-section')) {
-  filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel1 .left-col .first-pcat-names h4'),
-                 document.querySelectorAll('.main-categories-section .category-panel1 .right-col .product-item'));
+  filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel1 .col-left .first-pcat-names h4'),
+                 document.querySelectorAll('.main-categories-section .category-panel1 .col-right .product-item'));
 
-  filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel2 .left-col .second-pcat-names h4'),
-                 document.querySelectorAll('.main-categories-section .category-panel2 .right-col .product-item'));
+  filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel2 .col-left .second-pcat-names h4'),
+                 document.querySelectorAll('.main-categories-section .category-panel2 .col-right .product-item'));
 
-  filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel3 .left-col .third-pcat-names h4'),
-                 document.querySelectorAll('.main-categories-section .category-panel3 .right-col .product-ad'));
+  filterWithTabs(document.querySelectorAll('.main-categories-section .category-panel3 .col-left .third-pcat-names h4'),
+                 document.querySelectorAll('.main-categories-section .category-panel3 .col-right .product-ad'));
 }
 
 /* 
