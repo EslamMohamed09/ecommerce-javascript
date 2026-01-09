@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="online shopping, buy products, fashion, electronics, affordable prices, best deals, home appliances, beauty products, gadgets, trendy fashion, home decor, luxury watches, smartphones, gift ideas, sale, discounts, quality products, eCommerce, shopping cart, free shipping, eco-friendly products, best deals online">
   <title>single product</title>
-  <link rel="stylesheet" href="../inc/styles/bootstrap.css">
+  <link rel="stylesheet" href="../admin/inc/styles/bootstrap.min.css">
   <link rel="stylesheet" href="../inc/styles/main.css">
 </head>
 <body>
 <header class="header" id="header">
 
-  <div class="top-header d-flex-r-bt-c">
+  <div class="top-bar d-flex-r-bt-c">
 
     <div class="col-left d-flex-r-c-c">
       <select name="currency" id="currency">
@@ -26,7 +26,7 @@
 
       <div class="profile d-flex-r-c-c">
         <button class="login-btn" id="login-btn">login</button>
-      </div> <!-- end profile -->
+      </div>
 
     </div>
 
@@ -34,28 +34,41 @@
 
   <div class="main-header d-flex-c-c-c" id="main-header">
 
-    <div class="upper-nav d-flex-r-bt-c">
+    <div class="middle-bar d-flex-r-bt-c">
 
       <a href="index.html"><h1 class="web-title">shopify</h1></a>
 
-      <div class="nav-icons d-flex-r-c-c">
-        <!-- Example nav-icon -->
-        <div class="nav-icon d-flex-r-c-c"> 
-          <a href="#"><i class="fa-solid fa-code-compare" id="icon"></i></a> 
-          <a href="#" class="details"><span>0</span><p>compare</p></a>
-        </div>
+      <div class="action-buttons d-flex-r-c-c">
+
+        <a href="#" class="action-button d-flex-r-c-c"> 
+         <i class="fa-solid fa-code-compare"></i>
+         <div class="name-holder"><div class="value"><span>0585</span></div><p>compare</p></div>
+        </a>
+        
+        <a href="#" class="action-button d-flex-r-c-c"> 
+         <i class="far fa-heart"></i>
+         <div class="name-holder"><div class="value"><span>059</span></div><p>wishlist</p></div>
+        </a>
+
+        <a href="#" class="action-button d-flex-r-c-c">
+         <i class="fa-solid fa-cart-arrow-down"></i>
+         <div class="name-holder"><div class="value"><span>52</span></div><p>cart</p></div>
+        </a>
+
       </div>
 
     </div>
 
-    <nav class="navbar d-flex-r-c-c">
-      <ul class="d-flex-r-c-c">
-        <li><a href="#">all brands</a></li>
-        <li><a href="#">all categories</a></li>
-        <li><a href="#">coupons</a></li>
-        <li><a href="#">all offers</a></li>
-      </ul>
-    </nav>
+    <div class="bottom-bar">
+      <nav class="navbar d-flex-r-c-c">
+        <ul class="d-flex-r-c-c">
+          <li><a href="#">all brands</a></li>
+          <li><a href="#">all categories</a></li>
+          <li><a href="#">coupons</a></li>
+          <li><a href="#">all offers</a></li>
+        </ul>
+      </nav>
+    </div>
 
   </div> <!-- End main-header -->
 
@@ -96,7 +109,7 @@
 
   </div> <!-- End right-login-menu -->
 
-  <div class="small-menu d-flex-r-bt-c">
+  <!-- <div class="small-menu d-flex-r-bt-c">
 
       <a href="#" class="small-menu-link d-flex-c-c-c">
       <i class="fa-solid fa-layer-group" id="icon"></i>
@@ -118,43 +131,44 @@
       <span>menu</span>
       </button>
 
-  </div>
+  </div> -->
 
 </header>
   
 <section id="single-page">
+
   <div class="product-container">
     <div class="row">
 
       <div class="left-block col-md-5">
 
-        <ul class="allcategoriesproduct d-flex-r-st-c"><li>electronics > phones</li></ul>
+        <ul class="parent-categories-holder d-flex-r-st-c"></ul>
 
         <div class="images-block d-flex-r-st-st">
         
-          <div class="small-images d-flex-c-st-st">
+          <div class="small-images-holder d-flex-c-st-st">
             <div class="small-image">
-              <img src="../admin/inc/images/electronics/phones/samsung4/1.png" class="small-img">
+              <img src="../admin/inc/images/electronics/phones/samsung4/burgundy1.png" class="small-img">
             </div>
             <div class="small-image">
-              <img src="../admin/inc/images/electronics/phones/samsung4/2.png" class="small-img">
+              <img src="../admin/inc/images/electronics/phones/samsung4/burgundy2.png" class="small-img">
             </div>
             <div class="small-image">
-              <img src="../admin/inc/images/electronics/phones/samsung4/3.png" class="small-img">
+              <img src="../admin/inc/images/electronics/phones/samsung4/gray.png" class="small-img">
             </div>
             <div class="small-image">
-              <img src="../admin/inc/images/electronics/phones/samsung4/4.jpg" class="small-img">
+              <img src="../admin/inc/images/electronics/phones/samsung4/lightblue.png" class="small-img">
             </div>
           </div>
 
-          <div class="big-image">
-            <img src="../admin/inc/images/electronics/phones/samsung4/1.png" alt="">
+          <div class="big-image-holder">
+            <img src="../admin/inc/images/electronics/phones/samsung4/olive.png" alt="">
             <div class="lens"></div>
           </div>
 
-        </div> <!-- End all-images -->
+        </div>
 
-      </div> <!-- End left-block -->
+      </div>
 
       <div class="right-block col-md-7">
         <div class="content d-flex-c-st-st">
@@ -166,7 +180,7 @@
           <div class="description-block d-flex-c-st-st">
             <p class="id"></p>
             <p><span>Description</span> <i class="fas fa-sticky-note"></i></p>
-            <p class="description">Wireless carrier: Unlocked for All Carriers, Memory storage capacity: 12 GB, Screen size: 6.8 Inches, Wireless network: technology GSM, CDMA, LTE</p>
+            <p class="description"></p>
           </div>
 
           <p class="brand"><span>Brand:</span> <span class="brand-value">samsung</span></p>
@@ -189,7 +203,7 @@
 
           <div class="color-block d-flex-c-st-st" style="gap:0.5rem;">
             <p><span>Color:</span> <span id="selected-color"></span></p>
-            <div class="colors d-flex-r-st-st" style="gap:1rem;"></div>
+            <div class="colors-holder d-flex-r-st-st"></div>
           </div>
 
           <div class="product-quantity-block d-flex-c-st-st" style="gap:0.6rem;">
@@ -198,23 +212,100 @@
               <span id="pro-quantity-no">1</span>
               <button type="button" class="pro-quantity-btn increase-quantity-btn d-flex-r-c-c"><i class="fas fa-plus"></i></button>
             </div>
-            <p style="font-size:0.9rem;"><span>subtotal:</span> <span id="subtotal"></span></p>
+            <p><span>subtotal:</span> <span id="subtotal"></span></p>
           </div>
 
-          <button type="button" class="b-btn">Add To Cart</button>
-          <a href="#"><p>see all mobiles</p></a>
+          <button type="button" class="add-btn add-to-cart-btn">Add To Cart</button>
         </div> <!-- End content -->
       </div> <!-- End right-block -->
 
     </div>
   </div>
+
+  <div class="featured-products-container"></div>
+
 </section>
 
+<button type="button" class="scroll-up" id="scroll-up">back to top</button>
+<footer class="main-footer">
 
-<script src="../inc/js/bootstrap.js"></script>
-<script src="../inc/js/all.min.js"></script>
-<script src="../inc/js/solid.min.js"></script>
-<script src="../inc/js/brands.min.js"></script>
+  <div class="footer-container">
+    <div class="row">
+
+      <div class="col-left col-md-4 col-sm-12 d-flex-r-c-st">
+        <div class="footer-widget footer-widget-1">
+          <div class="footer-content">
+            <h3 class="web-title">shopify</h3>
+            <p class="web-desc">Premium e-commerce destination for modern lifestyle products. Quality and elegance in every detail.</p>
+            <div class="social-icons">
+              <ul class="social-menu">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-right col-md-8 col-sm-12 d-flex-r-c-st">
+
+        <div class="footer-widget footer-widget-2">
+          <div class="footer-content">
+            <h4 class="footer-widget-title">Links</h4>
+            <ul class="links-menu">
+              <li class="d-flex-r-st-c"><div class="dart"></div><a href="#">products</a></li>
+              <li class="d-flex-r-st-c"><div class="dart"></div><a href="#">shop</a></li>
+              <li class="d-flex-r-st-c"><div class="dart"></div><a href="#">recent</a></li>
+              <li class="d-flex-r-st-c"><div class="dart"></div><a href="#">blog</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-widget footer-widget-3">
+          <div class="footer-content">
+            <h4 class="footer-widget-title">instagram</h4>
+            <ul class="links-menu">
+              <li class="d-flex-r-st-c"><div class="dart"></div><a href="#">products</a></li>
+              <li class="d-flex-r-st-c"><div class="dart"></div><a href="#">shop</a></li>
+              <li class="d-flex-r-st-c"><div class="dart"></div><a href="#">recent</a></li>
+              <li class="d-flex-r-st-c"><div class="dart"></div><a href="#">blog</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-widget footer-widget-4">
+          <div class="footer-content">
+            <h4 class="footer-widget-title">connect with us</h4>
+            <div class="contacts">
+              <div><i class="fa-solid fa-location-dot"></i><span>Los Angelos</span></div>
+              <div class="phone-holder"><i class="fa fa-phone-alt"></i><a href="tel:01111126931">01 111 126 931</a></div>
+              <div class="email-holder"><i class="fa fa-envelope"></i><a href="eslammayo2017@gmail.com">eslammayo@gmail.com</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom d-flex-r-bt-c">
+    <div class="col-left"><p>&copy; 2025 lumina. All rights reserved.</p></div>
+    <div class="col-right payment-methods d-flex-r-c-c">
+      <i class="fa-brands fa-cc-visa"></i>
+      <i class="fa-brands fa-cc-mastercard"></i>
+      <i class="fa-brands fa-cc-paypal"></i>
+    </div>
+  </div>
+
+</footer>
+<script src="../admin/inc/js/all.min.js"></script>
+<script src="../admin/inc/js/bootstrap.min.js"></script>
+<script src="../admin/inc/js/solid.min.js"></script>
+<script src="../admin/inc/js/brands.min.js"></script>
 <script src="../inc/js/main.js"></script>
 </body>
 </html>
