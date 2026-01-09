@@ -4,7 +4,8 @@
    box-sizing:border-box;
    list-style:none;
    text-decoration:none !important;
-   font-family:var(--font-primary);
+//    font-family:var(--font-primary);
+   font-family:'Montserrat', sans-serif;
    transition:all 0.4s linear;}
 
 *::before, 
@@ -1075,6 +1076,7 @@ img {max-width:100%;
 
                               li a {font-size:1.1rem;
                                     font-weight:bold;
+                                    text-transform:capitalize;
                                     color:var(--gray10);}
                         }
                   }
@@ -1341,7 +1343,7 @@ img {max-width:100%;
 
                                     &:not(:last-child) {border-bottom:1px solid var(--gray1);}
 
-                                    .cat-link {font-size:1;
+                                    .cat-link {font-size:1.05rem;
                                                width:100%;
                                                color:var(--gray10);}
                               }
@@ -1615,7 +1617,8 @@ img {max-width:100%;
                                         background-color:transparent;
                                         position:relative;
 
-                                    strong {color:rgb(233, 167, 1);}
+                                    strong {color:rgb(233, 167, 1);
+                                            font-size:0.9rem;}
 
                                     .add-btn {position:absolute;
                                               right:-60%;
