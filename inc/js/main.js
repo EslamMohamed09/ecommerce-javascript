@@ -463,15 +463,15 @@ if(document.querySelector('.best-seller-section')) {
     nextArrowSelector:'.best-seller-section .section-heading .arrows .arrow-right',
   });
 
-  const bestSellerColorDots = document.querySelectorAll('.best-seller-section .product-card .color-dot');
-  bestSellerColorDots.forEach(dot => {
-    dot.addEventListener('click', function(e) {
-      e.preventDefault();
-      const parent = this.parentElement;
-      parent.querySelectorAll('.color-dot').forEach(s => s.classList.remove('selected')); // Get siblings
-      this.classList.add('selected');
-    });
-  });
+  // const bestSellerColorDots = document.querySelectorAll('.best-seller-section .product-card .color-dot');
+  // bestSellerColorDots.forEach(dot => {
+  //   dot.addEventListener('click', function(e) {
+  //     e.preventDefault();
+  //     const parent = this.parentElement;
+  //     parent.querySelectorAll('.color-dot').forEach(s => s.classList.remove('selected')); // Get siblings
+  //     this.classList.add('selected');
+  //   });
+  // });
 }
 
 /* 
@@ -1823,6 +1823,18 @@ if (document.querySelector("#single-page")) {
  ####### GLOBAL #######
  ######################
 */
+if(document.querySelector('.product-item')){
+  const colorDots = document.querySelectorAll('.product-item .color-dot');
+  colorDots.forEach(dot => {
+    dot.addEventListener('click', function(e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      parent.querySelectorAll('.color-dot').forEach(s => s.classList.remove('selected')); // Get siblings
+      this.classList.add('selected');
+    });
+  });
+}
+
 function scrollBarSlider(options) {
   const {
     section = 'slider-section',
