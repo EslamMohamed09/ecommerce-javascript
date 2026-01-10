@@ -112,7 +112,7 @@ class Slider {
 
 const header = document.querySelector('header');
 
-if (header) {document.body.style.paddingTop = `${header.offsetHeight + 10}px`;}
+if (header) {document.body.style.paddingTop = `${header.offsetHeight}px`;}
 
 // padding to notification of action buttons
 document.querySelectorAll('header .main-header .middle-bar .action-buttons .action-button .value span').forEach((span) => {

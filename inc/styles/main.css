@@ -1483,7 +1483,7 @@ img {
 .hero-section {
   min-height: 77vh;
   padding: 1rem 4% 2rem;
-  margin: 0 0 2rem;
+  margin: 0.9rem 0 2rem;
 }
 .hero-section .section-container {
   min-height: 77vh;
@@ -6770,6 +6770,7 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
 */
 .checkout-page {
   padding: 0;
+  margin: 0;
 }
 .checkout-page .left-block {
   padding: 1rem 3rem 1rem 6% !important;
@@ -6788,7 +6789,7 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
 .checkout-page .left-block .page-hierarchy p:nth-child(3) {
   color: var(--gray5);
 }
-.checkout-page .left-block .page-hierarchy svg {
+.checkout-page .left-block .page-hierarchy svg, .checkout-page .left-block .page-hierarchy i {
   color: var(--gray9);
 }
 .checkout-page .left-block .blocks {
@@ -6822,7 +6823,7 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
   color: var(--blue5);
   background-color: var(--white2);
 }
-.checkout-page .left-block .blocks .pay-block .buttons button:nth-child(2) svg {
+.checkout-page .left-block .blocks .pay-block .buttons button:nth-child(2) svg, .checkout-page .left-block .blocks .pay-block .buttons button:nth-child(2) i {
   color: var(--red9);
   margin-right: 0.1rem;
   font-size: 1.1rem;
@@ -6857,6 +6858,12 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
   padding: 0 0 0 0.5rem;
   border-radius: 0.6rem;
   border: 1px solid var(--gray4);
+}
+.checkout-page .left-block .blocks .contact-block .input-parent:focus-within {
+  border: 1px solid var(--blue11);
+}
+.checkout-page .left-block .blocks .contact-block .input-parent:has(input:valid) {
+  border: 1px solid var(--blue11);
 }
 .checkout-page .left-block .blocks .contact-block .input-parent .input-box {
   position: relative;
@@ -6893,6 +6900,10 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
 .checkout-page .left-block .blocks .contact-block .input-parent .input-box input[type=text]:valid ~ label {
   top: calc(50% - 0.8rem);
 }
+.checkout-page .left-block .blocks .contact-block .input-parent .input-box input[type=text]:focus .input-parent,
+.checkout-page .left-block .blocks .contact-block .input-parent .input-box input[type=text]:valid .input-parent {
+  border: 1px solid var(--blue5);
+}
 .checkout-page .left-block .blocks .contact-block .input-parent span {
   display: flex;
   justify-content: center;
@@ -6900,7 +6911,7 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
   height: 100% !important;
   padding: 0.5rem 1.5rem !important;
   font-size: 1.4rem;
-  background-color: var(--primary9);
+  background-color: var(--blue11);
   color: var(--white2);
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -6924,7 +6935,7 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
   border: 1px solid var(--gray4);
   cursor: pointer;
 }
-.checkout-page .left-block .blocks .delivery-block .check-parent .check svg {
+.checkout-page .left-block .blocks .delivery-block .check-parent .check svg, .checkout-page .left-block .blocks .delivery-block .check-parent .check i {
   font-size: 1rem;
 }
 .checkout-page .left-block .blocks .delivery-block .check-parent .check:first-child {
@@ -6953,6 +6964,12 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
   border-radius: 0.6rem;
   border: 1px solid var(--gray4);
   position: relative;
+}
+.checkout-page .left-block .blocks .shipping-block form .input-parent:focus-within {
+  border: 1px solid var(--blue11);
+}
+.checkout-page .left-block .blocks .shipping-block form .input-parent:has(input:valid) {
+  border: 1px solid var(--blue11);
 }
 .checkout-page .left-block .blocks .shipping-block form .input-parent label {
   color: var(--gray5);
