@@ -1926,8 +1926,8 @@ function scrollBarSlider(options) {
     animateScroll(sliderContainer.scrollLeft, scrollPosition, 900);
 
     if (currentIndex >= slides.length) {
-      currentIndex = 0;
-      sliderContainer.scrollTo({ left: 0 });
+        currentIndex = 0;
+        sliderContainer.scrollTo({ left: 0 });
     }
   }
 
@@ -2245,8 +2245,8 @@ function scrollSlider5Items(options) {
       { breakpoint: 730, settings: { slidesToShow: 3, slidesToScroll: 3 } },
       { breakpoint: 1000, settings: { slidesToShow: 4, slidesToScroll: 4 } },
       { breakpoint: 1300, settings: { slidesToShow: 5, slidesToScroll: 5 } },
-      { breakpoint: 1490, settings: { slidesToShow: 6, slidesToScroll: 6 } },
-      { breakpoint: 1600, settings: { slidesToShow: 7, slidesToScroll: 7 } }
+      { breakpoint: 1550, settings: { slidesToShow: 6, slidesToScroll: 6 } },
+      { breakpoint: 1800, settings: { slidesToShow: 7, slidesToScroll: 7 } }
     ];
 
     responsiveSettings.forEach(resp => {
@@ -2329,7 +2329,6 @@ function scrollSlider5Items(options) {
 
     scrollToSlide();
   }
-
   function attachEvents() {
     const prevButton = document.querySelector(prevArrowSelector);
     const nextButton = document.querySelector(nextArrowSelector);
