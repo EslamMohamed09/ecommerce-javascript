@@ -6212,7 +6212,7 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
 #category-page .category-page-container .right-block .products2-section .products-container .product-item .content .ratings {
   gap: 0.1rem;
 }
-#category-page .category-page-container .right-block .products2-section .products-container .product-item .content .ratings svg {
+#category-page .category-page-container .right-block .products2-section .products-container .product-item .content .ratings svg, #category-page .category-page-container .right-block .products2-section .products-container .product-item .content .ratings i {
   color: var(--yellow10);
   font-size: 1.1rem;
 }
@@ -6387,9 +6387,6 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
-#category-page-categoriesproducts .categoriesproducts2 .categoriesproducts2-container .product-item .content:hover .img-btns {
-  opacity: 1;
-}
 #category-page-categoriesproducts .categoriesproducts2 .categoriesproducts2-container .product-item .content .img-btns button {
   width: 1.7rem;
   height: 1.2rem;
@@ -6398,6 +6395,9 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
   color: var(--white);
   background: var(--black);
   cursor: pointer;
+}
+#category-page-categoriesproducts .categoriesproducts2 .categoriesproducts2-container .product-item .content:hover .img-btns {
+  opacity: 1;
 }
 #category-page-categoriesproducts .categoriesproducts2 .categoriesproducts2-container .product-item .content h5 {
   width: fit-content;
@@ -6586,7 +6586,7 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
 .cart-page .left-block table thead tr th:not(:first-child) {
   text-align: center;
 }
-.cart-page .left-block table tr:not(:last-child) {
+.cart-page .left-block table thead tr:not(:last-child) {
   border-bottom: 1px solid var(--gray3);
 }
 .cart-page .left-block table tr td {
@@ -6633,17 +6633,17 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
   border: none;
   background-color: transparent;
 }
-.cart-page .left-block table tr td .product-quantity-btns #pro-quantity-no {
-  font-size: 1rem;
-  margin: 0 0.5rem;
-  padding: 0;
-  color: var(--gray10);
-}
 .cart-page .left-block table tr td .product-quantity-btns .pro-quantity-btn:first-child {
   padding-left: 1rem;
 }
 .cart-page .left-block table tr td .product-quantity-btns .pro-quantity-btn:nth-child(3) {
   padding-right: 1rem;
+}
+.cart-page .left-block table tr td .product-quantity-btns #pro-quantity-no {
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  padding: 0;
+  color: var(--gray10);
 }
 .cart-page .left-block table tr td p.price,
 .cart-page .left-block table tr td p.total-price {
