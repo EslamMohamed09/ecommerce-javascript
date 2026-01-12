@@ -2903,10 +2903,23 @@ img {
   padding: 0;
   position: relative;
 }
-.main-categories-section .category-panel .col-right .products-block > div .content .productlink {
+.main-categories-section .category-panel .col-right .products-block > div .content .prod-title {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-categories-section .category-panel .col-right .products-block > div .content .prod-title .prod-link {
   color: var(--gray12);
   font-size: 1rem;
   font-weight: bold;
+}
+.main-categories-section .category-panel .col-right .products-block > div .content .ratings {
+  gap: 0.1rem;
+}
+.main-categories-section .category-panel .col-right .products-block > div .content .ratings svg, .main-categories-section .category-panel .col-right .products-block > div .content .ratings i {
+  color: var(--yellow10);
+  font-size: 1rem;
 }
 .main-categories-section .category-panel .col-right .products-block > div .content .product-price {
   width: 100%;
@@ -2917,17 +2930,17 @@ img {
 }
 .main-categories-section .category-panel .col-right .products-block > div .content .add-btn {
   position: absolute;
-  bottom: 0.3rem;
-  left: -60%;
+  bottom: 0.1rem;
+  left: -10%;
   width: 100%;
   opacity: 0;
-  transition: all 0.3s linear;
+  transition: all 0.4s linear;
 }
 .main-categories-section .category-panel .col-right .products-block > div:hover .add-btn {
   left: 50%;
   transform: translateX(-50%);
   opacity: 1;
-  transition: all 0.5s linear;
+  transition: all 0.4s linear;
 }
 .main-categories-section .category-panel .col-right .products-block > div:hover .product-price {
   opacity: 0;
@@ -6328,7 +6341,7 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
   padding: 1rem 0.3rem 0.5rem;
   position: relative;
 }
-#category-page .category-page-container .right-block .categories-products .categoriesproducts1 .product-item .content h5 .productlink {
+#category-page .category-page-container .right-block .categories-products .categoriesproducts1 .product-item .content h5 .prod-link {
   color: var(--gray2);
 }
 #category-page .category-page-container .right-block .categories-products .categoriesproducts1 .product-item .content .product-price {
@@ -6409,7 +6422,7 @@ footer .footer-bottom .payment-methods svg, footer .footer-bottom .payment-metho
   width: fit-content;
   margin: auto;
 }
-#category-page-categoriesproducts .categoriesproducts2 .categoriesproducts2-container .product-item .content h5 .productlink {
+#category-page-categoriesproducts .categoriesproducts2 .categoriesproducts2-container .product-item .content h5 .prod-link {
   color: var(--black);
 }
 #category-page-categoriesproducts .categoriesproducts2 .categoriesproducts2-container .product-item .content .product-price {

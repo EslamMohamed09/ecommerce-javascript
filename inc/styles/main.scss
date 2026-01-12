@@ -2534,9 +2534,19 @@ img {max-width:100%;
                                         padding:0;
                                         position:relative;
 
-                                    .productlink {color:var(--gray12);
-                                                  font-size:1rem;
-                                                  font-weight:bold;}
+                                    .prod-title {width:100%;
+                                                 white-space:nowrap;
+                                                 overflow:hidden;
+                                                 text-overflow:ellipsis;
+                                          .prod-link {color:var(--gray12);
+                                                      font-size:1rem;
+                                                      font-weight:bold;}
+                                    }
+
+                                    .ratings {gap:0.1rem;
+                                          svg,i {color:var(--yellow10);
+                                                 font-size:1rem;}
+                                    }
 
                                     .product-price {width:100%;
                                                     gap:10%;
@@ -2544,17 +2554,17 @@ img {max-width:100%;
                                     }
 
                                     .add-btn {position:absolute;
-                                              bottom:0.3rem;
-                                              left:-60%;
+                                              bottom:0.1rem;
+                                              left:-10%;
                                               width:100%;
                                               opacity:0;
-                                              transition:all 0.3s linear;}
+                                              transition:all 0.4s linear;}
                               }
 
                               &:hover .add-btn {left:50%;
                                                 transform:translateX(-50%);
                                                 opacity:1;
-                                                transition:all 0.5s linear;}
+                                                transition:all 0.4s linear;}
 
                               &:hover .product-price {opacity:0;
                                                       visibility:0;
@@ -5600,7 +5610,7 @@ footer {background:var(--navy2);
                                               padding:1rem 0.3rem 0.5rem;
                                               position:relative;
 
-                                          h5 .productlink {color:var(--gray2);}
+                                          h5 .prod-link {color:var(--gray2);}
 
                                           .product-price {flex-wrap:nowrap;
                                                           width:100%;
@@ -5671,7 +5681,7 @@ footer {background:var(--navy2);
                         
                               h5 {width:fit-content;
                                   margin:auto;
-                                  .productlink {color:var(--black);}
+                                  .prod-link {color:var(--black);}
                               }
 
                               .product-price {padding:0.5rem 0.5rem 0;}
