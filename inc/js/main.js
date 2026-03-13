@@ -181,14 +181,11 @@ if(document.querySelector('.hero-section')){
       categoriesContainer.appendChild(categoryList);
     });
   });
-}
 
-let index = 0;
-const heroSection = document.querySelector(".hero-section");
-const heroSliderWrapper = document.querySelector('.hero-section .col-middle .slider-wrapper');
-const heroSlideItems = document.querySelectorAll('.hero-section .hero-slide-item');
-
-if (heroSection) {
+  let index = 0;
+  const heroSection = document.querySelector(".hero-section");
+  const heroSliderWrapper = document.querySelector('.hero-section .col-middle .slider-wrapper');
+  const heroSlideItems = document.querySelectorAll('.hero-section .hero-slide-item');
 
   function heroSlider(options) {
 
@@ -373,7 +370,7 @@ if (heroSection) {
     updateSlides();
     setupSlider();
 
-    window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', function () { // stop slider when scroll and start when back to top
       if (window.scrollY > 10) {
         stopSlider();
       } else if (window.scrollY === 0) {
@@ -381,8 +378,8 @@ if (heroSection) {
       }
     });
 
-    section.querySelectorAll('.hero-slide-item .left-block h2').forEach((h2) => {
-      h2.textContent = truncateWords(h2.textContent, 5);
+    section.querySelectorAll('.hero-slide-item .left-block h3').forEach((h3) => {
+      h3.textContent = truncateWords(h3.textContent, 5);
     });
 
     section.querySelectorAll('.hero-slide-item .left-block p').forEach((p) => {
@@ -401,6 +398,7 @@ if (heroSection) {
   });
 
 }
+
 
 // if(header){
 
@@ -572,7 +570,7 @@ if (document.querySelector('.testimonials-section')) {
 
 /* 
  #########################
- #### ScrollUp Button #### 
+ #### ScrollUp Button ####
  #########################
 */
 if (document.getElementById('scroll-up')) {
