@@ -1562,7 +1562,6 @@ img {
   opacity: 0;
   transition: opacity 0.5s ease, visibility 0s linear 0.5s;
   /* Animation */
-  /* animation for image */
 }
 .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item .left-block {
   flex: 1 1 15rem;
@@ -1577,7 +1576,6 @@ img {
   color: var(--red7);
   font-weight: 550;
   text-transform: capitalize;
-  animation: movebottom 0.7s linear 0.7s backwards;
 }
 .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item .left-block .block-content .semi-title svg, .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item .left-block .block-content .semi-title i {
   margin-right: 0.2rem;
@@ -1595,7 +1593,6 @@ img {
 .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item .left-block .block-content .shop-btn {
   padding: 0.5rem 0.9rem 0.5rem 1.3rem;
   border-radius: 0;
-  animation: movetop 0.7s linear 0.7s backwards;
 }
 .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item .left-block .block-content .shop-btn svg, .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item .left-block .block-content .shop-btn i {
   margin-left: 0.5rem;
@@ -1618,58 +1615,13 @@ img {
 .hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active .left-block {
   margin-left: 0.5rem;
 }
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:first-child .left-block h3 {
-  animation: moveleft 0.7s linear 0.7s backwards;
+.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active .left-block .block-content .semi-title {
+  animation: movebottom 0.7s linear 0.7s backwards;
 }
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:first-child .left-block p {
-  animation: moveright 0.7s linear 0.7s backwards;
+.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active .left-block .block-content .shop-btn {
+  animation: movetop 0.7s linear 0.7s backwards;
 }
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(2) .left-block h3 {
-  animation: moveright 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(2) .left-block p {
-  animation: moveleft 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(3) .left-block h3 {
-  animation: moveright 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(3) .left-block p {
-  animation: moveright 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(4) .left-block h3 {
-  animation: moveright 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(4) .left-block p {
-  animation: moveleft 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(5) .left-block h3 {
-  animation: moveleft 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(5) .left-block p {
-  animation: moveright 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(6) .left-block h3 {
-  animation: moveright 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(6) .left-block p {
-  animation: moveleft 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:first-child .right-block img {
-  animation: showimg 0.3s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(2) .right-block img {
-  animation: showimg 0.3s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(3) .right-block img {
-  animation: showimg 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(4) .right-block img {
-  animation: showimg 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(5) .right-block img {
-  animation: showimg 0.7s linear 0.7s backwards;
-}
-.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active:nth-child(6) .right-block img {
+.hero-section .section-container .col-middle .slider-container .slider-wrapper .hero-slide-item.active .right-block img {
   animation: showimg 0.7s linear 0.7s backwards;
 }
 @keyframes movebottom {

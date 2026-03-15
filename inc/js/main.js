@@ -262,8 +262,30 @@ if(document.querySelector('.hero-section')){
       indicatorsMenu.children[currentIndex].classList.add('active');
 
       slides.forEach((slide, index) => {
+
+        const h3 = slide.querySelector('.left-block h3');
+        const p = slide.querySelector('.left-block p');
+
         if (index === currentIndex) {
           slide.classList.add('active');
+
+          // reset animations so they replay every time
+          if (h3 && p) {
+            h3.style.animation = "none";
+            p.style.animation = "none";
+
+            void h3.offsetWidth;
+            void p.offsetWidth;
+
+            if (index % 2 === 0) {
+              h3.style.animation = "moveleft 0.7s linear 0.7s backwards";
+              p.style.animation = "moveright 0.7s linear 0.7s backwards";
+            } else {
+              h3.style.animation = "moveright 0.7s linear 0.7s backwards";
+              p.style.animation = "moveleft 0.7s linear 0.7s backwards";
+            }
+          }
+
         } else {
           slide.classList.remove('active');
         }
@@ -396,7 +418,6 @@ if(document.querySelector('.hero-section')){
     prevBtnSelector: '.hero-section .col-middle .slider-container .prev-btn',
     nextBtnSelector: '.hero-section .col-middle .slider-container .next-btn',
   });
-
 }
 
 
