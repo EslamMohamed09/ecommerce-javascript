@@ -636,7 +636,7 @@ if (document.getElementById('scroll-up')) {
  ####### SINGLE PAGE #######
  ===========================
 */
-if (document.querySelector("#single-page")) {
+if (document.querySelector("#product-details-page")) {
 
   function getProductId() {
     const params = new URLSearchParams(window.location.search);
@@ -722,7 +722,7 @@ if (document.querySelector("#single-page")) {
         <a href="category.html?id=${parentCategory.id}" class="catlink">${parentCategory.name}</a>
       </li>`).join('');
 
-      const parentCategoriesHolder = document.querySelector('#single-page .product-container .left-block .parent-categories-holder');
+      const parentCategoriesHolder = document.querySelector('#product-details-page .product-container .left-block .parent-categories-holder');
       parentCategoriesHolder.innerHTML = parentCategoriesHtml;
     } catch (error) {
       console.error('error loading parent categories:', error);
@@ -826,7 +826,7 @@ if (document.querySelector("#single-page")) {
                       </div>
                       <div class="content d-flex-c-st-st">
                         ${colorHtml}
-                        <a href="single.html?id=${product.id}" class="product-title">${truncateTitle}</a>
+                        <a href="product-details.html?id=${product.id}" class="product-title">${truncateTitle}</a>
                         ${descriptionHtml}
                         ${ratingHtml}
                         <div class="product-price d-flex-r-bt-c">
@@ -862,7 +862,7 @@ if (document.querySelector("#single-page")) {
         siblingProductsContainer.appendChild(siblingProductsWrapper);
         siblingProductsBlock.appendChild(siblingProductsContainer);
 
-        document.querySelector('#single-page .featured-products-container').appendChild(siblingProductsBlock);
+        document.querySelector('#product-details-page .featured-products-container').appendChild(siblingProductsBlock);
 
         if (siblingProductsWrapper.children.length > 6) {
 
@@ -975,7 +975,7 @@ if (document.querySelector("#single-page")) {
                       </div>
                       <div class="content d-flex-c-st-st">
                         ${colorHtml}
-                        <a href="single.html?id=${product.id}" class="product-title">${truncateTitle}</a>
+                        <a href="product-details.html?id=${product.id}" class="product-title">${truncateTitle}</a>
                         ${descriptionHtml}
                         ${ratingHtml}
                         <div class="product-price d-flex-r-bt-c">
@@ -1011,7 +1011,7 @@ if (document.querySelector("#single-page")) {
         bestSellerSiblingProductsContainer.appendChild(bestSellerSiblingProductsWrapper);
         bestSellerSiblingProductsBlock.appendChild(bestSellerSiblingProductsContainer);
 
-        document.querySelector('#single-page .featured-products-container').appendChild(bestSellerSiblingProductsBlock);
+        document.querySelector('#product-details-page .featured-products-container').appendChild(bestSellerSiblingProductsBlock);
 
         if (bestSellerSiblingProductsWrapper.children.length > 6) {
 
@@ -1122,7 +1122,7 @@ if (document.querySelector("#single-page")) {
                       </div>
                       <div class="content d-flex-c-st-st">
                         ${colorHtml}
-                        <a href="single.html?id=${product.id}" class="product-title">${truncateTitle}</a>
+                        <a href="product-details.html?id=${product.id}" class="product-title">${truncateTitle}</a>
                         ${descriptionHtml}
                         ${ratingHtml}
                         <div class="product-price d-flex-r-bt-c">
@@ -1158,7 +1158,7 @@ if (document.querySelector("#single-page")) {
         topRatedsiblingProductsContainer.appendChild(topRatedsiblingProductsWrapper);
         topRatedsiblingProductsBlock.appendChild(topRatedsiblingProductsContainer);
 
-        document.querySelector('#single-page .featured-products-container').appendChild(topRatedsiblingProductsBlock);
+        document.querySelector('#product-details-page .featured-products-container').appendChild(topRatedsiblingProductsBlock);
 
         if (topRatedsiblingProductsWrapper.children.length > 6) {
 
@@ -1269,7 +1269,7 @@ if (document.querySelector("#single-page")) {
                       </div>
                       <div class="content d-flex-c-st-st">
                         ${colorHtml}
-                        <a href="single.html?id=${product.id}" class="product-title">${truncateTitle}</a>
+                        <a href="product-details.html?id=${product.id}" class="product-title">${truncateTitle}</a>
                         ${descriptionHtml}
                         ${ratingHtml}
                         <div class="product-price d-flex-r-bt-c">
@@ -1305,7 +1305,7 @@ if (document.querySelector("#single-page")) {
         highViewedSiblingProductsContainer.appendChild(highViewedSiblingProductsWrapper);
         highViewedSiblingProductsBlock.appendChild(highViewedSiblingProductsContainer);
 
-        document.querySelector('#single-page .featured-products-container').appendChild(highViewedSiblingProductsBlock);
+        document.querySelector('#product-details-page .featured-products-container').appendChild(highViewedSiblingProductsBlock);
 
         if (highViewedSiblingProductsWrapper.children.length > 6) {
 
@@ -1415,7 +1415,7 @@ if (document.querySelector("#single-page")) {
                       </div>
                       <div class="content d-flex-c-st-st">
                         ${colorHtml}
-                        <a href="single.html?id=${product.id}" class="product-title">${truncateTitle}</a>
+                        <a href="product-details.html?id=${product.id}" class="product-title">${truncateTitle}</a>
                         ${descriptionHtml}
                         ${ratingHtml}
                         <div class="product-price d-flex-r-bt-c">
@@ -1451,7 +1451,7 @@ if (document.querySelector("#single-page")) {
         siblingCategoriesProductsContainer.appendChild(siblingCategoriesProductsWrapper);
         siblingCategoriesProductsBlock.appendChild(siblingCategoriesProductsContainer);
 
-        document.querySelector('#single-page .featured-products-container').appendChild(siblingCategoriesProductsBlock);
+        document.querySelector('#product-details-page .featured-products-container').appendChild(siblingCategoriesProductsBlock);
 
         if (siblingCategoriesProductsWrapper.children.length > 6) {
 
@@ -1550,23 +1550,23 @@ if (document.querySelector("#single-page")) {
         if (product) {
           displayProductDetails(product);
         } else {
-          document.querySelector("#single-page .product-container");
+          document.querySelector("#product-details-page .product-container");
         }
       })
       .catch(error => {
         console.error('Error fetching the product data:', error);
-        document.querySelector("#single-page .product-container").innerHTML = 'Error loading product';
+        document.querySelector("#product-details-page .product-container").innerHTML = 'Error loading product';
       });
   }
 
   if (getProductId()) {
     fetchProduct(getProductId());
   } else {
-    document.querySelector("#single-page .product-container").innerHTML = 'no product to view';
+    document.querySelector("#product-details-page .product-container").innerHTML = 'no product to view';
   }
 
   function displayProductDetails(product) {
-    const productContainer = document.querySelector("#single-page .product-container");
+    const productContainer = document.querySelector("#product-details-page .product-container");
 
     const smallImagesHolder = productContainer.querySelector(".left-block .small-images-holder");
     const bigImage = productContainer.querySelector(".left-block .big-image-holder img");
@@ -1700,15 +1700,15 @@ if (document.querySelector("#single-page")) {
 
     productContainer.querySelector(".right-block .content .product-quantity-block #subtotal").textContent = product.salePrice;
 
-    magnify(document.querySelector('#single-page .product-container .left-block .big-image-holder img'));
+    magnify(document.querySelector('#product-details-page .product-container .left-block .big-image-holder img'));
     flippingSizes();
     handleQuantity();
     addToCart();
   }
 
   function magnify(bigImage) {
-    const lens = document.querySelector('#single-page .product-container .left-block .big-image-holder .lens');
-    const magnifierImage = document.querySelector('#single-page .product-container .right-block .content .magnifier-img');
+    const lens = document.querySelector('#product-details-page .product-container .left-block .big-image-holder .lens');
+    const magnifierImage = document.querySelector('#product-details-page .product-container .right-block .content .magnifier-img');
 
     if (bigImage && lens && magnifierImage) {
       lens.addEventListener('mousemove', (e) => moveLens(e, bigImage, lens, magnifierImage));
@@ -1745,9 +1745,9 @@ if (document.querySelector("#single-page")) {
   }
 
   function flippingSizes() {
-    document.querySelectorAll("#single-page .size-block .sizes span").forEach((size) => {
+    document.querySelectorAll("#product-details-page .size-block .sizes span").forEach((size) => {
       size.addEventListener('click', function () {
-        document.querySelector("#single-page .size-block .size .size-value").textContent = size.textContent;
+        document.querySelector("#product-details-page .size-block .size .size-value").textContent = size.textContent;
       });
     });
   }
@@ -1781,8 +1781,8 @@ if (document.querySelector("#single-page")) {
 
   function addToCart() {
 
-    document.querySelector("#single-page .product-container .right-block .add-to-cart-btn").addEventListener('click', function () {
-      const singlepProductContainer = document.querySelector("#single-page .product-container");
+    document.querySelector("#product-details-page .product-container .right-block .add-to-cart-btn").addEventListener('click', function () {
+      const singlepProductContainer = document.querySelector("#product-details-page .product-container");
 
       const safeTextContent = (selector) => {
         const element = singlepProductContainer.querySelector(selector);

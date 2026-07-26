@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build-css": "sass inc/styles/admin.scss inc/styles/main.css",
-    "watch-css": "sass --watch inc/styles/admin.scss:inc/styles/main.css"
+    "build-css": "sass assets/styles/admin.scss assets/styles/main.css",
+    "watch-css": "sass --watch assets/styles/admin.scss:assets/styles/main.css"
   },
   "keywords": [],
   "author": "",
