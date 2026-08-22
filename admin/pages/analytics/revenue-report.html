@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Revenue Report</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+
+<div class="dashboard-wrapper">
+
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="main-content">
+    
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content revenue-report-page" role="main">
+
+      <div class="page-header">
+
+        <div>
+          <h1 class="page-title">Revenue Report</h1>
+          <p class="page-subtitle">Revenue breakdown and analysis</p>
+        </div>
+
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Revenue Report</span>
+        </div>
+
+      </div>
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <div class="stat-icon green"><i class="fas fa-arrow-up"></i></div>
+          <div class="stat-value">$245,680</div>
+          <div class="stat-label">Gross Revenue</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon red"><i class="fas fa-arrow-down"></i></div>
+          <div class="stat-value">$38,420</div>
+          <div class="stat-label">Expenses</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon blue"><i class="fas fa-coins"></i></div>
+          <div class="stat-value">$207,260</div>
+          <div class="stat-label">Net Revenue</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon orange"><i class="fas fa-chart-pie"></i></div>
+          <div class="stat-value">84.3%</div>
+          <div class="stat-label">Profit Margin</div>
+        </div>
+
+      </div>
+
+      <div class="revenue-chart-card card">
+        <h3 class="card-title">Revenue vs Expenses</h3>
+        <div style="height:300px"><canvas id="revChart"></canvas></div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded',() => {
+          if(typeof Chart!=='undefined'){new Chart(document.getElementById('revChart'),{
+            type:'line',data:{labels:['Jan','Feb','Mar','Apr','May','Jun'],datasets:[{label:'Revenue',data:[32000,38000,35000,42000,48000,51000],borderColor:'#0A84FF',backgroundColor:'rgba(10,132,255,0.08)',fill:true,tension:0.4},{label:'Expenses',data:[5200,6100,5800,7200,8100,7500],borderColor:'#FF1744',backgroundColor:'rgba(255,23,68,0.05)',fill:true,tension:0.4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8899AA'}}},scales:{x:{grid:{display:false},ticks:{color:'#556677'}},y:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#556677'}}}}})}})
+      </script>
+
+    </main>
+  
+  </div>
+
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Messages</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+  
+<div class="dashboard-wrapper">
+
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="all-messages-page main-content">
+    
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Messages</h1>
+          <p class="page-subtitle">Customer messages and inquiries</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Messages</span>
+        </div>
+      </div>
+
+      <div class="cards-container grid-2">
+
+        <div class="customers-card card">
+
+          <div class="message-input-holder">
+            <input class="form-control-dash" placeholder="Search messages...">
+          </div>
+
+          <div class="customer-item" style="background:rgba(10,132,255,0.06);">
+            <div class="customer-title-row">
+              <div class="avatar" style="background:var(--gradient-primary)">AS</div>
+              <div class="customer-title-holder">
+                <span class="customer-title">Ahmed Salem</span>
+                <span class="time">2m ago</span>
+              </div>
+            </div>
+            <div class="message">I have a question about my order #7841...</div>
+          </div>
+
+          <div class="customer-item">
+            <div class="customer-title-row">
+              <div class="avatar" style="background:linear-gradient(135deg,#6C5CE7,#a855f7)">SK</div>
+              <div class="customer-title-holder">
+                <span class="customer-title">Sara Khalil</span>
+                <span class="time">1h ago</span>
+              </div>
+            </div>
+            <div class="message">When will my order be shipped?</div>
+          </div>
+
+          <div class="customer-item">
+            <div class="customer-title-row">
+              <div class="avatar" style="background:linear-gradient(135deg,#00E676,#00C853)">MH</div>
+              <div class="customer-title-holder">
+                <span class="customer-title">Mohamed Hassan</span>
+                <span class="time">3h ago</span>
+              </div>
+            </div>
+            <div class="message">I'd like to return my purchase...</div>
+          </div>
+
+        </div>
+
+        <div class="customer-chat-card card">
+
+          <div class="customer-title-row">
+
+            <div class="avatar">AS</div>
+
+            <div class="customer-title-holder">
+              <div class="customer-title">Ahmed Salem</div>
+              <div class="customer-email">ahmed@email.com</div>
+            </div>
+
+          </div>
+
+          <div class="chat-container">
+
+            <div class="chat-item">
+              <p class="message-content">I have a question about my order #7841. When will it arrive?</p>
+              <span class="message-time">10:30 AM</span>
+            </div>
+
+            <div class="replied-chat-item">
+              <p class="message-content">Your order has been shipped and will arrive by March 20th.</p>
+              <span class="message-time">10:35 AM</span>
+            </div>
+
+          </div>
+
+          <div class="send-message-holder">
+            <input class="form-control-dash" placeholder="Type your message..." style="flex:1">
+            <button class="btn-primary-dash"><i class="fas fa-paper-plane"></i></button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

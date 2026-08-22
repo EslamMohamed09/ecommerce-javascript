@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ShopVista — My Profile</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+  
+<div class="dashboard-wrapper">
+
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="main-content">
+
+    <header class="main-header" role="banner"></header>
+    
+    <main class="page-content my-profile-page" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">My Profile</h1>
+          <p class="page-subtitle">View your profile</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span><span>My Profile</span>
+        </div>
+      </div>
+
+      <div class="cards-container grid-2">
+
+        <div class="user-info-card card">
+
+          <div class="avatar avatar-lg">JD</div>
+          <h2 class="user-name">John Doe</h2>
+          <p class="user-role">Administrator</p>
+          <p class="user-email">john.doe@shopvista.com</p>
+
+          <div class="actions-activedays-info">
+
+            <div class="actions-holder">
+              <div class="action-count">1,248</div>
+              <div class="name">Actions</div>
+            </div>
+
+            <div class="days-active-holder">
+              <div class="days-count">365</div>
+              <div class="name">Days Active</div>
+            </div>
+
+          </div>
+          
+          <div class="action-btn-holder">
+            <a href="edit-profile.html" class="btn-primary-dash">
+              <i class="fas fa-pen"></i> Edit Profile
+            </a>
+          </div>
+
+        </div>
+
+        <div class="user-details-info card">
+
+          <h3 class="card-title">Profile Details</h3>
+
+          <div class="items-holder">
+
+            <div class="info-item">
+              <span class="name">Full Name</span>
+              <span class="value">John Doe</span>
+            </div>
+
+            <div class="info-item">
+              <span class="name">Email</span>
+              <span class="value">john.doe@shopvista.com</span>
+            </div>
+            
+            <div class="info-item">
+              <span class="name">Phone</span>
+              <span class="value">+20 123 456 789</span>
+            </div>
+            
+            <div class="info-item">
+              <span class="name">Role</span>
+              <span class="value">Administrator</span>
+            </div>
+            
+            <div class="info-item">
+              <span class="name">Joined</span>
+              <span class="value">Jan 1, 2025</span>
+            </div>
+            
+            <div class="info-item">
+              <span class="name">Last Login</span>
+              <span class="value">Mar 18, 2026</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+  
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

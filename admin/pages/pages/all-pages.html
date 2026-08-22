@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ShopVista — All Pages</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+  
+<div class="dashboard-wrapper">
+  
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="main-content">
+
+    <header class="main-header" role="banner"></header>
+      
+    <main class="page-content all-pages-page" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">All Pages</h1>
+          <p class="page-subtitle">Manage CMS pages</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>All Pages</span>
+        </div>
+      </div>
+
+      <div class="search-bar">
+        <input class="form-control-dash" placeholder="Search pages...">
+        <a href="add-page.html" class="btn-primary-dash"><i class="fas fa-plus"></i> Add Page</a>
+      </div>
+
+      <div class="table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Slug</th>
+              <th>Author</th>
+              <th>Modified</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="title-field">About Us</td>
+              <td class="slug-field">/about</td>
+              <td>John Doe</td>
+              <td>Mar 18</td>
+              <td><span class="badge badge-success">Published</span></td>
+              <td>
+                <a href="edit-page.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="title-field">Contact</td>
+              <td class="slug-field">/contact</td>
+              <td>John Doe</td>
+              <td>Mar 15</td>
+              <td><span class="badge badge-success">Published</span></td>
+              <td>
+                <a href="edit-page.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="title-field">Privacy Policy</td>
+              <td class="slug-field">/privacy</td>
+              <td>Admin</td>
+              <td>Mar 10</td>
+              <td><span class="badge badge-success">Published</span></td>
+              <td>
+                <a href="edit-page.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="title-field">Terms of Service</td>
+              <td class="slug-field">/terms</td>
+              <td>Admin</td>
+              <td>Mar 8</td>
+              <td><span class="badge badge-secondary">Draft</span></td>
+              <td>
+                <a href="edit-page.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="title-field">FAQ</td>
+              <td class="slug-field">/faq</td>
+              <td>John Doe</td>
+              <td>Mar 5</td>
+              <td><span class="badge badge-success">Published</span></td>
+              <td>
+                <a href="edit-page.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+
+  </div>
+  
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

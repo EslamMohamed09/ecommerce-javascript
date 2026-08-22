@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Pending Reviews</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+  
+<div class="dashboard-wrapper">
+    
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="main-content">
+  
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content pending-reviews-page" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Pending Reviews</h1>
+          <p class="page-subtitle">Reviews awaiting approval</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Pending Reviews</span>
+        </div>
+      </div>
+
+      <div class="table-card">
+
+        <div class="table-card-header">
+          <h3 class="table-card-title">Pending Reviews (5)</h3>
+          <div class="table-actions">
+            <button class="btn-success-dash"><i class="fas fa-check-double"></i> Approve All</button>
+          </div>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Product</th>
+              <th>Rating</th>
+              <th>Review</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sara Khalil</td>
+              <td>iPhone 15 Pro</td>
+              <td class="rating-field">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+              </td>
+              <td>Great phone but camera could improve</td>
+              <td>Mar 17</td>
+              <td class="action-buttons-field">
+                <button class="btn-success-dash"><i class="fas fa-check"></i> Approve</button>
+                <button class="btn-danger-dash"><i class="fas fa-times"></i> Reject</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

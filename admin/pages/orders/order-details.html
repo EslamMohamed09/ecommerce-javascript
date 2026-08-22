@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Order Details</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+
+<div class="dashboard-wrapper">
+
+ <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="main-content">
+
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content order-details-page" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Order Details</h1>
+          <p class="page-subtitle">Order #ORD-7841</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Order Details</span>
+        </div>
+      </div>
+
+      <div class="grid-2">
+
+        <div class="left-block">
+          
+          <div class="order-items-card card">
+
+            <h3 class="card-title">Order Items</h3>
+
+            <div class="items-holder">
+
+              <div class="order-item">
+                <div class="product-thumb"><i class="fas fa-laptop"></i></div>
+                <div class="order-title-holder">
+                  <div class="order-title">MacBook Pro 16"</div>
+                  <div class="order-quantity">Qty: 1</div>
+                </div>
+                <div class="order-cost">$2,499.00</div>
+              </div>
+
+              <div class="order-item">
+                <div class="product-thumb"><i class="fas fa-headphones"></i></div>
+                <div class="order-title-holder">
+                  <div class="order-title">AirPods Pro</div>
+                  <div class="order-quantity">Qty: 1</div>
+                </div>
+                <div class="order-cost">$249.00</div>
+              </div>
+
+            </div>
+
+            <div class="card-footer">
+              <span class="total-name">Total</span>
+              <span class="total-cost">$2,748.00</span>
+            </div>
+
+          </div>
+
+          <div class="order-timeline-card card">
+
+            <h3 class="card-title">Order Timeline</h3>
+
+            <div class="orders-statistics">
+
+              <div class="order-placed-item order-status-item">
+                <div class="order-placed">Order Placed</div>
+                <div class="order-time">Mar 18, 2026 - 10:30 AM</div>
+              </div>
+
+              <div class="order-confirmed-item order-status-item">
+                <div class="payment-confirmed">Payment Confirmed</div>
+                <div class="order-time">Mar 18, 2026 - 10:32 AM</div>
+              </div>
+
+              <div class="order-completed-item order-status-item">
+                <div class="order-completed">Order Completed</div>
+                <div class="order-time">Mar 18, 2026 - 2:15 PM</div>
+              </div>
+
+            </div>
+
+          </div>
+          
+        </div>
+
+        <div class="right-block">
+
+          <div class="customer-card card">
+
+            <h3 class="card-title">Customer</h3>
+
+            <div class="customer-avatar-holder">
+              <div class="avatar avatar-lg">AS</div>
+              <div class="cust-title-email">
+                <div class="customer-title">Ahmed Salem</div>
+                <div class="customer-email">ahmed@email.com</div>
+              </div>
+            </div>
+
+            <div class="customer-phone-holder">
+              <div class="cust-phone-row">
+                <span class="phone">Phone</span>
+                <span>+20 123 456 789</span>
+              </div>
+              <div class="cust-orders-row">
+                <span class="orders">Orders</span>
+                <span>15</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="shipping-card card">
+            <h3 class="card-title">Shipping</h3>
+            <div class="shipping-info">Ahmed Salem<br>123 Main Street, Apt 4B<br>Cairo, Egypt 11511<br>+20 123 456 789</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Notifications</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+  
+<div class="dashboard-wrapper">
+
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+  
+  <div class="main-content">
+  
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content all-notifications-page" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Notifications</h1>
+          <p class="page-subtitle">All system notifications</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Notifications</span>
+        </div>
+      </div>
+
+      <div class="major-card-buttons">
+
+        <div class="tab-nav">
+          <button class="tab-btn active">All</button>
+          <button class="tab-btn">Unread (8)</button>
+          <button class="tab-btn">Read</button>
+        </div>
+
+        <button class="btn-outline-dash"><i class="fas fa-check-double"></i> Mark All Read</button>
+
+      </div>
+
+      <div class="notifications-card card">
+
+        <div class="notifications-holder">
+
+          <div class="notification-item" style="background:rgba(10,132,255,0.03)">
+
+            <div class="icon-holder d-flex-r-c-c" style="background:var(--success)20;">
+              <i class="fas fa-shopping-cart" style="color:var(--success)"></i>
+            </div>
+
+            <div class="notification-info">
+              <div class="title">New order #7841 received</div>
+              <div class="description">Ahmed Salem placed an order for $2,499</div>
+              <div class="time">2 minutes ago</div>
+            </div>
+
+            <div class="dot"></div>
+
+          </div>
+
+          <div class="notification-item" style="background:rgba(10,132,255,0.03)">
+
+            <div class="icon-holder d-flex-r-c-c" style="background:var(--warning)20;">
+              <i class="fas fa-star" style="color:var(--warning)"></i>
+            </div>
+
+            <div class="notification-info">
+              <div class="title">New review pending</div>
+              <div class="description">Sara Khalil left a 4-star review on iPhone 15 Pro</div>
+              <div class="time">1 hour ago</div>
+            </div>
+
+            <div class="dot"></div>
+
+          </div>
+
+          <div class="notification-item" style="background:rgba(10,132,255,0.03)">
+
+            <div class="icon-holder d-flex-r-c-c" style="background:var(--danger)20;">
+              <i class="fas fa-exclamation-triangle" style="color:var(--danger)"></i>
+            </div>
+
+            <div class="notification-info">
+              <div class="title">Low stock alert</div>
+              <div class="description">iPhone 15 Pro Max has only 8 units remaining</div>
+              <div class="time">2 hours ago</div>
+            </div>
+
+            <div class="dot"></div>
+
+          </div>
+
+          <div class="notification-item">
+
+            <div class="icon-holder d-flex-r-c-c" style="background:var(--primary)20;">
+              <i class="fas fa-user-plus" style="color:var(--primary)"></i>
+            </div>
+
+            <div class="notification-info">
+              <div class="title">New customer registered</div>
+              <div class="description">Mohamed Ali created a new account</div>
+              <div class="time">3 hours ago</div>
+            </div>
+
+          </div>
+
+          <div class="notification-item">
+
+            <div class="icon-holder" style="background:var(--success)20;">
+              <i class="fas fa-check-circle" style="color:var(--success)"></i>
+            </div>
+
+            <div class="notification-info">
+              <div class="title">Order #7835 delivered</div>
+              <div class="description">Order delivered successfully to Yousef Nabil</div>
+              <div class="time">5 hours ago</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

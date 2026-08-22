@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Customers Report</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+
+<div class="dashboard-wrapper">
+
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="main-content">
+    
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content customers-report-page" role="main">
+
+      <div class="page-header">
+
+        <div>
+          <h1 class="page-title">Customers Report</h1>
+          <p class="page-subtitle">Customer acquisition and retention</p>
+        </div>
+
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Customers Report</span>
+        </div>
+
+      </div>
+
+      <div class="stats-grid">
+        
+        <div class="stat-card">
+          <div class="stat-icon blue"><i class="fas fa-users"></i></div>
+          <div class="stat-value">2,340</div>
+          <div class="stat-label">Total Customers</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon green"><i class="fas fa-user-plus"></i></div>
+          <div class="stat-value">186</div>
+          <div class="stat-label">New This Month</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon orange"><i class="fas fa-redo"></i></div>
+          <div class="stat-value">68%</div>
+          <div class="stat-label">Retention Rate</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon cyan"><i class="fas fa-dollar-sign"></i></div>
+          <div class="stat-value">$186</div>
+          <div class="stat-label">Avg. Lifetime Value</div>
+        </div>
+
+      </div>
+
+      <div class="customer-growth-chart card">
+        <h3 class="card-title">Customer Growth</h3>
+        <div style="height:300px">
+          <canvas id="custChart"></canvas>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+          if(typeof Chart!=='undefined'){
+            new Chart(document.getElementById('custChart'),{
+                type:'line',data:{labels:['Jan','Feb','Mar','Apr','May','Jun'],datasets:
+                                [{label:'New Customers',data:[120,145,135,168,186,210],borderColor:'#00D1FF',backgroundColor:'rgba(0,209,255,0.08)',fill:true,tension:0.4}]},
+                                options:{responsive:true,
+                                        maintainAspectRatio:false,
+                                        plugins:{legend:{labels:{color:'#8899AA'}}},
+                                scales:{x:{grid:{display:false},ticks:{color:'#556677'}},
+                                        y:{grid:{color:'rgba(255,255,255,0.04)'},
+                                        ticks:{color:'#556677'}}
+                                        }
+                                      }})
+                }
+            })
+      </script>
+      
+    </main>
+
+  </div>
+
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

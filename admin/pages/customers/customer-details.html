@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Customer Details</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+
+<div class="dashboard-wrapper">
+
+ <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="main-content">
+
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content customer-details-page" role="main">
+  
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Customer Details</h1>
+          <p class="page-subtitle">Customer profile and history</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Customer Details</span>
+        </div>
+      </div>
+
+      <div class="cards-container grid-2">
+
+        <div class="customer-personal-info-card card">
+          <div class="avatar avatar-lg">AS</div>
+          <h2 class="customer-name">Ahmed Salem</h2>
+          <p class="customer-email">ahmed@email.com</p>
+          <div class="customer-transactions">
+            <div class="orders-count-holder">
+              <div class="orders-count">15</div>
+              <div class="orders">Orders</div>
+            </div>
+            <div class="total-spent-holder">
+              <div class="total-spent-count">$8,450</div>
+              <div class="total-spent">Total Spent</div>
+            </div>
+            <div class="rank-holder">
+              <div class="rank">VIP</div>
+              <div class="tier">Tier</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="recent-orders-card card">
+
+          <h3 class="card-title">Recent Orders</h3>
+
+          <div class="orders-items-holder">
+
+            <div class="order-item">
+              <div class="order-number-holder">
+                <div class="order-number">#ORD-7841</div>
+                <div class="order-date">Mar 18, 2026</div>
+              </div>
+              <div class="order-cost">$2,499</div>
+              <span class="badge badge-success">Completed</span>
+            </div>
+
+            <div class="order-item">
+              <div class="order-number-holder">
+                <div class="order-number">#ORD-7820</div>
+                <div class="order-date">Mar 10, 2026</div>
+              </div>
+              <div class="order-cost">$1,899</div>
+              <span class="badge badge-success">Completed</span>
+            </div>
+
+          </div>
+          
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

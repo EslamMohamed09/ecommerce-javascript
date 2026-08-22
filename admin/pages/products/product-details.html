@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Product Details</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+
+<div class="dashboard-wrapper">
+
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="main-content">
+
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content product-details-page" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Product Details</h1>
+          <p class="page-subtitle">View product information</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a><span class="sep">/</span>
+          <span>Product Details</span>
+        </div>
+      </div>
+
+      <div class="grid-2">
+
+        <div class="product-image-card card">
+          <div class="image-holder"><i class="fas fa-laptop"></i></div>
+          <h2 class="product-title">MacBook Pro 16"</h2>
+          <p>SKU: SKU-001</p>
+          <div class="product-achieved-price">$2,499.00</div>
+          <span class="badge badge-success">
+          <span class="status-dot active"></span> Active</span>
+        </div>
+
+        <div class="product-info-block">
+
+          <div class="product-info-card card">
+
+            <h3 style="font-size:16px;font-weight:600;margin-bottom:16px">Product Info</h3>
+
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;justify-content:space-between">
+                <span style="color:var(--text-secondary)">Category</span>
+                <span style="font-weight:500">Electronics</span>
+              </div>
+              <div style="height:1px;background:var(--glass-border)"></div>
+              <div style="display:flex;justify-content:space-between">
+                <span style="color:var(--text-secondary)">Brand</span>
+                <span style="font-weight:500">Apple</span>
+              </div>
+              <div style="height:1px;background:var(--glass-border)"></div>
+              <div style="display:flex;justify-content:space-between">
+                <span style="color:var(--text-secondary)">Stock</span>
+                <span style="font-weight:500;color:var(--success)">142 units</span>
+              </div>
+              <div style="height:1px;background:var(--glass-border)"></div>
+              <div style="display:flex;justify-content:space-between">
+                <span style="color:var(--text-secondary)">Total Sales</span>
+                <span style="font-weight:500">$354,258</span>
+              </div>
+              <div style="height:1px;background:var(--glass-border)"></div>
+              <div style="display:flex;justify-content:space-between">
+                <span style="color:var(--text-secondary)">Rating</span>
+                <span style="font-weight:500;color:var(--warning)"><i class="bi bi-star-fill"></i> 4.8 (256 reviews)</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-actions">
+            <a href="edit-product.html" class="btn-primary-dash edit-btn"><i class="fas fa-pen"></i> Edit</a>
+            <button class="btn-danger-dash delete-btn"><i class="fas fa-trash"></i> Delete</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

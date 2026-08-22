@@ -1,57 +1,22 @@
-const headerContent = `
-  <div class="left-header">
-  
-    <a href="/index.html" class="logo">
-      <img src="assets/images/brands/underarmour.png" alt="">
-    </a>
-
-    <div class="asidecomponent">
-      <button id="asidebutton"><i class="fas fa-chevron-right"></i></button>
+const mainHeaderContent = `
+   <div class="header-left-block">
+        <button class="sidebar-toggle" aria-label="Toggle Sidebar"><i class="bi bi-chevron-right"></i></button>
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="search" class="form-control-dash" placeholder="Search..." aria-label="Search">
+        </div>
     </div>
 
-  </div>
-
-  <div class="right-header">
-
-    <div class="theme-toggler" id="theme-toggler">
-      <i class="fas fa-adjust" id="adjust-icon"></i>
-      <i class="far fa-moon" id="moon-icon"></i>
+    <div class="header-right-block">
+        <button class="header-action-btn" id="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button class="header-action-btn" aria-label="Notifications"><i class="fas fa-bell"></i><span class="dot"></span></button>
+        <div class="topbar-divider"></div>
+        <div class="header-user-holder">
+            <div class="header-user-avatar">JD</div>
+            <div>
+              <div class="header-user-name">John Doe</div>
+              <div class="header-user-role">Admin</div>
+            </div>
+        </div>
     </div>
-
-    <div class="content">
-      <div class="info">
-        <p>Hey, <b>eslam</b></p>
-        <small>admin</small>
-      </div>
-      <img src="assets/images/users/eslam3.jpg" id="profile-img" alt="">
-      <div class="drop-menu d-flex-c-st-st">
-        <a href="#" class="drop-link">update profile</a>
-        <a href="logout.php" class="drop-link">logout <i class="fas fa-sign-out-alt" id="icon"></i></a>
-      </div>
-    </div>
-
-  </div> <!-- End Right Header -->
-
-  <div class="small-menu">
-
-    <a href="#" class="small-menu-link">
-      <i class="fa-solid fa-layer-group" id="icon"></i>
-      <span>categories</span>
-    </a>
-
-    <a href="#" class="small-menu-link">
-      <i class="fas fa-cart-plus" id="icon"></i>
-      <span>add product</span>
-    </a>
-
-    <a href="#" class="small-menu-link">
-      <i class="fas fa-store-alt" id="icon"></i>
-      <span>products</span>
-    </a>
-
-    <button class="small-menu-link" id="asidebutton2">
-      <i class="fas fa-bars" id="icon"></i>
-      <span>menu</span>
-    </button>
-
-  </div>`;
+`;

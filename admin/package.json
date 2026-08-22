@@ -1,13 +1,13 @@
 {
-  "name": "admin",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "build-css": "sass assets/styles/admin.scss assets/styles/main.css",
-    "watch-css": "sass --watch assets/styles/admin.scss:assets/styles/main.css"
+  "devDependencies": {
+    "sass": "^1.101.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "scripts": {
+    "build-css": "sass assets/styles/dashboard.scss assets/styles/dashboard.css",
+    "watch-css": "sass --watch assets/styles/dashboard.scss:assets/styles/dashboard.css",
+    "serve": "browser-sync start --server --files 'assets/styles/*.css, *.html'"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.13.1"
+  }
 }

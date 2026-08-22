@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Product Performance</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+
+<div class="dashboard-wrapper">
+
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="main-content">
+
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content product-performance-page" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Product Performance</h1>
+          <p class="page-subtitle">Best and worst performing products</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a><span class="sep">/</span>
+          <span>Product Performance</span>
+        </div>
+      </div>
+
+      <div class="cards-container grid-2">
+        
+        <div class="top-performance-card card">
+
+          <h3 class="card-title"><i class="fas fa-arrow-up"></i>Top Performers</h3>
+
+          <div class="products-holder">
+
+            <div class="product-item">
+              <div class="product-thumb"><i class="fas fa-laptop"></i></div>
+              <div class="title-holder">
+                <div class="product-title">MacBook Pro 16"</div>
+                <div class="sold-info">142 sold • $354,258 revenue</div>
+              </div>
+              <span class="badge badge-success">+24%</span>
+            </div>
+
+            <div class="product-item">
+              <div class="product-thumb"><i class="fas fa-mobile-alt"></i></div>
+              <div class="title-holder">
+                <div class="product-title">iPhone 15 Pro</div>
+                <div class="sold-info">98 sold • $117,502 revenue</div>
+              </div>
+              <span class="badge badge-success">+18%</span>
+            </div>
+
+            <div class="product-item">
+              <div class="product-thumb"><i class="fas fa-headphones"></i></div>
+              <div class="title-holder">
+                <div class="product-title">AirPods Pro</div>
+                <div class="sold-info">256 sold • $63,744 revenue</div>
+              </div>
+              <span class="badge badge-success">+32%</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="needs-attention-card card">
+
+          <h3 class="card-title"><i class="fas fa-arrow-down"></i>Needs Attention</h3>
+
+          <div class="products-holder">
+
+            <div class="product-item">
+              <div class="product-thumb"><i class="fas fa-keyboard"></i></div>
+              <div class="title-holder">
+                <div class="product-title">Wireless Keyboard</div>
+                <div class="sold-info">3 sold • $147 revenue</div>
+              </div>
+              <span class="badge badge-danger">-45%</span>
+            </div>
+
+            <div class="product-item">
+              <div class="product-thumb"><i class="fas fa-mouse"></i></div>
+              <div class="title-holder">
+                <div class="product-title">USB-C Hub</div>
+                <div class="sold-info">8 sold • $320 revenue</div>
+              </div>
+              <span class="badge badge-danger">-28%</span>
+            </div>
+
+          </div>
+          
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+  
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

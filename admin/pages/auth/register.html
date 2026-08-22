@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Register</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+
+<div class="auth-wrapper register-page">
+
+  <div class="auth-brand-side">
+
+    <div class="sidebar-logo">SV</div>
+    <h1 class="auth-brand-title">Join ShopVista</h1>
+    <p class="auth-brand-desc">Start managing your e-commerce store with the most powerful dashboard built for modern merchants.</p>
+
+    <div class="features-holder">
+
+      <div class="feature-item">
+        <i class="fas fa-chart-line"></i>
+        <div class="feature-name">Real-time Analytics</div>
+      </div>
+
+      <div class="feature-item">
+        <i class="fas fa-shield-alt"></i>
+        <div class="feature-name">Secure Platform</div>
+      </div>
+
+      <div class="feature-item">
+        <i class="fas fa-rocket"></i>
+        <div class="feature-name">Fast Performance</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="auth-form-side">
+
+    <div class="auth-form-box">
+
+      <h2 class="auth-form-title">Create Account</h2>
+      <p class="auth-form-subtitle">Get started with your free ShopVista account</p>
+      <div class="social-btns">
+        <button class="social-btn"><i class="fab fa-google"></i> Google</button>
+        <button class="social-btn"><i class="fab fa-github"></i> GitHub</button>
+      </div>
+
+      <div class="auth-divider">or register with email</div>
+
+      <form>
+
+        <div class="fullname-inputs-holder">
+          <div class="auth-input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" class="auth-input" placeholder="First name" aria-label="First name" required>
+          </div>
+          <div class="auth-input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" class="auth-input" placeholder="Last name" aria-label="Last name" required>
+          </div>
+        </div>
+
+        <div class="auth-input-group d-flex-r-st-c"> <!-- email -->
+          <i class="fas fa-envelope"></i>
+          <input type="email" class="auth-input" placeholder="Email address" aria-label="Email" required>
+        </div>
+
+        <div class="auth-input-group d-flex-r-st-c"> <!-- password -->
+          <i class="fas fa-lock"></i>
+          <input type="password" class="auth-input" placeholder="Password" aria-label="Password" required>
+          <button type="button" class="password-toggle" aria-label="Show password"><i class="fas fa-eye"></i></button>
+        </div>
+
+        <div class="auth-input-group d-flex-r-st-c"> <!-- confirm password -->
+          <i class="fas fa-lock"></i>
+          <input type="password" class="auth-input" placeholder="Confirm password" aria-label="Confirm password" required>
+        </div>
+
+        <label class="agree-terms-privacy-row">
+          <input type="checkbox" required> 
+           I agree to the 
+          <a href="#">Terms of Service</a> and 
+          <a href="#">Privacy Policy</a>
+        </label>
+
+        <button type="submit" class="auth-btn">Create Account</button>
+
+      </form>
+
+      <p class="auth-footer-text">Already have an account? <a href="login.html">Sign in</a></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ShopVista — Store Settings</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+</head>
+<body>
+  
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+  
+<div class="dashboard-wrapper">
+    
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+    
+  <div class="store-settings-page main-content">
+      
+    <header class="main-header" role="banner"></header>
+      
+    <main class="page-content" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Store Settings</h1>
+          <p class="page-subtitle">Configure your store</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Store Settings</span>
+        </div>
+      </div>
+
+      <div class="store-card card">
+
+        <h3 class="card-title">Store Configuration</h3>
+
+        <div class="form-group">
+          <label class="form-label">Store Name</label>
+          <input class="form-control-dash" type="text" value="ShopVista Store">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Store Phone</label>
+          <input class="form-control-dash" type="text" value="+20 123 456 789">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Currency</label>
+          <select class="form-select-dash">
+            <option>USD ($)</option>
+            <option>EUR (€)</option>
+            <option>GBP (£)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Weight Unit</label>
+          <select class="form-select-dash">
+            <option>kg</option>
+            <option>lb</option>
+          </select>
+        </div>
+
+        <div class="enable-guest-row toggle-btn-row">
+          <span class="label-title">Enable Guest Checkout</span>
+          <label class="opened-toggle-switch-label"> <!-- open toggle button -->
+            <input type="checkbox" class="toggle-checkbox" checked/>
+            <div class="toggle-switch"> 
+              <i class="bi bi-x-lg"></i>
+              <i class="bi bi-check-lg"></i>
+            </div>
+          </label>
+        </div>
+
+        <div class="enable-wishlist-row toggle-btn-row">
+          <span class="label-title">Enable Wishlist</span>
+          <label class="opened-toggle-switch-label"> <!-- open toggle switch button -->
+            <input type="checkbox" class="toggle-checkbox" checked/>
+            <div class="toggle-switch"> 
+              <i class="bi bi-x-lg"></i>
+              <i class="bi bi-check-lg"></i>
+            </div>
+          </label>
+        </div>
+
+        <div class="show-stock-row toggle-btn-row">
+          <span class="label-title">Show Stock Quantity</span>
+          <label class="closed-toggle-switch-label"> <!-- closed toggle switch button -->
+            <input type="checkbox" class="toggle-checkbox" checked/>
+            <div class="toggle-switch"> 
+              <i class="bi bi-x-lg"></i>
+              <i class="bi bi-check-lg"></i>
+            </div>
+          </label>
+        </div>
+
+        <div class="action-buttons" style="margin-top:24px">
+          <button class="btn-outline-dash">Reset</button>
+          <button class="btn-primary-dash"><i class="fas fa-save"></i> Save Changes</button>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Add Product</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+
+<div class="dashboard-wrapper">
+
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="add-product-page main-content">
+
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Add Product</h1>
+          <p class="page-subtitle">Create a new product listing</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Add Product</span>
+        </div>
+      </div>
+
+      <div class="cards-container grid-2">
+
+        <div class="product-form-card card">
+
+          <h3 class="card-title">Product Information</h3>
+
+          <div class="form-group">
+            <label class="form-label">Product Name</label>
+            <input class="form-control-dash" placeholder="Enter product name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Description</label>
+            <textarea class="form-control-dash" placeholder="Enter product description" rows="5"></textarea>
+          </div>
+
+          <div class="grid-2">
+
+            <div class="form-group">
+              <label class="form-label">SKU</label>
+              <input class="form-control-dash" placeholder="SKU-000">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Barcode</label>
+              <input class="form-control-dash" placeholder="Enter barcode">
+            </div>
+
+          </div>
+        
+          <div class="grid-2">
+
+            <div class="form-group">
+              <label class="form-label">Category</label>
+              <select class="form-select-dash category-select">
+                <option>Select Category</option>
+                <option>Electronics</option>
+                <option>Fashion</option><option>Home</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Brand</label>
+              <input class="form-control-dash" placeholder="Enter brand">
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="right-block">
+
+          <div class="card pricing-stock-card">
+
+            <h3 class="card-title">Pricing & Stock</h3>
+
+            <div class="grid-2">
+
+              <div class="form-group">
+                <label class="form-label">Regular Price ($)</label>
+                <input class="form-control-dash" type="number" placeholder="0.00">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Sale Price ($)</label>
+                <input class="form-control-dash" type="number" placeholder="0.00">
+              </div>
+
+            </div>
+              
+            <div class="grid-2">
+
+              <div class="form-group">
+                <label class="form-label">Stock Quantity</label>
+                <input class="form-control-dash" type="number" placeholder="0">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Low Stock Alert</label>
+                <input class="form-control-dash" type="number" placeholder="10">
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="product-images-card card">
+            <h3 class="card-title">Product Images</h3>
+            <div class="upload-area">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <p>Drag & drop images here or click to browse</p>
+              <button class="btn-outline-dash">Choose Files</button>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn-outline-dash">Save as Draft</button>
+            <button class="btn-primary-dash"><i class="fas fa-check"></i> Publish Product</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+  
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

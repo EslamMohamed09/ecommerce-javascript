@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — All Products</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+
+<div class="dashboard-wrapper">
+
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+  
+  <div class="all-products-page main-content">
+
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content" role="main">
+  
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">All Products</h1>
+          <p class="page-subtitle">Manage your product catalog</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../../index.html">Home</a>
+          <span class="sep">/</span><span>All Products</span>
+        </div>
+      </div>
+
+      <div class="filter-bar-block">
+
+        <div class="filter-bar">
+
+          <input class="form-control-dash" placeholder="Search products...">
+
+          <select class="form-select-dash category-select">
+            <option value="all">All Categories</option>
+            <option value="1">electronics</option>
+            <option value="34">portable sound & vision</option>
+            <option value="67">men sweatShirt</option>
+            <option value="9">blenders</option>
+            <option value="85">men shoes</option>
+          </select>
+
+          <select class="form-select-dash">
+            <option>All Status</option>
+            <option>Active</option>
+            <option>Draft</option>
+            <option>Archived</option>
+          </select>
+
+        </div>
+
+        <a href="../add-product.html" class="btn-primary-dash"><i class="fas fa-plus"></i> Add Product</a>
+
+      </div>
+
+      <div class="table-card">
+
+        <form action="" class="manage-products-table-form">
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" id="head-checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </th>
+                <th>Product</th>
+                <th>SKU</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-laptop"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">MacBook Pro 16</h3>
+                      <div class="product-brand">Apple</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-001</td>
+                <td>Electronics</td>
+                <td class="product-price-field">$2,499</td>
+                <td><span class="badge badge-success">In Stock (142)</span></td>
+                <td><span class="badge badge-success"><span class="status-dot active"></span> Active</span></td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">iPhone 15 Pro Max</h3>
+                      <div class="product-brand">Apple</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-002</td>
+                <td>Electronics</td>
+                <td class="product-price-field">$1,199</td>
+                <td><span class="badge badge-warning">Low Stock (8)</span></td>
+                <td><span class="badge badge-success"><span class="status-dot active"></span> Active</span></td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-headphones"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">Sony WH-1000XM5</h3>
+                      <div class="product-brand">Sony</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-003</td>
+                <td>Electronics</td>
+                <td class="product-price-field">$398</td>
+                <td><span class="badge badge-success">In Stock (56)</span></td>
+                <td><span class="badge badge-secondary">Draft</span></td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-tshirt"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">Nike Air Max 90</h3>
+                      <div class="product-brand">Nike</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-004</td>
+                <td>Fashion</td>
+                <td class="product-price-field">$130</td>
+                <td><span class="badge badge-danger">Out of Stock</span></td>
+                <td>
+                  <span class="badge badge-danger">
+                  <span class="status-dot inactive"></span> Archived</span>
+                </td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-laptop"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">MacBook Pro 16 1</h3>
+                      <div class="product-brand">Apple</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-001</td>
+                <td>Electronics</td>
+                <td class="product-price-field">$2,499</td>
+                <td><span class="badge badge-success">In Stock (142)</span></td>
+                <td><span class="badge badge-success"><span class="status-dot active"></span> Active</span></td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">iPhone 15 Pro Max 1</h3>
+                      <div class="product-brand">Apple</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-002</td>
+                <td>Electronics</td>
+                <td class="product-price-field">$1,199</td>
+                <td><span class="badge badge-warning">Low Stock (8)</span></td>
+                <td><span class="badge badge-success"><span class="status-dot active"></span> Active</span></td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-headphones"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">Sony WH-1000XM5 1</h3>
+                      <div class="product-brand">Sony</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-003</td>
+                <td>Electronics</td>
+                <td class="product-price-field">$398</td>
+                <td><span class="badge badge-success">In Stock (56)</span></td>
+                <td><span class="badge badge-secondary">Draft</span></td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-tshirt"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">Nike Air Max 90 1</h3>
+                      <div class="product-brand">Nike</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-004</td>
+                <td>Fashion</td>
+                <td class="product-price-field">$130</td>
+                <td><span class="badge badge-danger">Out of Stock</span></td>
+                <td>
+                  <span class="badge badge-danger">
+                  <span class="status-dot inactive"></span> Archived</span>
+                </td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-laptop"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">MacBook Pro 16 2</h3>
+                      <div class="product-brand">Apple</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-001</td>
+                <td>Electronics</td>
+                <td class="product-price-field">$2,499</td>
+                <td><span class="badge badge-success">In Stock (142)</span></td>
+                <td><span class="badge badge-success"><span class="status-dot active"></span> Active</span></td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">iPhone 15 Pro Max 2</h3>
+                      <div class="product-brand">Apple</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-002</td>
+                <td>Electronics</td>
+                <td class="product-price-field">$1,199</td>
+                <td><span class="badge badge-warning">Low Stock (8)</span></td>
+                <td><span class="badge badge-success"><span class="status-dot active"></span> Active</span></td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-headphones"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">Sony WH-1000XM5 2</h3>
+                      <div class="product-brand">Sony</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-003</td>
+                <td>Electronics</td>
+                <td class="product-price-field">$398</td>
+                <td><span class="badge badge-success">In Stock (56)</span></td>
+                <td><span class="badge badge-secondary">Draft</span></td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="product-name-field">
+                  <div class="product-name-thumb-holder">
+                    <div class="product-thumb"><i class="fas fa-tshirt"></i></div>
+                    <div class="product-name-holder">
+                      <h3 class="product-title">Nike Air Max 90 2</h3>
+                      <div class="product-brand">Nike</div>
+                    </div>
+                  </div>
+                </td>
+                <td>SKU-004</td>
+                <td>Fashion</td>
+                <td class="product-price-field">$130</td>
+                <td><span class="badge badge-danger">Out of Stock</span></td>
+                <td>
+                  <span class="badge badge-danger">
+                  <span class="status-dot inactive"></span> Archived</span>
+                </td>
+                <td>
+                  <a href="../product-details.html" class="btn-icon"><i class="fas fa-eye"></i></a>
+                  <a href="../edit-product.html" class="btn-icon"><i class="fas fa-pen"></i></a>
+                  <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="pagination-wrapper d-flex-r-bt-c">
+
+            <div class="left-block d-flex-r-c-c">
+              <div class="pagination-info">Showing 1-4 of 1,248 products</div>
+              <div class="action-buttons-holder d-flex-r-st-c">
+                <input type="submit" name="multipledelete" value="delete" class="btn-primary-dash delete-submit">
+              </div>
+            </div>
+
+            <div class="pagination-btns">
+              <button><i class="fas fa-chevron-left"></i></button>
+              <button class="active">1</button>
+              <button>2</button>
+              <button>3</button>
+              <button><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </main>
+
+  </div>
+  
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

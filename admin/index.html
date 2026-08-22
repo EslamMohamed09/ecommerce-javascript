@@ -1,353 +1,476 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-height, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="keywords" content="online shopping, buy products, fashion, electronics, affordable prices, best deals, home appliances, beauty products, gadgets, trendy fashion, home decor, luxury watches, smartphones, gift ideas, sale, discounts, quality products, eCommerce, shopping cart, free shipping, eco-friendly products, best deals online">  
-  <title>dashboard</title>
-  <link rel="stylesheet" href="assets/styles/all.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopVista - Premium E-Commerce Admin Dashboard">
+  <title>ShopVista — Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="assets/styles/all.min.css">
   <link rel="stylesheet" href="assets/styles/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/styles/main.css">
+  <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
-<header class="header" id="header"></header>
 
-<section class="dashboard-section home-page" id="dashboard-section">
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
 
-  <aside id="main-aside"></aside>
+<div class="dashboard-wrapper">
+  
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
 
-  <div class="home-container page-container"> 
+  <div class="home-page main-content">
 
-    <h1 class="section-heading">dashboard</h1>
+    <header class="main-header" role="banner"></header>
 
-    <div class="section-holder">
+    <main class="main-page page-content" role="main">
 
-      <div class="middle">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Welcome back, John! Here's what's happening today.</p>
+        </div>
+        <div class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Dashboard</span>
+        </div>
+      </div>
+      
+      <div class="stats-grid"> <!-- KPI Stats -->
 
-        <div class="insights d-flex-r-st-st">
-          
-          <div class="insight-card sales">
-
-            <i class="fas fa-chart-line" id="icon"></i>
-
-            <div class="progress">
-
-              <div class="left">
-                <h5>total sales</h5>
-                <h4>$29,024</h4>
-              </div>
-
-              <svg>
-                <circle cx='38' cy='38' r='30'></circle>
-              </svg>
-
-              <p>89%</p>
-
-            </div>
-
-            <div class="number">
-              <span>last 24 hours</span>
-            </div>
-
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-icon blue"><i class="bi bi-currency-dollar"></i></div>
+            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 12.5%</div>
           </div>
-
-          <div class="insight-card expenses">
-
-            <i class="fas fa-chart-bar" id="icon"></i>
-
-            <div class="progress">
-              <div class="left">
-                <h5>total expenses</h5>
-                <h4>$16,024</h4>
-              </div>
-              <svg>
-                <circle cx='38' cy='38' r='30'></circle>
-              </svg>
-              <p>71%</p>
-            </div>
-
-            <div class="number">
-              <span>last 24 hours</span>
-            </div>
-
+          <div class="stat-value" data-count="45680" data-prefix="$" data-decimals="0">$0</div>
+          <div class="stat-label">Total Revenue</div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" data-width="78%" style="background:var(--gradient-primary);width:0"></div>
           </div>
-          
-          <div class="insight-card income">
+        </div>
 
-            <i class="fas fa-chart-area" id="icon"></i>
-
-            <div class="progress">
-              <div class="left">
-                <h5>total income</h5>
-                <h4>$33,024</h4>
-              </div>
-              <svg>
-                <circle cx='38' cy='38' r='30'></circle>
-              </svg>
-              <p>85%</p>
-            </div>
-
-            <div class="number">
-              <span>last 24 hours</span>
-            </div>
-
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-icon green"><i class="bi bi-bag-fill"></i></div>
+            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 8.2%</div>
           </div>
+          <div class="stat-value" data-count="847" data-decimals="0">0</div>
+          <div class="stat-label">Total Orders</div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" data-width="65%" style="background:var(--gradient-success);width:0"></div>
+          </div>
+        </div>
 
-        </div> <!-- End Insights -->
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-icon orange"><i class="bi bi-people-fill"></i></div>
+            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 5.1%</div>
+          </div>
+          <div class="stat-value" data-count="2340" data-decimals="0">0</div>
+          <div class="stat-label">Total Customers</div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" data-width="52%" style="background:var(--gradient-warning);width:0"></div>
+          </div>
+        </div>
 
-        <div class="recent-order">
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-icon cyan"><i class="bi bi-arrow-clockwise"></i></div>
+            <div class="stat-trend down"><i class="fas fa-arrow-down"></i> 2.3%</div>
+          </div>
+          <div class="stat-value" data-count="3.2" data-suffix="%" data-decimals="1">0%</div>
+          <div class="stat-label">Refund Rate</div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" data-width="32%" style="background:linear-gradient(135deg,#00D1FF,#0A84FF);width:0"></div>
+          </div>
+        </div>
 
-          <h3>recent orders</h3>
+      </div>
+      
+      <div class="charts-row grid-2"> <!-- Charts Row -->
 
-          <table>
+        <div class="revenue-overview-card card">
+          <div class="revenue-overview-card-header">
+            <div>
+              <h3 class="card-title">Revenue Overview</h3>
+              <p style="font-size:12px;color:var(--text-secondary);margin-top:4px">Monthly revenue & expenses</p>
+            </div>
+            <div style="display:flex;gap:6px">
+              <button class="btn-ghost" style="font-size:12px">Weekly</button>
+              <button class="btn-ghost" style="font-size:12px;color:var(--primary)">Monthly</button>
+              <button class="btn-ghost" style="font-size:12px">Yearly</button>
+            </div>
+          </div>
+          <div class="chart-container" style="height:280px">
+            <canvas id="revenueChart"></canvas>
+          </div>
+        </div>
 
+        <div class="order-status-card card">
+          <div class="order-status-card-header">
+            <div class="title-holder">
+              <h3 class="card-title">Order Status</h3>
+              <p>Current order distribution</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="ordersChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="orders-table-card table-card"> <!-- Recent Orders Table -->
+
+        <div class="table-card-header">
+          <h3 class="table-card-title">Recent Orders</h3>
+          <div class="table-actions">
+            <button class="btn-outline-dash"><i class="fas fa-filter"></i> Filter</button>
+            <a href="pages/orders/all-orders.html" class="btn-primary-dash"><i class="fas fa-eye"></i> View All</a>
+          </div>
+        </div>
+
+        <form action="" class="manage-orders-table-form">
+
+          <table class="data-table">
             <thead>
               <tr>
-                <th>product name</th>
-                <th>product number</th>
-                <th>payment</th>
-                <th>status</th>
-                <th>details</th>
+                <th>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" id="head-checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </th>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Action</th>
               </tr>
             </thead>
-
             <tbody>
-
               <tr>
-                <td>gray blue jacket</td>
-                <td>85631</td>
-                <td>due</td>
-                <td class="warning">pending</td>
-                <td class="primary">details</td>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="order-id-field">#ORD-7841</td>
+                <td class="customer-field">
+                  <div class="customer-field-holder">
+                    <div class="avatar" style="background:var(--gradient-primary)">AS</div>
+                    <div>
+                      <div class="customer-name">Ahmed Salem</div>
+                      <div class="customer-email">ahmed@email.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>MacBook Pro 16</td>
+                <td>Mar 18, 2026</td>
+                <td class="pro-price-field">$2,499.00</td>
+                <td><span class="badge badge-success"><span class="status-dot active"></span> Completed</span></td>
+                <td>
+                  <button class="btn-icon" aria-label="View"><i class="fas fa-eye"></i></button>
+                  <button class="btn-icon" aria-label="Edit"><i class="fas fa-pen"></i></button>
+                </td>
               </tr>
-
               <tr>
-                <td>half sleeve shirt</td>
-                <td>85631</td>
-                <td>due</td>
-                <td class="warning">pending</td>
-                <td class="primary">details</td>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="order-id-field">#ORD-7840</td>
+                <td class="customer-field">
+                  <div class="customer-field-holder">
+                    <div class="avatar" style="background:linear-gradient(135deg,#6C5CE7,#a855f7)">SK</div>
+                    <div>
+                      <div class="customer-name">Sara Khalil</div>
+                      <div class="customer-email">sara@email.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>iPhone 15 Pro Max</td>
+                <td>Mar 17, 2026</td>
+                <td class="pro-price-field">$1,199.00</td>
+                <td><span class="badge badge-warning"><span class="status-dot pending"></span> Processing</span></td>
+                <td>
+                  <button class="btn-icon" aria-label="View"><i class="fas fa-eye"></i></button>
+                  <button class="btn-icon" aria-label="Edit"><i class="fas fa-pen"></i></button>
+                </td>
               </tr>
-
               <tr>
-                <td>marco shoes</td>
-                <td>85631</td>
-                <td>due</td>
-                <td class="warning">pending</td>
-                <td class="primary">details</td>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="order-id-field">#ORD-7839</td>
+                <td class="customer-field">
+                  <div class="customer-field-holder">
+                    <div class="avatar" style="background:linear-gradient(135deg,#00E676,#00C853)">MH</div>
+                    <div>
+                      <div class="customer-name">Mohamed Hassan</div>
+                      <div class="customer-email">m.hassan@email.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Samsung Galaxy Watch 6</td>
+                <td>Mar 17, 2026</td>
+                <td class="pro-price-field">$349.99</td>
+                <td><span class="badge badge-info"><span class="status-dot pending"></span> Shipped</span></td>
+                <td>
+                  <button class="btn-icon" aria-label="View"><i class="fas fa-eye"></i></button>
+                  <button class="btn-icon" aria-label="Edit"><i class="fas fa-pen"></i></button>
+                </td>
               </tr>
-
               <tr>
-                <td>beats headset</td>
-                <td>85631</td>
-                <td>due</td>
-                <td class="warning">pending</td>
-                <td class="primary">details</td>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="order-id-field">#ORD-7838</td>
+                <td class="customer-field">
+                  <div class="customer-field-holder">
+                    <div class="avatar" style="background:linear-gradient(135deg,#FFB300,#FF8F00)">LN</div>
+                    <div>
+                      <div class="customer-name">Layla Nasser</div>
+                      <div class="customer-email">layla@email.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>AirPods Pro 2nd Gen</td>
+                <td>Mar 16, 2026</td>
+                <td class="pro-price-field">$249.00</td>
+                <td><span class="badge badge-danger"><span class="status-dot inactive"></span> Cancelled</span></td>
+                <td>
+                  <button class="btn-icon" aria-label="View"><i class="fas fa-eye"></i></button>
+                  <button class="btn-icon" aria-label="Edit"><i class="fas fa-pen"></i></button>
+                </td>
               </tr>
-
+              <tr>
+                <td>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="checkbox[]" class="row-check">
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+                <td class="order-id-field">#ORD-7837</td>
+                <td class="customer-field">
+                  <div class="customer-field-holder">
+                    <div class="avatar" style="background:linear-gradient(135deg,#00D1FF,#0A84FF)">OA</div>
+                    <div>
+                      <div class="customer-name">Omar Ali</div>
+                      <div class="customer-email">omar@email.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Sony WH-1000XM5</td>
+                <td>Mar 16, 2026</td>
+                <td class="pro-price-field">$398.00</td>
+                <td><span class="badge badge-success"><span class="status-dot active"></span> Completed</span></td>
+                <td>
+                  <button class="btn-icon" aria-label="View"><i class="fas fa-eye"></i></button>
+                  <button class="btn-icon" aria-label="Edit"><i class="fas fa-pen"></i></button>
+                </td>
+              </tr>
             </tbody>
-            
           </table>
 
-          <div class="block-footer d-flex-r-end-c">
-            <a href="#" class="showall-btn">show all</a>
-          </div>
+          <div class="pagination-wrapper d-flex-r-bt-c">
 
-        </div> <!-- End Recent Order -->
-
-      </div> <!-- End Middle -->
-
-      <div class="right-aside d-flex-c-st-st">
-
-        <div class="active-users-block block">
-
-          <h2 class="block-title">active users</h2>
-
-          <div class="images">
-            <img src="assets/images/users/eslam1.jpg" alt="">
-            <img src="assets/images/users/eslam5.jpg" alt="">
-            <img src="assets/images/users/eslam3.jpg" alt="">
-            <img src="assets/images/users/eslam4.jpg" alt="">
-          </div>
-
-          <a href="#" class="view-btn">view all <i class="fa-solid fa-power-off" id="power-off"></i></a>
-
-        </div> <!-- End Block -->
-
-        <div class="recent-updates-block block">
-    
-          <h2 class="block-title">recent updates</h2>
-    
-          <div class="updates">
-    
-            <div class="update">
-              <div class="image">
-                <img src="assets/images/users/eslam5.jpg" alt="">
-              </div>
-              <div class="message">
-                <p><b>eslam mohamed</b> recieved his order of mobiles</p>
-                <small>2 minute ago</small>
+            <div class="left-block d-flex-r-c-c">
+              <div class="pagination-info">Showing 1-5 of 847 orders</div>
+              <div class="action-buttons-holder d-flex-r-st-c">
+                <input type="submit" name="multipledelete" value="delete" class="btn-primary-dash delete-submit">
               </div>
             </div>
-    
-            <div class="update">
-              <div class="image">
-                <img src="assets/images/users/eslam5.jpg" alt="">
-              </div>
-              <div class="message">
-                <p><b>eslam mohamed</b> recieved his order of mobiles</p>
-                <small>2 minute ago</small>
-              </div>
-            </div>
-    
-            <div class="update">
-              <div class="image">
-                <img src="assets/images/users/eslam5.jpg" alt="">
-              </div>
-              <div class="message">
-                <p><b>eslam mohamed</b> recieved his order of mobiles</p>
-                <small>2 minute ago</small>
-              </div>
-            </div>
-    
-          </div>
-    
-        </div> <!-- End Block -->
-    
-        <div class="sales-analytics-block block">
-    
-          <h2 class="block-title">sales analytics</h2>
-    
-          <div class="items">
 
-            <div class="item online">
-              <i class="fas fa-shopping-cart" id="icon"></i>
-                <div class="info">
-                  <h3>online orders</h3>
-                  <small>last 24 hours</small>
-                </div>
-                <h5>+39%</h5>
-                <h4>3849</h4>
-            </div>
-      
-            <div class="item offline">
-              <i class="fa-solid fa-bag-shopping" id="icon"></i>
-                <div class="info">
-                  <h3>online orders</h3>
-                  <small>last 24 hours</small>
-                </div>
-                <h5>-39%</h5>
-                <h4>560</h4>
-            </div>
-      
-            <div class="item customer">
-              <i class="fas fa-user" id="icon"></i>
-                <div class="info">
-                  <h3>online orders</h3>
-                  <small>last 24 hours</small>
-                </div>
-                <h5>+39%</h5>
-                <h4>920</h4>
-            </div>
-
-          </div>
-    
-        </div> <!-- End Block -->
-
-        <div class="all-users-block block">
-
-          <h2 class="block-title">all users</h2>
-
-          <ul class="buttons d-flex-r-st-c">
-            <li class="tab-btn" filter-click="active">active</li>
-            <li class="tab-btn" filter-click="pending">pending</li>
-          </ul>
-
-          <div class="all-users">
-
-            <div class="active items d-flex-c-st-st">
-
-              <div class="item">
-                <img src="assets/images/users/eslam1.jpg" alt="">
-                <h4>eslam mohamed</h4>
-              </div>
-
-              <div class="item">
-                <img src="assets/images/users/eslam2.jpg" alt="">
-                <h4>mohanad mohamed</h4>
-              </div>
-
-              <div class="item">
-                <img src="assets/images/users/eslam3.jpg" alt="">
-                <h4>waleed mohamed</h4>
-              </div>
-
-              <div class="item">
-                <img src="assets/images/users/eslam4.jpg" alt="">
-                <h4>adham mohamed</h4>
-              </div>
-
-              <div class="item">
-                <img src="assets/images/users/eslam5.jpg" alt="">
-                <h4>samy mohamed</h4>
-              </div>
-
-            </div>
-
-            <div class="pending items d-flex-c-st-st">
-
-              <div class="item">
-                <img src="assets/images/users/eslam(6).jpg" alt="">
-                <h4>ali mohamed</h4>
-              </div>
-
-              <div class="item">
-                <img src="assets/images/users/eslam(7).jpg" alt="">
-                <h4>khaled mohamed</h4>
-              </div>
-
-              <div class="item">
-                <img src="assets/images/users/eslam(8).jpg" alt="">
-                <h4>rafaat mohamed</h4>
-              </div>
-
-              <div class="item">
-                <img src="assets/images/users/eslam(9).jpg" alt="">
-                <h4>yuassef mohamed</h4>
-              </div>
-
-              <div class="item">
-                <img src="assets/images/users/eslam(10).jpg" alt="">
-                <h4>moaz mohamed</h4>
-              </div>
-
+            <div class="pagination-btns">
+              <button><i class="fas fa-chevron-left"></i></button>
+              <button class="active">1</button>
+              <button>2</button>
+              <button>3</button>
+              <button><i class="fas fa-chevron-right"></i></button>
             </div>
 
           </div>
 
-        </div> <!-- End Block -->
-    
-        <a href="#" class="add-btn"><i class="fa-solid fa-cart-plus" id="icon"></i>add product</a>
-    
-      </div> <!-- End Right Aside -->
+        </form>
 
-    </div>
+      </div>
 
-  </div> <!-- ===== End page-container ==== -->
+      <div class="grid-3 bottom-row"> <!-- Bottom Grid -->
 
-</section>
+        <div class="card top-products-card"> <!-- Top Products -->
 
-<script src="assets/js/jquery-3.5.1.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/all.min.js"></script>
-<script src="assets/js/solid.min.js"></script>
-<script src="assets/js/regular.min.js"></script>
-<script src="assets/js/brands.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="pages/header.js"></script>
+          <h3 class="card-title">Top Products</h3>
+
+          <div class="items-holder">
+
+            <div class="prod-item">
+              <div class="product-thumb"><i class="fas fa-laptop"></i></div>
+              <div class="prod-info">
+                <div class="prod-name">MacBook Pro 16</div>
+                <div class="prod-sold">142 sold</div>
+              </div>
+              <div class="prod-price">$354,258</div>
+            </div>
+
+            <div class="prod-item">
+              <div class="product-thumb"><i class="fas fa-mobile-alt"></i></div>
+              <div class="prod-info">
+                <div class="prod-name">iPhone 15 Pro</div>
+                <div class="prod-sold">98 sold</div>
+              </div>
+              <div class="prod-price">$117,502</div>
+            </div>
+
+            <div class="prod-item">
+              <div class="product-thumb"><i class="fas fa-headphones"></i></div>
+              <div class="prod-info">
+                <div class="prod-name">AirPods Pro</div>
+                <div class="prod-sold">256 sold</div>
+              </div>
+              <div class="prod-price">$63,744</div>
+            </div>
+
+            <div class="prod-item">
+              <div class="product-thumb"><i class="fas fa-tv"></i></div>
+              <div class="prod-info">
+                <div class="prod-name">Samsung OLED TV</div>
+                <div class="prod-sold">34 sold</div>
+              </div>
+              <div class="prod-price">$47,566</div>
+            </div>
+
+          </div>
+
+        </div>
+        
+        <div class="card recent-activity-card"> <!-- Recent Activity -->
+
+          <h3 class="card-title">Recent Activity</h3>
+
+          <div class="items-holder">
+
+            <div class="activity-item">
+              <div class="new-alert"></div>
+              <div class="order-info">
+                <div class="order-id">New order #7841 received</div>
+                <div class="order-time">2 minutes ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="updated-alert"></div>
+              <div class="order-info">
+                <div class="order-id">Product stock updated</div>
+                <div class="order-time">15 minutes ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="pending-approval-alert"></div>
+              <div class="order-info">
+                <div class="order-id">New review pending approval</div>
+                <div class="order-time">1 hour ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="cancelled-alert"></div>
+              <div class="order-info">
+                <div class="order-id">Order #7838 cancelled</div>
+                <div class="order-time">2 hours ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="new-registered-alert"></div>
+              <div class="order-info">
+                <div class="order-id">New customer registered</div>
+                <div class="order-time">3 hours ago</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card store-summary-card"> <!-- Quick Stats -->
+
+          <h3 class="card-title">Store Summary</h3>
+
+          <div class="items-holder">
+
+            <div class="summary-item">
+              <div class="summary-title">Active Products</div>
+              <div class="summary-value">1,248</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="summary-item">
+              <div class="summary-title">Pending Orders</div>
+              <div class="summary-value" style="color:var(--warning)">95</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="summary-item">
+              <div class="summary-title">Low Stock Items</div>
+              <div class="summary-value" style="color:var(--danger)">23</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="summary-item">
+              <div class="summary-title">Avg. Order Value</div>
+              <div class="summary-value">$186.40</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="summary-item">
+              <div class="summary-title">Conversion Rate</div>
+              <div class="summary-value" style="color:var(--success)">4.8%</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+  
+</div>
+
 <script src="pages/aside.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="pages/header.js"></script>
+<script src="assets/js/all.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/dashboard.js"></script>
 </body>
 </html>

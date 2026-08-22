@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ShopVista — Roles & Permissions</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+  
+<div class="dashboard-wrapper">
+    
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+  
+  <div class="main-content">
+    
+    <header class="main-header" role="banner"></header>
+
+    <main class="page-content roles-permissions-page" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Roles & Permissions</h1>
+          <p class="page-subtitle">Manage user roles</p>
+        </div><div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Roles & Permissions</span>
+        </div>
+      </div>
+
+      <div class="page-heading">
+        <h3 class="page-title">User Roles</h3>
+        <button class="btn-primary-dash"><i class="fas fa-plus"></i> Add Role</button>
+      </div>
+
+      <div class="cards-container grid-3">
+
+        <div class="role-card card">
+          <div class="role-name-holder">
+            <div class="dot-value" style="background:var(--danger)"></div>
+            <h3 class="role-name">Administrator</h3>
+          </div>
+          <p class="role-description">Full Access</p>
+          <div class="users-count">2 users</div>
+          <div class="action-buttons-holder">
+            <button class="btn-outline-dash"><i class="fas fa-pen"></i> Edit</button>
+            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+
+        <div class="role-card card">
+          <div class="role-name-holder">
+            <div class="dot-value" style="background:var(--warning)"></div>
+            <h3 class="role-name">Manager</h3>
+          </div>
+          <p class="role-description">Limited Admin</p>
+          <div class="users-count">5 users</div>
+          <div class="action-buttons-holder">
+            <button class="btn-outline-dash"><i class="fas fa-pen"></i> Edit</button>
+            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+
+        <div class="role-card card">
+          <div class="role-name-holder">
+            <div class="dot-value" style="background:var(--primary)"></div>
+            <h3 class="role-name">Editor</h3>
+          </div>
+          <p class="role-description">Content Only</p>
+          <div class="users-count">8 users</div>
+          <div class="action-buttons-holder">
+            <button class="btn-outline-dash"><i class="fas fa-pen"></i> Edit</button>
+            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+
+        <div class="role-card card">
+          <div class="role-name-holder">
+            <div class="dot-value" style="background:var(--success)"></div>
+            <h3 class="role-name">Support</h3>
+          </div>
+          <p class="role-description">Customer Support</p>
+          <div class="users-count">12 users</div>
+          <div class="action-buttons-holder">
+            <button class="btn-outline-dash"><i class="fas fa-pen"></i> Edit</button>
+            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      
+        <div class="role-card card">
+          <div class="role-name-holder">
+            <div class="dot-value" style="background:var(--text-muted)"></div>
+            <h3 class="role-name">Viewer</h3>
+          </div>
+          <p class="role-description">Read Only</p>
+          <div class="users-count">25 users</div>
+          <div class="action-buttons-holder">
+            <button class="btn-outline-dash"><i class="fas fa-pen"></i> Edit</button>
+            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+  
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVista — Add Category</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+
+<div class="dashboard-wrapper">
+  
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+
+  <div class="main-content">
+
+    <header class="main-header" role="banner">
+
+      <div class="header-left-block">
+        <button class="sidebar-toggle" aria-label="Toggle Sidebar"><i class="bi bi-chevron-right"></i></button>
+        <div class="header-search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Search..." aria-label="Search"></div>
+      </div>
+
+      <div class="header-right-block">
+        <button class="header-action-btn" id="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button class="header-action-btn" aria-label="Notifications"><i class="fas fa-bell"></i><span class="dot"></span></button>
+        <div class="topbar-divider"></div>
+        <div class="header-user-holder">
+          <div class="header-user-avatar">JD</div>
+          <div>
+            <div class="header-user-name">John Doe</div>
+            <div class="header-user-role">Admin</div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <main class="page-content" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Add Category</h1>
+          <p class="page-subtitle">Create a new category</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span class="sep">/</span>
+          <span>Add Category</span>
+        </div>
+      </div>
+
+      <div class="card" style="max-width:600px">
+        
+        <h3 class="card-title">Category Details</h3>
+
+        <div class="form-group">
+          <label class="form-label">Category Name</label>
+          <input class="form-control-dash" placeholder="Enter category name">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Description</label>
+          <textarea class="form-control-dash" placeholder="Category description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Parent Category</label>
+          <select class="form-select-dash">
+            <option>None (Top Level)</option>
+            <option>Electronics</option>
+            <option>Fashion</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Icon</label>
+          <input class="form-control-dash" placeholder="fas fa-tag">
+        </div>
+
+        <div style="display:flex;gap:10px;justify-content:flex-end">
+          <button class="btn-outline-dash">Cancel</button>
+          <button class="btn-primary-dash"><i class="fas fa-check"></i> Save Category</button>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

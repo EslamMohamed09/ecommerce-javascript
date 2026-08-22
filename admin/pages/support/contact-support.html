@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>ShopVista — Contact Support</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/all.min.css">
+  <link rel="stylesheet" href="../../assets/styles/dashboard.css">
+</head>
+<body>
+
+<div id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">SV</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading ShopVista...</div>
+  </div>
+</div>
+  
+<div class="dashboard-wrapper">
+    
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></aside>
+    
+  <div class="main-content">
+    
+    <header class="main-header" role="banner"></header>
+    
+    <main class="page-content contact-support-page" role="main">
+
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Contact Support</h1>
+          <p class="page-subtitle">Get in touch with our team</p>
+        </div>
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a><span class="sep">/</span><span>Contact Support</span>
+        </div>
+      </div>
+
+      <div class="cards-container grid-2">
+
+        <div class="send-message-card card">
+
+          <h3 class="card-title">Send a Message</h3>
+
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <input class="form-control-dash" placeholder="What do you need help with?">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Priority</label>
+            <select class="form-select-dash">
+              <option>Low</option>
+              <option>Medium</option>
+              <option selected>High</option>
+              <option>Urgent</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <select class="form-select-dash">
+              <option>Technical Issue</option>
+              <option>Billing</option>
+              <option>Feature Request</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-control-dash" rows="5" placeholder="Describe your issue in detail..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Attachment</label>
+            <input class="form-control-dash" type="file">
+          </div>
+
+          <button class="btn-primary-dash"><i class="fas fa-paper-plane"></i> Submit Ticket</button>
+
+        </div>
+          
+        <div class="right-block">
+
+          <div class="other-ways-reach-us-card card">
+
+            <h3 class="card-title">Other Ways to Reach Us</h3>
+
+            <div class="contact-items-holder">
+
+              <div class="contact-item">
+                <div class="icon-holder"><i class="bi bi-envelope-fill"></i></div>
+                <div class="contact-method-holder">
+                  <div class="method">Email</div>
+                  <div class="value">support@shopvista.com</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="icon-holder"><i class="bi bi-telephone"></i></div>
+                <div class="contact-method-holder">
+                  <div class="method">Phone</div>
+                  <div class="value">+1 (555) 123-4567</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="icon-holder"><i class="fas fa-comments"></i></div>
+                <div class="contact-method-holder">
+                  <div class="method">Live Chat</div>
+                  <div class="value">Available 24/7</div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          
+          <div class="response-time-card card">
+            <h3 class="card-title">Response Time</h3>
+            <div class="items-holder">
+              <div class="item">
+                <span class="title">Average</span>
+                <span class="value" style="color:var(--success)">&lt; 2 hours</span>
+              </div>
+              <div class="item">
+                <span class="title">Urgent</span>
+                <span class="value" style="color:var(--primary)">&lt; 30 min</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+  
+</div>
+
+<script src="../aside.js"></script>
+<script src="../header.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>
