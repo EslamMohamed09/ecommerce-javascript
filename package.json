@@ -3,8 +3,8 @@
     "sass": "^1.101.0"
   },
   "scripts": {
-    "build-css": "sass assets/styles:assets/styles",
-    "watch-css": "sass --watch assets/styles:assets/styles",
+    "build-css":"sass --no-source-map assets/styles/scss:assets/styles/css",
+    "watch-css":"sass --watch --no-source-map --watch assets/styles/scss:assets/styles/css",
     "serve": "browser-sync start --server --files 'assets/styles/*.css, *.html'"
   }
 }
